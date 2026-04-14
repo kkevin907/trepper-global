@@ -1,0 +1,49 @@
+---
+interface Props {
+  location: string;
+  country: string;
+  flag: string;
+}
+
+const { location, country, flag } = Astro.props;
+---
+
+<div class="badge">
+  <span class="badge-dot"></span>
+  <span class="badge-flag">{flag}</span>
+  <span class="badge-text">Gerade in <strong>{location}</strong>, {country}</span>
+</div>
+
+<style>
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--coral-light);
+    border: 1.5px solid var(--coral-mid);
+    border-radius: 100px;
+    padding: 0.4rem 1rem 0.4rem 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #C2410C;
+  }
+
+  .badge-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--coral);
+    border-radius: 50%;
+    flex-shrink: 0;
+    animation: livepulse 2s ease-in-out infinite;
+  }
+
+  @keyframes livepulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4); }
+    50% { box-shadow: 0 0 0 6px rgba(249, 115, 22, 0); }
+  }
+
+  .badge-flag {
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+</style>

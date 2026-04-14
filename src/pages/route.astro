@@ -1,0 +1,332 @@
+---
+import Layout from '../layouts/Layout.astro';
+import WorldMap from '../components/WorldMap.astro';
+import stations from '../data/stations.json';
+
+const statusLabels: Record<string, string> = {
+  home:     'Heimat',
+  visited:  'Besucht',
+  planned:  'Besucht',
+  upcoming: 'Weltreise',
+  current:  'Aktuell hier',
+};
+
+const statusColors: Record<string, string> = {
+  home:     '#8B5CF6',
+  visited:  '#10B981',
+  planned:  '#10B981',
+  upcoming: '#F97316',
+  current:  '#F97316',
+};
+
+const preStations     = stations.filter(s => s.phase === 'home' || s.phase === 'pre');
+const warmupStations  = stations.filter(s => s.phase === 'warmup');
+const mainStations    = stations.filter(s => s.phase === 'main');
+---
+
+<Layout title="Route" description="Kevins Reiseroute — alle Stationen im Überblick.">
+  <div class="page-header">
+    <div class="page-header-inner">
+      <span class="page-badge">Route</span>
+      <h1 class="page-title">Meine Route</h1>
+      <p class="page-sub">Alle Stationen — vergangene und geplante. Filter-Buttons auf der Karte ein- und ausblenden.</p>
+    </div>
+  </div>
+
+  <div class="route-wrap">
+    <div class="route-inner">
+
+      <!-- KARTE MIT FILTER-BUTTONS -->
+      <WorldMap height="520px" mapId="route-map" showRoute={false} showFilters={true} />
+
+      <!-- TIMELINE -->
+      <div class="timeline-section">
+        <h2 class="timeline-title">Stationen im Überblick</h2>
+
+        <!-- ── GRUPPE 1: Frühere Reisen (eingeklappt) ── -->
+        <details class="sgroup" id="group-pre">
+          <summary class="sgroup-head">
+            <span class="sgroup-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </span>
+            <span class="sgroup-title">Frühere Reisen</span>
+            <span class="sgroup-count">{preStations.length} Länder</span>
+          </summary>
+          <div class="sgroup-body">
+            <div class="stations-list">
+              {preStations.map((station, i) => {
+                const color = statusColors[station.status] || '#94A3B8';
+                const label = statusLabels[station.status] || station.status;
+                return (
+                  <div class="station-row" style={`--sc:${color};`}>
+                    <div class="station-indicator">
+                      <div class="station-dot" style={`background:${color};`}></div>
+                      {i < preStations.length - 1 && <div class="station-line"></div>}
+                    </div>
+                    <div class="station-info">
+                      <div class="station-header">
+                        <span class="station-flag">{station.flag}</span>
+                        <span class="station-name">{station.name}</span>
+                        <span class="station-country">{station.country}</span>
+                        <span class="station-badge" style={`background:${color}20;color:${color};`}>{label}</span>
+                      </div>
+                      <p class="station-desc">{station.description}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </details>
+
+        <!-- ── GRUPPE 2: Warm-up 2026 (aufgeklappt) ── -->
+        <details class="sgroup" id="group-warmup" open>
+          <summary class="sgroup-head">
+            <span class="sgroup-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </span>
+            <span class="sgroup-title">✈️ 2026 — Vor dem Start</span>
+            <span class="sgroup-count">{warmupStations.length} Stops</span>
+          </summary>
+          <div class="sgroup-body">
+            <div class="stations-list">
+              {warmupStations.map((station, i) => {
+                const color = statusColors[station.status] || '#94A3B8';
+                const label = statusLabels[station.status] || station.status;
+                return (
+                  <div class="station-row" style={`--sc:${color};`}>
+                    <div class="station-indicator">
+                      <div class="station-dot" style={`background:${color};`}></div>
+                      {i < warmupStations.length - 1 && <div class="station-line"></div>}
+                    </div>
+                    <div class="station-info">
+                      <div class="station-header">
+                        <span class="station-flag">{station.flag}</span>
+                        <span class="station-name">{station.name}</span>
+                        <span class="station-country">{station.country}</span>
+                        <span class="station-badge" style={`background:${color}20;color:${color};`}>{label}</span>
+                      </div>
+                      <p class="station-desc">{station.description}</p>
+                      {station.dateFrom && (
+                        <div class="station-dates">
+                          {new Date(station.dateFrom).toLocaleDateString('de-DE', { day: 'numeric', month: 'long' })}
+                          {station.dateTo && ` → ${new Date(station.dateTo).toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' })}`}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </details>
+
+        <!-- ── GRUPPE 3: Die Weltreise (aufgeklappt) ── -->
+        <details class="sgroup" id="group-main" open>
+          <summary class="sgroup-head">
+            <span class="sgroup-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </span>
+            <span class="sgroup-title">🌏 Die Weltreise</span>
+            <span class="sgroup-count">{mainStations.length} Stationen</span>
+          </summary>
+          <div class="sgroup-body">
+            <div class="stations-list">
+              {mainStations.map((station, i) => {
+                const color = statusColors[station.status] || '#94A3B8';
+                const label = statusLabels[station.status] || station.status;
+                return (
+                  <div class="station-row" style={`--sc:${color};`}>
+                    <div class="station-indicator">
+                      <div class="station-dot" style={`background:${color};`}></div>
+                      {i < mainStations.length - 1 && <div class="station-line dashed"></div>}
+                    </div>
+                    <div class="station-info">
+                      <div class="station-header">
+                        <span class="station-flag">{station.flag}</span>
+                        <span class="station-name">{station.name}</span>
+                        <span class="station-country">{station.country}</span>
+                        <span class="station-badge" style={`background:${color}20;color:${color};`}>{label}</span>
+                      </div>
+                      <p class="station-desc">{station.description}</p>
+                    </div>
+                  </div>
+                );
+              })}
+              <!-- Placeholder -->
+              <div class="station-row" style="--sc:#CBD5E1;opacity:.55;">
+                <div class="station-indicator">
+                  <div class="station-dot-empty"></div>
+                </div>
+                <div class="station-info">
+                  <div class="station-header">
+                    <span class="station-flag">🌍</span>
+                    <span class="station-name" style="color:#94A3B8;">Weitere Stationen</span>
+                  </div>
+                  <p class="station-desc" style="font-style:italic;">Die Route entwickelt sich mit der Reise…</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-header {
+    background: linear-gradient(160deg, #F0FDF4 0%, #ffffff 60%);
+    border-bottom: 1px solid var(--border);
+    padding: 3.5rem 1.5rem 3rem;
+  }
+  .page-header-inner { max-width: 1100px; margin: 0 auto; }
+  .page-badge {
+    display: inline-block;
+    background: var(--green-light);
+    color: #065F46;
+    font-size: .75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    padding: .3rem .8rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+  .page-title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; letter-spacing: -.03em; }
+  .page-sub   { margin-top: .75rem; font-size: .95rem; color: var(--text-mid); line-height: 1.6; }
+
+  .route-wrap  { padding: 3rem 1.5rem 5rem; }
+  .route-inner { max-width: 1100px; margin: 0 auto; }
+
+  /* ── TIMELINE ── */
+  .timeline-section { margin-top: 2.5rem; }
+  .timeline-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -.03em;
+    margin-bottom: 1.25rem;
+  }
+
+  /* ── COLLAPSIBLE GROUPS ── */
+  .sgroup {
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    background: white;
+  }
+
+  .sgroup-head {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    background: white;
+    transition: background .15s;
+  }
+  .sgroup-head::-webkit-details-marker { display: none; }
+  .sgroup-head:hover { background: #F8FAFC; }
+
+  .sgroup-icon {
+    display: flex;
+    align-items: center;
+    color: #94A3B8;
+    transition: transform .2s;
+    flex-shrink: 0;
+  }
+  details[open] .sgroup-icon { transform: rotate(90deg); }
+
+  .sgroup-title {
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: -.02em;
+    color: var(--text);
+    flex: 1;
+  }
+  .sgroup-count {
+    font-size: .78rem;
+    font-weight: 600;
+    color: var(--text-light);
+    background: #F1F5F9;
+    padding: .2rem .65rem;
+    border-radius: 100px;
+  }
+
+  .sgroup-body { border-top: 1.5px solid var(--border); padding: 1.25rem 1.25rem 0.5rem; }
+
+  /* ── STATIONS LIST ── */
+  .stations-list { display: flex; flex-direction: column; }
+
+  .station-row {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 1.25rem;
+  }
+
+  .station-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: .2rem;
+  }
+
+  .station-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 0 0 2px var(--sc, #94A3B8);
+    flex-shrink: 0;
+  }
+  .station-dot-empty {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2.5px dashed #CBD5E1;
+    background: white;
+    flex-shrink: 0;
+  }
+
+  .station-line {
+    width: 2px;
+    flex: 1;
+    background: #E2E8F0;
+    min-height: 20px;
+    margin: 5px 0;
+  }
+  .station-line.dashed {
+    background: repeating-linear-gradient(
+      to bottom,
+      #E2E8F0 0px,
+      #E2E8F0 5px,
+      transparent 5px,
+      transparent 10px
+    );
+  }
+
+  .station-info    { padding-bottom: 1.5rem; }
+  .station-header  { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; margin-bottom: .35rem; }
+  .station-flag    { font-size: 1.1rem; line-height: 1; }
+  .station-name    { font-size: 1.05rem; font-weight: 700; letter-spacing: -.02em; }
+  .station-country { font-size: .82rem; color: var(--text-mid); }
+  .station-badge   {
+    font-size: .68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    padding: .18rem .6rem;
+    border-radius: 100px;
+    margin-left: .25rem;
+  }
+  .station-desc  { font-size: .88rem; color: var(--text-mid); line-height: 1.6; margin-bottom: .35rem; }
+  .station-dates { font-size: .78rem; color: var(--sc, var(--text-light)); font-weight: 600; }
+
+  @media (max-width: 600px) {
+    .station-row { grid-template-columns: 34px 1fr; gap: 1rem; }
+  }
+</style>

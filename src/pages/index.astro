@@ -1,0 +1,926 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LocationBadge from '../components/LocationBadge.astro';
+import WorldMap from '../components/WorldMap.astro';
+import stationsData from '../data/stations.json';
+import config from '../data/config.json';
+
+const allMdFiles = import.meta.glob('../content/logbook/*.md', { eager: true });
+const entries = Object.entries(allMdFiles)
+  .map(([_, mod]: [string, any]) => ({ fm: mod.frontmatter }))
+  .sort((a, b) => new Date(b.fm.date).getTime() - new Date(a.fm.date).getTime())
+  .slice(0, 3);
+
+const target   = new Date('2026-06-25T00:00:00');
+const now      = new Date();
+const daysLeft = Math.max(0, Math.ceil((target.getTime() - now.getTime()) / 86400000));
+const started  = daysLeft <= 0;
+
+// Kilometer berechnen — Haversine über alle besuchten Stationen (home + visited)
+function haversine(lat1: number, lon1: number, lat2: number, lon2: number): number {
+  const R = 6371;
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLon = (lon2 - lon1) * Math.PI / 180;
+  const a = Math.sin(dLat/2) ** 2
+    + Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * Math.sin(dLon/2) ** 2;
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+// km zurückgelegt — nur Weltreise (phase "main"), ab Solingen, chronologisch
+const home = stationsData.find(s => s.status === 'home')!;
+const worldTripVisited = stationsData
+  .filter(s => s.phase === 'main' && (s.status === 'visited' || s.status === 'current') && s.dateFrom)
+  .sort((a, b) => new Date(a.dateFrom!).getTime() - new Date(b.dateFrom!).getTime());
+
+const traveled = worldTripVisited.length > 0 ? [home, ...worldTripVisited] : [];
+
+let kmTotal = 0;
+for (let i = 1; i < traveled.length; i++) {
+  kmTotal += haversine(traveled[i-1].lat, traveled[i-1].lon, traveled[i].lat, traveled[i].lon);
+}
+const kmDisplay = kmTotal > 0
+  ? Math.round(kmTotal).toLocaleString('de-DE')
+  : '0';
+
+const cards = [
+  { border: '#F97316', bg: '#FFF7ED', text: '#C2410C' },
+  { border: '#0EA5E9', bg: '#E0F2FE', text: '#0369A1' },
+  { border: '#10B981', bg: '#D1FAE5', text: '#065F46' },
+];
+
+// Aktueller Standort — gesteuert über src/data/config.json → currentStationId
+const currentStation = stationsData.find(s => s.id === config.currentStationId)
+  || stationsData.find(s => s.status === 'home')!;
+const solingen = stationsData.find(s => s.id === 'solingen')!;
+const distKm = Math.round(haversine(solingen.lat, solingen.lon, currentStation.lat, currentStation.lon));
+const distDisplay = distKm === 0 ? 'Heimat' : `${distKm.toLocaleString('de-DE')} km`;
+const locTimezone = currentStation.timezone || 'Europe/Berlin';
+// Währungsname auf Deutsch via Intl.DisplayNames
+const currencyNames = new Intl.DisplayNames(['de'], { type: 'currency' });
+const locCurrencyName = currencyNames.of(currentStation.currency) || currentStation.currency;
+const locCurrencyDisplay = `${currentStation.currencySymbol} ${locCurrencyName}`;
+const locStationName = currentStation.name;
+const locLat = currentStation.lat;
+const locLon = currentStation.lon;
+---
+
+<Layout title="Home">
+<div class="pg-home">
+
+<!-- ═══════════════════════════════════════════════════════
+     HERO — 2-Spalten: Text links, Karte sofort sichtbar rechts
+═══════════════════════════════════════════════════════ -->
+<section class="ph-hero">
+  <div class="ph-blob ph-b1"></div>
+  <div class="ph-blob ph-b2"></div>
+  <div class="ph-blob ph-b3"></div>
+
+  <div class="ph-hero-inner">
+
+    <!-- LINKE SPALTE: kompakter Text -->
+    <div class="ph-hero-left">
+
+      <!-- Ortsinfo-Strip: Uhrzeit, Währung, Standort, Wetter -->
+      <div class="ph-locinfo" id="ph-locinfo" data-tz={locTimezone} data-lat={locLat} data-lon={locLon}>
+
+        <div class="ph-li-block">
+          <span class="ph-li-label">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Lokale Uhrzeit
+          </span>
+          <span class="ph-li-val">
+            <span id="ph-li-time" class="ph-li-time">--:--:--</span>
+          </span>
+        </div>
+
+        <div class="ph-li-sep"></div>
+
+        <div class="ph-li-block">
+          <span class="ph-li-label">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            Währung vor Ort
+          </span>
+          <span class="ph-li-val">{locCurrencyDisplay}</span>
+        </div>
+
+        <div class="ph-li-sep"></div>
+
+        <div class="ph-li-block">
+          <span class="ph-li-label">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 1 0 5 5"/><path d="M12 2v2M12 12v2M4.22 4.22l1.42 1.42M18.36 5.64l1.42-1.42M2 12h2M20 12h2"/><circle cx="16" cy="6" r="3"/></svg>
+            Wetter vor Ort
+          </span>
+          <span class="ph-li-val" id="ph-li-weather">
+            <span id="ph-weather-icon" style="font-size:.95rem;line-height:1;">–</span>
+            <span id="ph-weather-temp" class="ph-li-time" style="width:auto;min-width:38px;">–°</span>
+          </span>
+        </div>
+
+      </div>
+
+      <!-- Topbar: Standort + Countdown -->
+      <div class="ph-topbar">
+        <LocationBadge location={currentStation.name} country={currentStation.country} flag={currentStation.flag} />
+        {!started ? (
+          <div class="ph-chip">
+            <span class="ph-chip-num">{daysLeft}</span>
+            <span class="ph-chip-txt">Tage</span>
+          </div>
+        ) : (
+          <div class="ph-chip ph-chip-go">
+            <span class="ph-chip-txt">🌏 Unterwegs!</span>
+          </div>
+        )}
+      </div>
+
+      <!-- Kompakte Headline -->
+      <div class="ph-headline-block">
+        <p class="ph-eyebrow">Persönliches Reise-Logbuch</p>
+        <h1 class="ph-title">
+          Von Solingen<br />
+          <span class="ph-grad">in die Welt.</span>
+        </h1>
+        <p class="ph-sub">
+          Von Solingen nach Asien — alle Stops, alle Geschichten, live mitverfolgen.
+        </p>
+      </div>
+
+      <!-- Buttons -->
+      <div class="ph-actions">
+        <a href="/logbook" class="ph-btn-primary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          Logbuch lesen
+        </a>
+        <a href="/route" class="ph-btn-secondary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          Route
+        </a>
+        <a href="/about" class="ph-btn-ghost">Über mich</a>
+      </div>
+
+      <!-- Stats -->
+      <div class="ph-stats">
+        <div class="ph-stat">
+          <span class="ph-stat-n" style="color:#F97316;">25</span>
+          <span class="ph-stat-l">Länder bereist</span>
+        </div>
+        <div class="ph-stat-sep"></div>
+        <div class="ph-stat">
+          <span class="ph-stat-n" style="color:#0EA5E9;">3</span>
+          <span class="ph-stat-l">Einträge</span>
+        </div>
+        <div class="ph-stat-sep"></div>
+        <div class="ph-stat">
+          <span class="ph-stat-n" style="color:#10B981;">4</span>
+          <span class="ph-stat-l">Asien-Stops</span>
+        </div>
+        <div class="ph-stat-sep"></div>
+        <div class="ph-stat">
+          <span class="ph-stat-n" style="color:#8B5CF6;">{kmDisplay}</span>
+          <span class="ph-stat-l">km zurückgelegt</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RECHTE SPALTE: Karte direkt sichtbar -->
+    <div class="ph-hero-right">
+      <WorldMap height="100%" mapId="home-map" showRoute={false} showFilters={true} />
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     PHASEN — direkt danach, kompakt
+═══════════════════════════════════════════════════════ -->
+<section class="ph-sec ph-sec-soft reveal">
+  <div class="ph-wrap">
+    <div class="ph-sec-label" style="color:#F97316;">Der Plan</div>
+    <h2 class="ph-sec-title">Mein 2026</h2>
+    <p class="ph-sec-sub">Alle Stops — zieh die Timeline nach rechts für die Weltreise.</p>
+
+    <div class="ph-tl-outer">
+      <div class="ph-tl-scroll" id="ph-timeline">
+        <div class="ph-tl">
+
+          <!-- ✓ DONE: grün, solid lines -->
+          {[
+            { flag:'🇳🇱', name:'Renesse',   badge:'✓ Apr' },
+            { flag:'🇬🇧', name:'London',    badge:'✓ Apr' },
+            { flag:'🇵🇹', name:'Madeira',   badge:'✓ Apr' },
+            { flag:'🇵🇹', name:'Lissabon',  badge:'✓ Apr' },
+            { flag:'🇪🇸', name:'Madrid',    badge:'✓ Apr' },
+            { flag:'🇪🇸', name:'Ibiza',     badge:'✓ Apr' },
+            { flag:'🇲🇦', name:'Essaouira', badge:'✓ Mai' },
+            { flag:'🇲🇦', name:'Taghazout', badge:'✓ Mai' },
+          ].map((s) => (
+            <>
+              <div class="ph-tl-stop">
+                <div class="ph-tl-top">
+                  <span class="ph-tl-flag">{s.flag}</span>
+                  <span class="ph-tl-name">{s.name}</span>
+                </div>
+                <div class="ph-tl-dot-row">
+                  <div class="ph-tl-dot" style="background:#10B981;box-shadow:0 0 0 3px #10B98122;"></div>
+                </div>
+                <div class="ph-tl-bot">
+                  <span class="ph-tl-badge" style="background:#D1FAE5;color:#065F46;">{s.badge}</span>
+                </div>
+              </div>
+              <div class="ph-tl-line tl-solid"></div>
+            </>
+          ))}
+
+          <!-- 🌏 START — immer zentriert -->
+          <div class="ph-tl-start" id="ph-tl-start-marker">
+            <div class="ph-tl-top"><span class="ph-tl-start-label">Weltreise-<br/>Start</span></div>
+            <div class="ph-tl-dot-row"><div class="ph-tl-start-dot">🌏</div></div>
+            <div class="ph-tl-bot"><span class="ph-tl-badge" style="background:#FFF7ED;color:#C2410C;border:1.5px solid #FDBA74;">25. Juni</span></div>
+          </div>
+          <div class="ph-tl-line tl-dash"></div>
+
+          <!-- GEPLANT: orange, dashed -->
+          {[
+            { flag:'🇭🇰', name:'Hongkong'     },
+            { flag:'🇹🇭', name:'Bangkok'      },
+            { flag:'🇻🇳', name:'Vietnam'      },
+            { flag:'🇲🇾', name:'Kuala Lumpur' },
+            { flag:'🇮🇩', name:'Bali'         },
+            { flag:'🇳🇿', name:'Neuseeland'   },
+          ].map((s, i, arr) => (
+            <>
+              <div class="ph-tl-stop">
+                <div class="ph-tl-top">
+                  <span class="ph-tl-flag">{s.flag}</span>
+                  <span class="ph-tl-name">{s.name}</span>
+                </div>
+                <div class="ph-tl-dot-row">
+                  <div class="ph-tl-dot" style="background:#F97316;opacity:.6;box-shadow:0 0 0 3px #F9731618;"></div>
+                </div>
+                <div class="ph-tl-bot">
+                  <span class="ph-tl-badge" style="background:#FFF7ED;color:#C2410C;">Geplant</span>
+                </div>
+              </div>
+              {i < arr.length - 1 && <div class="ph-tl-line tl-dash"></div>}
+            </>
+          ))}
+
+          <div class="ph-tl-line tl-dash"></div>
+          <div class="ph-tl-stop" style="opacity:.38;">
+            <div class="ph-tl-top"><span class="ph-tl-flag">🌍</span><span class="ph-tl-name">& mehr</span></div>
+            <div class="ph-tl-dot-row"><div class="ph-tl-dot" style="background:white;border:2px dashed #CBD5E1;"></div></div>
+            <div class="ph-tl-bot"><span class="ph-tl-badge" style="background:#F1F5F9;color:#94A3B8;">TBD</span></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+(function () {
+  function initTimeline() {
+    var container = document.getElementById('ph-timeline');
+    var marker    = document.getElementById('ph-tl-start-marker');
+    if (!container || !marker) return;
+
+    // 🌏-Marker zentrieren
+    function centerMarker() {
+      var cw = container.offsetWidth;
+      var ml = marker.offsetLeft;
+      var mw = marker.offsetWidth;
+      container.scrollLeft = ml - cw / 2 + mw / 2;
+    }
+    centerMarker();
+    window.addEventListener('resize', centerMarker);
+
+    // Maus-Drag
+    var isDown = false, startX = 0, scrollLeft = 0;
+    container.style.cursor = 'grab';
+
+    container.addEventListener('mousedown', function (e) {
+      isDown = true;
+      container.style.cursor = 'grabbing';
+      startX     = e.pageX - container.offsetLeft;
+      scrollLeft = container.scrollLeft;
+    });
+    document.addEventListener('mouseup', function () {
+      isDown = false;
+      container.style.cursor = 'grab';
+    });
+    container.addEventListener('mousemove', function (e) {
+      if (!isDown) return;
+      e.preventDefault();
+      var x = e.pageX - container.offsetLeft;
+      container.scrollLeft = scrollLeft - (x - startX) * 1.5;
+    });
+  }
+
+  // Wetter via Open-Meteo (kostenlos, kein API-Key)
+  function initWeather() {
+    var el = document.getElementById('ph-locinfo');
+    if (!el) return;
+    var lat = el.getAttribute('data-lat');
+    var lon = el.getAttribute('data-lon');
+    if (!lat || !lon) return;
+
+    // WMO Wettercodes → Emoji + Beschreibung
+    var wmoMap = {
+      0:  { e: '☀️',  t: 'Klar' },
+      1:  { e: '🌤️', t: 'Meist klar' },
+      2:  { e: '⛅',  t: 'Bewölkt' },
+      3:  { e: '☁️',  t: 'Bedeckt' },
+      45: { e: '🌫️', t: 'Nebel' },
+      48: { e: '🌫️', t: 'Nebel' },
+      51: { e: '🌦️', t: 'Nieselregen' },
+      53: { e: '🌦️', t: 'Nieselregen' },
+      55: { e: '🌦️', t: 'Nieselregen' },
+      61: { e: '🌧️', t: 'Regen' },
+      63: { e: '🌧️', t: 'Regen' },
+      65: { e: '🌧️', t: 'Starkregen' },
+      71: { e: '🌨️', t: 'Schnee' },
+      73: { e: '🌨️', t: 'Schnee' },
+      75: { e: '❄️',  t: 'Schneefall' },
+      77: { e: '🌨️', t: 'Schneekörner' },
+      80: { e: '🌦️', t: 'Schauer' },
+      81: { e: '🌧️', t: 'Schauer' },
+      82: { e: '⛈️',  t: 'Starke Schauer' },
+      85: { e: '🌨️', t: 'Schneeschauer' },
+      86: { e: '🌨️', t: 'Schneeschauer' },
+      95: { e: '⛈️',  t: 'Gewitter' },
+      96: { e: '⛈️',  t: 'Gewitter' },
+      99: { e: '⛈️',  t: 'Schweres Gewitter' },
+    };
+
+    function fetchWeather() {
+      var url = 'https://api.open-meteo.com/v1/forecast'
+        + '?latitude=' + lat
+        + '&longitude=' + lon
+        + '&current=temperature_2m,weather_code'
+        + '&timezone=auto';
+
+      fetch(url)
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          var cur = data.current;
+          var code = cur.weather_code;
+          var temp = Math.round(cur.temperature_2m);
+          var info = wmoMap[code] || { e: '🌡️', t: '' };
+
+          var iconEl = document.getElementById('ph-weather-icon');
+          var tempEl = document.getElementById('ph-weather-temp');
+          if (iconEl) iconEl.textContent = info.e;
+          if (tempEl) tempEl.textContent = temp + '°C';
+        })
+        .catch(function() {
+          var tempEl = document.getElementById('ph-weather-temp');
+          if (tempEl) tempEl.textContent = 'n/a';
+        });
+    }
+
+    fetchWeather();
+    // alle 15 Minuten aktualisieren
+    setInterval(fetchWeather, 15 * 60 * 1000);
+  }
+
+  // Lokale Uhrzeit — live aktualisiert
+  function initClock() {
+    var el = document.getElementById('ph-locinfo');
+    var timeEl = document.getElementById('ph-li-time');
+    if (!el || !timeEl) return;
+    var tz = el.getAttribute('data-tz') || 'Europe/Berlin';
+    var fmt = new Intl.DateTimeFormat('de-DE', {
+      hour: '2-digit', minute: '2-digit', second: '2-digit',
+      timeZone: tz, hour12: false
+    });
+    function tick() { timeEl.textContent = fmt.format(new Date()); }
+    tick();
+    setInterval(tick, 1000);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () { initTimeline(); initClock(); initWeather(); });
+  } else {
+    initTimeline();
+    initClock();
+    initWeather();
+  }
+})();
+</script>
+
+<!-- ═══════════════════════════════════════════════════════
+     LOGBUCH — Letzte Einträge
+═══════════════════════════════════════════════════════ -->
+<section class="ph-sec ph-sec-white">
+  <div class="ph-wrap">
+    <div class="ph-sec-head reveal">
+      <div>
+        <div class="ph-sec-label" style="color:#F97316;">Logbuch</div>
+        <h2 class="ph-sec-title">Letzte Einträge</h2>
+      </div>
+      <a href="/logbook" class="ph-all-link">Alle lesen →</a>
+    </div>
+
+    <div class="ph-cards reveal-stagger">
+      {entries.map((entry, i) => {
+        const p = cards[i % 3];
+        return (
+          <a href="/logbook" class="ph-card" style={`border-top:4px solid ${p.border};`}>
+            <div class="ph-card-inner">
+              <div class="ph-card-meta">
+                <span style="font-size:1.1rem;">{entry.fm.flag}</span>
+                <span style={`font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:${p.border};`}>{entry.fm.location}</span>
+                <time style="font-size:.72rem;color:#94A3B8;margin-left:auto;">{new Date(entry.fm.date).toLocaleDateString('de-DE',{day:'numeric',month:'short'})}</time>
+              </div>
+              <h3 class="ph-card-title">{entry.fm.title}</h3>
+              <p class="ph-card-excerpt">{entry.fm.excerpt}</p>
+            </div>
+            <div class="ph-card-foot" style={`background:${p.bg};color:${p.text};`}>Eintrag lesen →</div>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     INSTAGRAM
+═══════════════════════════════════════════════════════ -->
+<section class="ph-ig reveal">
+  <div class="ph-wrap" style="display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;">
+    <div class="ph-ig-icon">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </div>
+    <div style="flex:1;">
+      <strong style="font-size:1rem;font-weight:700;color:#0F172A;display:block;">Auf Instagram mitverfolgen</strong>
+      <p style="font-size:.875rem;color:#64748B;margin-top:2px;">Fotos, Stories, Updates in Echtzeit — @trepper</p>
+    </div>
+    <a href="https://instagram.com/trepper" target="_blank" rel="noopener" class="ph-ig-btn">Zum Profil</a>
+  </div>
+</section>
+
+</div><!-- /.pg-home -->
+</Layout>
+
+<style is:global>
+/* ────────────────────────────────────────────────────────
+   TREPPER GLOBAL — Home (ph- Prefix, kein Bleeding)
+──────────────────────────────────────────────────────── */
+
+/* ── HERO ── */
+.ph-hero {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  padding: 3rem 1.5rem 2.5rem;
+  border-bottom: 1px solid #E2E8F0;
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+}
+
+.ph-blob { position:absolute; border-radius:50%; filter:blur(80px); pointer-events:none; z-index:0; }
+.ph-b1 { width:480px; height:480px; background:#FFE0CC; top:-160px; right:-60px; opacity:.8; }
+.ph-b2 { width:320px; height:320px; background:#C5EEFF; bottom:-60px; right:42%; opacity:.65; }
+.ph-b3 { width:260px; height:260px; background:#FEF0C0; bottom:-40px; left:-60px; opacity:.55; }
+
+.ph-hero-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+/* ── HERO LEFT ── */
+.ph-hero-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+/* ── LOC-INFO STRIP ── */
+.ph-locinfo {
+  display: inline-flex;
+  align-items: stretch;
+  background: #ffffff;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 14px;
+  overflow: hidden;
+  width: fit-content;
+  box-shadow: 0 1px 4px rgba(15,23,42,.05);
+}
+.ph-li-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: .5rem .85rem;
+  flex-shrink: 0;
+}
+.ph-li-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: .6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: #94A3B8;
+  white-space: nowrap;
+}
+.ph-li-val {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: .8rem;
+  font-weight: 600;
+  color: #0F172A;
+  white-space: nowrap;
+}
+/* Fixe Breite verhindert Layout-Shift beim Sekundenwechsel */
+.ph-li-time {
+  display: inline-block;
+  width: 64px;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+  letter-spacing: .01em;
+}
+.ph-li-flag {
+  font-size: .95rem;
+  line-height: 1;
+}
+.ph-li-sep {
+  width: 1px;
+  background: #E2E8F0;
+  align-self: stretch;
+  flex-shrink: 0;
+}
+
+.ph-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ph-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+  background: linear-gradient(135deg, #FEF9C3, #FEF3C7);
+  border: 2px solid #FCD34D;
+  border-radius: 100px;
+  padding: .35rem .9rem;
+}
+.ph-chip-go { background: linear-gradient(135deg, #D1FAE5, #A7F3D0); border-color: #34D399; }
+.ph-chip-num { font-size: 1.25rem; font-weight: 800; color: #92400E; letter-spacing: -.03em; line-height: 1; }
+.ph-chip-txt { font-size: .75rem; font-weight: 700; color: #92400E; }
+.ph-chip-go .ph-chip-txt { color: #065F46; }
+
+.ph-eyebrow {
+  font-size: .72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: #F97316;
+  margin-bottom: .5rem;
+}
+
+.ph-title {
+  font-size: clamp(2rem, 3.5vw, 2.9rem);
+  font-weight: 800;
+  letter-spacing: -.04em;
+  line-height: 1.08;
+  color: #0F172A;
+}
+.ph-grad {
+  background: linear-gradient(125deg, #F97316 0%, #EC4899 50%, #8B5CF6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ph-sub {
+  font-size: .97rem;
+  color: #475569;
+  line-height: 1.7;
+}
+
+/* ── BUTTONS ── */
+.ph-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.ph-btn-primary,
+.ph-btn-secondary,
+.ph-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: .65rem 1.25rem;
+  border-radius: 10px;
+  font-size: .9rem;
+  font-weight: 700;
+  font-family: inherit;
+  transition: all .15s;
+  border: 2px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+}
+.ph-btn-primary {
+  background: #F97316;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(249,115,22,.30);
+}
+.ph-btn-primary:hover { background: #EA6D10; transform: translateY(-2px); box-shadow: 0 6px 22px rgba(249,115,22,.42); }
+.ph-btn-secondary {
+  background: #0EA5E9;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(14,165,233,.25);
+}
+.ph-btn-secondary:hover { background: #0284C7; transform: translateY(-2px); }
+.ph-btn-ghost {
+  background: #ffffff;
+  color: #64748B !important;
+  border-color: #E2E8F0;
+}
+.ph-btn-ghost:hover { border-color: #CBD5E1; color: #0F172A !important; }
+
+/* ── STATS ── */
+.ph-stats {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.ph-stat { display: flex; flex-direction: column; align-items: center; padding: .75rem 1rem; flex: 1; }
+.ph-stat-n { font-size: 1.35rem; font-weight: 800; letter-spacing: -.03em; line-height: 1; }
+.ph-stat-l { font-size: .65rem; font-weight: 600; color: #94A3B8; text-transform: uppercase; letter-spacing: .05em; margin-top: 3px; white-space: normal; text-align: center; line-height: 1.3; }
+.ph-stat-sep { width: 1px; background: #E2E8F0; align-self: stretch; flex-shrink: 0; }
+
+/* ── LEGEND ── */
+.ph-legend { display: flex; gap: 6px; flex-wrap: wrap; }
+.ph-lpill {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: .72rem;
+  font-weight: 600;
+  background: #ffffff;
+  border: 1.5px solid;
+}
+
+/* ── HERO RIGHT (Map) ── */
+.ph-hero-right {
+  height: 480px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(15,23,42,.13);
+  border: 3px solid white;
+  outline: 1px solid #E2E8F0;
+}
+/* Override WorldMap inner div to fill container */
+.ph-hero-right > div {
+  height: 100% !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* ── SECTIONS ── */
+.ph-sec { padding: 3.5rem 1.5rem; border-bottom: 1px solid #E2E8F0; }
+.ph-sec-soft  { background: #F8FAFC; }
+.ph-sec-white { background: #ffffff; }
+.ph-ig {
+  padding: 1.75rem 1.5rem;
+  background: linear-gradient(135deg, #FFF7ED, #FDF4FF, #EFF6FF);
+  border-top: 1px solid #E2E8F0;
+}
+
+.ph-wrap { max-width: 1100px; margin: 0 auto; }
+
+.ph-sec-label { font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 4px; }
+.ph-sec-title { font-size: clamp(1.5rem, 2.5vw, 2rem); font-weight: 800; letter-spacing: -.03em; color: #0F172A; }
+.ph-sec-head  { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 1.5rem; }
+.ph-all-link  { font-size: .88rem; font-weight: 700; color: #F97316; align-self: flex-end; text-decoration: none; }
+.ph-all-link:hover { text-decoration: underline; }
+
+/* ── TIMELINE ── */
+.ph-tl-outer {
+  position: relative;
+  margin-top: 2rem;
+}
+.ph-tl-outer::before,
+.ph-tl-outer::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 48px;
+  z-index: 2;
+  pointer-events: none;
+}
+.ph-tl-outer::before {
+  left: 0;
+  background: linear-gradient(to right, #F8FAFC 40%, transparent);
+}
+.ph-tl-outer::after {
+  right: 0;
+  background: linear-gradient(to left, #F8FAFC 40%, transparent);
+}
+
+.ph-tl-scroll {
+  overflow-x: auto;
+  padding-bottom: .75rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  user-select: none;
+}
+.ph-tl-scroll::-webkit-scrollbar { display: none; }
+
+.ph-tl {
+  display: flex;
+  align-items: center;
+  min-width: max-content;
+  padding: .5rem 48px 1rem;
+}
+
+.ph-tl-stop,
+.ph-tl-start {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+}
+.ph-tl-stop  { min-width: 82px; }
+.ph-tl-start { min-width: 94px; }
+
+.ph-tl-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  min-height: 50px;
+  justify-content: flex-end;
+}
+.ph-tl-flag { font-size: 1.35rem; line-height: 1; }
+.ph-tl-name {
+  font-size: .73rem;
+  font-weight: 700;
+  color: #0F172A;
+  white-space: nowrap;
+  text-align: center;
+}
+.ph-tl-start-label {
+  font-size: .68rem;
+  font-weight: 800;
+  color: #C2410C;
+  text-align: center;
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.ph-tl-dot-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 26px;
+}
+.ph-tl-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2.5px solid white;
+  flex-shrink: 0;
+}
+.ph-tl-start-dot {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FEF3C7, #FED7AA);
+  border: 2.5px solid white;
+  box-shadow: 0 0 0 3px #F9731640, 0 4px 12px rgba(249,115,22,.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.ph-tl-bot {
+  min-height: 26px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.ph-tl-badge {
+  font-size: .6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  padding: 2px 7px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+/* Connecting lines */
+.ph-tl-line {
+  height: 2px;
+  width: 28px;
+  flex-shrink: 0;
+  margin-bottom: 14px; /* vertically center with dots */
+}
+.tl-solid { background: #10B981; }
+.tl-dash {
+  background: repeating-linear-gradient(
+    90deg,
+    #CBD5E1 0px, #CBD5E1 4px,
+    transparent 4px, transparent 9px
+  );
+}
+
+/* ── CARDS ── */
+.ph-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.1rem;
+}
+.ph-card {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1.5px solid #E2E8F0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform .2s, box-shadow .2s;
+  text-decoration: none;
+}
+.ph-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(15,23,42,.10); }
+.ph-card-inner   { padding: 1.1rem 1.1rem .9rem; flex: 1; display: flex; flex-direction: column; gap: 9px; }
+.ph-card-meta    { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
+.ph-card-title   { font-size: 1rem; font-weight: 800; letter-spacing: -.02em; line-height: 1.35; color: #0F172A; }
+.ph-card-excerpt { font-size: .84rem; color: #64748B; line-height: 1.7; flex: 1; }
+.ph-card-foot    { padding: 9px 18px; font-size: .8rem; font-weight: 700; }
+
+/* ── INSTAGRAM ── */
+.ph-ig-icon {
+  width: 48px; height: 48px; border-radius: 13px; flex-shrink: 0;
+  background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  display: flex; align-items: center; justify-content: center; color: #ffffff;
+}
+.ph-ig-btn {
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: #ffffff !important;
+  padding: .6rem 1.25rem;
+  border-radius: 10px;
+  font-size: .88rem;
+  font-weight: 700;
+  font-family: inherit;
+  transition: opacity .15s, transform .15s;
+  display: inline-block;
+  text-decoration: none;
+}
+.ph-ig-btn:hover { opacity: .85; transform: translateY(-1px); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1000px) {
+  .ph-hero-inner {
+    grid-template-columns: 1fr;
+    max-width: 700px;
+  }
+  .ph-hero {
+    min-height: auto;
+    padding: 2.5rem 1.5rem;
+  }
+  .ph-hero-right {
+    height: 360px;
+  }
+}
+
+@media (max-width: 700px) {
+  .ph-phases { grid-template-columns: 1fr; }
+  .ph-mid {
+    flex-direction: row;
+    padding-top: 0;
+    margin: .5rem 0;
+    justify-content: flex-start;
+  }
+  .ph-mid-line  { width: 20px; height: 2px; background: linear-gradient(to right, transparent, #F97316); }
+  .ph-mid-line2 { width: 20px; height: 2px; background: linear-gradient(to right, #0EA5E9, transparent); }
+  .ph-hero-right { height: 280px; }
+  .ph-stats { flex-wrap: wrap; }
+  .ph-stat  { min-width: 100px; }
+  .ph-cards { grid-template-columns: 1fr; }
+  .ph-topbar { flex-direction: column; align-items: flex-start; }
+}
+</style>

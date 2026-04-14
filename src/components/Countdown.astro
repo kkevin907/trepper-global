@@ -1,0 +1,89 @@
+---
+const targetDate = new Date('2026-06-25T00:00:00');
+const now = new Date();
+const diff = targetDate.getTime() - now.getTime();
+const daysLeft = Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
+const started = diff <= 0;
+---
+
+{!started ? (
+  <div class="countdown-wrap">
+    <div class="countdown-label">Weltreise startet in</div>
+    <div class="countdown-number" id="countdown-days">{daysLeft}</div>
+    <div class="countdown-unit">Tagen</div>
+    <div class="countdown-date">25. Juni 2026</div>
+  </div>
+) : (
+  <div class="countdown-wrap started">
+    <div class="countdown-label">Die Reise läuft!</div>
+    <div class="countdown-icon">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"/><path d="M12 8v4l3 3"/></svg>
+    </div>
+    <div class="countdown-date">Unterwegs seit 25. Juni 2026</div>
+  </div>
+)}
+
+<script>
+  function updateCountdown() {
+    const el = document.getElementById('countdown-days');
+    if (!el) return;
+    const target = new Date('2026-06-25T00:00:00').getTime();
+    const now = Date.now();
+    const diff = target - now;
+    if (diff > 0) {
+      el.textContent = String(Math.ceil(diff / (1000 * 60 * 60 * 24)));
+    }
+  }
+  setInterval(updateCountdown, 60000);
+</script>
+
+<style>
+  .countdown-wrap {
+    background: var(--yellow-light);
+    border: 2px solid var(--yellow);
+    border-radius: var(--radius);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    min-width: 160px;
+  }
+
+  .countdown-wrap.started {
+    background: var(--green-light);
+    border-color: var(--green);
+  }
+
+  .countdown-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #92400E;
+    opacity: 0.7;
+  }
+
+  .countdown-number {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1;
+    color: #92400E;
+    letter-spacing: -0.04em;
+  }
+
+  .countdown-unit {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #92400E;
+    opacity: 0.8;
+  }
+
+  .countdown-date {
+    font-size: 0.75rem;
+    color: #92400E;
+    opacity: 0.6;
+    margin-top: 0.25rem;
+  }
+</style>

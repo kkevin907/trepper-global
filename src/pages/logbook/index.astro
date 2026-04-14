@@ -1,0 +1,225 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const allMdFiles = import.meta.glob('../../content/logbook/*.md', { eager: true });
+const entries = Object.entries(allMdFiles)
+  .map(([path, mod]: [string, any]) => ({
+    frontmatter: mod.frontmatter,
+    compiledContent: mod.compiledContent?.() ?? '',
+    file: path,
+  }))
+  .sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime());
+
+const accentColors = ['#F97316', '#0EA5E9', '#10B981', '#8B5CF6', '#EAB308', '#EC4899'];
+---
+
+<Layout title="Logbuch" description="Kevins persönliches Reise-Tagebuch — alle Einträge chronologisch.">
+  <div class="page-header">
+    <div class="page-header-inner">
+      <span class="page-badge">Logbuch</span>
+      <h1 class="page-title">Alle Einträge</h1>
+      <p class="page-sub">Chronologisch, persönlich, ungeschönt. Wie ein Brief aus der Ferne.</p>
+    </div>
+  </div>
+
+  <div class="entries-wrap">
+    <div class="entries-inner">
+      {entries.length === 0 ? (
+        <div class="empty">
+          <p>Noch keine Einträge. Die Reise beginnt am 25. Juni 2026.</p>
+        </div>
+      ) : (
+        <div class="timeline">
+          {entries.map((entry, i) => {
+            const color = accentColors[i % accentColors.length];
+            const date = new Date(entry.frontmatter.date);
+            return (
+              <article class="timeline-entry reveal">
+                <div class="timeline-line">
+                  <div class="timeline-dot" style={`background: ${color}; box-shadow: 0 0 0 4px ${color}25;`}></div>
+                  {i < entries.length - 1 && <div class="timeline-connector"></div>}
+                </div>
+                <div class="timeline-content">
+                  <div class="entry-meta">
+                    <span class="entry-flag">{entry.frontmatter.flag}</span>
+                    <span class="entry-location" style={`color: ${color}`}>
+                      {entry.frontmatter.location}, {entry.frontmatter.country}
+                    </span>
+                    <time class="entry-date">
+                      {date.toLocaleDateString('de-DE', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
+                    </time>
+                  </div>
+                  <h2 class="entry-title">{entry.frontmatter.title}</h2>
+                  <div class="entry-body" set:html={entry.compiledContent}></div>
+                  <div class="entry-divider" style={`background: linear-gradient(90deg, ${color}40, transparent)`}></div>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .page-header {
+    background: linear-gradient(160deg, #EFF6FF 0%, #ffffff 60%);
+    border-bottom: 1px solid var(--border);
+    padding: 3.5rem 1.5rem 3rem;
+  }
+
+  .page-header-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .page-badge {
+    display: inline-block;
+    background: var(--teal-light);
+    color: #0369A1;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.3rem 0.8rem;
+    border-radius: 100px;
+    margin-bottom: 1rem;
+  }
+
+  .page-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+
+  .page-sub {
+    margin-top: 0.75rem;
+    font-size: 1rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+  }
+
+  .entries-wrap {
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  .entries-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .timeline-entry {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 1.5rem;
+  }
+
+  .timeline-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.25rem;
+  }
+
+  .timeline-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 3px solid;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 4px white, 0 0 0 5px currentColor;
+    position: relative;
+    z-index: 1;
+  }
+
+  .timeline-connector {
+    width: 2px;
+    flex: 1;
+    background: var(--border);
+    margin: 8px 0;
+    min-height: 32px;
+  }
+
+  .timeline-content {
+    padding-bottom: 2.5rem;
+  }
+
+  .entry-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.6rem;
+  }
+
+  .entry-flag {
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+
+  .entry-location {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+
+  .entry-date {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    margin-left: auto;
+  }
+
+  .entry-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+  }
+
+  .entry-body {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-mid);
+  }
+
+  .entry-body p {
+    margin-bottom: 1em;
+  }
+
+  .entry-divider {
+    height: 2px;
+    border-radius: 1px;
+    margin-top: 1.5rem;
+  }
+
+  .empty {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text-mid);
+    font-size: 1rem;
+    background: var(--bg-soft);
+    border-radius: var(--radius);
+    border: 2px dashed var(--border);
+  }
+
+  @media (max-width: 600px) {
+    .timeline-entry {
+      grid-template-columns: 28px 1fr;
+      gap: 1rem;
+    }
+
+    .entry-date {
+      margin-left: 0;
+    }
+  }
+</style>
