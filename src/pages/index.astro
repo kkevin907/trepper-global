@@ -950,10 +950,20 @@ const locLon = currentStation.lon;
   }
   .ph-mid-line  { width: 20px; height: 2px; background: linear-gradient(to right, transparent, #F97316); }
   .ph-mid-line2 { width: 20px; height: 2px; background: linear-gradient(to right, #0EA5E9, transparent); }
-  .ph-hero-right { height: 280px; }
-  .ph-stats { flex-wrap: wrap; }
-  .ph-stat  { min-width: 100px; }
+  .ph-hero-right { height: 240px; }
+  .ph-stats { flex-wrap: wrap; gap: 1rem 1.5rem; }
+  .ph-stat  { min-width: 80px; }
+  .ph-stat-sep { display: none; }
   .ph-cards { grid-template-columns: 1fr; }
   .ph-topbar { flex-direction: column; align-items: flex-start; }
+  .ph-locinfo { flex-direction: column; gap: .75rem; align-items: stretch; }
+  .ph-li-sep { display: none; }
+  .ph-li-block { flex-direction: row; align-items: center; justify-content: space-between; background: #F8FAFC; border-radius: 10px; padding: .5rem .75rem; }
+  .ph-li-label { margin-bottom: 0; }
+  .ph-li-val { text-align: right; }
+  .ph-li-rate { text-align: right; display: block; }
+  .ph-li-time { min-width: auto; }
+  .ph-sec-sub { font-size: .85rem; }
+  .ph-tl-outer { margin-top: 1rem; }
 }
 </style>

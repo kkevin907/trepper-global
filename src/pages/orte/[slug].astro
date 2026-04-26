@@ -349,10 +349,17 @@ const stars = '★'.repeat(d.rating) + '☆'.repeat(5 - d.rating);
   /* RESPONSIVE */
   @media (max-width: 900px) {
     .or-grid { grid-template-columns: 1fr; }
-    .or-sidebar { order: -1; display: grid; grid-template-columns: 1fr 1fr; }
+    .or-sidebar { display: grid; grid-template-columns: 1fr 1fr; }
+    .or-header { padding: 1.75rem 1.25rem; }
+    .or-wrap { padding: 1.5rem 1.25rem 3rem; }
+    .or-cover img { height: 260px; }
   }
   @media (max-width: 600px) {
     .or-sidebar { grid-template-columns: 1fr; }
     .or-photo-grid { grid-template-columns: repeat(2, 1fr); }
+    .or-chips { gap: .35rem; }
+    .or-chip { font-size: .7rem; padding: .22rem .65rem; }
+    .or-title { font-size: clamp(1.6rem, 8vw, 2.5rem); }
+    .or-flag { font-size: 2.5rem; }
   }
 </style>

@@ -63,7 +63,7 @@ const fullTitle    = title === "Home" ? "Trepper Global — Von Solingen in die 
           <span class="logo-dot"></span>
           Trepper Global
         </a>
-        <div class="nav-links">
+        <div class="nav-links" id="nav-links">
           <a href="/jetzt" class:list={["nav-link nav-link-live", { active: currentPath === "/jetzt" }]}>
             <span class="nav-live-dot"></span>Jetzt
           </a>
@@ -72,8 +72,27 @@ const fullTitle    = title === "Home" ? "Trepper Global — Von Solingen in die 
           <a href="/route" class:list={["nav-link", { active: currentPath === "/route" }]}>Route</a>
           <a href="/about" class:list={["nav-link", { active: currentPath === "/about" }]}>Über mich</a>
         </div>
+        <button class="nav-burger" id="nav-burger" aria-label="Menü">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
+    <script is:inline>
+      var burger = document.getElementById('nav-burger');
+      var links  = document.getElementById('nav-links');
+      if (burger && links) {
+        burger.addEventListener('click', function() {
+          var open = links.classList.toggle('nav-links--open');
+          burger.classList.toggle('nav-burger--open', open);
+        });
+        links.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', function() {
+            links.classList.remove('nav-links--open');
+            burger.classList.remove('nav-burger--open');
+          });
+        });
+      }
+    </script>
 
     <main>
       <slot />
@@ -220,6 +239,52 @@ const fullTitle    = title === "Home" ? "Trepper Global — Von Solingen in die 
   }
 
   .nav-links { display: flex; gap: 0.2rem; align-items: center; }
+
+  /* Hamburger */
+  .nav-burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 8px;
+  }
+  .nav-burger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: transform .2s, opacity .2s;
+  }
+  .nav-burger--open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-burger--open span:nth-child(2) { opacity: 0; }
+  .nav-burger--open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  @media (max-width: 680px) {
+    .nav-burger { display: flex; }
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 64px;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      background: rgba(255,255,255,0.98);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: .75rem 1rem;
+      gap: .25rem;
+      z-index: 199;
+    }
+    .nav-links--open { display: flex; }
+    .nav-link { padding: .75rem 1rem; border-radius: 10px; font-size: .95rem; }
+    .nav { position: sticky; }
+  }
 
   .nav-link-live { display: inline-flex; align-items: center; gap: 5px; }
   .nav-live-dot {
