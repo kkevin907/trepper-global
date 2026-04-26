@@ -1,0 +1,402 @@
+---
+import Layout from '../layouts/Layout.astro';
+import WorldMap from '../components/WorldMap.astro';
+import stationsData from '../data/stations.json';
+import config from '../data/config.json';
+
+const currentStation = stationsData.find(s => s.id === config.currentStationId)
+  || stationsData.find(s => s.status === 'home')!;
+
+const solingen = stationsData.find(s => s.id === 'solingen')!;
+
+function haversine(lat1: number, lon1: number, lat2: number, lon2: number): number {
+  const R = 6371;
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLon = (lon2 - lon1) * Math.PI / 180;
+  const a = Math.sin(dLat/2) ** 2
+    + Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * Math.sin(dLon/2) ** 2;
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+const distKm = Math.round(haversine(solingen.lat, solingen.lon, currentStation.lat, currentStation.lon));
+const isHome = distKm === 0;
+const details = (currentStation as any).details;
+
+const currencyNames = new Intl.DisplayNames(['de'], { type: 'currency' });
+const currencyName = currencyNames.of(currentStation.currency) || currentStation.currency;
+---
+
+<Layout
+  title={`Gerade in ${currentStation.name}`}
+  description={`Kevin ist gerade in ${currentStation.name}, ${currentStation.country}. Alle Infos, Highlights und Tipps.`}
+>
+
+  <!-- HEADER -->
+  <div class="jt-header">
+    <div class="jt-header-inner">
+      <span class="jt-badge">Aktueller Standort</span>
+      <h1 class="jt-title">
+        <span class="jt-flag">{currentStation.flag}</span>
+        {currentStation.name}
+      </h1>
+      <p class="jt-country">{currentStation.country}{!isHome ? ` · ${distKm.toLocaleString('de-DE')} km von Solingen` : ' · Heimat'}</p>
+      <p class="jt-desc">{currentStation.description}</p>
+    </div>
+  </div>
+
+  <div class="jt-wrap">
+    <div class="jt-inner">
+
+      <!-- LIVE-STRIP + KARTE -->
+      <div class="jt-top-grid">
+
+        <!-- Live-Infos -->
+        <div class="jt-live-col">
+          <h2 class="jt-section-title">Live vor Ort</h2>
+          <div class="jt-live-cards" id="jt-live"
+            data-tz={currentStation.timezone}
+            data-lat={currentStation.lat}
+            data-lon={currentStation.lon}
+            data-currency={currentStation.currency}
+            data-symbol={currentStation.currencySymbol}
+          >
+            <div class="jt-live-card">
+              <span class="jt-live-label">Lokale Uhrzeit</span>
+              <span class="jt-live-val" id="jt-time">--:--:--</span>
+            </div>
+            <div class="jt-live-card">
+              <span class="jt-live-label">Wetter</span>
+              <span class="jt-live-val">
+                <span id="jt-weather-icon">–</span>
+                <span id="jt-weather-temp">–°C</span>
+              </span>
+            </div>
+            <div class="jt-live-card">
+              <span class="jt-live-label">Währung</span>
+              <span class="jt-live-val">{currentStation.currencySymbol} {currencyName}</span>
+              {currentStation.currency !== 'EUR' && (
+                <span class="jt-live-sub" id="jt-rate">1 € = …</span>
+              )}
+            </div>
+            {details?.visa && (
+              <div class="jt-live-card">
+                <span class="jt-live-label">Visum</span>
+                <span class="jt-live-val jt-live-val--sm">{details.visa}</span>
+              </div>
+            )}
+            {details?.language && (
+              <div class="jt-live-card">
+                <span class="jt-live-label">Sprache</span>
+                <span class="jt-live-val jt-live-val--sm">{details.language}</span>
+              </div>
+            )}
+          </div>
+        </div>
+
+        <!-- Karte -->
+        <div class="jt-map-col">
+          <WorldMap height="340px" mapId="jetzt-map" showRoute={false} showFilters={false} />
+        </div>
+
+      </div>
+
+      {details && (
+        <>
+          <!-- HIGHLIGHTS -->
+          <div class="jt-section">
+            <h2 class="jt-section-title">
+              <span class="jt-section-icon">📍</span> Must-See
+            </h2>
+            <div class="jt-tags">
+              {details.highlights.map((h: string) => (
+                <span class="jt-tag jt-tag--coral">{h}</span>
+              ))}
+            </div>
+          </div>
+
+          <!-- ESSEN -->
+          <div class="jt-section">
+            <h2 class="jt-section-title">
+              <span class="jt-section-icon">🍜</span> Unbedingt essen
+            </h2>
+            <div class="jt-tags">
+              {details.mustEat.map((e: string) => (
+                <span class="jt-tag jt-tag--green">{e}</span>
+              ))}
+            </div>
+          </div>
+
+          <!-- BESTE FÜR -->
+          {details.bestFor && details.bestFor.length > 0 && (
+            <div class="jt-section">
+              <h2 class="jt-section-title">
+                <span class="jt-section-icon">✨</span> Perfekt für
+              </h2>
+              <div class="jt-tags">
+                {details.bestFor.map((b: string) => (
+                  <span class="jt-tag jt-tag--blue">{b}</span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <!-- TIPPS -->
+          {details.tips && (
+            <div class="jt-section">
+              <h2 class="jt-section-title">
+                <span class="jt-section-icon">💡</span> Tipps
+              </h2>
+              <p class="jt-tips">{details.tips}</p>
+            </div>
+          )}
+        </>
+      )}
+
+      <!-- LOGBUCH-LINK -->
+      <div class="jt-logbook-cta">
+        <div>
+          <p class="jt-cta-label">Tagebuch</p>
+          <p class="jt-cta-text">Alle Einträge aus {currentStation.name} im Logbuch lesen</p>
+        </div>
+        <a href="/logbook" class="jt-cta-btn">Zum Logbuch →</a>
+      </div>
+
+    </div>
+  </div>
+
+</Layout>
+
+<script is:inline>
+(function () {
+  var el = document.getElementById('jt-live');
+  if (!el) return;
+
+  var tz       = el.getAttribute('data-tz') || 'Europe/Berlin';
+  var lat      = el.getAttribute('data-lat');
+  var lon      = el.getAttribute('data-lon');
+  var currency = el.getAttribute('data-currency');
+  var symbol   = el.getAttribute('data-symbol');
+
+  // Uhrzeit
+  var timeEl = document.getElementById('jt-time');
+  if (timeEl) {
+    var fmt = new Intl.DateTimeFormat('de-DE', {
+      hour: '2-digit', minute: '2-digit', second: '2-digit',
+      timeZone: tz, hour12: false
+    });
+    function tick() { timeEl.textContent = fmt.format(new Date()); }
+    tick();
+    setInterval(tick, 1000);
+  }
+
+  // Wetter
+  if (lat && lon) {
+    var wmoMap = {
+      0:'☀️',1:'🌤️',2:'⛅',3:'☁️',45:'🌫️',48:'🌫️',
+      51:'🌦️',53:'🌦️',55:'🌦️',61:'🌧️',63:'🌧️',65:'🌧️',
+      71:'🌨️',73:'🌨️',75:'❄️',80:'🌦️',81:'🌧️',82:'⛈️',95:'⛈️',99:'⛈️'
+    };
+    fetch('https://api.open-meteo.com/v1/forecast?latitude=' + lat + '&longitude=' + lon + '&current=temperature_2m,weather_code&timezone=auto')
+      .then(function(r) { return r.json(); })
+      .then(function(d) {
+        var iconEl = document.getElementById('jt-weather-icon');
+        var tempEl = document.getElementById('jt-weather-temp');
+        if (iconEl) iconEl.textContent = wmoMap[d.current.weather_code] || '🌡️';
+        if (tempEl) tempEl.textContent = Math.round(d.current.temperature_2m) + '°C';
+      }).catch(function(){});
+  }
+
+  // Wechselkurs
+  var rateEl = document.getElementById('jt-rate');
+  if (rateEl && currency && currency !== 'EUR') {
+    fetch('https://api.frankfurter.app/latest?from=EUR&to=' + currency)
+      .then(function(r) { return r.json(); })
+      .then(function(d) {
+        var rate = d.rates && d.rates[currency];
+        if (!rate) return;
+        var formatted = rate >= 100
+          ? Math.round(rate).toLocaleString('de-DE')
+          : rate.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        rateEl.textContent = '1 € = ' + formatted + ' ' + symbol;
+      }).catch(function(){});
+  }
+})();
+</script>
+
+<style>
+  /* HEADER */
+  .jt-header {
+    background: linear-gradient(160deg, #FFF7ED 0%, #ffffff 60%);
+    border-bottom: 1px solid var(--border);
+    padding: 3.5rem 1.5rem 3rem;
+  }
+  .jt-header-inner { max-width: 1100px; margin: 0 auto; }
+
+  .jt-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--coral-light);
+    color: #C2410C;
+    font-size: .72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    padding: .3rem .9rem;
+    border-radius: 100px;
+    margin-bottom: 1.1rem;
+    border: 1.5px solid var(--coral-mid);
+  }
+  .jt-badge::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--coral); animation: livepulse 2s ease-in-out infinite; }
+  @keyframes livepulse {
+    0%,100% { box-shadow: 0 0 0 0 rgba(249,115,22,.4); }
+    50%      { box-shadow: 0 0 0 5px rgba(249,115,22,0); }
+  }
+
+  .jt-title {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    letter-spacing: -.04em;
+    color: var(--text);
+    margin-bottom: .35rem;
+  }
+  .jt-flag  { font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1; }
+  .jt-country { font-size: .9rem; color: var(--text-mid); margin-bottom: .5rem; }
+  .jt-desc    { font-size: 1rem; color: var(--text-mid); line-height: 1.7; max-width: 640px; }
+
+  /* WRAP */
+  .jt-wrap  { padding: 2.5rem 1.5rem 5rem; }
+  .jt-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem; }
+
+  /* TOP GRID */
+  .jt-top-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  /* LIVE CARDS */
+  .jt-section-title {
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: -.02em;
+    color: var(--text);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+  }
+  .jt-section-icon { font-size: 1.1rem; }
+
+  .jt-live-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: .75rem;
+  }
+  .jt-live-card {
+    background: #ffffff;
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: .85rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .jt-live-card--wide { grid-column: 1 / -1; }
+  .jt-live-label {
+    font-size: .62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: var(--text-light);
+  }
+  .jt-live-val {
+    font-size: .95rem;
+    font-weight: 700;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-variant-numeric: tabular-nums;
+  }
+  .jt-live-val--sm { font-size: .82rem; font-weight: 600; }
+  .jt-live-sub {
+    font-size: .72rem;
+    color: var(--green);
+    font-weight: 700;
+    margin-top: 1px;
+  }
+
+  /* MAP COL */
+  .jt-map-col { border-radius: 16px; overflow: hidden; }
+
+  /* SECTIONS */
+  .jt-section {
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+  }
+
+  .jt-tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+  .jt-tag {
+    display: inline-block;
+    padding: .35rem .85rem;
+    border-radius: 100px;
+    font-size: .82rem;
+    font-weight: 600;
+    border: 1.5px solid;
+  }
+  .jt-tag--coral { background: #FFF7ED; color: #C2410C; border-color: #FDBA74; }
+  .jt-tag--green { background: #D1FAE5; color: #065F46; border-color: #6EE7B7; }
+  .jt-tag--blue  { background: #E0F2FE; color: #0369A1; border-color: #7DD3FC; }
+
+  .jt-tips {
+    font-size: .92rem;
+    color: var(--text-mid);
+    line-height: 1.8;
+    background: #F8FAFC;
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+  }
+
+  /* CTA */
+  .jt-logbook-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background: linear-gradient(135deg, #FFF7ED, #FDF4FF);
+    border: 1.5px solid #FDBA74;
+    border-radius: 16px;
+    padding: 1.5rem 1.75rem;
+  }
+  .jt-cta-label { font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: var(--coral); margin-bottom: .2rem; }
+  .jt-cta-text  { font-size: .95rem; font-weight: 600; color: var(--text); }
+  .jt-cta-btn {
+    background: var(--coral);
+    color: #fff !important;
+    padding: .65rem 1.4rem;
+    border-radius: 10px;
+    font-size: .9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background .15s, transform .15s;
+    flex-shrink: 0;
+  }
+  .jt-cta-btn:hover { background: #EA6D10; transform: translateY(-1px); }
+
+  /* RESPONSIVE */
+  @media (max-width: 800px) {
+    .jt-top-grid { grid-template-columns: 1fr; }
+    .jt-live-cards { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 480px) {
+    .jt-live-cards { grid-template-columns: 1fr; }
+    .jt-live-card--wide { grid-column: 1; }
+  }
+</style>

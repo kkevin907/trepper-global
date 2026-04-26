@@ -1,0 +1,358 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const orte = await getCollection('orte', ({ data }) => !data.draft);
+  return orte.map(ort => ({ params: { slug: ort.id }, props: { ort } }));
+}
+
+const { ort } = Astro.props;
+const { Content } = await render(ort);
+const d = ort.data;
+
+const dateFrom = new Date(d.dateFrom).toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' });
+const dateTo   = new Date(d.dateTo).toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' });
+
+const costLabels = ['', 'Günstig', 'Mittel', 'Teuer'];
+const costColors = ['', '#10B981', '#F97316', '#EF4444'];
+const stars = '★'.repeat(d.rating) + '☆'.repeat(5 - d.rating);
+---
+
+<Layout
+  title={d.title}
+  description={`Kevin in ${d.title} — persönlicher Erfahrungsbericht, Food-Spots, Tipps und Highlights.`}
+>
+
+  <!-- HEADER -->
+  <div class="or-header">
+    <div class="or-header-inner">
+      <a href="/orte" class="or-back">← Alle Orte</a>
+      <div class="or-meta">
+        <span class="or-flag">{d.flag}</span>
+        <div>
+          <h1 class="or-title">{d.title}</h1>
+          <p class="or-country">{d.country}</p>
+        </div>
+      </div>
+      <div class="or-chips">
+        <span class="or-chip">{dateFrom} – {dateTo}</span>
+        <span class="or-chip">{d.nights} Nächte</span>
+        <span class="or-chip or-chip-vibe">{d.vibe}</span>
+        <span class="or-chip" style={`color:${costColors[d.costLevel]};border-color:${costColors[d.costLevel]}20;background:${costColors[d.costLevel]}10;`}>
+          {'€'.repeat(d.costLevel)} {costLabels[d.costLevel]}
+        </span>
+        <span class="or-chip or-chip-stars" title={`${d.rating}/5`}>{stars}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="or-wrap">
+    <div class="or-inner">
+
+      <!-- ZWEISPALTEN LAYOUT -->
+      <div class="or-grid">
+
+        <!-- LINKE SPALTE: Bericht + Food + Skip -->
+        <div class="or-main">
+
+          <!-- Cover-Bild falls vorhanden -->
+          {d.coverImage && (
+            <div class="or-cover">
+              <img src={d.coverImage} alt={`${d.title} Titelbild`} />
+            </div>
+          )}
+
+          <!-- Persönlicher Bericht -->
+          <div class="or-prose">
+            <Content />
+          </div>
+
+          <!-- FOOD SPOTS -->
+          <div class="or-section">
+            <h2 class="or-section-title">🍽️ Food-Spots</h2>
+            <div class="or-food-list">
+              {d.foodSpots.map(f => (
+                <div class="or-food-card">
+                  <div class="or-food-header">
+                    <span class="or-food-name">{f.name}</span>
+                    <span class="or-food-stars">{'★'.repeat(f.stars)}{'☆'.repeat(5-f.stars)}</span>
+                  </div>
+                  <p class="or-food-what">{f.what}</p>
+                  <div class="or-food-meta">
+                    {f.area && <span class="or-food-area">📍 {f.area}</span>}
+                    {f.tip && <span class="or-food-tip">💬 {f.tip}</span>}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- FOTOS (Platzhalter) -->
+          <div class="or-section">
+            <h2 class="or-section-title">📷 Fotos</h2>
+            <div class="or-photo-grid" id={`photo-grid-${ort.id}`}>
+              <div class="or-photo-empty">
+                <span>Fotos folgen bald</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RECHTE SPALTE: Highlights, Märkte, Skip, Tipps -->
+        <div class="or-sidebar">
+
+          <!-- Highlights -->
+          <div class="or-sidebar-card">
+            <h3 class="or-sidebar-title">📍 Highlights</h3>
+            <ul class="or-list">
+              {d.highlights.map(h => <li>{h}</li>)}
+            </ul>
+          </div>
+
+          <!-- Märkte -->
+          {d.markets && d.markets.length > 0 && (
+            <div class="or-sidebar-card">
+              <h3 class="or-sidebar-title">🛒 Märkte</h3>
+              <div class="or-market-list">
+                {d.markets.map(m => (
+                  <div class="or-market">
+                    <div class="or-market-name">{m.name}</div>
+                    <div class="or-market-meta">
+                      <span class="or-market-type">{m.type}</span>
+                      {m.when && <span class="or-market-when">{m.when}</span>}
+                    </div>
+                    {m.tip && <p class="or-market-tip">{m.tip}</p>}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <!-- Tipps -->
+          <div class="or-sidebar-card">
+            <h3 class="or-sidebar-title">💡 Tipps</h3>
+            <ul class="or-list">
+              {d.tips.map(t => <li>{t}</li>)}
+            </ul>
+          </div>
+
+          <!-- Bestes Viertel -->
+          {d.bestArea && (
+            <div class="or-sidebar-card or-sidebar-card--highlight">
+              <h3 class="or-sidebar-title">🏘️ Bestes Viertel</h3>
+              <p class="or-sidebar-text">{d.bestArea}</p>
+            </div>
+          )}
+
+          <!-- Meiden -->
+          {d.skip && d.skip.length > 0 && (
+            <div class="or-sidebar-card or-sidebar-card--skip">
+              <h3 class="or-sidebar-title">🚫 Eher meiden</h3>
+              <ul class="or-list or-list--skip">
+                {d.skip.map(s => <li>{s}</li>)}
+              </ul>
+            </div>
+          )}
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</Layout>
+
+<style>
+  /* HEADER */
+  .or-header {
+    background: linear-gradient(160deg, #F8FAFC 0%, #ffffff 60%);
+    border-bottom: 1px solid var(--border);
+    padding: 2.5rem 1.5rem 2.5rem;
+  }
+  .or-header-inner { max-width: 1100px; margin: 0 auto; }
+
+  .or-back {
+    display: inline-block;
+    font-size: .82rem;
+    font-weight: 600;
+    color: var(--text-mid);
+    margin-bottom: 1.25rem;
+    text-decoration: none;
+    transition: color .15s;
+  }
+  .or-back:hover { color: var(--coral); }
+
+  .or-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+  .or-flag  { font-size: 3.5rem; line-height: 1; }
+  .or-title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; letter-spacing: -.04em; color: var(--text); }
+  .or-country { font-size: .9rem; color: var(--text-mid); margin-top: .2rem; }
+
+  .or-chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+  .or-chip {
+    display: inline-block;
+    padding: .28rem .8rem;
+    border-radius: 100px;
+    font-size: .75rem;
+    font-weight: 600;
+    border: 1.5px solid var(--border);
+    background: #F8FAFC;
+    color: var(--text-mid);
+    white-space: nowrap;
+  }
+  .or-chip-vibe { background: var(--coral-light); color: #C2410C; border-color: var(--coral-mid); }
+  .or-chip-stars { color: #F59E0B; letter-spacing: 1px; }
+
+  /* LAYOUT */
+  .or-wrap  { padding: 2.5rem 1.5rem 5rem; }
+  .or-inner { max-width: 1100px; margin: 0 auto; }
+
+  .or-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  /* MAIN COLUMN */
+  .or-cover { margin-bottom: 2rem; border-radius: 16px; overflow: hidden; }
+  .or-cover img { width: 100%; height: 380px; object-fit: cover; border-radius: 16px; }
+
+  .or-prose {
+    font-size: .97rem;
+    color: var(--text-mid);
+    line-height: 1.85;
+    margin-bottom: 2.5rem;
+  }
+  .or-prose p { margin-bottom: 1rem; }
+  .or-prose p:last-child { margin-bottom: 0; }
+  .or-prose strong { color: var(--text); font-weight: 700; }
+
+  /* Inline photo placeholders in prose */
+  :global(.or-photo-hint) {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    background: #F8FAFC;
+    border: 2px dashed var(--border);
+    border-radius: 10px;
+    padding: .75rem 1rem;
+    margin: 1.25rem 0;
+    font-size: .82rem;
+    color: var(--text-light);
+    font-style: normal;
+  }
+  :global(.or-photo-hint em) {
+    font-style: normal;
+    color: var(--text-light);
+  }
+
+  .or-section { margin-bottom: 2.5rem; }
+  .or-section-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: -.02em;
+    color: var(--text);
+    margin-bottom: 1rem;
+    padding-bottom: .6rem;
+    border-bottom: 2px solid var(--border);
+  }
+
+  /* FOOD */
+  .or-food-list { display: flex; flex-direction: column; gap: .75rem; }
+  .or-food-card {
+    background: #ffffff;
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem 1.1rem;
+    transition: box-shadow .15s;
+  }
+  .or-food-card:hover { box-shadow: var(--shadow); }
+  .or-food-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: .3rem; }
+  .or-food-name  { font-size: .95rem; font-weight: 700; color: var(--text); }
+  .or-food-stars { color: #F59E0B; font-size: .85rem; letter-spacing: 1px; }
+  .or-food-what  { font-size: .85rem; color: var(--text-mid); margin-bottom: .4rem; }
+  .or-food-meta  { display: flex; flex-wrap: wrap; gap: .5rem; }
+  .or-food-area  { font-size: .75rem; color: var(--text-light); }
+  .or-food-tip   { font-size: .75rem; color: var(--coral); font-weight: 600; }
+
+  /* PHOTOS */
+  .or-photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .75rem;
+  }
+  .or-photo-empty {
+    grid-column: 1 / -1;
+    background: #F8FAFC;
+    border: 2px dashed var(--border);
+    border-radius: 12px;
+    padding: 2.5rem;
+    text-align: center;
+    font-size: .85rem;
+    color: var(--text-light);
+    font-weight: 600;
+  }
+  .or-photo-item { border-radius: 10px; overflow: hidden; aspect-ratio: 1; }
+  .or-photo-item img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* SIDEBAR */
+  .or-sidebar { display: flex; flex-direction: column; gap: 1rem; }
+
+  .or-sidebar-card {
+    background: #ffffff;
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 1.1rem 1.25rem;
+  }
+  .or-sidebar-card--highlight {
+    background: var(--coral-light);
+    border-color: var(--coral-mid);
+  }
+  .or-sidebar-card--skip {
+    background: #FFF1F2;
+    border-color: #FECDD3;
+  }
+
+  .or-sidebar-title {
+    font-size: .82rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--text);
+    margin-bottom: .75rem;
+  }
+  .or-sidebar-text { font-size: .88rem; color: var(--text-mid); line-height: 1.6; }
+
+  .or-list { list-style: none; display: flex; flex-direction: column; gap: .45rem; }
+  .or-list li {
+    font-size: .86rem;
+    color: var(--text-mid);
+    line-height: 1.5;
+    padding-left: 1.1rem;
+    position: relative;
+  }
+  .or-list li::before { content: '→'; position: absolute; left: 0; color: var(--coral); font-size: .75rem; top: .1rem; }
+  .or-list--skip li::before { content: '✕'; color: #EF4444; }
+
+  /* MARKETS */
+  .or-market-list { display: flex; flex-direction: column; gap: .75rem; }
+  .or-market { padding-bottom: .75rem; border-bottom: 1px solid var(--border); }
+  .or-market:last-child { border-bottom: none; padding-bottom: 0; }
+  .or-market-name { font-size: .88rem; font-weight: 700; color: var(--text); margin-bottom: .2rem; }
+  .or-market-meta { display: flex; gap: .5rem; margin-bottom: .2rem; }
+  .or-market-type { font-size: .72rem; font-weight: 600; background: #F1F5F9; color: var(--text-mid); padding: 1px 7px; border-radius: 100px; }
+  .or-market-when { font-size: .72rem; font-weight: 600; background: var(--green-light); color: #065F46; padding: 1px 7px; border-radius: 100px; }
+  .or-market-tip  { font-size: .78rem; color: var(--text-light); line-height: 1.5; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .or-grid { grid-template-columns: 1fr; }
+    .or-sidebar { order: -1; display: grid; grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .or-sidebar { grid-template-columns: 1fr; }
+    .or-photo-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>

@@ -64,7 +64,11 @@ const fullTitle    = title === "Home" ? "Trepper Global — Von Solingen in die 
           Trepper Global
         </a>
         <div class="nav-links">
+          <a href="/jetzt" class:list={["nav-link nav-link-live", { active: currentPath === "/jetzt" }]}>
+            <span class="nav-live-dot"></span>Jetzt
+          </a>
           <a href="/logbook" class:list={["nav-link", { active: currentPath.startsWith("/logbook") }]}>Logbuch</a>
+          <a href="/orte" class:list={["nav-link", { active: currentPath.startsWith("/orte") }]}>Orte</a>
           <a href="/route" class:list={["nav-link", { active: currentPath === "/route" }]}>Route</a>
           <a href="/about" class:list={["nav-link", { active: currentPath === "/about" }]}>Über mich</a>
         </div>
@@ -215,7 +219,21 @@ const fullTitle    = title === "Home" ? "Trepper Global — Von Solingen in die 
     50%       { transform: scale(1.4); opacity: 0.6; }
   }
 
-  .nav-links { display: flex; gap: 0.2rem; }
+  .nav-links { display: flex; gap: 0.2rem; align-items: center; }
+
+  .nav-link-live { display: inline-flex; align-items: center; gap: 5px; }
+  .nav-live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--coral);
+    flex-shrink: 0;
+    animation: livepulse 2s ease-in-out infinite;
+  }
+  @keyframes livepulse {
+    0%,100% { box-shadow: 0 0 0 0 rgba(249,115,22,.5); }
+    50%      { box-shadow: 0 0 0 4px rgba(249,115,22,0); }
+  }
 
   .nav-link {
     padding: 0.45rem 1rem;

@@ -1,6 +1,7 @@
 ---
 import stations from '../data/stations.json';
 import config from '../data/config.json';
+import { getCollection } from 'astro:content';
 
 interface Props {
   height?: string;
@@ -18,7 +19,12 @@ const {
   currentStationId = config.currentStationId,
 } = Astro.props;
 
+// IDs die einen Erfahrungsbericht haben
+const orteEntries = await getCollection('orte', ({ data }) => !data.draft);
+const orteIds = orteEntries.map(o => o.data.stationId);
+
 const stationsJSON = JSON.stringify(stations);
+const orteIdsJSON  = JSON.stringify(orteIds);
 const doRoute      = showRoute;
 const doFilters    = showFilters;
 ---
@@ -30,13 +36,14 @@ const doFilters    = showFilters;
   <div id={mapId} style="height:100%;width:100%;"></div>
 </div>
 
-<script is:inline define:vars={{ stationsJSON, mapId, doRoute, doFilters, currentStationId }}>
+<script is:inline define:vars={{ stationsJSON, orteIdsJSON, mapId, doRoute, doFilters, currentStationId }}>
 (function() {
   function initMap() {
     if (typeof window.L === 'undefined') { setTimeout(initMap, 100); return; }
 
     var L        = window.L;
     var stations = JSON.parse(stationsJSON);
+    var orteIds  = JSON.parse(orteIdsJSON);
 
     var map = L.map(mapId, { scrollWheelZoom: false, zoomControl: true });
 
@@ -117,7 +124,11 @@ const doFilters    = showFilters;
       }
 
       var worldreiseNote = (s.status === 'upcoming')
-        ? '<div style="margin-top:7px;font-size:0.72rem;color:#F97316;font-weight:700;">🌏 Weltreise · ab 25. Juni 2026</div>'
+        ? '<div style="margin-top:7px;font-size:0.72rem;color:#F97316;font-weight:700;">🌏 Weltreise · Abflug 9. Juni 2026</div>'
+        : '';
+
+      var reportLink = orteIds.indexOf(s.id) !== -1
+        ? '<a href="/orte/' + s.id + '" style="display:inline-flex;align-items:center;gap:4px;margin-top:10px;font-size:0.78rem;font-weight:700;color:#F97316;text-decoration:none;background:#FFF7ED;border:1.5px solid #FDBA74;padding:4px 10px;border-radius:100px;">📖 Zum Erfahrungsbericht →</a>'
         : '';
 
       var hierBadge = isHere
@@ -134,6 +145,7 @@ const doFilters    = showFilters;
         + '<div style="font-size:0.82rem;color:#475569;line-height:1.5;">' + s.description + '</div>'
         + (dateStr ? '<div style="margin-top:7px;font-size:0.75rem;color:' + color + ';font-weight:600;">' + dateStr + '</div>' : '')
         + worldreiseNote
+        + reportLink
         + '</div>',
         { maxWidth: 250 }
       );

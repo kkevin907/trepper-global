@@ -13,7 +13,13 @@
     "currencySymbol": "€",
     "dateFrom": null,
     "dateTo": null,
-    "description": "Heimatbasis — von hier geht die Reise los."
+    "description": "Heimatbasis — von hier geht die Reise los.",
+    "details": {
+      "highlights": ["Klingenmuseum", "Müngstener Brücke", "Schloss Burg", "Gräfrather Markt"],
+      "mustEat": ["Bergische Waffeln", "Sauerbraten", "Reibekuchen"],
+      "visa": "Heimat",
+      "language": "Deutsch"
+    }
   },
   {
     "id": "niederlande",
@@ -397,7 +403,17 @@
     "currencySymbol": "£",
     "dateFrom": "2026-04-06",
     "dateTo": "2026-04-09",
-    "description": "Großstadt-Kurztrip — Kultur, Food, Themse."
+    "description": "Großstadt-Kurztrip — Kultur, Food, Themse.",
+    "details": {
+      "highlights": ["Tower Bridge", "Borough Market", "Tate Modern", "Camden Town", "Hyde Park", "Notting Hill"],
+      "mustEat": ["Fish & Chips", "Full English Breakfast", "Brick Lane Bagels", "Dishoom Curry"],
+      "tips": "Oyster Card für den Tube kaufen. Museen meist kostenlos. Rechtsverkehr beachten.",
+      "bestFor": ["Kultur", "Street Food", "Shopping", "Nachtleben"],
+      "visa": "Kein Visum für Deutsche (bis 6 Monate)",
+      "language": "Englisch",
+      "transport": "London Underground (Tube), Bus, Uber",
+      "plug": "Typ G (230V) — Adapter nötig!"
+    }
   },
   {
     "id": "madeira",
@@ -413,7 +429,17 @@
     "currencySymbol": "€",
     "dateFrom": "2026-04-10",
     "dateTo": "2026-04-13",
-    "description": "Insel im Atlantik — Levadas, Natur, Blumeninsel."
+    "description": "Insel im Atlantik — Levadas, Natur, Blumeninsel.",
+    "details": {
+      "highlights": ["Pico do Arieiro", "Levada do Caldeirão Verde", "Funchal Altstadt", "Cabo Girão", "Monte Palace"],
+      "mustEat": ["Espetada", "Bolo do Caco", "Poncha", "Lapas (Napfschnecken)"],
+      "tips": "Mietwagen empfehlenswert. Levada-Wanderungen früh starten. Im April angenehme 20°C.",
+      "bestFor": ["Wandern", "Natur", "Vulkanlandschaft", "Entspannen"],
+      "visa": "Schengen — kein Visum",
+      "language": "Portugiesisch",
+      "transport": "Mietwagen, Busse, Seilbahn in Funchal",
+      "plug": "Typ F (230V)"
+    }
   },
   {
     "id": "lissabon",
@@ -429,7 +455,17 @@
     "currencySymbol": "€",
     "dateFrom": "2026-04-14",
     "dateTo": "2026-04-17",
-    "description": "Portugals Hauptstadt — Tram 28, Pastéis, Fado."
+    "description": "Portugals Hauptstadt — Tram 28, Pastéis, Fado.",
+    "details": {
+      "highlights": ["Alfama", "Belém-Turm", "Tram 28", "LX Factory", "Sintra (Tagesausflug)", "Miradouro da Graça"],
+      "mustEat": ["Pastel de Nata", "Bacalhau", "Bifanas", "Ginjinha"],
+      "tips": "Lissabon ist sehr hügelig — gutes Schuhwerk nötig. Tuk-Tuks für steile Straßen. Früh in Cafés frühstücken.",
+      "bestFor": ["Kultur", "Architektur", "Food", "Fado-Abende"],
+      "visa": "Schengen — kein Visum",
+      "language": "Portugiesisch",
+      "transport": "Tram, Metro, Uber, E-Trottinett",
+      "plug": "Typ F (230V)"
+    }
   },
   {
     "id": "madrid",
@@ -445,7 +481,17 @@
     "currencySymbol": "€",
     "dateFrom": "2026-04-18",
     "dateTo": "2026-04-21",
-    "description": "Spanische Hauptstadt — Museen, Tapas, Lebendigkeit."
+    "description": "Spanische Hauptstadt — Museen, Tapas, Lebendigkeit.",
+    "details": {
+      "highlights": ["Prado Museum", "Retiro Park", "Puerta del Sol", "Mercado de San Miguel", "Gran Vía", "Reina Sofía"],
+      "mustEat": ["Patatas Bravas", "Tortilla Española", "Jamón Ibérico", "Churros con Chocolate"],
+      "tips": "Spanier essen spät — Abendessen erst ab 21 Uhr. Museen montags oft geschlossen. Siesta beachten.",
+      "bestFor": ["Kunst & Kultur", "Nachtleben", "Shopping", "Food"],
+      "visa": "Schengen — kein Visum",
+      "language": "Spanisch",
+      "transport": "Metro, Bus, Renfe, Uber",
+      "plug": "Typ F (230V)"
+    }
   },
   {
     "id": "ibiza",
@@ -461,7 +507,17 @@
     "currencySymbol": "€",
     "dateFrom": "2026-04-22",
     "dateTo": "2026-04-30",
-    "description": "Baleareninsel — Strände, Altstadt, Sonnenuntergänge."
+    "description": "Baleareninsel — Strände, Altstadt, Sonnenuntergänge.",
+    "details": {
+      "highlights": ["Dalt Vila (UNESCO Altstadt)", "Es Vedrà", "Cala Conta", "San Antonio Sonnenuntergang", "Hippie-Märkte"],
+      "mustEat": ["Bullit de Peix", "Flaó (Käsekuchen)", "Hierbas Ibicencas", "frischer Fisch am Hafen"],
+      "tips": "Im April noch ruhig und günstig. Mietwagen oder Scooter ideal. Abseits der Touristenpfade wunderschön.",
+      "bestFor": ["Strände", "Sonnenuntergänge", "Natur", "Entspannen"],
+      "visa": "Schengen — kein Visum",
+      "language": "Spanisch, Ibizenkisch",
+      "transport": "Mietwagen, Scooter, Bus",
+      "plug": "Typ F (230V)"
+    }
   },
   {
     "id": "essaouira",
@@ -477,7 +533,17 @@
     "currencySymbol": "MAD",
     "dateFrom": "2026-05-01",
     "dateTo": "2026-05-31",
-    "description": "Atlantikküste, Fischerhafen, Surfen — Marokko erkunden."
+    "description": "Atlantikküste, Fischerhafen, Surfen — Marokko erkunden.",
+    "details": {
+      "highlights": ["Medina Essaouira (UNESCO)", "Ramparts & Stadtmauern", "Taghazout Surfer-Beach", "Fischerhafen", "Argan-Kooperativen"],
+      "mustEat": ["Frischer Grillfish am Hafen", "Tagine", "Msemen (Pfannkuchen)", "Minztee"],
+      "tips": "Preise im Souk verhandeln. Taghazout ist 15 min entfernt — ideal zum Surfen. Surfboard-Verleih vor Ort günstig.",
+      "bestFor": ["Surfen", "Kultur", "Fotografie", "Entschleunigung"],
+      "visa": "Kein Visum für Deutsche (bis 90 Tage)",
+      "language": "Arabisch, Tamazight, Französisch",
+      "transport": "Petit Taxi, Mietwagen, Bus (CTM)",
+      "plug": "Typ C/E (220V)"
+    }
   },
   {
     "id": "kanada",
@@ -512,6 +578,32 @@
     "description": "Bereist."
   },
   {
+    "id": "istanbul",
+    "name": "Istanbul",
+    "country": "Türkei",
+    "flag": "🇹🇷",
+    "lat": 41.0082,
+    "lon": 28.9784,
+    "status": "upcoming",
+    "phase": "warmup",
+    "timezone": "Europe/Istanbul",
+    "currency": "TRY",
+    "currencySymbol": "₺",
+    "dateFrom": "2026-06-09",
+    "dateTo": "2026-06-10",
+    "description": "Zwischenstopp auf dem Weg nach Asien — eine Nacht in Istanbul.",
+    "details": {
+      "highlights": ["Hagia Sophia", "Großer Basar", "Bosporus-Überfahrt", "Galata-Turm"],
+      "mustEat": ["Kebap", "Baklava", "Türkischer Tee", "Simit"],
+      "tips": "Nur ein Zwischenstopp — Altstadt ist zu Fuß erreichbar vom Flughafen per Metro.",
+      "bestFor": ["Zwischenstopp", "Kulinarik", "Geschichte"],
+      "visa": "Kein Visum für Deutsche (bis 90 Tage)",
+      "language": "Türkisch",
+      "transport": "Metro, Tram, Fähre",
+      "plug": "Typ C/F (230V)"
+    }
+  },
+  {
     "id": "hongkong",
     "name": "Hongkong",
     "country": "Hongkong",
@@ -523,9 +615,19 @@
     "timezone": "Asia/Hong_Kong",
     "currency": "HKD",
     "currencySymbol": "HK$",
-    "dateFrom": null,
+    "dateFrom": "2026-07-02",
     "dateTo": null,
-    "description": "Geplant — Skyline, Straßenmärkte, Dim Sum."
+    "description": "Skyline, Straßenmärkte, Dim Sum — erster Asien-Stop der Weltreise.",
+    "details": {
+      "highlights": ["Victoria Peak", "Temple Street Night Market", "Star Ferry", "Mong Kok", "Lantau Island & Big Buddha", "Kowloon Waterfront"],
+      "mustEat": ["Dim Sum (Yum Cha)", "Wonton Noodle Soup", "Egg Tarts", "Roasted Goose", "Milk Tea (Hong Kong Style)"],
+      "tips": "Octopus Card für MTR kaufen. Trambahn auf Hong Kong Island für 2,60 HK$. Star Ferry ist Pflicht bei Nacht.",
+      "bestFor": ["Skyline", "Street Food", "Shopping", "Kontraste"],
+      "visa": "Kein Visum für Deutsche (bis 90 Tage)",
+      "language": "Kantonesisch, Englisch",
+      "transport": "MTR (U-Bahn), Bus, Tram, Fähre",
+      "plug": "Typ G (230V) — Adapter nötig!"
+    }
   },
   {
     "id": "thailand",
@@ -539,9 +641,19 @@
     "timezone": "Asia/Bangkok",
     "currency": "THB",
     "currencySymbol": "฿",
-    "dateFrom": null,
+    "dateFrom": "2026-06-11",
     "dateTo": null,
-    "description": "Geplant — Tempel, Street Food, Südthailand."
+    "description": "Tempel, Street Food, Süden — Thailand von Nord bis Süd.",
+    "details": {
+      "highlights": ["Wat Phra Kaew (Smaragd-Buddha)", "Chatuchak Weekend Market", "Khao San Road", "Chao Phraya Fluss", "Railay Beach (Süden)", "Chiang Mai (Norden)"],
+      "mustEat": ["Pad Thai", "Som Tam (Papayasalat)", "Mango Sticky Rice", "Pad Kra Pao", "Tom Yum Soup"],
+      "tips": "Tuk-Tuks immer Preis vorher aushandeln. Tempel: Schultern und Knie bedecken. BTS Skytrain in Bangkok unverzichtbar.",
+      "bestFor": ["Tempel", "Street Food", "Inseln & Strände", "Nightlife"],
+      "visa": "Visa on Arrival / kein Visum für Deutsche (bis 30 Tage)",
+      "language": "Thai",
+      "transport": "BTS Skytrain, MRT, Tuk-Tuk, Grab (App)",
+      "plug": "Typ A/B/C (220V)"
+    }
   },
   {
     "id": "vietnam",
@@ -557,7 +669,17 @@
     "currencySymbol": "₫",
     "dateFrom": null,
     "dateTo": null,
-    "description": "Geplant — Norden bis Süden, noch offen."
+    "description": "Von Hanoi bis Ho-Chi-Minh-Stadt — Vietnam von Nord nach Süd.",
+    "details": {
+      "highlights": ["Hạ Long Bay", "Hoi An Altstadt (UNESCO)", "Phong Nha Höhlen", "Hanoi Altstadt", "Mekong Delta", "Sapa Reisterrassen"],
+      "mustEat": ["Pho Bo (Rindfleischsuppe)", "Bánh Mì", "Bún Chả", "Bánh Xèo (Crêpe)", "vietnamesischer Kaffee mit Kondensmilch"],
+      "tips": "Overnight-Busse sparen Hotelkosten. Motorroller fahren nur mit Erfahrung. Früh morgens beste Lichtstimmung.",
+      "bestFor": ["Natur", "Kultur", "Backpacking", "Food"],
+      "visa": "E-Visum für Deutsche erforderlich (ca. 25 USD, online beantragen)",
+      "language": "Vietnamesisch",
+      "transport": "Overnight-Bus, Grab, Motorroller, Inlandsflüge",
+      "plug": "Typ A/C/G (220V)"
+    }
   },
   {
     "id": "malaysia",
@@ -573,7 +695,17 @@
     "currencySymbol": "RM",
     "dateFrom": null,
     "dateTo": null,
-    "description": "Geplant — Petronas Towers, Kulinarik, Dschungel."
+    "description": "Petronas Towers, Kulinarik, Dschungel — Melting Pot Südostasiens.",
+    "details": {
+      "highlights": ["Petronas Twin Towers", "Batu Caves", "Petaling Street (Chinatown)", "KLCC Park", "Bukit Bintang", "Cameron Highlands (Tagesausflug)"],
+      "mustEat": ["Nasi Lemak", "Char Kway Teow", "Roti Canai", "Laksa", "Teh Tarik (gezogener Tee)"],
+      "tips": "KL ist sehr günstig. Grab (Uber-Alternative) für alles nutzen. Moscheen erfordern Kopftuch für Frauen.",
+      "bestFor": ["Food", "Shopping", "Wolkenkratzer", "Multikultur"],
+      "visa": "Kein Visum für Deutsche (bis 90 Tage)",
+      "language": "Malaysisch, Englisch, Mandarin, Tamil",
+      "transport": "LRT/MRT, Monorail, Grab, Bus",
+      "plug": "Typ G (230V) — Adapter nötig!"
+    }
   },
   {
     "id": "indonesia",
@@ -589,7 +721,17 @@
     "currencySymbol": "Rp",
     "dateFrom": null,
     "dateTo": null,
-    "description": "Geplant — Reisfelder, Tempel, Surfen."
+    "description": "Reisfelder, Tempel, Surfen — Insel der Götter.",
+    "details": {
+      "highlights": ["Tegallalang Reisterrassen", "Tanah Lot Tempel", "Ubud Monkey Forest", "Seminyak Beach", "Uluwatu Klippen-Tempel", "Mount Batur (Sunrise Trek)"],
+      "mustEat": ["Nasi Goreng", "Babi Guling (Spanferkel)", "Sate Lilit", "Gado Gado", "frische Kokosnuss"],
+      "tips": "Scooter-Verleih für ca. 5€/Tag. Bei Tempeln immer Sarong tragen. Ubud für Kultur, Seminyak für Strand & Party.",
+      "bestFor": ["Surfen", "Yoga & Wellness", "Tempel", "Natur"],
+      "visa": "Visa on Arrival für Deutsche (35 USD, 30 Tage)",
+      "language": "Balinesisch, Indonesisch",
+      "transport": "Scooter, Grab, privater Fahrer (günstig)",
+      "plug": "Typ C/F (230V)"
+    }
   },
   {
     "id": "newzealand",
@@ -605,6 +747,16 @@
     "currencySymbol": "NZ$",
     "dateFrom": null,
     "dateTo": null,
-    "description": "Geplant — Landschaft, Natur, das Ende der Welt."
+    "description": "Atemberaubende Landschaft, Natur pur — das Ende der Welt.",
+    "details": {
+      "highlights": ["Milford Sound", "Tongariro Alpine Crossing", "Abel Tasman Nationalpark", "Hobbiton", "Franz Josef Gletscher", "Bay of Islands"],
+      "mustEat": ["Hāngi (Māori-Erdofen)", "Meat Pie", "Pavlova", "L&P Limo", "Green-lipped Mussels"],
+      "tips": "Mietwagen Pflicht — ÖPNV kaum vorhanden. Linksverkehr! Campervans sehr beliebt. DOC Hütten für Trekking buchen.",
+      "bestFor": ["Trekking", "Natur", "Abenteuer", "Fotografie"],
+      "visa": "Kein Visum, aber NZeTA erforderlich (ca. 17 NZD, online)",
+      "language": "Englisch, Māori",
+      "transport": "Mietwagen / Campervan, Inlandsflüge, InterCity Bus",
+      "plug": "Typ I (230V) — Adapter nötig!"
+    }
   }
 ]

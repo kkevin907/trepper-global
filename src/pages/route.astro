@@ -2,6 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import WorldMap from '../components/WorldMap.astro';
 import stations from '../data/stations.json';
+import { getCollection } from 'astro:content';
+
+const orteEntries = await getCollection('orte', ({ data }) => !data.draft);
+const orteIds = new Set(orteEntries.map(o => o.data.stationId));
 
 const statusLabels: Record<string, string> = {
   home:     'Heimat',
@@ -57,6 +61,7 @@ const mainStations    = stations.filter(s => s.phase === 'main');
               {preStations.map((station, i) => {
                 const color = statusColors[station.status] || '#94A3B8';
                 const label = statusLabels[station.status] || station.status;
+                const hasReport = orteIds.has(station.id);
                 return (
                   <div class="station-row" style={`--sc:${color};`}>
                     <div class="station-indicator">
@@ -66,7 +71,10 @@ const mainStations    = stations.filter(s => s.phase === 'main');
                     <div class="station-info">
                       <div class="station-header">
                         <span class="station-flag">{station.flag}</span>
-                        <span class="station-name">{station.name}</span>
+                        {hasReport
+                          ? <a href={`/orte/${station.id}`} class="station-name station-name--link">{station.name}</a>
+                          : <span class="station-name">{station.name}</span>
+                        }
                         <span class="station-country">{station.country}</span>
                         <span class="station-badge" style={`background:${color}20;color:${color};`}>{label}</span>
                       </div>
@@ -93,6 +101,7 @@ const mainStations    = stations.filter(s => s.phase === 'main');
               {warmupStations.map((station, i) => {
                 const color = statusColors[station.status] || '#94A3B8';
                 const label = statusLabels[station.status] || station.status;
+                const hasReport = orteIds.has(station.id);
                 return (
                   <div class="station-row" style={`--sc:${color};`}>
                     <div class="station-indicator">
@@ -102,9 +111,13 @@ const mainStations    = stations.filter(s => s.phase === 'main');
                     <div class="station-info">
                       <div class="station-header">
                         <span class="station-flag">{station.flag}</span>
-                        <span class="station-name">{station.name}</span>
+                        {hasReport
+                          ? <a href={`/orte/${station.id}`} class="station-name station-name--link">{station.name}</a>
+                          : <span class="station-name">{station.name}</span>
+                        }
                         <span class="station-country">{station.country}</span>
                         <span class="station-badge" style={`background:${color}20;color:${color};`}>{label}</span>
+                        {hasReport && <span class="station-report-badge">📖 Bericht</span>}
                       </div>
                       <p class="station-desc">{station.description}</p>
                       {station.dateFrom && (
@@ -135,6 +148,7 @@ const mainStations    = stations.filter(s => s.phase === 'main');
               {mainStations.map((station, i) => {
                 const color = statusColors[station.status] || '#94A3B8';
                 const label = statusLabels[station.status] || station.status;
+                const hasReport = orteIds.has(station.id);
                 return (
                   <div class="station-row" style={`--sc:${color};`}>
                     <div class="station-indicator">
@@ -144,9 +158,13 @@ const mainStations    = stations.filter(s => s.phase === 'main');
                     <div class="station-info">
                       <div class="station-header">
                         <span class="station-flag">{station.flag}</span>
-                        <span class="station-name">{station.name}</span>
+                        {hasReport
+                          ? <a href={`/orte/${station.id}`} class="station-name station-name--link">{station.name}</a>
+                          : <span class="station-name">{station.name}</span>
+                        }
                         <span class="station-country">{station.country}</span>
                         <span class="station-badge" style={`background:${color}20;color:${color};`}>{label}</span>
+                        {hasReport && <span class="station-report-badge">📖 Bericht</span>}
                       </div>
                       <p class="station-desc">{station.description}</p>
                     </div>
@@ -313,6 +331,18 @@ const mainStations    = stations.filter(s => s.phase === 'main');
   .station-header  { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; margin-bottom: .35rem; }
   .station-flag    { font-size: 1.1rem; line-height: 1; }
   .station-name    { font-size: 1.05rem; font-weight: 700; letter-spacing: -.02em; }
+  .station-name--link { color: var(--text); text-decoration: none; transition: color .15s; }
+  .station-name--link:hover { color: var(--coral); }
+  .station-report-badge {
+    font-size: .68rem;
+    font-weight: 700;
+    background: #FFF7ED;
+    color: #C2410C;
+    border: 1.5px solid #FDBA74;
+    padding: 1px 7px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
   .station-country { font-size: .82rem; color: var(--text-mid); }
   .station-badge   {
     font-size: .68rem;

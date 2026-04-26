@@ -4,14 +4,17 @@ import LocationBadge from '../components/LocationBadge.astro';
 import WorldMap from '../components/WorldMap.astro';
 import stationsData from '../data/stations.json';
 import config from '../data/config.json';
+import { getCollection } from 'astro:content';
 
-const allMdFiles = import.meta.glob('../content/logbook/*.md', { eager: true });
-const entries = Object.entries(allMdFiles)
-  .map(([_, mod]: [string, any]) => ({ fm: mod.frontmatter }))
-  .sort((a, b) => new Date(b.fm.date).getTime() - new Date(a.fm.date).getTime())
-  .slice(0, 3);
+const orteEntries = await getCollection('orte', ({ data }) => !data.draft);
+const orteIdSet = new Set(orteEntries.filter(o => !o.data.highlights[0].startsWith('TODO')).map(o => o.data.stationId));
+const orteCount = orteIdSet.size;
 
-const target   = new Date('2026-06-25T00:00:00');
+// Warmup-Stops die bereits besucht wurden
+const warmupVisited = stationsData.filter(s => s.phase === 'warmup' && s.status === 'visited').length;
+
+
+const target   = new Date('2026-06-09T00:00:00');
 const now      = new Date();
 const daysLeft = Math.max(0, Math.ceil((target.getTime() - now.getTime()) / 86400000));
 const started  = daysLeft <= 0;
@@ -42,11 +45,6 @@ const kmDisplay = kmTotal > 0
   ? Math.round(kmTotal).toLocaleString('de-DE')
   : '0';
 
-const cards = [
-  { border: '#F97316', bg: '#FFF7ED', text: '#C2410C' },
-  { border: '#0EA5E9', bg: '#E0F2FE', text: '#0369A1' },
-  { border: '#10B981', bg: '#D1FAE5', text: '#065F46' },
-];
 
 // Aktueller Standort — gesteuert über src/data/config.json → currentStationId
 const currentStation = stationsData.find(s => s.id === config.currentStationId)
@@ -81,7 +79,7 @@ const locLon = currentStation.lon;
     <div class="ph-hero-left">
 
       <!-- Ortsinfo-Strip: Uhrzeit, Währung, Standort, Wetter -->
-      <div class="ph-locinfo" id="ph-locinfo" data-tz={locTimezone} data-lat={locLat} data-lon={locLon}>
+      <div class="ph-locinfo" id="ph-locinfo" data-tz={locTimezone} data-lat={locLat} data-lon={locLon} data-currency={currentStation.currency} data-symbol={currentStation.currencySymbol}>
 
         <div class="ph-li-block">
           <span class="ph-li-label">
@@ -101,6 +99,7 @@ const locLon = currentStation.lon;
             Währung vor Ort
           </span>
           <span class="ph-li-val">{locCurrencyDisplay}</span>
+          <span class="ph-li-rate" id="ph-li-rate"></span>
         </div>
 
         <div class="ph-li-sep"></div>
@@ -161,23 +160,23 @@ const locLon = currentStation.lon;
       <!-- Stats -->
       <div class="ph-stats">
         <div class="ph-stat">
-          <span class="ph-stat-n" style="color:#F97316;">25</span>
-          <span class="ph-stat-l">Länder bereist</span>
+          <span class="ph-stat-n" style="color:#F97316;">{warmupVisited}</span>
+          <span class="ph-stat-l">Orte in 2026</span>
         </div>
         <div class="ph-stat-sep"></div>
         <div class="ph-stat">
-          <span class="ph-stat-n" style="color:#0EA5E9;">3</span>
-          <span class="ph-stat-l">Einträge</span>
+          <span class="ph-stat-n" style="color:#0EA5E9;">{orteCount}</span>
+          <span class="ph-stat-l">Reiseberichte</span>
         </div>
         <div class="ph-stat-sep"></div>
         <div class="ph-stat">
-          <span class="ph-stat-n" style="color:#10B981;">4</span>
-          <span class="ph-stat-l">Asien-Stops</span>
+          <span class="ph-stat-n" style="color:#10B981;">{started ? '🛫' : daysLeft}</span>
+          <span class="ph-stat-l">{started ? 'Unterwegs!' : 'Tage bis Abflug'}</span>
         </div>
         <div class="ph-stat-sep"></div>
         <div class="ph-stat">
-          <span class="ph-stat-n" style="color:#8B5CF6;">{kmDisplay}</span>
-          <span class="ph-stat-l">km zurückgelegt</span>
+          <span class="ph-stat-n" style="color:#8B5CF6;">{kmDisplay || '0'}</span>
+          <span class="ph-stat-l">km Weltreise</span>
         </div>
       </div>
 
@@ -206,20 +205,23 @@ const locLon = currentStation.lon;
 
           <!-- ✓ DONE: grün, solid lines -->
           {[
-            { flag:'🇳🇱', name:'Renesse',   badge:'✓ Apr' },
-            { flag:'🇬🇧', name:'London',    badge:'✓ Apr' },
-            { flag:'🇵🇹', name:'Madeira',   badge:'✓ Apr' },
-            { flag:'🇵🇹', name:'Lissabon',  badge:'✓ Apr' },
-            { flag:'🇪🇸', name:'Madrid',    badge:'✓ Apr' },
-            { flag:'🇪🇸', name:'Ibiza',     badge:'✓ Apr' },
-            { flag:'🇲🇦', name:'Essaouira', badge:'✓ Mai' },
-            { flag:'🇲🇦', name:'Taghazout', badge:'✓ Mai' },
+            { flag:'🇳🇱', name:'Renesse',   badge:'✓ Apr', id:'renesse' },
+            { flag:'🇬🇧', name:'London',    badge:'✓ Apr', id:'london' },
+            { flag:'🇵🇹', name:'Madeira',   badge:'✓ Apr', id:'madeira' },
+            { flag:'🇵🇹', name:'Lissabon',  badge:'✓ Apr', id:'lissabon' },
+            { flag:'🇪🇸', name:'Madrid',    badge:'✓ Apr', id:'madrid' },
+            { flag:'🇪🇸', name:'Ibiza',     badge:'✓ Apr', id:'ibiza' },
+            { flag:'🇲🇦', name:'Essaouira', badge:'✓ Mai', id:'essaouira' },
+            { flag:'🇲🇦', name:'Taghazout', badge:'✓ Mai', id:'taghazout' },
           ].map((s) => (
             <>
               <div class="ph-tl-stop">
                 <div class="ph-tl-top">
                   <span class="ph-tl-flag">{s.flag}</span>
-                  <span class="ph-tl-name">{s.name}</span>
+                  {orteIdSet.has(s.id)
+                    ? <a href={`/orte/${s.id}`} class="ph-tl-name ph-tl-name--link">{s.name}</a>
+                    : <span class="ph-tl-name">{s.name}</span>
+                  }
                 </div>
                 <div class="ph-tl-dot-row">
                   <div class="ph-tl-dot" style="background:#10B981;box-shadow:0 0 0 3px #10B98122;"></div>
@@ -232,22 +234,44 @@ const locLon = currentStation.lon;
             </>
           ))}
 
-          <!-- 🌏 START — immer zentriert -->
+          <!-- 🌏 START — Abflug 9. Juni -->
           <div class="ph-tl-start" id="ph-tl-start-marker">
-            <div class="ph-tl-top"><span class="ph-tl-start-label">Weltreise-<br/>Start</span></div>
+            <div class="ph-tl-top"><span class="ph-tl-start-label">Abflug<br/>Asien</span></div>
             <div class="ph-tl-dot-row"><div class="ph-tl-start-dot">🌏</div></div>
-            <div class="ph-tl-bot"><span class="ph-tl-badge" style="background:#FFF7ED;color:#C2410C;border:1.5px solid #FDBA74;">25. Juni</span></div>
+            <div class="ph-tl-bot"><span class="ph-tl-badge" style="background:#FFF7ED;color:#C2410C;border:1.5px solid #FDBA74;">9. Juni</span></div>
           </div>
+          <div class="ph-tl-line tl-dash"></div>
+
+          <!-- Istanbul Zwischenstopp — grün nach 10. Juni, sonst orange -->
+          {(() => {
+            const istanbulDone = new Date() > new Date('2026-06-10T23:59:59');
+            return (
+              <div class="ph-tl-stop">
+                <div class="ph-tl-top">
+                  <span class="ph-tl-flag">🇹🇷</span>
+                  <span class="ph-tl-name">Istanbul</span>
+                </div>
+                <div class="ph-tl-dot-row">
+                  <div class="ph-tl-dot" style={`background:${istanbulDone ? '#10B981' : '#F97316'};opacity:${istanbulDone ? '1' : '.6'};box-shadow:0 0 0 3px ${istanbulDone ? '#10B98122' : '#F9731618'};`}></div>
+                </div>
+                <div class="ph-tl-bot">
+                  <span class="ph-tl-badge" style={`background:${istanbulDone ? '#D1FAE5' : '#FFF7ED'};color:${istanbulDone ? '#065F46' : '#C2410C'};`}>
+                    {istanbulDone ? '✓ 9.–10. Jun' : '9.–10. Jun'}
+                  </span>
+                </div>
+              </div>
+            );
+          })()}
           <div class="ph-tl-line tl-dash"></div>
 
           <!-- GEPLANT: orange, dashed -->
           {[
-            { flag:'🇭🇰', name:'Hongkong'     },
-            { flag:'🇹🇭', name:'Bangkok'      },
-            { flag:'🇻🇳', name:'Vietnam'      },
-            { flag:'🇲🇾', name:'Kuala Lumpur' },
-            { flag:'🇮🇩', name:'Bali'         },
-            { flag:'🇳🇿', name:'Neuseeland'   },
+            { flag:'🇹🇭', name:'Bangkok',      date:'ab 11. Jun' },
+            { flag:'🇭🇰', name:'Hongkong',     date:'ab 2. Jul'  },
+            { flag:'🇻🇳', name:'Vietnam'       },
+            { flag:'🇲🇾', name:'Kuala Lumpur'  },
+            { flag:'🇮🇩', name:'Bali'          },
+            { flag:'🇳🇿', name:'Neuseeland'    },
           ].map((s, i, arr) => (
             <>
               <div class="ph-tl-stop">
@@ -259,7 +283,7 @@ const locLon = currentStation.lon;
                   <div class="ph-tl-dot" style="background:#F97316;opacity:.6;box-shadow:0 0 0 3px #F9731618;"></div>
                 </div>
                 <div class="ph-tl-bot">
-                  <span class="ph-tl-badge" style="background:#FFF7ED;color:#C2410C;">Geplant</span>
+                  <span class="ph-tl-badge" style="background:#FFF7ED;color:#C2410C;">{s.date ?? 'Geplant'}</span>
                 </div>
               </div>
               {i < arr.length - 1 && <div class="ph-tl-line tl-dash"></div>}
@@ -316,6 +340,29 @@ const locLon = currentStation.lon;
       var x = e.pageX - container.offsetLeft;
       container.scrollLeft = scrollLeft - (x - startX) * 1.5;
     });
+  }
+
+  // Wechselkurs via Frankfurter API (kostenlos, kein API-Key)
+  function initExchangeRate() {
+    var el = document.getElementById('ph-locinfo');
+    var rateEl = document.getElementById('ph-li-rate');
+    if (!el || !rateEl) return;
+
+    var currency = el.getAttribute('data-currency');
+    var symbol   = el.getAttribute('data-symbol');
+    if (!currency || currency === 'EUR') return; // Heimatwährung, kein Kurs nötig
+
+    fetch('https://api.frankfurter.app/latest?from=EUR&to=' + currency)
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        var rate = data.rates && data.rates[currency];
+        if (!rate) return;
+        var formatted = rate >= 100
+          ? Math.round(rate).toLocaleString('de-DE')
+          : rate.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        rateEl.textContent = '1 € = ' + formatted + ' ' + symbol;
+      })
+      .catch(function() {});
   }
 
   // Wetter via Open-Meteo (kostenlos, kein API-Key)
@@ -401,11 +448,12 @@ const locLon = currentStation.lon;
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () { initTimeline(); initClock(); initWeather(); });
+    document.addEventListener('DOMContentLoaded', function () { initTimeline(); initClock(); initWeather(); initExchangeRate(); });
   } else {
     initTimeline();
     initClock();
     initWeather();
+    initExchangeRate();
   }
 })();
 </script>
@@ -413,37 +461,6 @@ const locLon = currentStation.lon;
 <!-- ═══════════════════════════════════════════════════════
      LOGBUCH — Letzte Einträge
 ═══════════════════════════════════════════════════════ -->
-<section class="ph-sec ph-sec-white">
-  <div class="ph-wrap">
-    <div class="ph-sec-head reveal">
-      <div>
-        <div class="ph-sec-label" style="color:#F97316;">Logbuch</div>
-        <h2 class="ph-sec-title">Letzte Einträge</h2>
-      </div>
-      <a href="/logbook" class="ph-all-link">Alle lesen →</a>
-    </div>
-
-    <div class="ph-cards reveal-stagger">
-      {entries.map((entry, i) => {
-        const p = cards[i % 3];
-        return (
-          <a href="/logbook" class="ph-card" style={`border-top:4px solid ${p.border};`}>
-            <div class="ph-card-inner">
-              <div class="ph-card-meta">
-                <span style="font-size:1.1rem;">{entry.fm.flag}</span>
-                <span style={`font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:${p.border};`}>{entry.fm.location}</span>
-                <time style="font-size:.72rem;color:#94A3B8;margin-left:auto;">{new Date(entry.fm.date).toLocaleDateString('de-DE',{day:'numeric',month:'short'})}</time>
-              </div>
-              <h3 class="ph-card-title">{entry.fm.title}</h3>
-              <p class="ph-card-excerpt">{entry.fm.excerpt}</p>
-            </div>
-            <div class="ph-card-foot" style={`background:${p.bg};color:${p.text};`}>Eintrag lesen →</div>
-          </a>
-        );
-      })}
-    </div>
-  </div>
-</section>
 
 <!-- ═══════════════════════════════════════════════════════
      INSTAGRAM
@@ -554,6 +571,13 @@ const locLon = currentStation.lon;
 .ph-li-flag {
   font-size: .95rem;
   line-height: 1;
+}
+.ph-li-rate {
+  font-size: .67rem;
+  color: #10B981;
+  font-weight: 700;
+  margin-top: 1px;
+  min-height: 1em;
 }
 .ph-li-sep {
   width: 1px;
@@ -778,7 +802,16 @@ const locLon = currentStation.lon;
   color: #0F172A;
   white-space: nowrap;
   text-align: center;
+  text-decoration: none;
 }
+.ph-tl-name--link {
+  color: var(--coral);
+  text-decoration: underline;
+  text-decoration-color: var(--coral-mid);
+  text-underline-offset: 2px;
+  transition: color .15s;
+}
+.ph-tl-name--link:hover { color: #C2410C; }
 .ph-tl-start-label {
   font-size: .68rem;
   font-weight: 800;
