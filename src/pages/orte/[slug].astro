@@ -11,6 +11,14 @@ const { ort } = Astro.props;
 const { Content } = await render(ort);
 const d = ort.data;
 
+// Konvertiert [text](url) → klickbaren Link mit externem Target
+function ml(text: string): string {
+  return text.replace(
+    /\[([^\]]+)\]\(([^)]+)\)/g,
+    '<a href="$2" target="_blank" rel="noopener noreferrer" class="or-inline-link">$1</a>'
+  );
+}
+
 const dateFrom = new Date(d.dateFrom).toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' });
 const dateTo   = new Date(d.dateTo).toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' });
 
@@ -75,7 +83,10 @@ const stars = '★'.repeat(d.rating) + '☆'.repeat(5 - d.rating);
               {d.foodSpots.map(f => (
                 <div class="or-food-card">
                   <div class="or-food-header">
-                    <span class="or-food-name">{f.name}</span>
+                    {f.link
+                      ? <a href={f.link} target="_blank" rel="noopener noreferrer" class="or-food-name or-food-name--link">{f.name} ↗</a>
+                      : <span class="or-food-name">{f.name}</span>
+                    }
                     <span class="or-food-stars">{'★'.repeat(f.stars)}{'☆'.repeat(5-f.stars)}</span>
                   </div>
                   <p class="or-food-what">{f.what}</p>
@@ -107,7 +118,7 @@ const stars = '★'.repeat(d.rating) + '☆'.repeat(5 - d.rating);
           <div class="or-sidebar-card">
             <h3 class="or-sidebar-title">📍 Highlights</h3>
             <ul class="or-list">
-              {d.highlights.map(h => <li>{h}</li>)}
+              {d.highlights.map(h => <li set:html={ml(h)} />)}
             </ul>
           </div>
 
@@ -118,7 +129,10 @@ const stars = '★'.repeat(d.rating) + '☆'.repeat(5 - d.rating);
               <div class="or-market-list">
                 {d.markets.map(m => (
                   <div class="or-market">
-                    <div class="or-market-name">{m.name}</div>
+                    {m.link
+                      ? <a href={m.link} target="_blank" rel="noopener noreferrer" class="or-market-name or-market-name--link">{m.name} ↗</a>
+                      : <div class="or-market-name">{m.name}</div>
+                    }
                     <div class="or-market-meta">
                       <span class="or-market-type">{m.type}</span>
                       {m.when && <span class="or-market-when">{m.when}</span>}
@@ -134,7 +148,7 @@ const stars = '★'.repeat(d.rating) + '☆'.repeat(5 - d.rating);
           <div class="or-sidebar-card">
             <h3 class="or-sidebar-title">💡 Tipps</h3>
             <ul class="or-list">
-              {d.tips.map(t => <li>{t}</li>)}
+              {d.tips.map(t => <li set:html={ml(t)} />)}
             </ul>
           </div>
 
@@ -151,7 +165,7 @@ const stars = '★'.repeat(d.rating) + '☆'.repeat(5 - d.rating);
             <div class="or-sidebar-card or-sidebar-card--skip">
               <h3 class="or-sidebar-title">🚫 Eher meiden</h3>
               <ul class="or-list or-list--skip">
-                {d.skip.map(s => <li>{s}</li>)}
+                {d.skip.map(s => <li set:html={ml(s)} />)}
               </ul>
             </div>
           )}
@@ -271,6 +285,12 @@ const stars = '★'.repeat(d.rating) + '☆'.repeat(5 - d.rating);
   .or-food-card:hover { box-shadow: var(--shadow); }
   .or-food-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: .3rem; }
   .or-food-name  { font-size: .95rem; font-weight: 700; color: var(--text); }
+  .or-food-name--link { text-decoration: none; color: var(--coral); transition: opacity .15s; }
+  .or-food-name--link:hover { opacity: .75; }
+  .or-market-name--link { font-size: .88rem; font-weight: 700; color: var(--coral); text-decoration: none; display: block; margin-bottom: .2rem; transition: opacity .15s; }
+  .or-market-name--link:hover { opacity: .75; }
+  :global(.or-inline-link) { color: var(--coral); text-decoration: underline; text-decoration-color: var(--coral-mid); text-underline-offset: 2px; transition: opacity .15s; }
+  :global(.or-inline-link:hover) { opacity: .75; }
   .or-food-stars { color: #F59E0B; font-size: .85rem; letter-spacing: 1px; }
   .or-food-what  { font-size: .85rem; color: var(--text-mid); margin-bottom: .4rem; }
   .or-food-meta  { display: flex; flex-wrap: wrap; gap: .5rem; }

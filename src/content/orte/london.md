@@ -11,43 +11,48 @@ costLevel: 3
 rating: 4
 coverImage: ""
 highlights:
-  - "Sky Garden — kostenloser Ausblick über ganz London, aber unbedingt vorab online buchen"
-  - "Brick Lane & Old Spitalfields Market — Vintage-Feeling pur, der Stand im Markt ist ein echter Geheimtipp"
-  - "Uber Boat auf der Themse — bestes Preis-Erlebnis-Verhältnis der Stadt"
-  - "St. James's Park & Kensington Gardens — mitten in der City und trotzdem komplett ruhig"
+  - "[Sky Garden](https://skygarden.london/) — kostenloser Ausblick über ganz London, aber unbedingt vorab online buchen"
+  - "[Brick Lane](https://maps.google.com/?q=Brick+Lane+London) & [Old Spitalfields Market](https://oldspitalfieldsmarket.com/) — Vintage-Feeling pur, der Stand im Markt ist ein echter Geheimtipp"
+  - "[Uber Boat by Thames Clippers](https://www.thamesclippers.com/) auf der Themse — bestes Preis-Erlebnis-Verhältnis der Stadt"
+  - "[St. James's Park](https://maps.google.com/?q=St+James+Park+London) & [Kensington Gardens](https://maps.google.com/?q=Kensington+Gardens+London) — mitten in der City und trotzdem komplett ruhig"
 foodSpots:
   - name: "YUU Kitchen"
     what: "Asiatische Bao Buns & Small Plates — frisch, kreativ, sättigend"
     stars: 5
     area: "Spitalfields"
     tip: "Mittagszeit einplanen, dann ist es weniger voll. Direkt am Old Spitalfields Market."
+    link: "https://www.yuukitchen.com/"
   - name: "The Wolfpack Bar"
     what: "Klassischer East-End-Pub — Bier, Vibes, genau so wie man es sich vorstellt"
     stars: 5
     area: "Spitalfields / City"
     tip: "Abends hingehen wenn die lokalen Büroarbeiter nach der Arbeit reinkommen — das ist die echte Atmosphäre"
+    link: "https://maps.google.com/?q=The+Wolfpack+Bar+London+Spitalfields"
   - name: "Borough Market"
     what: "Street Food & Feinkost von allem was die Welt zu bieten hat"
     stars: 4
     area: "Southwark"
     tip: "Eher früh am Morgen kommen, mittags ist es voll und die besten Sachen sind weg"
+    link: "https://boroughmarket.org.uk/"
 markets:
   - name: "Old Spitalfields Market"
     type: "Vintage & Design"
     when: "täglich, Vintage vor allem am Wochenende"
     tip: "Der Vintage-Stand ganz hinten rechts ist der Beste — sehr faire Preise im Vergleich zu den Läden draußen auf der Brick Lane"
+    link: "https://oldspitalfieldsmarket.com/"
   - name: "Brick Lane Market"
     type: "Flohmarkt & Vintage"
     when: "Sonntag"
     tip: "Cooles Ambiente, aber die meisten Shops sind teuer. Eher zum Schauen als zum Kaufen."
+    link: "https://maps.google.com/?q=Brick+Lane+Market+London"
 skip:
   - "Vintage-Shops entlang der Brick Lane — tolle Auswahl, aber fast alle sehr überteuert"
   - "Touristenfallen rund um die Tower Bridge — Restaurants und Souvenirs direkt am Wasser sind deutlich zu teuer"
 tips:
   - "Oyster Card direkt am Flughafen kaufen — günstiger und spart Warteschlangen an der U-Bahn"
-  - "Staatliche Museen sind kostenlos — British Museum, Tate Modern, National Gallery, V&A"
-  - "Sky Garden kostenlos, aber online buchen — spontan kommt man nicht rein"
-  - "Uber Boat (Thames Clipper) nutzen — schöner als die Tube und man sieht dabei die Stadt"
+  - "Staatliche Museen kostenlos — [British Museum](https://www.britishmuseum.org/), [Tate Modern](https://www.tate.org.uk/visit/tate-modern), [National Gallery](https://www.nationalgallery.org.uk/), [V&A](https://www.vam.ac.uk/)"
+  - "[Sky Garden](https://skygarden.london/) kostenlos, aber online buchen — spontan kommt man nicht rein"
+  - "[Uber Boat by Thames Clippers](https://www.thamesclippers.com/) nutzen — schöner als die Tube und man sieht dabei die Stadt"
   - "Spät essen gehen klappt hier gut — Küchen machen auch um 22 Uhr noch auf"
 bestArea: "Spitalfields / East End — direkt bei Brick Lane und Old Spitalfields Market. Lebhaft, sicher, gut angebunden."
 draft: false

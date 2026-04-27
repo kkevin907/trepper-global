@@ -11,17 +11,18 @@ costLevel: 2
 rating: 5
 coverImage: ""
 highlights:
-  - "Seixal Beach — schwarzer Lavastrand, idyllisch, fast menschenleer im April"
-  - "Piscinas Naturais — natürliche Lavapools direkt am Meer, ein Muss"
-  - "Paul do Mar & Jardim do Mar — die schönsten Küstendörfer der Insel, Nordwesten"
-  - "Bar 101 — bestes Steak-Sandwich der Insel (PREGO), unbedingt hingehen"
-  - "Fanal Forest — Lorbeerwälder im Nebel, surreale Stimmung"
+  - "[Seixal Beach](https://maps.google.com/?q=Seixal+Beach+Madeira) — schwarzer Lavastrand, idyllisch, fast menschenleer im April"
+  - "[Piscinas Naturais Porto Moniz](https://maps.google.com/?q=Piscinas+Naturais+Porto+Moniz+Madeira) — natürliche Lavapools direkt am Meer, ein Muss"
+  - "[Paul do Mar](https://maps.google.com/?q=Paul+do+Mar+Madeira) & [Jardim do Mar](https://maps.google.com/?q=Jardim+do+Mar+Madeira) — die schönsten Küstendörfer der Insel, Nordwesten"
+  - "[Bar 101](https://maps.google.com/?q=Bar+101+Achadas+da+Cruz+Madeira) — bestes Steak-Sandwich der Insel (PREGO), unbedingt hingehen"
+  - "[Fanal Forest](https://maps.google.com/?q=Fanal+Forest+Madeira) — Lorbeerwälder im Nebel, surreale Stimmung"
 foodSpots:
   - name: "Bar 101 / Beira Mar"
     what: "PREGO — Steak-Sandwich auf Madeira, herzhaft und perfekt"
     stars: 5
-    area: "Küste, Südosten"
+    area: "Achadas da Cruz, Nordwesten"
     tip: "Unbedingt das PREGO bestellen. Klingt simpel, ist aber das Beste was du auf der Insel essen wirst."
+    link: "https://maps.google.com/?q=Bar+101+Achadas+da+Cruz+Madeira"
   - name: "Bäckereien (überall)"
     what: "Frisches Brot, lokale Süßigkeiten, Poncha"
     stars: 4
@@ -32,15 +33,16 @@ markets:
     type: "Lebensmittelmarkt"
     when: "Mo–Sa"
     tip: "Funchal's berühmter Markt — schön anzusehen, Preise für Touristen aber eher hoch."
+    link: "https://maps.google.com/?q=Mercado+dos+Lavradores+Funchal+Madeira"
 skip:
   - "Hochsaison ohne Mietwagenreservierung — Parkplätze an den Sehenswürdigkeiten sind begrenzt, im Sommer chaotisch"
   - "Wetter im Norden und in den Bergen unterschätzen — Sonnenschein in Funchal bedeutet nichts für die Bergregionen"
 tips:
   - "Automatik-Mietwagen ist Pflicht — die Straßen sind steil, eng und kurvenreich"
   - "Madeira hat viele Mikroklimata: Süden fast immer warm, Berge oft neblig und kalt, Norden eher regnerisch"
-  - "Der Nordwesten (Paul do Mar, Jardim do Mar) ist die schönste Ecke der Insel — dort Zeit einplanen"
+  - "Der Nordwesten ([Paul do Mar](https://maps.google.com/?q=Paul+do+Mar+Madeira), [Jardim do Mar](https://maps.google.com/?q=Jardim+do+Mar+Madeira)) ist die schönste Ecke der Insel — dort Zeit einplanen"
   - "Früh starten für Wanderungen und Aussichtspunkte — vor den Reisegruppen am besten"
-  - "Fürs nächste Mal vormerken: Pico do Arieiro, Cristo-Statue, Natural Pools Porto Moniz, Korbschlitten in Monte"
+  - "Fürs nächste Mal: [Pico do Arieiro](https://maps.google.com/?q=Pico+do+Arieiro+Madeira), [Natural Pools Porto Moniz](https://maps.google.com/?q=Piscinas+Naturais+Porto+Moniz+Madeira), Korbschlitten in Monte"
 bestArea: "Nordwesten — Paul do Mar und Jardim do Mar. Ruhig, wild, authentisch und weit weg vom Tourismus."
 draft: false
 ---

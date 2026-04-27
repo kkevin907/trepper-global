@@ -10,32 +10,34 @@ vibe: One Night Only
 costLevel: 3
 rating: 5
 highlights:
-  - Hï Ibiza Opening Night 2026
-  - Skepta — Más Tiempo Residency
-  - Sonnenaufgang am Playa d'en Bossa
-  - La Canela — handgemachte Bäckerei
-  - Shuttle Bus für 3,50 € direkt in die Stadt
+  - "[Hï Ibiza](https://www.hiibiza.com/) Opening Night 2026"
+  - "Skepta — Más Tiempo Residency"
+  - "[Sonnenaufgang am Playa d'en Bossa](https://maps.google.com/?q=Playa+d%27en+Bossa+Ibiza)"
+  - "[La Canela](https://maps.google.com/?q=La+Canela+Ibiza+Stadt) — handgemachte Bäckerei"
+  - "Shuttle Bus für 3,50 € direkt in die Stadt"
 foodSpots:
   - name: La Canela
     what: Empanadas, süße Backwaren — alles frisch und handgemacht
     stars: 5
     area: Ibiza Stadt
     tip: Erste Bäckerei die morgens öffnet — perfekt nach der Clubnacht
+    link: "https://maps.google.com/?q=La+Canela+Ibiza+Stadt"
   - name: Murphy's Ibiza
     what: Irish Pub an der Clubmeile — Guinness für 10 €
     stars: 3
     area: Playa d'en Bossa
     tip: Teuer, aber Ibiza-Standard. Guter Startpunkt mit guter Stimmung
+    link: "https://maps.google.com/?q=Murphy%27s+Irish+Bar+Playa+d%27en+Bossa+Ibiza"
 skip:
-  - Clubtickets am selben Abend kaufen — bis zu 200 € statt 75 €
-  - Tickets mit Einlass erst ab 6 Uhr — klingt günstig, bringt aber kaum etwas
-  - Ohne Gepäckreservierung ankommen — Easy Lockers immer vorab buchen
+  - "Clubtickets am selben Abend kaufen — bis zu 200 € statt 75 €"
+  - "Tickets mit Einlass erst ab 6 Uhr — klingt günstig, bringt aber kaum etwas"
+  - "Ohne Gepäckreservierung ankommen — [Easy Lockers](https://easylockersibiza.com/) immer vorab buchen"
 tips:
-  - Clubticket mindestens 1 Monat im Voraus buchen — Opening Night 75 € statt 200 €
-  - "Gepäck bei [Easy Lockers Ibiza](https://easylockersibiza.com/) vorab online reservieren — kein Walk-in"
-  - Shuttle Bus Flughafen ↔ Stadt je 3,50 € pro Person — kein Taxi nötig
+  - "[Hï Ibiza](https://www.hiibiza.com/) — Clubticket mindestens 1 Monat im Voraus buchen, Opening Night 75 € statt 200 €"
+  - "[Easy Lockers Ibiza](https://easylockersibiza.com/) vorab online reservieren — kein Walk-in"
+  - "Shuttle Bus Flughafen ↔ Stadt je 3,50 € pro Person — kein Taxi nötig"
   - "Großer Lidl am Stadtrand: Getränke für die Promenade zu normalen Preisen"
-  - Nachts nur rund 11°C — leichte Jacke einpacken
+  - "Nachts nur rund 11°C — leichte Jacke einpacken"
 bestArea: Playa d'en Bossa — Clubs, Strandpromenade, Sonnenaufgang
 draft: false
 ---
