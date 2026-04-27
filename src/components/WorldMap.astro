@@ -29,12 +29,26 @@ const doRoute      = showRoute;
 const doFilters    = showFilters;
 ---
 
-<div
-  id={`${mapId}-wrap`}
-  style={`position:relative;height:${height};width:100%;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(15,23,42,0.13);border:3px solid white;outline:1px solid #E2E8F0;`}
->
-  <div id={mapId} style="height:100%;width:100%;"></div>
+<div class="map-outer-wrap">
+  {showFilters && <div id={`${mapId}-filter`} class="map-filter-bar"></div>}
+  <div
+    id={`${mapId}-wrap`}
+    style={`position:relative;height:${height};width:100%;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(15,23,42,0.13);border:3px solid white;outline:1px solid #E2E8F0;`}
+  >
+    <div id={mapId} style="height:100%;width:100%;"></div>
+  </div>
 </div>
+
+<style>
+  .map-outer-wrap { display: flex; flex-direction: column; gap: 0; width: 100%; }
+  .map-filter-bar {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 8px 0 6px;
+  }
+</style>
 
 <script is:inline define:vars={{ stationsJSON, orteIdsJSON, mapId, doRoute, doFilters, currentStationId }}>
 (function() {
@@ -163,26 +177,36 @@ const doFilters    = showFilters;
 
     // ── FILTER BUTTONS ──────────────────────────────────────
     if (doFilters) {
-      var wrap = document.getElementById(mapId + '-wrap');
+      // Use external filter bar above map (better for mobile)
+      var externalBar = document.getElementById(mapId + '-filter');
 
       var bar = document.createElement('div');
-      bar.style.cssText = [
-        'position:absolute',
-        'bottom:14px',
-        'left:50%',
-        'transform:translateX(-50%)',
-        'z-index:1000',
-        'display:flex',
-        'gap:7px',
-        'flex-wrap:wrap',
-        'justify-content:center',
-        'padding:8px 12px',
-        'background:rgba(255,255,255,0.92)',
-        'backdrop-filter:blur(8px)',
-        'border-radius:100px',
-        'box-shadow:0 4px 20px rgba(15,23,42,0.13)',
-        'border:1px solid #E2E8F0',
-      ].join(';');
+      if (externalBar) {
+        // Render buttons in the bar above the map
+        bar.style.cssText = 'display:contents;';
+        externalBar.appendChild(bar);
+      } else {
+        // Fallback: absolute inside map
+        var wrap = document.getElementById(mapId + '-wrap');
+        bar.style.cssText = [
+          'position:absolute',
+          'bottom:14px',
+          'left:50%',
+          'transform:translateX(-50%)',
+          'z-index:1000',
+          'display:flex',
+          'gap:7px',
+          'flex-wrap:wrap',
+          'justify-content:center',
+          'padding:8px 12px',
+          'background:rgba(255,255,255,0.92)',
+          'backdrop-filter:blur(8px)',
+          'border-radius:100px',
+          'box-shadow:0 4px 20px rgba(15,23,42,0.13)',
+          'border:1px solid #E2E8F0',
+        ].join(';');
+        wrap.appendChild(bar);
+      }
 
       var filterDefs = [
         { status: 'home',     label: '🏠 Heimat',   color: '#8B5CF6' },
@@ -211,8 +235,6 @@ const doFilters    = showFilters;
 
         bar.appendChild(btn);
       });
-
-      wrap.appendChild(bar);
     }
 
     function setFilterStyle(btn, color, active) {

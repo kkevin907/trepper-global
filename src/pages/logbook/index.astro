@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
 
 const allMdFiles = import.meta.glob('../../content/logbook/*.md', { eager: true });
 const entries = Object.entries(allMdFiles)
@@ -12,6 +13,15 @@ const entries = Object.entries(allMdFiles)
   .sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime());
 
 const accentColors = ['#F97316', '#0EA5E9', '#10B981', '#8B5CF6', '#EAB308', '#EC4899'];
+
+// Fertige Reiseberichte für die Empty State
+const orteEntries = await getCollection('orte', ({ data }) => !data.draft && !data.highlights[0].startsWith('TODO'));
+orteEntries.sort((a, b) => new Date(b.data.dateFrom).getTime() - new Date(a.data.dateFrom).getTime());
+
+const target   = new Date('2026-06-09T00:00:00');
+const now      = new Date();
+const daysLeft = Math.max(0, Math.ceil((target.getTime() - now.getTime()) / 86400000));
+const started  = daysLeft <= 0;
 ---
 
 <Layout title="Logbuch" description="Kevins persönliches Reise-Tagebuch — alle Einträge chronologisch.">
@@ -26,8 +36,54 @@ const accentColors = ['#F97316', '#0EA5E9', '#10B981', '#8B5CF6', '#EAB308', '#E
   <div class="entries-wrap">
     <div class="entries-inner">
       {entries.length === 0 ? (
-        <div class="empty">
-          <p>Noch keine Einträge. Die Reise beginnt am 9. Juni 2026.</p>
+        <div class="lb-empty">
+
+          <!-- Countdown-Banner -->
+          <div class="lb-countdown">
+            <span class="lb-countdown-dot"></span>
+            {started
+              ? <span class="lb-countdown-text">Die Weltreise hat begonnen — erste Einträge folgen bald.</span>
+              : <span class="lb-countdown-text">Das Logbuch startet mit dem Abflug — <strong>9. Juni 2026</strong>, noch <strong>{daysLeft} Tage</strong>.</span>
+            }
+          </div>
+
+          <!-- Überbrückung: vorhandene Berichte -->
+          <div class="lb-bridge">
+            <p class="lb-bridge-label">Schon jetzt lesen</p>
+            <h2 class="lb-bridge-title">Reiseberichte aus dem Warm-up</h2>
+            <p class="lb-bridge-sub">
+              Bevor die Weltreise startet, sind schon einige Trips gemacht worden.
+              Alle Erfahrungen, Food-Spots und Tipps gibt es hier:
+            </p>
+
+            <div class="lb-orte-grid">
+              {orteEntries.map(ort => {
+                const d = ort.data;
+                const costColors = ['', '#10B981', '#F97316', '#EF4444'];
+                const stars = '★'.repeat(d.rating) + '☆'.repeat(5 - d.rating);
+                return (
+                  <a href={`/orte/${ort.id}`} class="lb-ort-card">
+                    <div class="lb-ort-top">
+                      <span class="lb-ort-flag">{d.flag}</span>
+                      <div>
+                        <div class="lb-ort-name">{d.title}</div>
+                        <div class="lb-ort-country">{d.country}</div>
+                      </div>
+                      <span class="lb-ort-stars">{stars}</span>
+                    </div>
+                    <div class="lb-ort-chips">
+                      <span class="lb-ort-vibe">{d.vibe}</span>
+                      <span class="lb-ort-cost" style={`color:${costColors[d.costLevel]}`}>{'€'.repeat(d.costLevel)}</span>
+                    </div>
+                    <div class="lb-ort-cta">📖 Bericht lesen →</div>
+                  </a>
+                );
+              })}
+            </div>
+
+            <a href="/orte" class="lb-all-link">Alle Orte ansehen →</a>
+          </div>
+
         </div>
       ) : (
         <div class="timeline">
@@ -203,15 +259,110 @@ const accentColors = ['#F97316', '#0EA5E9', '#10B981', '#8B5CF6', '#EAB308', '#E
     margin-top: 1.5rem;
   }
 
-  .empty {
-    text-align: center;
-    padding: 4rem 2rem;
+  /* ── EMPTY STATE ── */
+  .lb-empty { display: flex; flex-direction: column; gap: 2rem; }
+
+  .lb-countdown {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    background: var(--coral-light);
+    border: 1.5px solid var(--coral-mid);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    font-size: .92rem;
     color: var(--text-mid);
-    font-size: 1rem;
-    background: var(--bg-soft);
-    border-radius: var(--radius);
-    border: 2px dashed var(--border);
   }
+  .lb-countdown strong { color: var(--text); }
+  .lb-countdown-dot {
+    width: 9px; height: 9px; border-radius: 50%;
+    background: var(--coral); flex-shrink: 0;
+    animation: livepulse 2s ease-in-out infinite;
+  }
+  @keyframes livepulse {
+    0%,100% { box-shadow: 0 0 0 0 rgba(249,115,22,.4); }
+    50%      { box-shadow: 0 0 0 5px rgba(249,115,22,0); }
+  }
+
+  .lb-bridge {
+    background: #ffffff;
+    border: 1.5px solid var(--border);
+    border-radius: 16px;
+    padding: 1.75rem 2rem 2rem;
+  }
+  .lb-bridge-label {
+    font-size: .7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--coral);
+    margin-bottom: .5rem;
+  }
+  .lb-bridge-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -.03em;
+    margin-bottom: .5rem;
+  }
+  .lb-bridge-sub {
+    font-size: .9rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+    max-width: 560px;
+    margin-bottom: 1.5rem;
+  }
+
+  .lb-orte-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .lb-ort-card {
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+    background: var(--bg-soft);
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem 1.1rem;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+  }
+  .lb-ort-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+
+  .lb-ort-top { display: flex; align-items: center; gap: .65rem; }
+  .lb-ort-flag { font-size: 1.6rem; line-height: 1; flex-shrink: 0; }
+  .lb-ort-name { font-size: .95rem; font-weight: 800; color: var(--text); letter-spacing: -.02em; }
+  .lb-ort-country { font-size: .72rem; color: var(--text-light); }
+  .lb-ort-stars { font-size: .75rem; color: #F59E0B; margin-left: auto; letter-spacing: 1px; flex-shrink: 0; }
+
+  .lb-ort-chips { display: flex; gap: .4rem; flex-wrap: wrap; }
+  .lb-ort-vibe {
+    font-size: .7rem; font-weight: 600;
+    background: var(--coral-light); color: #C2410C;
+    border: 1px solid var(--coral-mid);
+    padding: 2px 8px; border-radius: 100px;
+  }
+  .lb-ort-cost { font-size: .78rem; font-weight: 700; }
+
+  .lb-ort-cta {
+    font-size: .78rem;
+    font-weight: 700;
+    color: var(--coral);
+    margin-top: auto;
+  }
+
+  .lb-all-link {
+    display: inline-block;
+    font-size: .85rem;
+    font-weight: 700;
+    color: var(--text-mid);
+    text-decoration: none;
+    transition: color .15s;
+  }
+  .lb-all-link:hover { color: var(--coral); }
 
   @media (max-width: 600px) {
     .timeline-entry {
