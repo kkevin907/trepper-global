@@ -374,6 +374,23 @@
     "description": "Bereist — Lissabon, Madeira."
   },
   {
+    "id": "valencia-2025",
+    "name": "Valencia",
+    "country": "Spanien",
+    "flag": "🇪🇸",
+    "lat": 39.4699,
+    "lon": -0.3763,
+    "status": "visited",
+    "phase": "history",
+    "year": 2025,
+    "timezone": "Europe/Madrid",
+    "currency": "EUR",
+    "currencySymbol": "€",
+    "dateFrom": "2025-01-01",
+    "dateTo": null,
+    "description": "Trip nach Valencia im Januar."
+  },
+  {
     "id": "mellau-damuels-2025",
     "name": "Mellau-Damüls",
     "country": "Österreich",
