@@ -385,9 +385,9 @@
     "timezone": "Europe/Amsterdam",
     "currency": "EUR",
     "currencySymbol": "€",
-    "dateFrom": "2026-04-01",
-    "dateTo": "2026-04-05",
-    "description": "Küstenurlaub an der Nordsee — Start der 2026-Trips."
+    "dateFrom": "2026-04-03",
+    "dateTo": "2026-04-10",
+    "description": "Eine Woche Zeeland — Fahrrad, Dünen, Alpakas und Easter Rockfest."
   },
   {
     "id": "london",
