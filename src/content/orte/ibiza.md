@@ -29,10 +29,10 @@ foodSpots:
 skip:
   - Clubtickets am selben Abend kaufen — bis zu 200 € statt 75 €
   - Tickets mit Einlass erst ab 6 Uhr — klingt günstig, bringt aber kaum etwas
-  - Ohne Gepäckreservierung ankommen — Easy Locos immer vorab buchen
+  - Ohne Gepäckreservierung ankommen — Easy Lockers immer vorab buchen
 tips:
   - Clubticket mindestens 1 Monat im Voraus buchen — Opening Night 75 € statt 200 €
-  - Gepäck bei Easy Locos Ibiza vorab online reservieren — kein Walk-in
+  - "Gepäck bei [Easy Lockers Ibiza](https://easylockersibiza.com/) vorab online reservieren — kein Walk-in"
   - Shuttle Bus Flughafen ↔ Stadt je 3,50 € pro Person — kein Taxi nötig
   - "Großer Lidl am Stadtrand: Getränke für die Promenade zu normalen Preisen"
   - Nachts nur rund 11°C — leichte Jacke einpacken
@@ -42,7 +42,7 @@ draft: false
 
 Eine Nacht, kein Hotel, kein Schlaf — und trotzdem der stärkste Abschluss des Trips. Landung 19 Uhr, Abflug 09:30 Uhr am nächsten Morgen. Alles dazwischen war Ibiza.
 
-**Ankunft & Gepäck.** Direkt vom Flughafen für 3,50 € pro Person mit dem Shuttle in die Stadt. Gepäck bei Easy Locos Ibiza eingeschlossen — Spind unbedingt vorab online reservieren, sonst gibt es keinen Platz.
+**Ankunft & Gepäck.** Direkt vom Flughafen für 3,50 € pro Person mit dem Shuttle in die Stadt. Gepäck bei <a href="https://easylockersibiza.com/" target="_blank" rel="noopener">Easy Lockers Ibiza</a> eingeschlossen — Spind unbedingt vorab online reservieren, sonst gibt es keinen Platz.
 
 **Ibiza Stadt & Weg zur Meile.** Kurz durch die Stadt gelaufen, am großen Lidl am Stadtrand noch Getränke besorgt. Dann zu Fuß an der Strandpromenade entlang Richtung Playa d'en Bossa.
 
