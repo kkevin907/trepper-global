@@ -24,6 +24,7 @@ const statusColors: Record<string, string> = {
 };
 
 const preStations     = stations.filter(s => s.phase === 'home' || s.phase === 'pre');
+const history2022     = stations.filter(s => s.phase === 'history' && s.year === 2022);
 const history2023     = stations.filter(s => s.phase === 'history' && s.year === 2023);
 const history2024     = stations.filter(s => s.phase === 'history' && s.year === 2024);
 const history2025     = stations.filter(s => s.phase === 'history' && s.year === 2025);
@@ -90,7 +91,50 @@ const mainStations    = stations.filter(s => s.phase === 'main');
           </div>
         </details>
 
-        <!-- ── GRUPPE 2: 2023 (eingeklappt) ── -->
+        <!-- ── GRUPPE 2: 2022 (eingeklappt) ── -->
+        <details class="sgroup" id="group-2022">
+          <summary class="sgroup-head">
+            <span class="sgroup-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </span>
+            <span class="sgroup-title">📅 2022</span>
+            <span class="sgroup-count">{history2022.length} Trips</span>
+          </summary>
+          <div class="sgroup-body">
+            <div class="stations-list">
+              {history2022.map((station, i) => {
+                const color = '#10B981';
+                const hasReport = orteIds.has(station.id);
+                return (
+                  <div class="station-row" style={`--sc:${color};`}>
+                    <div class="station-indicator">
+                      <div class="station-dot" style={`background:${color};`}></div>
+                      {i < history2022.length - 1 && <div class="station-line"></div>}
+                    </div>
+                    <div class="station-info">
+                      <div class="station-header">
+                        <span class="station-flag">{station.flag}</span>
+                        {hasReport
+                          ? <a href={`/orte/${station.id}`} class="station-name station-name--link">{station.name}</a>
+                          : <span class="station-name">{station.name}</span>
+                        }
+                        <span class="station-country">{station.country}</span>
+                      </div>
+                      <p class="station-desc">{station.description}</p>
+                      {station.dateFrom && (
+                        <div class="station-dates">
+                          {new Date(station.dateFrom).toLocaleDateString('de-DE', { month: 'long', year: 'numeric' })}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </details>
+
+        <!-- ── GRUPPE 3: 2023 (eingeklappt) ── -->
         <details class="sgroup" id="group-2023">
           <summary class="sgroup-head">
             <span class="sgroup-icon">
