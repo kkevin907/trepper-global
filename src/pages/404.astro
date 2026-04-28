@@ -1,5 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import stations from '../data/stations.json';
+import { getCollection } from 'astro:content';
+
+const orteEntries = await getCollection('orte', ({ data }) => !data.draft);
+const orteIds = new Set(orteEntries.map(o => o.data.stationId));
+
+// Nur Stationen mit Koordinaten für die Karte
+const mapStations = stations.filter(s => s.lat && s.lon);
+const mapStationsJSON = JSON.stringify(mapStations);
+const orteIdsJSON = JSON.stringify([...orteIds]);
 ---
 
 <Layout title="404 — Seite nicht gefunden" description="Diese Seite existiert nicht — aber die Reise geht weiter.">
@@ -12,7 +22,6 @@ import Layout from '../layouts/Layout.astro';
     <div class="nf-route-line" aria-hidden="true">
       <svg viewBox="0 0 1200 120" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
-          id="route-path"
           d="M -50 60 C 150 20, 250 95, 400 55 C 550 15, 620 85, 780 50 C 900 25, 1000 80, 1250 45"
           stroke="#F97316"
           stroke-width="2.5"
@@ -21,7 +30,6 @@ import Layout from '../layouts/Layout.astro';
           fill="none"
         />
       </svg>
-      <!-- Pulsierender Punkt am Ende der Route -->
       <div class="nf-pulse-dot">
         <div class="nf-pulse-ring"></div>
         <div class="nf-pulse-core"></div>
@@ -61,11 +69,103 @@ import Layout from '../layouts/Layout.astro';
         Zurück zur letzten Seite
       </a>
     </div>
+  </div>
 
+  <!-- Karten-Sektion -->
+  <div class="nf-map-section">
+    <div class="nf-map-inner">
+      <div class="nf-map-header">
+        <p class="nf-map-label">Vielleicht hilft das weiter</p>
+        <h2 class="nf-map-title">Alle besuchten Orte auf einen Blick</h2>
+        <p class="nf-map-sub">Klick auf einen Marker um mehr zu erfahren — oder stöbere durch die Berichte.</p>
+      </div>
+      <div class="nf-map-wrap">
+        <div id="nf-map"></div>
+      </div>
+      <div class="nf-map-footer">
+        <a href="/orte" class="nf-map-link">
+          Alle Reiseberichte ansehen
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="/route" class="nf-map-link">
+          Route & Timeline
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+    </div>
   </div>
 </Layout>
 
+<script is:inline define:vars={{ mapStationsJSON, orteIdsJSON }}>
+(function() {
+  function initMap() {
+    if (typeof window.L === 'undefined') { setTimeout(initMap, 80); return; }
+    var el = document.getElementById('nf-map');
+    if (!el || el._leaflet_id) return;
+
+    var L = window.L;
+    var stations = JSON.parse(mapStationsJSON);
+    var orteIds  = JSON.parse(orteIdsJSON);
+
+    var map = L.map('nf-map', {
+      center: [30, 10],
+      zoom: 2,
+      zoomControl: true,
+      scrollWheelZoom: false,
+      attributionControl: false,
+    });
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      maxZoom: 10,
+    }).addTo(map);
+
+    var colorMap = {
+      home:     '#8B5CF6',
+      visited:  '#10B981',
+      planned:  '#10B981',
+      upcoming: '#F97316',
+      current:  '#F97316',
+    };
+
+    stations.forEach(function(s) {
+      if (!s.lat || !s.lon) return;
+      var isHistory = s.phase === 'history' || s.phase === 'pre';
+      if (isHistory && s.phase === 'pre') return; // pre-Länder weglassen, zu viele
+      var color = colorMap[s.status] || '#94A3B8';
+      var size  = s.phase === 'home' ? 14 : 11;
+      var hasReport = orteIds.indexOf(s.id) !== -1;
+
+      var icon = L.divIcon({
+        className: '',
+        html: '<div style="width:' + size + 'px;height:' + size + 'px;border-radius:50%;background:' + color + ';border:2.5px solid white;box-shadow:0 1px 6px rgba(0,0,0,0.25);' + (s.status === 'current' ? 'animation:nf-map-ping 1.5s ease-out infinite;' : '') + '"></div>',
+        iconSize: [size, size],
+        iconAnchor: [size / 2, size / 2],
+      });
+
+      var popup = '<div style="font-family:Plus Jakarta Sans,sans-serif;min-width:130px;">'
+        + '<div style="font-size:.85rem;font-weight:800;color:#0F172A;margin-bottom:2px;">' + s.flag + ' ' + s.name + '</div>'
+        + '<div style="font-size:.72rem;color:#94A3B8;margin-bottom:6px;">' + s.country + '</div>'
+        + (hasReport
+            ? '<a href="/orte/' + s.id + '" style="font-size:.75rem;font-weight:700;color:#F97316;text-decoration:none;">📖 Bericht lesen →</a>'
+            : '<span style="font-size:.72rem;color:#CBD5E1;">Bericht folgt</span>')
+        + '</div>';
+
+      L.marker([s.lat, s.lon], { icon: icon })
+        .addTo(map)
+        .bindPopup(popup, { maxWidth: 200, className: 'nf-map-popup' });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMap);
+  } else {
+    initMap();
+  }
+})();
+</script>
+
 <style>
+  /* ── HERO SECTION ── */
   .nf-wrap {
     min-height: calc(100vh - 140px);
     display: flex;
@@ -76,7 +176,6 @@ import Layout from '../layouts/Layout.astro';
     padding: 4rem 1.5rem;
   }
 
-  /* ── Riesige 404 im Hintergrund ── */
   .nf-bg-number {
     position: absolute;
     top: 50%;
@@ -93,7 +192,6 @@ import Layout from '../layouts/Layout.astro';
     animation: nf-fade-in 0.8s ease both;
   }
 
-  /* ── Animierte Route ── */
   .nf-route-line {
     position: absolute;
     top: 50%;
@@ -103,32 +201,19 @@ import Layout from '../layouts/Layout.astro';
     height: 120px;
     pointer-events: none;
   }
-
-  .nf-route-line svg {
-    width: 100%;
-    height: 100%;
-  }
-
+  .nf-route-line svg { width: 100%; height: 100%; }
   .nf-route-line svg path {
-    stroke-dasharray: 10 8;
     stroke-dashoffset: 800;
     animation: nf-draw-route 2s cubic-bezier(.4,0,.2,1) 0.3s forwards;
     opacity: 0.35;
   }
 
   @keyframes nf-draw-route {
-    from {
-      stroke-dashoffset: 800;
-      opacity: 0;
-    }
-    10% { opacity: 0.35; }
-    to {
-      stroke-dashoffset: 0;
-      opacity: 0.35;
-    }
+    from { stroke-dashoffset: 800; opacity: 0; }
+    10%  { opacity: 0.35; }
+    to   { stroke-dashoffset: 0; opacity: 0.35; }
   }
 
-  /* ── Pulsierender Punkt ── */
   .nf-pulse-dot {
     position: absolute;
     right: calc(100% / 12);
@@ -142,7 +227,6 @@ import Layout from '../layouts/Layout.astro';
     opacity: 0;
     animation: nf-appear 0.4s ease 2s forwards;
   }
-
   .nf-pulse-ring {
     position: absolute;
     width: 32px;
@@ -151,7 +235,6 @@ import Layout from '../layouts/Layout.astro';
     background: #F9731620;
     animation: nf-ping 1.6s ease-out 2.2s infinite;
   }
-
   .nf-pulse-core {
     width: 12px;
     height: 12px;
@@ -163,16 +246,9 @@ import Layout from '../layouts/Layout.astro';
     z-index: 1;
   }
 
-  @keyframes nf-ping {
-    0%   { transform: scale(1); opacity: 0.6; }
-    100% { transform: scale(2.5); opacity: 0; }
-  }
+  @keyframes nf-ping   { 0% { transform: scale(1); opacity: .6; } 100% { transform: scale(2.5); opacity: 0; } }
+  @keyframes nf-appear { to { opacity: 1; } }
 
-  @keyframes nf-appear {
-    to { opacity: 1; }
-  }
-
-  /* ── Inhalt ── */
   .nf-content {
     position: relative;
     z-index: 10;
@@ -184,17 +260,9 @@ import Layout from '../layouts/Layout.astro';
     animation: nf-fade-up 0.7s ease 0.1s both;
   }
 
-  @keyframes nf-fade-up {
-    from { opacity: 0; transform: translateY(16px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+  @keyframes nf-fade-up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes nf-fade-in { from { opacity: 0; } to { opacity: 1; } }
 
-  @keyframes nf-fade-in {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-  }
-
-  /* Badge */
   .nf-badge {
     display: inline-flex;
     align-items: center;
@@ -209,7 +277,6 @@ import Layout from '../layouts/Layout.astro';
     border-radius: 100px;
     border: 1.5px solid #FDBA74;
   }
-
   .nf-badge-dot {
     width: 6px;
     height: 6px;
@@ -218,7 +285,6 @@ import Layout from '../layouts/Layout.astro';
     display: inline-block;
   }
 
-  /* Headline */
   .nf-headline {
     font-size: clamp(2rem, 6vw, 3.75rem);
     font-weight: 900;
@@ -227,8 +293,6 @@ import Layout from '../layouts/Layout.astro';
     color: var(--text);
     max-width: 18ch;
   }
-
-  /* Subtext */
   .nf-sub {
     font-size: clamp(.95rem, 2vw, 1.15rem);
     color: var(--text-mid);
@@ -236,7 +300,6 @@ import Layout from '../layouts/Layout.astro';
     max-width: 40ch;
   }
 
-  /* Koordinaten */
   .nf-coords {
     display: flex;
     align-items: center;
@@ -250,10 +313,8 @@ import Layout from '../layouts/Layout.astro';
     border-radius: 100px;
     letter-spacing: .04em;
   }
-
   .nf-coords-sep { color: var(--border); }
 
-  /* Buttons */
   .nf-actions {
     display: flex;
     gap: .75rem;
@@ -261,11 +322,9 @@ import Layout from '../layouts/Layout.astro';
     justify-content: center;
     margin-top: .25rem;
   }
-
   .nf-btn {
     display: inline-flex;
     align-items: center;
-    gap: .4rem;
     padding: .75rem 1.75rem;
     border-radius: 100px;
     font-size: .9rem;
@@ -274,30 +333,19 @@ import Layout from '../layouts/Layout.astro';
     transition: all .18s ease;
     white-space: nowrap;
   }
-
   .nf-btn--primary {
     background: var(--coral);
     color: white;
     box-shadow: 0 4px 16px rgba(249,115,22,0.3);
   }
-  .nf-btn--primary:hover {
-    background: #EA6A0A;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(249,115,22,0.4);
-  }
-
+  .nf-btn--primary:hover { background: #EA6A0A; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(249,115,22,0.4); }
   .nf-btn--ghost {
     background: white;
     color: var(--text);
     border: 1.5px solid var(--border);
   }
-  .nf-btn--ghost:hover {
-    border-color: #CBD5E1;
-    background: var(--bg-soft);
-    transform: translateY(-2px);
-  }
+  .nf-btn--ghost:hover { border-color: #CBD5E1; background: var(--bg-soft); transform: translateY(-2px); }
 
-  /* Zurück-Link */
   .nf-back {
     display: inline-flex;
     align-items: center;
@@ -309,16 +357,90 @@ import Layout from '../layouts/Layout.astro';
   }
   .nf-back:hover { color: var(--text-mid); }
 
-  /* Mobile */
+  /* ── KARTEN-SEKTION ── */
+  .nf-map-section {
+    background: var(--bg-soft);
+    border-top: 1.5px solid var(--border);
+    padding: 3rem 1.5rem 4rem;
+  }
+  .nf-map-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .nf-map-header { text-align: center; }
+  .nf-map-label {
+    font-size: .75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--text-light);
+    margin-bottom: .5rem;
+  }
+  .nf-map-title {
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+    font-weight: 800;
+    letter-spacing: -.03em;
+    color: var(--text);
+    margin-bottom: .5rem;
+  }
+  .nf-map-sub {
+    font-size: .9rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+  }
+
+  .nf-map-wrap {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(15,23,42,0.1);
+    border: 3px solid white;
+    outline: 1px solid var(--border);
+  }
+  #nf-map {
+    height: 380px;
+    width: 100%;
+  }
+
+  .nf-map-footer {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .nf-map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    font-size: .88rem;
+    font-weight: 700;
+    color: var(--coral);
+    transition: gap .15s;
+  }
+  .nf-map-link:hover { gap: .65rem; }
+
+  /* Leaflet popup override */
+  :global(.nf-map-popup .leaflet-popup-content-wrapper) {
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(15,23,42,0.15);
+    border: 1.5px solid #E2E8F0;
+    padding: 0;
+  }
+  :global(.nf-map-popup .leaflet-popup-content) {
+    margin: 10px 14px;
+  }
+  :global(.nf-map-popup .leaflet-popup-tip) {
+    background: white;
+  }
+
   @media (max-width: 600px) {
-    .nf-bg-number {
-      font-size: clamp(10rem, 55vw, 16rem);
-    }
-    .nf-coords {
-      font-size: .7rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+    .nf-bg-number { font-size: clamp(10rem, 55vw, 16rem); }
+    .nf-coords { font-size: .7rem; flex-wrap: wrap; justify-content: center; }
     .nf-btn { padding: .7rem 1.4rem; }
+    #nf-map { height: 300px; }
+    .nf-map-footer { gap: 1.25rem; }
   }
 </style>
