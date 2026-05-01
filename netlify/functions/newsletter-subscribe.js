@@ -34,7 +34,7 @@ export default async function handler(req, context) {
     });
   }
 
-  const payload = { email };
+  const payload = { email, double_optin: true };
   if (groupId) payload.groups = [groupId];
 
   const mlRes = await fetch('https://connect.mailerlite.com/api/subscribers', {
