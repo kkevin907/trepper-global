@@ -48,6 +48,11 @@ const doFilters    = showFilters;
     justify-content: center;
     padding: 8px 0 6px;
   }
+  @media (max-width: 600px) {
+    .map-outer-wrap > div[id$="-wrap"] {
+      height: 300px !important;
+    }
+  }
 </style>
 
 <script is:inline define:vars={{ stationsJSON, orteIdsJSON, mapId, doRoute, doFilters, currentStationId }}>

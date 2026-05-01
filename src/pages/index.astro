@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import LocationBadge from '../components/LocationBadge.astro';
 import WorldMap from '../components/WorldMap.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
 import stationsData from '../data/stations.json';
 import config from '../data/config.json';
 import { getCollection } from 'astro:content';
@@ -463,6 +464,15 @@ const locLon = currentStation.lon;
 ═══════════════════════════════════════════════════════ -->
 
 <!-- ═══════════════════════════════════════════════════════
+     NEWSLETTER
+═══════════════════════════════════════════════════════ -->
+<section class="ph-sec ph-sec-soft reveal">
+  <div class="ph-wrap">
+    <NewsletterSignup variant="section" />
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
      INSTAGRAM
 ═══════════════════════════════════════════════════════ -->
 <section class="ph-ig reveal">
@@ -472,9 +482,9 @@ const locLon = currentStation.lon;
     </div>
     <div style="flex:1;">
       <strong style="font-size:1rem;font-weight:700;color:#0F172A;display:block;">Auf Instagram mitverfolgen</strong>
-      <p style="font-size:.875rem;color:#64748B;margin-top:2px;">Fotos, Stories, Updates in Echtzeit — @trepper</p>
+      <p style="font-size:.875rem;color:#64748B;margin-top:2px;">Fotos, Stories, Updates in Echtzeit — @kevin.ontour</p>
     </div>
-    <a href="https://instagram.com/trepper" target="_blank" rel="noopener" class="ph-ig-btn">Zum Profil</a>
+    <a href="https://instagram.com/kevin.ontour" target="_blank" rel="noopener" class="ph-ig-btn">Zum Profil</a>
   </div>
 </section>
 

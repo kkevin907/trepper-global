@@ -331,7 +331,9 @@ import WorldMap from '../components/WorldMap.astro';
   @media (max-width: 600px) {
     .nf-bg-number { font-size: clamp(10rem, 55vw, 16rem); }
     .nf-coords { font-size: .7rem; flex-wrap: wrap; justify-content: center; }
-    .nf-btn { padding: .7rem 1.4rem; }
+    .nf-btn { padding: .7rem 1.4rem; min-height: 44px; }
+    .nf-actions { flex-direction: column; width: 100%; max-width: 280px; }
+    .nf-actions .nf-btn { justify-content: center; }
     .nf-map-section { padding: 2rem 1.25rem 3rem; }
   }
 </style>
