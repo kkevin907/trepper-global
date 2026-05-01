@@ -19,8 +19,8 @@ function ml(text: string): string {
   );
 }
 
-const dateFrom = new Date(d.dateFrom).toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' });
-const dateTo   = new Date(d.dateTo).toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' });
+const dateFrom = new Date(d.dateFrom).toLocaleDateString('de-DE', { month: 'long', year: 'numeric' });
+const dateTo   = new Date(d.dateTo).toLocaleDateString('de-DE', { month: 'long', year: 'numeric' });
 
 const costLabels = ['', 'Günstig', 'Mittel', 'Teuer'];
 const costColors = ['', '#10B981', '#F97316', '#EF4444'];

@@ -103,7 +103,7 @@ const started  = daysLeft <= 0;
                       {entry.frontmatter.location}, {entry.frontmatter.country}
                     </span>
                     <time class="entry-date">
-                      {date.toLocaleDateString('de-DE', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
+                      {date.toLocaleDateString('de-DE', { month: 'long', year: 'numeric' })}
                     </time>
                   </div>
                   <h2 class="entry-title">{entry.frontmatter.title}</h2>

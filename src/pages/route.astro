@@ -301,8 +301,8 @@ const mainStations    = stations.filter(s => s.phase === 'main');
                       <p class="station-desc">{station.description}</p>
                       {station.dateFrom && (
                         <div class="station-dates">
-                          {new Date(station.dateFrom).toLocaleDateString('de-DE', { day: 'numeric', month: 'long' })}
-                          {station.dateTo && ` → ${new Date(station.dateTo).toLocaleDateString('de-DE', { day: 'numeric', month: 'long', year: 'numeric' })}`}
+                          {new Date(station.dateFrom).toLocaleDateString('de-DE', { month: 'long', year: 'numeric' })}
+                          {station.dateTo && ` → ${new Date(station.dateTo).toLocaleDateString('de-DE', { month: 'long', year: 'numeric' })}`}
                         </div>
                       )}
                     </div>
