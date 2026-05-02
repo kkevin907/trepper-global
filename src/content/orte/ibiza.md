@@ -7,6 +7,7 @@ dateFrom: "2026-04-25"
 dateTo: "2026-04-26"
 nights: 1
 vibe: One Night Only
+description: Eine Nacht, kein Hotel, kein Schlaf — Ibiza Opening Night 2026 mit Skepta im Hï.
 costLevel: 3
 rating: 5
 highlights:
