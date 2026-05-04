@@ -8,6 +8,10 @@ dateTo: "2026-04-10"
 nights: 7
 vibe: Familie & Nordsee
 costLevel: 2
+mapCenter:
+  lat: 51.7317
+  lon: 3.7759
+budgetPerDay: "30–60 €"
 rating: 4
 highlights:
   - "[Alpaca en Falabella Ranch](https://alpaca-falabellaranch.nl/) in Kerkwerve — Alpaka-Wanderung, ein besonderes Erlebnis"

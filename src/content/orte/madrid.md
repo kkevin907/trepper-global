@@ -8,6 +8,10 @@ dateTo: "2026-04-21"
 nights: 3
 vibe: Tapas & Großstadtpuls
 costLevel: 2
+mapCenter:
+  lat: 40.4168
+  lon: -3.7038
+budgetPerDay: "60–100 €"
 rating: 4
 highlights:
   - "[El Tigre](https://maps.google.com/?q=El+Tigre+Calle+Infantas+30+Madrid) — Sidrería mit kostenlosem Tapas-Wahnsinn zu jedem Drink, unbedingt hingehen"
@@ -17,18 +21,24 @@ highlights:
   - "[Parque del Retiro](https://maps.google.com/?q=Parque+del+Retiro+Madrid) — riesiger Stadtpark, Bootsfahren auf dem See, Entspannung pur"
 foodSpots:
   - name: El Tigre
+    lat: 40.4213
+    lon: -3.6987
     what: Sidrería mit freien Tapas zu jedem Getränk — Croquetas, Chorizo, Patatas Bravas, alles auf einmal
     stars: 5
     area: Centro / Chueca (Calle Infantas)
     tip: "Nur Bargeld — keine Karte. Früh hingehen, es wird voll. Halber Liter Bier ca. 7 €, dazu kommt ein komplettes Tablett Tapas gratis."
     link: "https://maps.google.com/?q=El+Tigre+Calle+Infantas+30+Madrid"
   - name: Salt In Cake
+    lat: 40.4167
+    lon: -3.7011
     what: Frühstückscafé mit Cinnamon Rolls, Cakes und Gebäck — gut aber etwas teuer
     stars: 4
     area: Madrid Centro
     tip: Gut für den ersten Morgen, aber nicht günstig für Madrid-Verhältnisse
     link: "https://maps.google.com/?q=Salt+In+Cake+Madrid"
   - name: Gourmet Experience El Corte Inglés
+    lat: 40.4199
+    lon: -3.7048
     what: Feinkost-Foodcourt im 9. Stock mit Panoramablick über die Gran Vía
     stars: 4
     area: Plaza del Callao

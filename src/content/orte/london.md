@@ -8,6 +8,10 @@ dateTo: "2026-04-18"
 nights: 2
 vibe: "East End Energy"
 costLevel: 3
+mapCenter:
+  lat: 51.5074
+  lon: -0.1278
+budgetPerDay: "100–180 €"
 rating: 4
 coverImage: ""
 highlights:
@@ -17,18 +21,24 @@ highlights:
   - "[St. James's Park](https://maps.google.com/?q=St+James+Park+London) & [Kensington Gardens](https://maps.google.com/?q=Kensington+Gardens+London) — mitten in der City und trotzdem komplett ruhig"
 foodSpots:
   - name: "YUU Kitchen"
+    lat: 51.5191
+    lon: -0.0773
     what: "Asiatische Bao Buns & Small Plates — frisch, kreativ, sättigend"
     stars: 5
     area: "Spitalfields"
     tip: "Mittagszeit einplanen, dann ist es weniger voll. Direkt am Old Spitalfields Market."
     link: "https://www.yuukitchen.com/"
   - name: "The Wolfpack Bar"
+    lat: 51.5206
+    lon: -0.0781
     what: "Klassischer East-End-Pub — Bier, Vibes, genau so wie man es sich vorstellt"
     stars: 5
     area: "Spitalfields / City"
     tip: "Abends hingehen wenn die lokalen Büroarbeiter nach der Arbeit reinkommen — das ist die echte Atmosphäre"
     link: "https://maps.google.com/?q=The+Wolfpack+Bar+London+Spitalfields"
   - name: "Borough Market"
+    lat: 51.5055
+    lon: -0.0905
     what: "Street Food & Feinkost von allem was die Welt zu bieten hat"
     stars: 4
     area: "Southwark"

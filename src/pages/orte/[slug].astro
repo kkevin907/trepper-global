@@ -11,7 +11,6 @@ const { ort } = Astro.props;
 const { Content } = await render(ort);
 const d = ort.data;
 
-// Konvertiert [text](url) → klickbaren Link mit externem Target
 function ml(text: string): string {
   return text.replace(
     /\[([^\]]+)\]\(([^)]+)\)/g,
@@ -24,7 +23,25 @@ const dateTo   = new Date(d.dateTo).toLocaleDateString('de-DE', { month: 'long',
 
 const costLabels = ['', 'Günstig', 'Mittel', 'Teuer'];
 const costColors = ['', '#10B981', '#F97316', '#EF4444'];
+const costBg     = ['', '#D1FAE5', '#FFF7ED', '#FEE2E2'];
 const stars = '★'.repeat(d.rating) + '☆'.repeat(5 - d.rating);
+
+// Food spots with coordinates for map
+const mapSpots = (d.foodSpots || []).filter((f: any) => f.lat && f.lon);
+const mapCenter = (d as any).mapCenter;
+const budgetPerDay = (d as any).budgetPerDay;
+
+const mapData = JSON.stringify({
+  center: mapCenter || null,
+  spots: mapSpots.map((f: any) => ({
+    name: f.name,
+    lat: f.lat,
+    lon: f.lon,
+    stars: f.stars,
+    area: f.area || '',
+    what: f.what || '',
+  })),
+});
 ---
 
 <Layout
@@ -44,11 +61,11 @@ const stars = '★'.repeat(d.rating) + '☆'.repeat(5 - d.rating);
         </div>
       </div>
       <div class="or-chips">
-        <span class="or-chip">{dateFrom} – {dateTo}</span>
-        <span class="or-chip">{d.nights} Nächte</span>
+        <span class="or-chip">{dateFrom}{dateFrom !== dateTo ? ` – ${dateTo}` : ''}</span>
+        <span class="or-chip">{d.nights} {d.nights === 1 ? 'Nacht' : 'Nächte'}</span>
         <span class="or-chip or-chip-vibe">{d.vibe}</span>
-        <span class="or-chip" style={`color:${costColors[d.costLevel]};border-color:${costColors[d.costLevel]}20;background:${costColors[d.costLevel]}10;`}>
-          {'€'.repeat(d.costLevel)} {costLabels[d.costLevel]}
+        <span class="or-chip" style={`color:${costColors[d.costLevel]};border-color:${costColors[d.costLevel]}40;background:${costBg[d.costLevel]};`}>
+          {'€'.repeat(d.costLevel)} · {costLabels[d.costLevel]}
         </span>
         <span class="or-chip or-chip-stars" title={`${d.rating}/5`}>{stars}</span>
       </div>
@@ -57,21 +74,17 @@ const stars = '★'.repeat(d.rating) + '☆'.repeat(5 - d.rating);
 
   <div class="or-wrap">
     <div class="or-inner">
-
-      <!-- ZWEISPALTEN LAYOUT -->
       <div class="or-grid">
 
-        <!-- LINKE SPALTE: Bericht + Food + Skip -->
+        <!-- ── LINKE SPALTE ── -->
         <div class="or-main">
 
-          <!-- Cover-Bild falls vorhanden -->
           {d.coverImage && (
             <div class="or-cover">
               <img src={d.coverImage} alt={`${d.title} Titelbild`} />
             </div>
           )}
 
-          <!-- Persönlicher Bericht -->
           <div class="or-prose">
             <Content />
           </div>
@@ -80,7 +93,7 @@ const stars = '★'.repeat(d.rating) + '☆'.repeat(5 - d.rating);
           <div class="or-section">
             <h2 class="or-section-title">🍽️ Food-Spots</h2>
             <div class="or-food-list">
-              {d.foodSpots.map(f => (
+              {d.foodSpots.map((f: any) => (
                 <div class="or-food-card">
                   <div class="or-food-header">
                     {f.link
@@ -92,17 +105,30 @@ const stars = '★'.repeat(d.rating) + '☆'.repeat(5 - d.rating);
                   <p class="or-food-what">{f.what}</p>
                   <div class="or-food-meta">
                     {f.area && <span class="or-food-area">📍 {f.area}</span>}
-                    {f.tip && <span class="or-food-tip">💬 {f.tip}</span>}
+                    {f.tip  && <span class="or-food-tip">💬 {f.tip}</span>}
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          <!-- FOTOS (Platzhalter) -->
+          <!-- STADTKARTE -->
+          {mapCenter && (
+            <div class="or-section">
+              <h2 class="or-section-title">🗺️ Karte & Food-Spots</h2>
+              <div class="or-map-wrap">
+                <div id="or-map" class="or-map"></div>
+                {mapSpots.length > 0 && (
+                  <p class="or-map-hint">📍 {mapSpots.length} Food-Spot{mapSpots.length > 1 ? 's' : ''} markiert — auf Marker klicken für Details</p>
+                )}
+              </div>
+            </div>
+          )}
+
+          <!-- FOTOS -->
           <div class="or-section">
             <h2 class="or-section-title">📷 Fotos</h2>
-            <div class="or-photo-grid" id={`photo-grid-${ort.id}`}>
+            <div class="or-photo-grid">
               <div class="or-photo-empty">
                 <span>Fotos folgen bald</span>
               </div>
@@ -111,23 +137,57 @@ const stars = '★'.repeat(d.rating) + '☆'.repeat(5 - d.rating);
 
         </div>
 
-        <!-- RECHTE SPALTE: Highlights, Märkte, Skip, Tipps -->
+        <!-- ── RECHTE SPALTE ── -->
         <div class="or-sidebar">
 
-          <!-- Highlights -->
+          <!-- BUDGET KARTE -->
+          {budgetPerDay && (
+            <div class="or-sidebar-card or-budget-card">
+              <h3 class="or-sidebar-title">💰 Budget-Einschätzung</h3>
+              <div class="or-budget-level">
+                {[1,2,3].map(i => (
+                  <div class={`or-budget-dot ${i <= d.costLevel ? 'or-budget-dot--active' : ''}`}
+                       style={i <= d.costLevel ? `background:${costColors[d.costLevel]}` : ''}></div>
+                ))}
+                <span class="or-budget-label" style={`color:${costColors[d.costLevel]}`}>
+                  {costLabels[d.costLevel]}
+                </span>
+              </div>
+              <div class="or-budget-amount">
+                <span class="or-budget-num">{budgetPerDay}</span>
+                <span class="or-budget-sub">pro Person / Tag</span>
+              </div>
+              <div class="or-budget-rows">
+                <div class="or-budget-row">
+                  <span>🏨 Unterkunft</span>
+                  <span>{d.costLevel === 1 ? 'ab 15 €' : d.costLevel === 2 ? 'ab 25 €' : 'ab 60 €'}</span>
+                </div>
+                <div class="or-budget-row">
+                  <span>🍽️ Essen</span>
+                  <span>{d.costLevel === 1 ? '10–20 €' : d.costLevel === 2 ? '20–40 €' : '40–80 €'}</span>
+                </div>
+                <div class="or-budget-row">
+                  <span>🚌 Transport</span>
+                  <span>{d.costLevel === 1 ? '2–5 €' : d.costLevel === 2 ? '5–15 €' : '10–25 €'}</span>
+                </div>
+              </div>
+            </div>
+          )}
+
+          <!-- HIGHLIGHTS -->
           <div class="or-sidebar-card">
             <h3 class="or-sidebar-title">📍 Highlights</h3>
             <ul class="or-list">
-              {d.highlights.map(h => <li set:html={ml(h)} />)}
+              {d.highlights.map((h: any) => <li set:html={ml(h)} />)}
             </ul>
           </div>
 
-          <!-- Märkte -->
+          <!-- MÄRKTE -->
           {d.markets && d.markets.length > 0 && (
             <div class="or-sidebar-card">
               <h3 class="or-sidebar-title">🛒 Märkte</h3>
               <div class="or-market-list">
-                {d.markets.map(m => (
+                {d.markets.map((m: any) => (
                   <div class="or-market">
                     {m.link
                       ? <a href={m.link} target="_blank" rel="noopener noreferrer" class="or-market-name or-market-name--link">{m.name} ↗</a>
@@ -144,15 +204,15 @@ const stars = '★'.repeat(d.rating) + '☆'.repeat(5 - d.rating);
             </div>
           )}
 
-          <!-- Tipps -->
+          <!-- TIPPS -->
           <div class="or-sidebar-card">
             <h3 class="or-sidebar-title">💡 Tipps</h3>
             <ul class="or-list">
-              {d.tips.map(t => <li set:html={ml(t)} />)}
+              {d.tips.map((t: any) => <li set:html={ml(t)} />)}
             </ul>
           </div>
 
-          <!-- Bestes Viertel -->
+          <!-- BESTES VIERTEL -->
           {d.bestArea && (
             <div class="or-sidebar-card or-sidebar-card--highlight">
               <h3 class="or-sidebar-title">🏘️ Bestes Viertel</h3>
@@ -160,227 +220,213 @@ const stars = '★'.repeat(d.rating) + '☆'.repeat(5 - d.rating);
             </div>
           )}
 
-          <!-- Meiden -->
+          <!-- EHER MEIDEN -->
           {d.skip && d.skip.length > 0 && (
             <div class="or-sidebar-card or-sidebar-card--skip">
               <h3 class="or-sidebar-title">🚫 Eher meiden</h3>
               <ul class="or-list or-list--skip">
-                {d.skip.map(s => <li set:html={ml(s)} />)}
+                {d.skip.map((s: any) => <li set:html={ml(s)} />)}
               </ul>
             </div>
           )}
 
         </div>
       </div>
-
     </div>
   </div>
 
 </Layout>
 
+<!-- Leaflet map init -->
+<script define:vars={{ mapData }}>
+  (function () {
+    const parsed = JSON.parse(mapData);
+    if (!parsed.center) return;
+
+    function initMap() {
+      if (!window.L) { setTimeout(initMap, 100); return; }
+
+      const mapEl = document.getElementById('or-map');
+      if (!mapEl) return;
+
+      const map = L.map('or-map', { zoomControl: true, scrollWheelZoom: false })
+        .setView([parsed.center.lat, parsed.center.lon], 13);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        maxZoom: 19,
+      }).addTo(map);
+
+      // Custom marker icon
+      function makeIcon(color) {
+        return L.divIcon({
+          className: '',
+          html: `<div style="
+            width:32px;height:32px;border-radius:50% 50% 50% 0;
+            background:${color};border:3px solid white;
+            box-shadow:0 2px 8px rgba(0,0,0,0.3);
+            transform:rotate(-45deg);
+          "></div>`,
+          iconSize: [32, 32],
+          iconAnchor: [16, 32],
+          popupAnchor: [0, -34],
+        });
+      }
+
+      // Center marker
+      L.marker([parsed.center.lat, parsed.center.lon], {
+        icon: makeIcon('#F97316'),
+      }).addTo(map);
+
+      // Food spot markers
+      const starStr = (n) => '★'.repeat(n) + '☆'.repeat(5 - n);
+      parsed.spots.forEach(function (spot) {
+        const popup = `
+          <div style="font-family:sans-serif;min-width:160px;">
+            <div style="font-weight:800;font-size:13px;color:#0F172A;margin-bottom:2px;">${spot.name}</div>
+            <div style="font-size:11px;color:#F59E0B;margin-bottom:4px;">${starStr(spot.stars)}</div>
+            ${spot.area ? `<div style="font-size:11px;color:#64748B;">📍 ${spot.area}</div>` : ''}
+            ${spot.what ? `<div style="font-size:11px;color:#475569;margin-top:4px;line-height:1.4;">${spot.what}</div>` : ''}
+          </div>`;
+        L.marker([spot.lat, spot.lon], { icon: makeIcon('#0F172A') })
+          .addTo(map)
+          .bindPopup(popup);
+      });
+
+      // Fit bounds to all markers if spots exist
+      if (parsed.spots.length > 0) {
+        const allCoords = [
+          [parsed.center.lat, parsed.center.lon],
+          ...parsed.spots.map(s => [s.lat, s.lon]),
+        ];
+        map.fitBounds(allCoords, { padding: [32, 32], maxZoom: 14 });
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initMap);
+    } else {
+      initMap();
+    }
+  })();
+</script>
+
 <style>
   /* HEADER */
-  .or-header {
-    background: linear-gradient(160deg, #F8FAFC 0%, #ffffff 60%);
-    border-bottom: 1px solid var(--border);
-    padding: 2.5rem 1.5rem 2.5rem;
-  }
-  .or-header-inner { max-width: 1100px; margin: 0 auto; }
-
-  .or-back {
-    display: inline-block;
-    font-size: .82rem;
-    font-weight: 600;
-    color: var(--text-mid);
-    margin-bottom: 1.25rem;
-    text-decoration: none;
-    transition: color .15s;
-  }
-  .or-back:hover { color: var(--coral); }
-
-  .or-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
-  .or-flag  { font-size: 3.5rem; line-height: 1; }
-  .or-title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; letter-spacing: -.04em; color: var(--text); }
-  .or-country { font-size: .9rem; color: var(--text-mid); margin-top: .2rem; }
-
-  .or-chips { display: flex; flex-wrap: wrap; gap: .5rem; }
-  .or-chip {
-    display: inline-block;
-    padding: .28rem .8rem;
-    border-radius: 100px;
-    font-size: .75rem;
-    font-weight: 600;
-    border: 1.5px solid var(--border);
-    background: #F8FAFC;
-    color: var(--text-mid);
-    white-space: nowrap;
-  }
-  .or-chip-vibe { background: var(--coral-light); color: #C2410C; border-color: var(--coral-mid); }
-  .or-chip-stars { color: #F59E0B; letter-spacing: 1px; }
+  .or-header { background: linear-gradient(160deg,#F8FAFC 0%,#ffffff 60%); border-bottom:1px solid var(--border); padding:2.5rem 1.5rem; }
+  .or-header-inner { max-width:1100px; margin:0 auto; }
+  .or-back { display:inline-block; font-size:.82rem; font-weight:600; color:var(--text-mid); margin-bottom:1.25rem; text-decoration:none; transition:color .15s; }
+  .or-back:hover { color:var(--coral); }
+  .or-meta { display:flex; align-items:center; gap:1rem; margin-bottom:1rem; }
+  .or-flag  { font-size:3.5rem; line-height:1; }
+  .or-title { font-size:clamp(2rem,5vw,3rem); font-weight:800; letter-spacing:-.04em; color:var(--text); }
+  .or-country { font-size:.9rem; color:var(--text-mid); margin-top:.2rem; }
+  .or-chips { display:flex; flex-wrap:wrap; gap:.5rem; }
+  .or-chip { display:inline-block; padding:.28rem .8rem; border-radius:100px; font-size:.75rem; font-weight:600; border:1.5px solid var(--border); background:#F8FAFC; color:var(--text-mid); white-space:nowrap; }
+  .or-chip-vibe { background:var(--coral-light); color:#C2410C; border-color:var(--coral-mid); }
+  .or-chip-stars { color:#F59E0B; letter-spacing:1px; }
 
   /* LAYOUT */
-  .or-wrap  { padding: 2.5rem 1.5rem 5rem; }
-  .or-inner { max-width: 1100px; margin: 0 auto; }
+  .or-wrap  { padding:2.5rem 1.5rem 5rem; }
+  .or-inner { max-width:1100px; margin:0 auto; }
+  .or-grid  { display:grid; grid-template-columns:1fr 320px; gap:2.5rem; align-items:start; }
 
-  .or-grid {
-    display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 2.5rem;
-    align-items: start;
-  }
+  /* MAIN */
+  .or-cover { margin-bottom:2rem; border-radius:16px; overflow:hidden; }
+  .or-cover img { width:100%; height:380px; object-fit:cover; border-radius:16px; }
+  .or-prose { font-size:.97rem; color:var(--text-mid); line-height:1.85; margin-bottom:2.5rem; }
+  .or-prose p { margin-bottom:1rem; }
+  .or-prose p:last-child { margin-bottom:0; }
+  .or-prose strong { color:var(--text); font-weight:700; }
+  :global(.or-photo-hint) { display:flex; align-items:center; gap:.5rem; background:#F8FAFC; border:2px dashed var(--border); border-radius:10px; padding:.75rem 1rem; margin:1.25rem 0; font-size:.82rem; color:var(--text-light); }
+  :global(.or-photo-hint em) { font-style:normal; color:var(--text-light); }
+  :global(.or-inline-link) { color:var(--coral); text-decoration:underline; text-decoration-color:var(--coral-mid); text-underline-offset:2px; transition:opacity .15s; }
+  :global(.or-inline-link:hover) { opacity:.75; }
 
-  /* MAIN COLUMN */
-  .or-cover { margin-bottom: 2rem; border-radius: 16px; overflow: hidden; }
-  .or-cover img { width: 100%; height: 380px; object-fit: cover; border-radius: 16px; }
-
-  .or-prose {
-    font-size: .97rem;
-    color: var(--text-mid);
-    line-height: 1.85;
-    margin-bottom: 2.5rem;
-  }
-  .or-prose p { margin-bottom: 1rem; }
-  .or-prose p:last-child { margin-bottom: 0; }
-  .or-prose strong { color: var(--text); font-weight: 700; }
-
-  /* Inline photo placeholders in prose */
-  :global(.or-photo-hint) {
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-    background: #F8FAFC;
-    border: 2px dashed var(--border);
-    border-radius: 10px;
-    padding: .75rem 1rem;
-    margin: 1.25rem 0;
-    font-size: .82rem;
-    color: var(--text-light);
-    font-style: normal;
-  }
-  :global(.or-photo-hint em) {
-    font-style: normal;
-    color: var(--text-light);
-  }
-
-  .or-section { margin-bottom: 2.5rem; }
-  .or-section-title {
-    font-size: 1.1rem;
-    font-weight: 800;
-    letter-spacing: -.02em;
-    color: var(--text);
-    margin-bottom: 1rem;
-    padding-bottom: .6rem;
-    border-bottom: 2px solid var(--border);
-  }
+  .or-section { margin-bottom:2.5rem; }
+  .or-section-title { font-size:1.1rem; font-weight:800; letter-spacing:-.02em; color:var(--text); margin-bottom:1rem; padding-bottom:.6rem; border-bottom:2px solid var(--border); }
 
   /* FOOD */
-  .or-food-list { display: flex; flex-direction: column; gap: .75rem; }
-  .or-food-card {
-    background: #ffffff;
-    border: 1.5px solid var(--border);
-    border-radius: 12px;
-    padding: 1rem 1.1rem;
-    transition: box-shadow .15s;
-  }
-  .or-food-card:hover { box-shadow: var(--shadow); }
-  .or-food-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: .3rem; }
-  .or-food-name  { font-size: .95rem; font-weight: 700; color: var(--text); }
-  .or-food-name--link { text-decoration: none; color: var(--coral); transition: opacity .15s; }
-  .or-food-name--link:hover { opacity: .75; }
-  .or-market-name--link { font-size: .88rem; font-weight: 700; color: var(--coral); text-decoration: none; display: block; margin-bottom: .2rem; transition: opacity .15s; }
-  .or-market-name--link:hover { opacity: .75; }
-  :global(.or-inline-link) { color: var(--coral); text-decoration: underline; text-decoration-color: var(--coral-mid); text-underline-offset: 2px; transition: opacity .15s; }
-  :global(.or-inline-link:hover) { opacity: .75; }
-  .or-food-stars { color: #F59E0B; font-size: .85rem; letter-spacing: 1px; }
-  .or-food-what  { font-size: .85rem; color: var(--text-mid); margin-bottom: .4rem; }
-  .or-food-meta  { display: flex; flex-wrap: wrap; gap: .5rem; }
-  .or-food-area  { font-size: .75rem; color: var(--text-light); }
-  .or-food-tip   { font-size: .75rem; color: var(--coral); font-weight: 600; }
+  .or-food-list { display:flex; flex-direction:column; gap:.75rem; }
+  .or-food-card { background:#ffffff; border:1.5px solid var(--border); border-radius:12px; padding:1rem 1.1rem; transition:box-shadow .15s; }
+  .or-food-card:hover { box-shadow:var(--shadow); }
+  .or-food-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:.3rem; }
+  .or-food-name { font-size:.95rem; font-weight:700; color:var(--text); }
+  .or-food-name--link { text-decoration:none; color:var(--coral); transition:opacity .15s; }
+  .or-food-name--link:hover { opacity:.75; }
+  .or-food-stars { color:#F59E0B; font-size:.85rem; letter-spacing:1px; }
+  .or-food-what  { font-size:.85rem; color:var(--text-mid); margin-bottom:.4rem; }
+  .or-food-meta  { display:flex; flex-wrap:wrap; gap:.5rem; }
+  .or-food-area  { font-size:.75rem; color:var(--text-light); }
+  .or-food-tip   { font-size:.75rem; color:var(--coral); font-weight:600; }
+
+  /* MAP */
+  .or-map-wrap { border-radius:14px; overflow:hidden; border:1.5px solid var(--border); }
+  .or-map { height:380px; width:100%; }
+  .or-map-hint { font-size:.78rem; color:var(--text-light); margin-top:.6rem; text-align:center; }
 
   /* PHOTOS */
-  .or-photo-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: .75rem;
-  }
-  .or-photo-empty {
-    grid-column: 1 / -1;
-    background: #F8FAFC;
-    border: 2px dashed var(--border);
-    border-radius: 12px;
-    padding: 2.5rem;
-    text-align: center;
-    font-size: .85rem;
-    color: var(--text-light);
-    font-weight: 600;
-  }
-  .or-photo-item { border-radius: 10px; overflow: hidden; aspect-ratio: 1; }
-  .or-photo-item img { width: 100%; height: 100%; object-fit: cover; }
+  .or-photo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:.75rem; }
+  .or-photo-empty { grid-column:1/-1; background:#F8FAFC; border:2px dashed var(--border); border-radius:12px; padding:2.5rem; text-align:center; font-size:.85rem; color:var(--text-light); font-weight:600; }
 
   /* SIDEBAR */
-  .or-sidebar { display: flex; flex-direction: column; gap: 1rem; }
+  .or-sidebar { display:flex; flex-direction:column; gap:1rem; }
+  .or-sidebar-card { background:#ffffff; border:1.5px solid var(--border); border-radius:14px; padding:1.1rem 1.25rem; }
+  .or-sidebar-card--highlight { background:var(--coral-light); border-color:var(--coral-mid); }
+  .or-sidebar-card--skip { background:#FFF1F2; border-color:#FECDD3; }
+  .or-sidebar-title { font-size:.82rem; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:var(--text); margin-bottom:.75rem; }
+  .or-sidebar-text { font-size:.88rem; color:var(--text-mid); line-height:1.6; }
 
-  .or-sidebar-card {
-    background: #ffffff;
-    border: 1.5px solid var(--border);
-    border-radius: 14px;
-    padding: 1.1rem 1.25rem;
-  }
-  .or-sidebar-card--highlight {
-    background: var(--coral-light);
-    border-color: var(--coral-mid);
-  }
-  .or-sidebar-card--skip {
-    background: #FFF1F2;
-    border-color: #FECDD3;
-  }
+  /* BUDGET CARD */
+  .or-budget-card { background:var(--bg-soft); }
+  .or-budget-level { display:flex; align-items:center; gap:.4rem; margin-bottom:.85rem; }
+  .or-budget-dot { width:12px; height:12px; border-radius:50%; background:var(--border); }
+  .or-budget-dot--active { }
+  .or-budget-label { font-size:.8rem; font-weight:700; margin-left:.25rem; }
+  .or-budget-amount { display:flex; align-items:baseline; gap:.4rem; margin-bottom:.9rem; }
+  .or-budget-num { font-size:1.5rem; font-weight:800; letter-spacing:-.03em; color:var(--text); }
+  .or-budget-sub { font-size:.75rem; color:var(--text-light); }
+  .or-budget-rows { display:flex; flex-direction:column; gap:0; border:1.5px solid var(--border); border-radius:8px; overflow:hidden; }
+  .or-budget-row { display:flex; justify-content:space-between; align-items:center; padding:.45rem .75rem; font-size:.8rem; border-bottom:1px solid var(--border); background:white; }
+  .or-budget-row:last-child { border-bottom:none; }
+  .or-budget-row span:first-child { color:var(--text-mid); }
+  .or-budget-row span:last-child { font-weight:700; color:var(--text); }
 
-  .or-sidebar-title {
-    font-size: .82rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: .06em;
-    color: var(--text);
-    margin-bottom: .75rem;
-  }
-  .or-sidebar-text { font-size: .88rem; color: var(--text-mid); line-height: 1.6; }
-
-  .or-list { list-style: none; display: flex; flex-direction: column; gap: .45rem; }
-  .or-list li {
-    font-size: .86rem;
-    color: var(--text-mid);
-    line-height: 1.5;
-    padding-left: 1.1rem;
-    position: relative;
-  }
-  .or-list li::before { content: '→'; position: absolute; left: 0; color: var(--coral); font-size: .75rem; top: .1rem; }
-  .or-list--skip li::before { content: '✕'; color: #EF4444; }
+  /* LISTS */
+  .or-list { list-style:none; display:flex; flex-direction:column; gap:.45rem; }
+  .or-list li { font-size:.86rem; color:var(--text-mid); line-height:1.5; padding-left:1.1rem; position:relative; }
+  .or-list li::before { content:'→'; position:absolute; left:0; color:var(--coral); font-size:.75rem; top:.1rem; }
+  .or-list--skip li::before { content:'✕'; color:#EF4444; }
 
   /* MARKETS */
-  .or-market-list { display: flex; flex-direction: column; gap: .75rem; }
-  .or-market { padding-bottom: .75rem; border-bottom: 1px solid var(--border); }
-  .or-market:last-child { border-bottom: none; padding-bottom: 0; }
-  .or-market-name { font-size: .88rem; font-weight: 700; color: var(--text); margin-bottom: .2rem; }
-  .or-market-meta { display: flex; gap: .5rem; margin-bottom: .2rem; }
-  .or-market-type { font-size: .72rem; font-weight: 600; background: #F1F5F9; color: var(--text-mid); padding: 1px 7px; border-radius: 100px; }
-  .or-market-when { font-size: .72rem; font-weight: 600; background: var(--green-light); color: #065F46; padding: 1px 7px; border-radius: 100px; }
-  .or-market-tip  { font-size: .78rem; color: var(--text-light); line-height: 1.5; }
+  .or-market-list { display:flex; flex-direction:column; gap:.75rem; }
+  .or-market { padding-bottom:.75rem; border-bottom:1px solid var(--border); }
+  .or-market:last-child { border-bottom:none; padding-bottom:0; }
+  .or-market-name { font-size:.88rem; font-weight:700; color:var(--text); margin-bottom:.2rem; }
+  .or-market-name--link { font-size:.88rem; font-weight:700; color:var(--coral); text-decoration:none; display:block; margin-bottom:.2rem; }
+  .or-market-meta { display:flex; gap:.5rem; margin-bottom:.2rem; }
+  .or-market-type { font-size:.72rem; font-weight:600; background:#F1F5F9; color:var(--text-mid); padding:1px 7px; border-radius:100px; }
+  .or-market-when { font-size:.72rem; font-weight:600; background:var(--green-light); color:#065F46; padding:1px 7px; border-radius:100px; }
+  .or-market-tip  { font-size:.78rem; color:var(--text-light); line-height:1.5; }
 
   /* RESPONSIVE */
   @media (max-width: 900px) {
-    .or-grid { grid-template-columns: 1fr; }
-    .or-sidebar { display: grid; grid-template-columns: 1fr 1fr; }
-    .or-header { padding: 1.75rem 1.25rem; }
-    .or-wrap { padding: 1.5rem 1.25rem 3rem; }
-    .or-cover img { height: 240px; }
+    .or-grid { grid-template-columns:1fr; }
+    .or-sidebar { display:grid; grid-template-columns:1fr 1fr; }
+    .or-budget-card { grid-column:1/-1; }
+    .or-header { padding:1.75rem 1.25rem; }
+    .or-wrap { padding:1.5rem 1.25rem 3rem; }
+    .or-cover img { height:240px; }
+    .or-map { height:300px; }
   }
   @media (max-width: 600px) {
-    .or-sidebar { grid-template-columns: 1fr; }
-    .or-cover img { height: 200px; }
-    .or-photo-grid { grid-template-columns: repeat(2, 1fr); }
-    .or-chips { gap: .35rem; }
-    .or-chip { font-size: .7rem; padding: .22rem .65rem; }
-    .or-title { font-size: clamp(1.6rem, 8vw, 2.5rem); }
-    .or-flag { font-size: 2.5rem; }
+    .or-sidebar { grid-template-columns:1fr; }
+    .or-cover img { height:200px; }
+    .or-photo-grid { grid-template-columns:repeat(2,1fr); }
+    .or-chips { gap:.35rem; }
+    .or-chip { font-size:.7rem; padding:.22rem .65rem; }
+    .or-title { font-size:clamp(1.6rem,8vw,2.5rem); }
+    .or-flag { font-size:2.5rem; }
+    .or-map { height:260px; }
   }
 </style>

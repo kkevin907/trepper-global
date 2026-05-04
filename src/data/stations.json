@@ -15,10 +15,87 @@
     "dateTo": null,
     "description": "Heimatbasis — von hier geht die Reise los.",
     "details": {
-      "highlights": ["Klingenmuseum", "Müngstener Brücke", "Schloss Burg", "Gräfrather Markt"],
-      "mustEat": ["Bergische Waffeln", "Sauerbraten", "Reibekuchen"],
+      "highlights": [
+        "Klingenmuseum",
+        "Müngstener Brücke",
+        "Schloss Burg",
+        "Gräfrather Markt"
+      ],
+      "mustEat": [
+        "Bergische Waffeln",
+        "Sauerbraten",
+        "Reibekuchen"
+      ],
       "visa": "Heimat",
-      "language": "Deutsch"
+      "language": "Deutsch",
+      "spots": [
+        {
+          "name": "Klingenmuseum",
+          "lat": 51.2096,
+          "lon": 7.0725,
+          "type": "sight"
+        },
+        {
+          "name": "Müngstener Brücke",
+          "lat": 51.1673,
+          "lon": 7.137,
+          "type": "sight"
+        },
+        {
+          "name": "Schloss Burg",
+          "lat": 51.1375,
+          "lon": 7.1528,
+          "type": "sight"
+        },
+        {
+          "name": "Gräfrather Markt",
+          "lat": 51.209,
+          "lon": 7.072,
+          "type": "sight"
+        },
+        {
+          "name": "Ohligser Heide",
+          "lat": 51.1572,
+          "lon": 6.9643,
+          "type": "sight"
+        },
+        {
+          "name": "Burg Hohenscheid",
+          "lat": 51.1395,
+          "lon": 7.095,
+          "type": "sight"
+        },
+        {
+          "name": "Wuppertaler Schwebebahn",
+          "lat": 51.2562,
+          "lon": 7.1508,
+          "type": "sight"
+        },
+        {
+          "name": "Kaffeehaus Solingen",
+          "lat": 51.209,
+          "lon": 7.0722,
+          "type": "food"
+        },
+        {
+          "name": "Olympia",
+          "lat": 51.1619,
+          "lon": 7.1128,
+          "type": "food"
+        },
+        {
+          "name": "Birker Meer",
+          "lat": 51.18,
+          "lon": 7.082,
+          "type": "food"
+        },
+        {
+          "name": "Bäckerei Stöcker",
+          "lat": 51.1538,
+          "lon": 7.0266,
+          "type": "food"
+        }
+      ]
     }
   },
   {
@@ -202,7 +279,7 @@
     "name": "Schweiz",
     "country": "Schweiz",
     "flag": "🇨🇭",
-    "lat": 46.9480,
+    "lat": 46.948,
     "lon": 7.4474,
     "status": "visited",
     "phase": "pre",
@@ -250,7 +327,7 @@
     "name": "Kroatien",
     "country": "Kroatien",
     "flag": "🇭🇷",
-    "lat": 45.8150,
+    "lat": 45.815,
     "lon": 15.9819,
     "status": "visited",
     "phase": "pre",
@@ -864,14 +941,69 @@
     "dateTo": "2026-04-09",
     "description": "Großstadt-Kurztrip — Kultur, Food, Themse.",
     "details": {
-      "highlights": ["Tower Bridge", "Borough Market", "Tate Modern", "Camden Town", "Hyde Park", "Notting Hill"],
-      "mustEat": ["Fish & Chips", "Full English Breakfast", "Brick Lane Bagels", "Dishoom Curry"],
+      "highlights": [
+        "Tower Bridge",
+        "Borough Market",
+        "Tate Modern",
+        "Camden Town",
+        "Hyde Park",
+        "Notting Hill"
+      ],
+      "mustEat": [
+        "Fish & Chips",
+        "Full English Breakfast",
+        "Brick Lane Bagels",
+        "Dishoom Curry"
+      ],
       "tips": "Oyster Card für den Tube kaufen. Museen meist kostenlos. Rechtsverkehr beachten.",
-      "bestFor": ["Kultur", "Street Food", "Shopping", "Nachtleben"],
+      "bestFor": [
+        "Kultur",
+        "Street Food",
+        "Shopping",
+        "Nachtleben"
+      ],
       "visa": "Kein Visum für Deutsche (bis 6 Monate)",
       "language": "Englisch",
       "transport": "London Underground (Tube), Bus, Uber",
-      "plug": "Typ G (230V) — Adapter nötig!"
+      "plug": "Typ G (230V) — Adapter nötig!",
+      "spots": [
+        {
+          "name": "Tower Bridge",
+          "lat": 51.5055,
+          "lon": -0.0754,
+          "type": "sight"
+        },
+        {
+          "name": "Borough Market",
+          "lat": 51.5055,
+          "lon": -0.0905,
+          "type": "food"
+        },
+        {
+          "name": "Tate Modern",
+          "lat": 51.5076,
+          "lon": -0.0994,
+          "type": "sight"
+        },
+        {
+          "name": "Camden Town",
+          "lat": 51.539,
+          "lon": -0.1426,
+          "type": "sight"
+        },
+        {
+          "name": "Hyde Park",
+          "lat": 51.5074,
+          "lon": -0.1657,
+          "type": "sight"
+        },
+        {
+          "name": "Notting Hill",
+          "lat": 51.5139,
+          "lon": -0.2052,
+          "type": "sight"
+        }
+      ]
     }
   },
   {
@@ -890,14 +1022,62 @@
     "dateTo": "2026-04-13",
     "description": "Insel im Atlantik — Levadas, Natur, Blumeninsel.",
     "details": {
-      "highlights": ["Pico do Arieiro", "Levada do Caldeirão Verde", "Funchal Altstadt", "Cabo Girão", "Monte Palace"],
-      "mustEat": ["Espetada", "Bolo do Caco", "Poncha", "Lapas (Napfschnecken)"],
+      "highlights": [
+        "Pico do Arieiro",
+        "Levada do Caldeirão Verde",
+        "Funchal Altstadt",
+        "Cabo Girão",
+        "Monte Palace"
+      ],
+      "mustEat": [
+        "Espetada",
+        "Bolo do Caco",
+        "Poncha",
+        "Lapas (Napfschnecken)"
+      ],
       "tips": "Mietwagen empfehlenswert. Levada-Wanderungen früh starten. Im April angenehme 20°C.",
-      "bestFor": ["Wandern", "Natur", "Vulkanlandschaft", "Entspannen"],
+      "bestFor": [
+        "Wandern",
+        "Natur",
+        "Vulkanlandschaft",
+        "Entspannen"
+      ],
       "visa": "Schengen — kein Visum",
       "language": "Portugiesisch",
       "transport": "Mietwagen, Busse, Seilbahn in Funchal",
-      "plug": "Typ F (230V)"
+      "plug": "Typ F (230V)",
+      "spots": [
+        {
+          "name": "Pico do Arieiro",
+          "lat": 32.7352,
+          "lon": -16.9289,
+          "type": "sight"
+        },
+        {
+          "name": "Funchal Altstadt",
+          "lat": 32.6487,
+          "lon": -16.9089,
+          "type": "sight"
+        },
+        {
+          "name": "Cabo Girão",
+          "lat": 32.6491,
+          "lon": -17.0321,
+          "type": "sight"
+        },
+        {
+          "name": "Monte Palace",
+          "lat": 32.6612,
+          "lon": -16.9057,
+          "type": "sight"
+        },
+        {
+          "name": "Fischerhafen Câmara de Lobos",
+          "lat": 32.6494,
+          "lon": -16.9811,
+          "type": "sight"
+        }
+      ]
     }
   },
   {
@@ -916,14 +1096,69 @@
     "dateTo": "2026-04-17",
     "description": "Portugals Hauptstadt — Tram 28, Pastéis, Fado.",
     "details": {
-      "highlights": ["Alfama", "Belém-Turm", "Tram 28", "LX Factory", "Sintra (Tagesausflug)", "Miradouro da Graça"],
-      "mustEat": ["Pastel de Nata", "Bacalhau", "Bifanas", "Ginjinha"],
+      "highlights": [
+        "Alfama",
+        "Belém-Turm",
+        "Tram 28",
+        "LX Factory",
+        "Sintra (Tagesausflug)",
+        "Miradouro da Graça"
+      ],
+      "mustEat": [
+        "Pastel de Nata",
+        "Bacalhau",
+        "Bifanas",
+        "Ginjinha"
+      ],
       "tips": "Lissabon ist sehr hügelig — gutes Schuhwerk nötig. Tuk-Tuks für steile Straßen. Früh in Cafés frühstücken.",
-      "bestFor": ["Kultur", "Architektur", "Food", "Fado-Abende"],
+      "bestFor": [
+        "Kultur",
+        "Architektur",
+        "Food",
+        "Fado-Abende"
+      ],
       "visa": "Schengen — kein Visum",
       "language": "Portugiesisch",
       "transport": "Tram, Metro, Uber, E-Trottinett",
-      "plug": "Typ F (230V)"
+      "plug": "Typ F (230V)",
+      "spots": [
+        {
+          "name": "Alfama",
+          "lat": 38.7139,
+          "lon": -9.1309,
+          "type": "sight"
+        },
+        {
+          "name": "Belém-Turm",
+          "lat": 38.6916,
+          "lon": -9.216,
+          "type": "sight"
+        },
+        {
+          "name": "LX Factory",
+          "lat": 38.7034,
+          "lon": -9.1779,
+          "type": "sight"
+        },
+        {
+          "name": "Miradouro da Graça",
+          "lat": 38.7173,
+          "lon": -9.1299,
+          "type": "sight"
+        },
+        {
+          "name": "Time Out Market",
+          "lat": 38.7068,
+          "lon": -9.146,
+          "type": "food"
+        },
+        {
+          "name": "Manteigaria (Pastéis)",
+          "lat": 38.7108,
+          "lon": -9.1426,
+          "type": "food"
+        }
+      ]
     }
   },
   {
@@ -942,14 +1177,69 @@
     "dateTo": "2026-04-21",
     "description": "Spanische Hauptstadt — Museen, Tapas, Lebendigkeit.",
     "details": {
-      "highlights": ["Prado Museum", "Retiro Park", "Puerta del Sol", "Mercado de San Miguel", "Gran Vía", "Reina Sofía"],
-      "mustEat": ["Patatas Bravas", "Tortilla Española", "Jamón Ibérico", "Churros con Chocolate"],
+      "highlights": [
+        "Prado Museum",
+        "Retiro Park",
+        "Puerta del Sol",
+        "Mercado de San Miguel",
+        "Gran Vía",
+        "Reina Sofía"
+      ],
+      "mustEat": [
+        "Patatas Bravas",
+        "Tortilla Española",
+        "Jamón Ibérico",
+        "Churros con Chocolate"
+      ],
       "tips": "Spanier essen spät — Abendessen erst ab 21 Uhr. Museen montags oft geschlossen. Siesta beachten.",
-      "bestFor": ["Kunst & Kultur", "Nachtleben", "Shopping", "Food"],
+      "bestFor": [
+        "Kunst & Kultur",
+        "Nachtleben",
+        "Shopping",
+        "Food"
+      ],
       "visa": "Schengen — kein Visum",
       "language": "Spanisch",
       "transport": "Metro, Bus, Renfe, Uber",
-      "plug": "Typ F (230V)"
+      "plug": "Typ F (230V)",
+      "spots": [
+        {
+          "name": "Prado Museum",
+          "lat": 40.4138,
+          "lon": -3.6922,
+          "type": "sight"
+        },
+        {
+          "name": "Retiro Park",
+          "lat": 40.4153,
+          "lon": -3.6845,
+          "type": "sight"
+        },
+        {
+          "name": "Mercado de San Miguel",
+          "lat": 40.4153,
+          "lon": -3.7094,
+          "type": "food"
+        },
+        {
+          "name": "Gran Vía",
+          "lat": 40.42,
+          "lon": -3.7024,
+          "type": "sight"
+        },
+        {
+          "name": "El Tigre (Tapas)",
+          "lat": 40.4213,
+          "lon": -3.6987,
+          "type": "food"
+        },
+        {
+          "name": "Templo de Debod",
+          "lat": 40.4239,
+          "lon": -3.7179,
+          "type": "sight"
+        }
+      ]
     }
   },
   {
@@ -968,14 +1258,52 @@
     "dateTo": "2026-04-26",
     "description": "Eine Nacht, kein Hotel — Hï Ibiza Opening Night mit Skepta.",
     "details": {
-      "highlights": ["Hï Ibiza Opening Night", "Skepta — Más Tiempo Residency", "Sonnenaufgang am Playa d'en Bossa", "La Canela Bäckerei"],
-      "mustEat": ["La Canela — Empanadas & Backwaren", "Wegbier vom Lidl für die Promenade"],
+      "highlights": [
+        "Hï Ibiza Opening Night",
+        "Skepta — Más Tiempo Residency",
+        "Sonnenaufgang am Playa d'en Bossa",
+        "La Canela Bäckerei"
+      ],
+      "mustEat": [
+        "La Canela — Empanadas & Backwaren",
+        "Wegbier vom Lidl für die Promenade"
+      ],
       "tips": "Clubticket mindestens 1 Monat im Voraus buchen. Shuttle Bus für 3,50 € vom Flughafen.",
-      "bestFor": ["Clubnächte", "Opening Season", "One-Night-Trips"],
+      "bestFor": [
+        "Clubnächte",
+        "Opening Season",
+        "One-Night-Trips"
+      ],
       "visa": "Schengen — kein Visum",
       "language": "Spanisch, Ibizenkisch",
       "transport": "Mietwagen, Scooter, Bus",
-      "plug": "Typ F (230V)"
+      "plug": "Typ F (230V)",
+      "spots": [
+        {
+          "name": "Hï Ibiza (Club)",
+          "lat": 38.884,
+          "lon": 1.4023,
+          "type": "sight"
+        },
+        {
+          "name": "Playa d'en Bossa",
+          "lat": 38.8848,
+          "lon": 1.4029,
+          "type": "sight"
+        },
+        {
+          "name": "La Canela Bäckerei",
+          "lat": 38.9088,
+          "lon": 1.4312,
+          "type": "food"
+        },
+        {
+          "name": "Ibiza Altstadt (Dalt Vila)",
+          "lat": 38.9079,
+          "lon": 1.4344,
+          "type": "sight"
+        }
+      ]
     }
   },
   {
@@ -994,14 +1322,50 @@
     "dateTo": "2026-05-31",
     "description": "Atlantikküste, Fischerhafen, Surfen — Marokko erkunden.",
     "details": {
-      "highlights": ["Medina Essaouira (UNESCO)", "Ramparts & Stadtmauern", "Taghazout Surfer-Beach", "Fischerhafen", "Argan-Kooperativen"],
-      "mustEat": ["Frischer Grillfish am Hafen", "Tagine", "Msemen (Pfannkuchen)", "Minztee"],
+      "highlights": [
+        "Medina Essaouira (UNESCO)",
+        "Ramparts & Stadtmauern",
+        "Taghazout Surfer-Beach",
+        "Fischerhafen",
+        "Argan-Kooperativen"
+      ],
+      "mustEat": [
+        "Frischer Grillfish am Hafen",
+        "Tagine",
+        "Msemen (Pfannkuchen)",
+        "Minztee"
+      ],
       "tips": "Preise im Souk verhandeln. Taghazout ist 15 min entfernt — ideal zum Surfen. Surfboard-Verleih vor Ort günstig.",
-      "bestFor": ["Surfen", "Kultur", "Fotografie", "Entschleunigung"],
+      "bestFor": [
+        "Surfen",
+        "Kultur",
+        "Fotografie",
+        "Entschleunigung"
+      ],
       "visa": "Kein Visum für Deutsche (bis 90 Tage)",
       "language": "Arabisch, Tamazight, Französisch",
       "transport": "Petit Taxi, Mietwagen, Bus (CTM)",
-      "plug": "Typ C/E (220V)"
+      "plug": "Typ C/E (220V)",
+      "spots": [
+        {
+          "name": "Medina Essaouira",
+          "lat": 31.5085,
+          "lon": -9.7595,
+          "type": "sight"
+        },
+        {
+          "name": "Fischerhafen",
+          "lat": 31.5099,
+          "lon": -9.7701,
+          "type": "food"
+        },
+        {
+          "name": "Ramparts & Stadtmauern",
+          "lat": 31.5108,
+          "lon": -9.7658,
+          "type": "sight"
+        }
+      ]
     }
   },
   {
@@ -1052,14 +1416,54 @@
     "dateTo": "2026-06-10",
     "description": "Zwischenstopp auf dem Weg nach Asien — eine Nacht in Istanbul.",
     "details": {
-      "highlights": ["Hagia Sophia", "Großer Basar", "Bosporus-Überfahrt", "Galata-Turm"],
-      "mustEat": ["Kebap", "Baklava", "Türkischer Tee", "Simit"],
+      "highlights": [
+        "Hagia Sophia",
+        "Großer Basar",
+        "Bosporus-Überfahrt",
+        "Galata-Turm"
+      ],
+      "mustEat": [
+        "Kebap",
+        "Baklava",
+        "Türkischer Tee",
+        "Simit"
+      ],
       "tips": "Nur ein Zwischenstopp — Altstadt ist zu Fuß erreichbar vom Flughafen per Metro.",
-      "bestFor": ["Zwischenstopp", "Kulinarik", "Geschichte"],
+      "bestFor": [
+        "Zwischenstopp",
+        "Kulinarik",
+        "Geschichte"
+      ],
       "visa": "Kein Visum für Deutsche (bis 90 Tage)",
       "language": "Türkisch",
       "transport": "Metro, Tram, Fähre",
-      "plug": "Typ C/F (230V)"
+      "plug": "Typ C/F (230V)",
+      "spots": [
+        {
+          "name": "Hagia Sophia",
+          "lat": 41.0086,
+          "lon": 28.9802,
+          "type": "sight"
+        },
+        {
+          "name": "Großer Basar",
+          "lat": 41.0106,
+          "lon": 28.9682,
+          "type": "sight"
+        },
+        {
+          "name": "Galata-Turm",
+          "lat": 41.0256,
+          "lon": 28.9742,
+          "type": "sight"
+        },
+        {
+          "name": "Bosporus-Fähre",
+          "lat": 41.0219,
+          "lon": 29.0054,
+          "type": "sight"
+        }
+      ]
     }
   },
   {
@@ -1078,14 +1482,64 @@
     "dateTo": null,
     "description": "Skyline, Straßenmärkte, Dim Sum — erster Asien-Stop der Weltreise.",
     "details": {
-      "highlights": ["Victoria Peak", "Temple Street Night Market", "Star Ferry", "Mong Kok", "Lantau Island & Big Buddha", "Kowloon Waterfront"],
-      "mustEat": ["Dim Sum (Yum Cha)", "Wonton Noodle Soup", "Egg Tarts", "Roasted Goose", "Milk Tea (Hong Kong Style)"],
+      "highlights": [
+        "Victoria Peak",
+        "Temple Street Night Market",
+        "Star Ferry",
+        "Mong Kok",
+        "Lantau Island & Big Buddha",
+        "Kowloon Waterfront"
+      ],
+      "mustEat": [
+        "Dim Sum (Yum Cha)",
+        "Wonton Noodle Soup",
+        "Egg Tarts",
+        "Roasted Goose",
+        "Milk Tea (Hong Kong Style)"
+      ],
       "tips": "Octopus Card für MTR kaufen. Trambahn auf Hong Kong Island für 2,60 HK$. Star Ferry ist Pflicht bei Nacht.",
-      "bestFor": ["Skyline", "Street Food", "Shopping", "Kontraste"],
+      "bestFor": [
+        "Skyline",
+        "Street Food",
+        "Shopping",
+        "Kontraste"
+      ],
       "visa": "Kein Visum für Deutsche (bis 90 Tage)",
       "language": "Kantonesisch, Englisch",
       "transport": "MTR (U-Bahn), Bus, Tram, Fähre",
-      "plug": "Typ G (230V) — Adapter nötig!"
+      "plug": "Typ G (230V) — Adapter nötig!",
+      "spots": [
+        {
+          "name": "Victoria Peak",
+          "lat": 22.2759,
+          "lon": 114.1455,
+          "type": "sight"
+        },
+        {
+          "name": "Temple Street Night Market",
+          "lat": 22.3069,
+          "lon": 114.17,
+          "type": "food"
+        },
+        {
+          "name": "Star Ferry",
+          "lat": 22.2936,
+          "lon": 114.1685,
+          "type": "sight"
+        },
+        {
+          "name": "Mong Kok",
+          "lat": 22.3193,
+          "lon": 114.1694,
+          "type": "sight"
+        },
+        {
+          "name": "Dim Sum Restaurant",
+          "lat": 22.2806,
+          "lon": 114.1588,
+          "type": "food"
+        }
+      ]
     }
   },
   {
@@ -1104,14 +1558,70 @@
     "dateTo": null,
     "description": "Tempel, Street Food, Süden — Thailand von Nord bis Süd.",
     "details": {
-      "highlights": ["Wat Phra Kaew (Smaragd-Buddha)", "Chatuchak Weekend Market", "Khao San Road", "Chao Phraya Fluss", "Railay Beach (Süden)", "Chiang Mai (Norden)"],
-      "mustEat": ["Pad Thai", "Som Tam (Papayasalat)", "Mango Sticky Rice", "Pad Kra Pao", "Tom Yum Soup"],
+      "highlights": [
+        "Wat Phra Kaew (Smaragd-Buddha)",
+        "Chatuchak Weekend Market",
+        "Khao San Road",
+        "Chao Phraya Fluss",
+        "Railay Beach (Süden)",
+        "Chiang Mai (Norden)"
+      ],
+      "mustEat": [
+        "Pad Thai",
+        "Som Tam (Papayasalat)",
+        "Mango Sticky Rice",
+        "Pad Kra Pao",
+        "Tom Yum Soup"
+      ],
       "tips": "Tuk-Tuks immer Preis vorher aushandeln. Tempel: Schultern und Knie bedecken. BTS Skytrain in Bangkok unverzichtbar.",
-      "bestFor": ["Tempel", "Street Food", "Inseln & Strände", "Nightlife"],
+      "bestFor": [
+        "Tempel",
+        "Street Food",
+        "Inseln & Strände",
+        "Nightlife"
+      ],
       "visa": "Visa on Arrival / kein Visum für Deutsche (bis 30 Tage)",
       "language": "Thai",
       "transport": "BTS Skytrain, MRT, Tuk-Tuk, Grab (App)",
-      "plug": "Typ A/B/C (220V)"
+      "plug": "Typ A/B/C (220V)",
+      "spots": [
+        {
+          "name": "Wat Phra Kaew",
+          "lat": 13.7516,
+          "lon": 100.4925,
+          "type": "sight"
+        },
+        {
+          "name": "Chatuchak Market",
+          "lat": 13.7999,
+          "lon": 100.5508,
+          "type": "food"
+        },
+        {
+          "name": "Khao San Road",
+          "lat": 13.7586,
+          "lon": 100.4977,
+          "type": "sight"
+        },
+        {
+          "name": "Pad Thai Street Food",
+          "lat": 13.7563,
+          "lon": 100.5018,
+          "type": "food"
+        },
+        {
+          "name": "Railay Beach",
+          "lat": 8.0124,
+          "lon": 98.8348,
+          "type": "sight"
+        },
+        {
+          "name": "Chiang Mai Altstadt",
+          "lat": 18.7883,
+          "lon": 98.9853,
+          "type": "sight"
+        }
+      ]
     }
   },
   {
@@ -1130,14 +1640,58 @@
     "dateTo": null,
     "description": "Von Hanoi bis Ho-Chi-Minh-Stadt — Vietnam von Nord nach Süd.",
     "details": {
-      "highlights": ["Hạ Long Bay", "Hoi An Altstadt (UNESCO)", "Phong Nha Höhlen", "Hanoi Altstadt", "Mekong Delta", "Sapa Reisterrassen"],
-      "mustEat": ["Pho Bo (Rindfleischsuppe)", "Bánh Mì", "Bún Chả", "Bánh Xèo (Crêpe)", "vietnamesischer Kaffee mit Kondensmilch"],
+      "highlights": [
+        "Hạ Long Bay",
+        "Hoi An Altstadt (UNESCO)",
+        "Phong Nha Höhlen",
+        "Hanoi Altstadt",
+        "Mekong Delta",
+        "Sapa Reisterrassen"
+      ],
+      "mustEat": [
+        "Pho Bo (Rindfleischsuppe)",
+        "Bánh Mì",
+        "Bún Chả",
+        "Bánh Xèo (Crêpe)",
+        "vietnamesischer Kaffee mit Kondensmilch"
+      ],
       "tips": "Overnight-Busse sparen Hotelkosten. Motorroller fahren nur mit Erfahrung. Früh morgens beste Lichtstimmung.",
-      "bestFor": ["Natur", "Kultur", "Backpacking", "Food"],
+      "bestFor": [
+        "Natur",
+        "Kultur",
+        "Backpacking",
+        "Food"
+      ],
       "visa": "E-Visum für Deutsche erforderlich (ca. 25 USD, online beantragen)",
       "language": "Vietnamesisch",
       "transport": "Overnight-Bus, Grab, Motorroller, Inlandsflüge",
-      "plug": "Typ A/C/G (220V)"
+      "plug": "Typ A/C/G (220V)",
+      "spots": [
+        {
+          "name": "Hạ Long Bay",
+          "lat": 20.9101,
+          "lon": 107.1839,
+          "type": "sight"
+        },
+        {
+          "name": "Hoi An Altstadt",
+          "lat": 15.8801,
+          "lon": 108.338,
+          "type": "sight"
+        },
+        {
+          "name": "Hanoi Altstadt",
+          "lat": 21.0285,
+          "lon": 105.8542,
+          "type": "sight"
+        },
+        {
+          "name": "Bánh Mì Stand",
+          "lat": 21.0275,
+          "lon": 105.8412,
+          "type": "food"
+        }
+      ]
     }
   },
   {
@@ -1145,7 +1699,7 @@
     "name": "Kuala Lumpur",
     "country": "Malaysia",
     "flag": "🇲🇾",
-    "lat": 3.1390,
+    "lat": 3.139,
     "lon": 101.6869,
     "status": "upcoming",
     "phase": "main",
@@ -1156,14 +1710,58 @@
     "dateTo": null,
     "description": "Petronas Towers, Kulinarik, Dschungel — Melting Pot Südostasiens.",
     "details": {
-      "highlights": ["Petronas Twin Towers", "Batu Caves", "Petaling Street (Chinatown)", "KLCC Park", "Bukit Bintang", "Cameron Highlands (Tagesausflug)"],
-      "mustEat": ["Nasi Lemak", "Char Kway Teow", "Roti Canai", "Laksa", "Teh Tarik (gezogener Tee)"],
+      "highlights": [
+        "Petronas Twin Towers",
+        "Batu Caves",
+        "Petaling Street (Chinatown)",
+        "KLCC Park",
+        "Bukit Bintang",
+        "Cameron Highlands (Tagesausflug)"
+      ],
+      "mustEat": [
+        "Nasi Lemak",
+        "Char Kway Teow",
+        "Roti Canai",
+        "Laksa",
+        "Teh Tarik (gezogener Tee)"
+      ],
       "tips": "KL ist sehr günstig. Grab (Uber-Alternative) für alles nutzen. Moscheen erfordern Kopftuch für Frauen.",
-      "bestFor": ["Food", "Shopping", "Wolkenkratzer", "Multikultur"],
+      "bestFor": [
+        "Food",
+        "Shopping",
+        "Wolkenkratzer",
+        "Multikultur"
+      ],
       "visa": "Kein Visum für Deutsche (bis 90 Tage)",
       "language": "Malaysisch, Englisch, Mandarin, Tamil",
       "transport": "LRT/MRT, Monorail, Grab, Bus",
-      "plug": "Typ G (230V) — Adapter nötig!"
+      "plug": "Typ G (230V) — Adapter nötig!",
+      "spots": [
+        {
+          "name": "Petronas Twin Towers",
+          "lat": 3.1579,
+          "lon": 101.7119,
+          "type": "sight"
+        },
+        {
+          "name": "Batu Caves",
+          "lat": 3.2379,
+          "lon": 101.684,
+          "type": "sight"
+        },
+        {
+          "name": "Petaling Street",
+          "lat": 3.1436,
+          "lon": 101.6957,
+          "type": "food"
+        },
+        {
+          "name": "Nasi Lemak Restaurant",
+          "lat": 3.139,
+          "lon": 101.6869,
+          "type": "food"
+        }
+      ]
     }
   },
   {
@@ -1172,7 +1770,7 @@
     "country": "Indonesien",
     "flag": "🇮🇩",
     "lat": -8.3405,
-    "lon": 115.0920,
+    "lon": 115.092,
     "status": "upcoming",
     "phase": "main",
     "timezone": "Asia/Makassar",
@@ -1182,14 +1780,64 @@
     "dateTo": null,
     "description": "Reisfelder, Tempel, Surfen — Insel der Götter.",
     "details": {
-      "highlights": ["Tegallalang Reisterrassen", "Tanah Lot Tempel", "Ubud Monkey Forest", "Seminyak Beach", "Uluwatu Klippen-Tempel", "Mount Batur (Sunrise Trek)"],
-      "mustEat": ["Nasi Goreng", "Babi Guling (Spanferkel)", "Sate Lilit", "Gado Gado", "frische Kokosnuss"],
+      "highlights": [
+        "Tegallalang Reisterrassen",
+        "Tanah Lot Tempel",
+        "Ubud Monkey Forest",
+        "Seminyak Beach",
+        "Uluwatu Klippen-Tempel",
+        "Mount Batur (Sunrise Trek)"
+      ],
+      "mustEat": [
+        "Nasi Goreng",
+        "Babi Guling (Spanferkel)",
+        "Sate Lilit",
+        "Gado Gado",
+        "frische Kokosnuss"
+      ],
       "tips": "Scooter-Verleih für ca. 5€/Tag. Bei Tempeln immer Sarong tragen. Ubud für Kultur, Seminyak für Strand & Party.",
-      "bestFor": ["Surfen", "Yoga & Wellness", "Tempel", "Natur"],
+      "bestFor": [
+        "Surfen",
+        "Yoga & Wellness",
+        "Tempel",
+        "Natur"
+      ],
       "visa": "Visa on Arrival für Deutsche (35 USD, 30 Tage)",
       "language": "Balinesisch, Indonesisch",
       "transport": "Scooter, Grab, privater Fahrer (günstig)",
-      "plug": "Typ C/F (230V)"
+      "plug": "Typ C/F (230V)",
+      "spots": [
+        {
+          "name": "Tegallalang Reisterrassen",
+          "lat": -8.431,
+          "lon": 115.2785,
+          "type": "sight"
+        },
+        {
+          "name": "Tanah Lot Tempel",
+          "lat": -8.6213,
+          "lon": 115.0869,
+          "type": "sight"
+        },
+        {
+          "name": "Ubud Monkey Forest",
+          "lat": -8.5186,
+          "lon": 115.2594,
+          "type": "sight"
+        },
+        {
+          "name": "Seminyak Beach",
+          "lat": -8.6882,
+          "lon": 115.1552,
+          "type": "sight"
+        },
+        {
+          "name": "Nasi Goreng Local Waung",
+          "lat": -8.3405,
+          "lon": 115.092,
+          "type": "food"
+        }
+      ]
     }
   },
   {
@@ -1198,7 +1846,7 @@
     "country": "Neuseeland",
     "flag": "🇳🇿",
     "lat": -40.9006,
-    "lon": 174.8860,
+    "lon": 174.886,
     "status": "upcoming",
     "phase": "main",
     "timezone": "Pacific/Auckland",
@@ -1208,14 +1856,52 @@
     "dateTo": null,
     "description": "Atemberaubende Landschaft, Natur pur — das Ende der Welt.",
     "details": {
-      "highlights": ["Milford Sound", "Tongariro Alpine Crossing", "Abel Tasman Nationalpark", "Hobbiton", "Franz Josef Gletscher", "Bay of Islands"],
-      "mustEat": ["Hāngi (Māori-Erdofen)", "Meat Pie", "Pavlova", "L&P Limo", "Green-lipped Mussels"],
+      "highlights": [
+        "Milford Sound",
+        "Tongariro Alpine Crossing",
+        "Abel Tasman Nationalpark",
+        "Hobbiton",
+        "Franz Josef Gletscher",
+        "Bay of Islands"
+      ],
+      "mustEat": [
+        "Hāngi (Māori-Erdofen)",
+        "Meat Pie",
+        "Pavlova",
+        "L&P Limo",
+        "Green-lipped Mussels"
+      ],
       "tips": "Mietwagen Pflicht — ÖPNV kaum vorhanden. Linksverkehr! Campervans sehr beliebt. DOC Hütten für Trekking buchen.",
-      "bestFor": ["Trekking", "Natur", "Abenteuer", "Fotografie"],
+      "bestFor": [
+        "Trekking",
+        "Natur",
+        "Abenteuer",
+        "Fotografie"
+      ],
       "visa": "Kein Visum, aber NZeTA erforderlich (ca. 17 NZD, online)",
       "language": "Englisch, Māori",
       "transport": "Mietwagen / Campervan, Inlandsflüge, InterCity Bus",
-      "plug": "Typ I (230V) — Adapter nötig!"
+      "plug": "Typ I (230V) — Adapter nötig!",
+      "spots": [
+        {
+          "name": "Milford Sound",
+          "lat": -44.6413,
+          "lon": 167.8974,
+          "type": "sight"
+        },
+        {
+          "name": "Tongariro Crossing",
+          "lat": -39.1307,
+          "lon": 175.5874,
+          "type": "sight"
+        },
+        {
+          "name": "Hobbiton",
+          "lat": -37.8572,
+          "lon": 175.682,
+          "type": "sight"
+        }
+      ]
     }
   }
 ]

@@ -9,6 +9,10 @@ nights: 1
 vibe: One Night Only
 description: Eine Nacht, kein Hotel, kein Schlaf — Ibiza Opening Night 2026 mit Skepta im Hï.
 costLevel: 3
+mapCenter:
+  lat: 38.9088
+  lon: 1.4312
+budgetPerDay: "80–150 €"
 rating: 5
 highlights:
   - "[Hï Ibiza](https://www.hiibiza.com/) Opening Night 2026"
@@ -18,12 +22,16 @@ highlights:
   - "Shuttle Bus für 3,50 € direkt in die Stadt"
 foodSpots:
   - name: La Canela
+    lat: 38.9088
+    lon: 1.4312
     what: Empanadas, süße Backwaren — alles frisch und handgemacht
     stars: 5
     area: Ibiza Stadt
     tip: Erste Bäckerei die morgens öffnet — perfekt nach der Clubnacht
     link: "https://maps.google.com/?q=La+Canela+Ibiza+Stadt"
   - name: Murphy's Ibiza
+    lat: 38.8844
+    lon: 1.4025
     what: Irish Pub an der Clubmeile — Guinness für 10 €
     stars: 3
     area: Playa d'en Bossa

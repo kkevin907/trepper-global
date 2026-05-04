@@ -8,6 +8,10 @@ dateTo: "2026-04-13"
 nights: 3
 vibe: "Natur & Entschleunigung"
 costLevel: 2
+mapCenter:
+  lat: 32.6491
+  lon: -16.9071
+budgetPerDay: "50–80 €"
 rating: 5
 coverImage: ""
 highlights:
@@ -18,6 +22,8 @@ highlights:
   - "[Fanal Forest](https://maps.google.com/?q=Fanal+Forest+Madeira) — Lorbeerwälder im Nebel, surreale Stimmung"
 foodSpots:
   - name: "Bar 101 / Beira Mar"
+    lat: 32.8192
+    lon: -17.2394
     what: "PREGO — Steak-Sandwich auf Madeira, herzhaft und perfekt"
     stars: 5
     area: "Achadas da Cruz, Nordwesten"

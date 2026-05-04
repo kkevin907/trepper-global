@@ -1,79 +1,151 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" xmlns:v="urn:schemas-microsoft-com:vml">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Willkommen bei trepper.global</title>
-</head>
-<body style="margin:0;padding:0;background:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;">
+  <!-- Force light mode in all email clients that respect this -->
+  <meta name="color-scheme" content="light" />
+  <meta name="supported-color-schemes" content="light" />
+  <title>Willkommen bei trepper-global.de</title>
+  <style>
+    /* Force light mode – prevents Apple Mail / Gmail dark mode from inverting */
+    :root { color-scheme: light !important; }
 
-  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#F8FAFC;padding:32px 16px;">
+    body {
+      margin: 0 !important;
+      padding: 0 !important;
+      background-color: #F8FAFC !important;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+
+    /* Dark mode override – keep everything readable */
+    @media (prefers-color-scheme: dark) {
+      body { background-color: #F8FAFC !important; }
+      .email-wrap { background-color: #F8FAFC !important; }
+
+      /* Header stays dark – already navy, fine */
+      .header-td { background-color: #0F172A !important; }
+
+      /* Hero: force light background + dark text */
+      .hero-td {
+        background-color: #FFF7ED !important;
+        background-image: none !important;
+      }
+      .hero-h1 { color: #0F172A !important; }
+      .hero-p  { color: #374151 !important; }
+
+      /* Body: white background, dark text */
+      .body-td  { background-color: #ffffff !important; }
+      .body-p   { color: #374151 !important; }
+      .intro-td { background-color: #F1F5F9 !important; }
+      .intro-label { color: #64748B !important; }
+      .intro-p  { color: #374151 !important; }
+      .intro-strong { color: #0F172A !important; }
+
+      /* Footer */
+      .footer-td    { background-color: #E2E8F0 !important; }
+      .footer-name  { color: #0F172A !important; }
+      .footer-sub   { color: #475569 !important; }
+      .footer-link  { color: #475569 !important; }
+    }
+  </style>
+</head>
+<body style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;-webkit-text-size-adjust:100%;">
+
+  <table class="email-wrap" width="100%" cellpadding="0" cellspacing="0" border="0"
+         style="background-color:#F8FAFC;padding:32px 16px;">
     <tr>
       <td align="center">
-        <table width="560" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;width:100%;">
+        <table width="560" cellpadding="0" cellspacing="0" border="0"
+               style="max-width:560px;width:100%;">
 
-          <!-- HEADER -->
+          <!-- ── HEADER ── -->
           <tr>
-            <td style="background:#0F172A;border-radius:16px 16px 0 0;padding:28px 36px;text-align:center;">
-              <div style="display:inline-block;margin-bottom:8px;">
-                <div style="width:20px;height:2px;background:rgba(249,115,22,0.5);border-radius:1px;display:inline-block;vertical-align:middle;"></div>
-                <div style="width:8px;height:8px;border-radius:50%;background:#F97316;box-shadow:0 0 0 3px rgba(249,115,22,0.25);display:inline-block;vertical-align:middle;margin:0 6px;"></div>
-                <div style="width:20px;height:2px;background:rgba(249,115,22,0.5);border-radius:1px;display:inline-block;vertical-align:middle;"></div>
+            <td class="header-td"
+                style="background-color:#0F172A;border-radius:16px 16px 0 0;padding:28px 36px;text-align:center;">
+              <!-- Route-dot Icon -->
+              <div style="margin-bottom:8px;line-height:1;">
+                <span style="display:inline-block;width:20px;height:2px;background:rgba(249,115,22,0.5);border-radius:1px;vertical-align:middle;"></span>
+                <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#F97316;vertical-align:middle;margin:0 6px;"></span>
+                <span style="display:inline-block;width:20px;height:2px;background:rgba(249,115,22,0.5);border-radius:1px;vertical-align:middle;"></span>
               </div>
-              <div style="font-size:20px;font-weight:800;letter-spacing:-0.04em;color:#FFFFFF;margin-top:4px;">trepper<span style="color:#F97316;">.</span>global</div>
-              <div style="font-size:11px;color:#475569;letter-spacing:0.08em;text-transform:uppercase;margin-top:4px;">Reise-Updates</div>
+              <div style="font-size:20px;font-weight:800;letter-spacing:-0.04em;color:#FFFFFF;margin-top:4px;">
+                trepper<span style="color:#F97316;">-global.de</span>
+              </div>
+              <div style="font-size:11px;color:#94A3B8;letter-spacing:0.08em;text-transform:uppercase;margin-top:6px;">
+                Reise-Updates
+              </div>
             </td>
           </tr>
 
-          <!-- HERO -->
+          <!-- ── HERO ── -->
           <tr>
-            <td style="background:linear-gradient(135deg,#FFF7ED 0%,#FFFBF5 100%);border-left:1px solid #FDE8CC;border-right:1px solid #FDE8CC;padding:36px 36px 28px;text-align:center;">
-              <div style="font-size:40px;margin-bottom:12px;">👋</div>
-              <h1 style="font-size:26px;font-weight:800;letter-spacing:-0.04em;color:#0F172A;line-height:1.2;margin:0 0 12px;">
+            <td class="hero-td"
+                style="background-color:#FFF7ED;border-left:1px solid #FDE8CC;border-right:1px solid #FDE8CC;padding:36px 36px 28px;text-align:center;">
+              <div style="font-size:40px;margin-bottom:12px;line-height:1;">👋</div>
+              <h1 class="hero-h1"
+                  style="font-size:24px;font-weight:800;letter-spacing:-0.03em;color:#0F172A;line-height:1.25;margin:0 0 14px;">
                 Hey, schön dass du dabei bist!
               </h1>
-              <p style="font-size:15px;color:#475569;line-height:1.75;margin:0;">
-                Ab jetzt kriegst du eine Nachricht, wann immer es etwas Neues gibt — neue Orte, Tipps, Erlebnisse direkt aus dem Rucksack.
+              <p class="hero-p"
+                 style="font-size:15px;color:#374151;line-height:1.75;margin:0;">
+                Ab jetzt kriegst du eine Nachricht, wann immer es etwas Neues gibt —
+                neue Orte, Tipps, Erlebnisse direkt aus dem Rucksack.
               </p>
             </td>
           </tr>
 
-          <!-- BODY -->
+          <!-- ── BODY ── -->
           <tr>
-            <td style="background:#ffffff;border-left:1px solid #E2E8F0;border-right:1px solid #E2E8F0;padding:32px 36px;">
+            <td class="body-td"
+                style="background-color:#ffffff;border-left:1px solid #E2E8F0;border-right:1px solid #E2E8F0;padding:32px 36px;">
 
-              <!-- Kevin intro -->
-              <table cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#F8FAFC;border-radius:12px;border:1.5px solid #E2E8F0;margin-bottom:28px;">
+              <!-- Intro box -->
+              <table cellpadding="0" cellspacing="0" border="0" width="100%"
+                     style="margin-bottom:24px;">
                 <tr>
-                  <td style="padding:20px 22px;">
-                    <p style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#94A3B8;margin:0 0 8px;">Kurz zu mir</p>
-                    <p style="font-size:15px;color:#475569;line-height:1.75;margin:0;">
-                      Ich bin Kevin, 20 Jahre alt aus Solingen. Am <strong style="color:#0F172A;">9. Juni 2026</strong> fliege ich Richtung Bangkok — und reise danach so lange durch Asien und die Welt wie es geht. Diese Seite ist mein Archiv dafür.
+                  <td class="intro-td"
+                      style="background-color:#F8FAFC;border-radius:12px;border:1.5px solid #E2E8F0;padding:20px 22px;">
+                    <p class="intro-label"
+                       style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.09em;color:#64748B;margin:0 0 8px;">
+                      Kurz zu mir
+                    </p>
+                    <p class="intro-p"
+                       style="font-size:15px;color:#374151;line-height:1.75;margin:0;">
+                      Ich bin Kevin, 20 Jahre alt aus Solingen. Am
+                      <strong class="intro-strong" style="color:#0F172A;">9. Juni 2026</strong>
+                      fliege ich Richtung Bangkok — und reise danach so lange durch Asien
+                      und die Welt wie es geht. Diese Seite ist mein Archiv dafür.
                     </p>
                   </td>
                 </tr>
               </table>
 
               <!-- Divider -->
-              <div style="height:1px;background:#E2E8F0;margin-bottom:24px;"></div>
+              <div style="height:1px;background-color:#E2E8F0;margin-bottom:22px;"></div>
 
-              <!-- CTA -->
-              <p style="font-size:15px;color:#475569;line-height:1.75;margin:0 0 20px;">
-                Schau schon mal rein — auf der Website gibt es erste Reiseberichte, eine interaktive Karte und die geplante Route:
+              <!-- CTA text -->
+              <p class="body-p"
+                 style="font-size:15px;color:#374151;line-height:1.75;margin:0 0 20px;">
+                Schau schon mal rein — auf der Website gibt es erste Reiseberichte,
+                eine interaktive Karte und die geplante Route:
               </p>
 
-              <table cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom:12px;">
+              <!-- Buttons -->
+              <table cellpadding="0" cellspacing="0" border="0" width="100%"
+                     style="margin-bottom:8px;">
                 <tr>
-                  <td style="padding:0 6px 0 0;" width="50%">
-                    <a href="https://trepper.global/orte"
-                       style="display:block;background:#0F172A;color:#ffffff;font-size:14px;font-weight:700;padding:13px 16px;border-radius:10px;text-decoration:none;text-align:center;">
+                  <td style="padding:0 5px 0 0;" width="50%">
+                    <a href="https://trepper-global.de/orte"
+                       style="display:block;background-color:#0F172A;color:#ffffff;font-size:14px;font-weight:700;padding:14px 16px;border-radius:10px;text-decoration:none;text-align:center;">
                       🗺️ Reiseberichte
                     </a>
                   </td>
-                  <td style="padding:0 0 0 6px;" width="50%">
-                    <a href="https://trepper.global/route"
-                       style="display:block;background:#FFF7ED;color:#C2410C;font-size:14px;font-weight:700;padding:13px 16px;border-radius:10px;text-decoration:none;text-align:center;border:1.5px solid #FDBA74;">
-                      📍 Route & Karte
+                  <td style="padding:0 0 0 5px;" width="50%">
+                    <a href="https://trepper-global.de/route"
+                       style="display:block;background-color:#FFF7ED;color:#C2410C;font-size:14px;font-weight:700;padding:14px 16px;border-radius:10px;text-decoration:none;text-align:center;border:1.5px solid #FDBA74;">
+                      📍 Route &amp; Karte
                     </a>
                   </td>
                 </tr>
@@ -82,25 +154,39 @@
             </td>
           </tr>
 
-          <!-- FOOTER -->
+          <!-- ── FOOTER ── -->
           <tr>
-            <td style="background:#F1F5F9;border-radius:0 0 16px 16px;padding:20px 36px;text-align:center;">
-              <p style="font-size:13px;color:#0F172A;font-weight:600;margin:0 0 4px;">Kevin Trepper · trepper.global</p>
-              <p style="font-size:12px;color:#94A3B8;line-height:1.6;margin:0 0 12px;">
-                Du bekommst diese Mail weil du Updates von trepper.global abonniert hast.
+            <td class="footer-td"
+                style="background-color:#F1F5F9;border-radius:0 0 16px 16px;padding:22px 36px;text-align:center;">
+              <p class="footer-name"
+                 style="font-size:13px;color:#0F172A;font-weight:700;margin:0 0 4px;">
+                Kevin Trepper · trepper-global.de
+              </p>
+              <p class="footer-sub"
+                 style="font-size:12px;color:#64748B;line-height:1.6;margin:0 0 14px;">
+                Du bekommst diese Mail, weil du Updates von trepper-global.de abonniert hast.
               </p>
               <table cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
                 <tr>
                   <td style="padding:0 10px;">
-                    <a href="https://trepper.global" style="font-size:12px;color:#64748B;font-weight:600;text-decoration:none;">Website</a>
+                    <a class="footer-link" href="https://trepper-global.de"
+                       style="font-size:12px;color:#64748B;font-weight:600;text-decoration:none;">
+                      Website
+                    </a>
                   </td>
                   <td style="color:#CBD5E1;font-size:12px;">|</td>
                   <td style="padding:0 10px;">
-                    <a href="https://instagram.com/kevin.ontour" style="font-size:12px;color:#64748B;font-weight:600;text-decoration:none;">Instagram</a>
+                    <a class="footer-link" href="https://instagram.com/kevin.ontour"
+                       style="font-size:12px;color:#64748B;font-weight:600;text-decoration:none;">
+                      Instagram
+                    </a>
                   </td>
                   <td style="color:#CBD5E1;font-size:12px;">|</td>
                   <td style="padding:0 10px;">
-                    <a href="{$unsubscribe}" style="font-size:12px;color:#64748B;font-weight:600;text-decoration:none;">Abmelden</a>
+                    <a class="footer-link" href="{$unsubscribe}"
+                       style="font-size:12px;color:#64748B;font-weight:600;text-decoration:none;">
+                      Abmelden
+                    </a>
                   </td>
                 </tr>
               </table>

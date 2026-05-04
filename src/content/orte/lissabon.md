@@ -8,6 +8,10 @@ dateTo: "2026-04-17"
 nights: 3
 vibe: Miradouros & Pastéis de Nata
 costLevel: 2
+mapCenter:
+  lat: 38.7223
+  lon: -9.1393
+budgetPerDay: "60–100 €"
 rating: 4
 highlights:
   - "[Miradouro de São Pedro de Alcântara](https://maps.google.com/?q=Miradouro+de+São+Pedro+de+Alcântara+Lissabon) — erster Ausblick über Lissabon, Livemusik, mit dem Elevador da Glória hochgefahren"
@@ -17,18 +21,24 @@ highlights:
   - "[Manteigaria](https://manteigaria.com/en/) — die Pastéis de Nata Manufaktur, frisch aus dem Ofen, mehrere Filialen"
 foodSpots:
   - name: Manteigaria
+    lat: 38.7108
+    lon: -9.1426
     what: Pastéis de Nata frisch aus dem Ofen — die wohl beste Adresse der Stadt dafür
     stars: 5
     area: Chiado / auch im Time Out Market
     tip: Warm essen, mit Zimt und Puderzucker — so wie es sein soll
     link: "https://manteigaria.com/en/"
   - name: O Trevo
+    lat: 38.71
+    lon: -9.1428
     what: Bifana — das klassische portugiesische Schweinefleisch-Sandwich, knusprig und deftig
     stars: 4
     area: Praça Luís de Camões / Chiado
     tip: Günstig, schnell, echt portugiesisch — perfekter Snack zwischendurch. Von Anthony Bourdain empfohlen.
     link: "https://maps.google.com/?q=O+Trevo+Lisbon+Praça+Luís+de+Camões"
   - name: Pastelaria Doce Mila
+    lat: 38.7165
+    lon: -9.1352
     what: Frühstückscafé in der Mouraria mit gutem Cappuccino und frischen Backwaren
     stars: 4
     area: Mouraria / Martim Moniz

@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import WorldMap from '../components/WorldMap.astro';
 import stationsData from '../data/stations.json';
 import config from '../data/config.json';
 
@@ -24,6 +23,24 @@ const details = (currentStation as any).details;
 
 const currencyNames = new Intl.DisplayNames(['de'], { type: 'currency' });
 const currencyName = currencyNames.of(currentStation.currency) || currentStation.currency;
+
+const cityMapData = JSON.stringify({
+  center: { lat: currentStation.lat, lon: currentStation.lon },
+  name: currentStation.name,
+  spots: (details?.spots || []) as Array<{name: string; lat: number; lon: number; type: string}>,
+});
+
+// Lookup: Spot-Name → Koordinaten, für klickbare Tags
+const spotsLookup: Record<string, { lat: number; lon: number }> = {};
+if (details?.spots) {
+  for (const sp of details.spots as Array<{name: string; lat: number; lon: number}>) {
+    spotsLookup[sp.name] = { lat: sp.lat, lon: sp.lon };
+  }
+}
+function gmapsUrl(label: string, city: string, lat?: number, lon?: number) {
+  if (lat && lon) return `https://www.google.com/maps?q=${lat},${lon}`;
+  return `https://www.google.com/maps/search/${encodeURIComponent(label + ' ' + city)}`;
+}
 ---
 
 <Layout
@@ -95,7 +112,10 @@ const currencyName = currencyNames.of(currentStation.currency) || currentStation
 
         <!-- Karte -->
         <div class="jt-map-col">
-          <WorldMap height="340px" mapId="jetzt-map" showRoute={false} showFilters={false} />
+          <h2 class="jt-section-title" style="margin-bottom:.75rem">
+            <span class="jt-section-icon">🗺️</span> {currentStation.name} – Karte
+          </h2>
+          <div id="jetzt-city-map" style="height:300px;border-radius:14px;overflow:hidden;border:1.5px solid var(--border);"></div>
         </div>
 
       </div>
@@ -108,9 +128,20 @@ const currencyName = currencyNames.of(currentStation.currency) || currentStation
               <span class="jt-section-icon">📍</span> Must-See
             </h2>
             <div class="jt-tags">
-              {details.highlights.map((h: string) => (
-                <span class="jt-tag jt-tag--coral">{h}</span>
-              ))}
+              {details.highlights.map((h: string) => {
+                const sp = spotsLookup[h];
+                return (
+                  <a
+                    href={gmapsUrl(h, currentStation.name, sp?.lat, sp?.lon)}
+                    target="_blank"
+                    rel="noopener"
+                    class="jt-tag jt-tag--coral"
+                    title={`${h} auf Google Maps öffnen`}
+                  >
+                    {h} <span class="jt-tag-icon">↗</span>
+                  </a>
+                );
+              })}
             </div>
           </div>
 
@@ -119,6 +150,7 @@ const currencyName = currencyNames.of(currentStation.currency) || currentStation
             <h2 class="jt-section-title">
               <span class="jt-section-icon">🍜</span> Unbedingt essen
             </h2>
+            <p class="jt-must-eat-hint">Typische Gerichte & Spezialitäten — auf der Karte oben findest du konkrete Restaurants.</p>
             <div class="jt-tags">
               {details.mustEat.map((e: string) => (
                 <span class="jt-tag jt-tag--green">{e}</span>
@@ -220,6 +252,93 @@ const currencyName = currencyNames.of(currentStation.currency) || currentStation
         rateEl.textContent = '1 € = ' + formatted + ' ' + symbol;
       }).catch(function(){});
   }
+})();
+</script>
+
+<script define:vars={{ cityMapData }}>
+(function () {
+  var parsed = JSON.parse(cityMapData);
+  var mapEl = document.getElementById('jetzt-city-map');
+  if (!mapEl || !parsed.center) return;
+
+  function initCityMap() {
+    if (!window.L) { setTimeout(initCityMap, 100); return; }
+
+    var map = L.map('jetzt-city-map', { zoomControl: true, scrollWheelZoom: false });
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap',
+      maxZoom: 18,
+    }).addTo(map);
+
+    var popupOpts = { maxWidth: 220, className: 'jt-leaflet-popup' };
+
+    function mapsLink(lat, lon, name) {
+      return 'https://www.google.com/maps?q=' + lat + ',' + lon + '&query_place=' + encodeURIComponent(name);
+    }
+
+    function popupHtml(name, badge, badgeColor, lat, lon) {
+      return '<div style="font-family:inherit;padding:2px 0">'
+        + '<div style="font-size:.85rem;font-weight:700;color:#0F172A;margin-bottom:4px">' + name + '</div>'
+        + '<div style="display:inline-block;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;'
+        + 'padding:2px 7px;border-radius:100px;background:' + badgeColor.bg + ';color:' + badgeColor.text + ';margin-bottom:8px">'
+        + badge + '</div>'
+        + '<br><a href="' + mapsLink(lat, lon, name) + '" target="_blank" rel="noopener" '
+        + 'style="display:inline-flex;align-items:center;gap:4px;font-size:.78rem;font-weight:700;'
+        + 'color:#F97316;text-decoration:none;padding:4px 10px;border-radius:7px;'
+        + 'background:#FFF7ED;border:1px solid #FDBA74;margin-top:2px">'
+        + '↗ Google Maps</a>'
+        + '</div>';
+    }
+
+    // Center marker (orange)
+    var centerIcon = L.divIcon({
+      html: '<div style="width:14px;height:14px;border-radius:50%;background:#F97316;border:3px solid white;box-shadow:0 2px 6px rgba(0,0,0,0.35);"></div>',
+      className: '',
+      iconSize: [14, 14],
+      iconAnchor: [7, 7],
+    });
+
+    // Spot markers
+    var sightIcon = L.divIcon({
+      html: '<div style="width:11px;height:11px;border-radius:50%;background:#0EA5E9;border:2px solid white;box-shadow:0 1px 4px rgba(0,0,0,0.3);"></div>',
+      className: '',
+      iconSize: [11, 11],
+      iconAnchor: [5, 5],
+    });
+    var foodIcon = L.divIcon({
+      html: '<div style="width:11px;height:11px;border-radius:50%;background:#10B981;border:2px solid white;box-shadow:0 1px 4px rgba(0,0,0,0.3);"></div>',
+      className: '',
+      iconSize: [11, 11],
+      iconAnchor: [5, 5],
+    });
+
+    var allMarkers = [];
+
+    var centerMarker = L.marker([parsed.center.lat, parsed.center.lon], { icon: centerIcon });
+    centerMarker.bindPopup(popupHtml(parsed.name, '📍 Aktueller Standort', {bg:'#FFF7ED',text:'#C2410C'}, parsed.center.lat, parsed.center.lon), popupOpts);
+    centerMarker.addTo(map);
+    allMarkers.push(centerMarker);
+
+    parsed.spots.forEach(function (spot) {
+      var isFood = spot.type === 'food';
+      var icon   = isFood ? foodIcon : sightIcon;
+      var badge  = isFood ? '🍜 Essen-Tipp' : '📍 Sehenswürdigkeit';
+      var color  = isFood
+        ? { bg: '#D1FAE5', text: '#065F46' }
+        : { bg: '#E0F2FE', text: '#0369A1' };
+      var m = L.marker([spot.lat, spot.lon], { icon: icon });
+      m.bindPopup(popupHtml(spot.name, badge, color, spot.lat, spot.lon), popupOpts);
+      m.addTo(map);
+      allMarkers.push(m);
+    });
+
+    // Zoom auf alle Pins
+    var group = L.featureGroup(allMarkers);
+    map.fitBounds(group.getBounds(), { padding: [28, 28] });
+  }
+
+  initCityMap();
 })();
 </script>
 
@@ -353,6 +472,17 @@ const currencyName = currencyNames.of(currentStation.currency) || currentStation
   .jt-tag--green { background: #D1FAE5; color: #065F46; border-color: #6EE7B7; }
   .jt-tag--blue  { background: #E0F2FE; color: #0369A1; border-color: #7DD3FC; }
 
+  a.jt-tag { transition: filter .15s, transform .15s; }
+  a.jt-tag:hover { filter: brightness(.93); transform: translateY(-1px); }
+  .jt-tag-icon { font-size: .7rem; opacity: .6; }
+
+  .jt-must-eat-hint {
+    font-size: .78rem;
+    color: var(--text-light);
+    margin-bottom: .75rem;
+    font-style: italic;
+  }
+
   .jt-tips {
     font-size: .92rem;
     color: var(--text-mid);
@@ -389,6 +519,20 @@ const currencyName = currencyNames.of(currentStation.currency) || currentStation
     flex-shrink: 0;
   }
   .jt-cta-btn:hover { background: #EA6D10; transform: translateY(-1px); }
+
+  /* Leaflet Popup Override */
+  :global(.jt-leaflet-popup .leaflet-popup-content-wrapper) {
+    border-radius: 12px !important;
+    box-shadow: 0 6px 24px rgba(15,23,42,0.14) !important;
+    padding: 0 !important;
+    border: 1.5px solid #E2E8F0 !important;
+  }
+  :global(.jt-leaflet-popup .leaflet-popup-content) {
+    margin: 12px 14px !important;
+  }
+  :global(.jt-leaflet-popup .leaflet-popup-tip-container) {
+    margin-top: -1px;
+  }
 
   /* RESPONSIVE */
   @media (max-width: 800px) {

@@ -28,6 +28,11 @@ const orte = defineCollection({
     rating:     z.number().min(1).max(5),
     coverImage: z.string().optional(),
     highlights: z.array(z.string()),
+    mapCenter: z.object({
+      lat: z.number(),
+      lon: z.number(),
+    }).optional(),
+    budgetPerDay: z.string().optional(),
     foodSpots: z.array(z.object({
       name:   z.string(),
       what:   z.string(),
@@ -35,6 +40,8 @@ const orte = defineCollection({
       area:   z.string().optional(),
       tip:    z.string().optional(),
       link:   z.string().optional(),
+      lat:    z.number().optional(),
+      lon:    z.number().optional(),
     })),
     markets: z.array(z.object({
       name: z.string(),

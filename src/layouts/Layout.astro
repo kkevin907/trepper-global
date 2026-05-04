@@ -71,6 +71,7 @@ const fullTitle    = title === "Home" ? "Trepper Global — Von Solingen in die 
           <a href="/orte" class:list={["nav-link", { active: currentPath.startsWith("/orte") }]}>Orte</a>
           <a href="/route" class:list={["nav-link", { active: currentPath === "/route" }]}>Route</a>
           <a href="/about" class:list={["nav-link", { active: currentPath === "/about" }]}>Über mich</a>
+          <a href="/newsletter" class:list={["nav-link nav-link--nl", { active: currentPath === "/newsletter" }]}>Newsletter</a>
         </div>
         <button class="nav-burger" id="nav-burger" aria-label="Menü">
           <span></span><span></span><span></span>
@@ -313,6 +314,20 @@ const fullTitle    = title === "Home" ? "Trepper Global — Von Solingen in die 
   .nav-link.active {
     color: var(--coral);
     background: var(--coral-light);
+  }
+
+  .nav-link--nl {
+    background: var(--coral);
+    color: white !important;
+    font-weight: 700;
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    transition: background .15s, transform .15s;
+  }
+  .nav-link--nl:hover,
+  .nav-link--nl.active {
+    background: #EA6D10 !important;
+    color: white !important;
   }
 
   /* FOOTER */

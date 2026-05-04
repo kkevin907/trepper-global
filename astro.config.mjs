@@ -3,14 +3,14 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://trepper.global',
+  site: 'https://trepper-global.de',
   output: 'static',
   integrations: [
     sitemap({
       changefreq: 'weekly',
       priority: 0.7,
       lastmod: new Date(),
-      customPages: ['https://trepper.global/'],
+      customPages: ['https://trepper-global.de/'],
     }),
   ],
 });
