@@ -24,7 +24,7 @@ const orte = defineCollection({
     dateTo:     z.string(),
     nights:     z.number(),
     vibe:       z.string(),
-    costLevel:  z.number().min(1).max(3),
+    costLevel:  z.number().min(1).max(5),
     rating:     z.number().min(1).max(5),
     coverImage: z.string().optional(),
     highlights: z.array(z.string()),
@@ -32,7 +32,6 @@ const orte = defineCollection({
       lat: z.number(),
       lon: z.number(),
     }).optional(),
-    budgetPerDay: z.string().optional(),
     foodSpots: z.array(z.object({
       name:   z.string(),
       what:   z.string(),

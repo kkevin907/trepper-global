@@ -32,12 +32,12 @@ const warmupStations  = stations.filter(s => s.phase === 'warmup');
 const mainStations    = stations.filter(s => s.phase === 'main');
 ---
 
-<Layout title="Route" description="Kevins Reiseroute — alle Stationen im Überblick.">
+<Layout title="Route" description="Alle Orte wo ich war und wo ich noch hinwill. Vergangene Trips, Warm-up 2026 und die Weltreise.">
   <div class="page-header">
     <div class="page-header-inner">
       <span class="page-badge">Route</span>
       <h1 class="page-title">Meine Route</h1>
-      <p class="page-sub">Alle Stationen — vergangene und geplante. Filter-Buttons auf der Karte ein- und ausblenden.</p>
+      <p class="page-sub">Alles was ich bereist hab und was noch kommt. Karte oben, Liste unten.</p>
     </div>
   </div>
 
@@ -97,7 +97,7 @@ const mainStations    = stations.filter(s => s.phase === 'main');
             <span class="sgroup-icon">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
             </span>
-            <span class="sgroup-title">📅 2022</span>
+            <span class="sgroup-title">2022</span>
             <span class="sgroup-count">{history2022.length} Trips</span>
           </summary>
           <div class="sgroup-body">
@@ -140,7 +140,7 @@ const mainStations    = stations.filter(s => s.phase === 'main');
             <span class="sgroup-icon">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
             </span>
-            <span class="sgroup-title">📅 2023</span>
+            <span class="sgroup-title">2023</span>
             <span class="sgroup-count">{history2023.length} Trips</span>
           </summary>
           <div class="sgroup-body">
@@ -184,7 +184,7 @@ const mainStations    = stations.filter(s => s.phase === 'main');
             <span class="sgroup-icon">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
             </span>
-            <span class="sgroup-title">📅 2024</span>
+            <span class="sgroup-title">2024</span>
             <span class="sgroup-count">{history2024.length} Trips</span>
           </summary>
           <div class="sgroup-body">
@@ -228,7 +228,7 @@ const mainStations    = stations.filter(s => s.phase === 'main');
             <span class="sgroup-icon">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
             </span>
-            <span class="sgroup-title">📅 2025</span>
+            <span class="sgroup-title">2025</span>
             <span class="sgroup-count">{history2025.length} Trips</span>
           </summary>
           <div class="sgroup-body">
@@ -272,7 +272,7 @@ const mainStations    = stations.filter(s => s.phase === 'main');
             <span class="sgroup-icon">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
             </span>
-            <span class="sgroup-title">✈️ 2026 — Vor dem Start</span>
+            <span class="sgroup-title">2026 — Vor dem Start</span>
             <span class="sgroup-count">{warmupStations.length} Stops</span>
           </summary>
           <div class="sgroup-body">
@@ -319,7 +319,7 @@ const mainStations    = stations.filter(s => s.phase === 'main');
             <span class="sgroup-icon">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
             </span>
-            <span class="sgroup-title">🌏 Die Weltreise</span>
+            <span class="sgroup-title">Die Weltreise</span>
             <span class="sgroup-count">{mainStations.length} Stationen</span>
           </summary>
           <div class="sgroup-body">
@@ -544,5 +544,13 @@ const mainStations    = stations.filter(s => s.phase === 'main');
     .station-name { font-size: .95rem; }
     .station-header { flex-wrap: wrap; gap: .3rem; }
     .timeline-title { font-size: 1.1rem; }
+  }
+  @media (max-width: 380px) {
+    .page-header { padding: 1.5rem 1rem; }
+    .route-wrap { padding: 1.25rem 1rem 2.5rem; }
+    .station-row { grid-template-columns: 28px 1fr; gap: .5rem; }
+    .station-name { font-size: .88rem; }
+    .station-desc { font-size: .82rem; }
+    .station-badge { font-size: .65rem; padding: 2px 7px; }
   }
 </style>

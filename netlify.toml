@@ -39,6 +39,12 @@
   [headers.values]
     Cache-Control = "public, max-age=3600"
 
+# Newsletter-URL auf Live dabei umleiten
+[[redirects]]
+  from   = "/newsletter"
+  to     = "/live-dabei"
+  status = 301
+
 # 404 auf eigene Fehlerseite routen
 [[redirects]]
   from   = "/*"

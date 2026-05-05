@@ -7,11 +7,10 @@ dateFrom: "2026-04-10"
 dateTo: "2026-04-13"
 nights: 3
 vibe: "Natur & Entschleunigung"
-costLevel: 2
+costLevel: 3
 mapCenter:
   lat: 32.6491
   lon: -16.9071
-budgetPerDay: "50–80 €"
 rating: 5
 coverImage: ""
 highlights:

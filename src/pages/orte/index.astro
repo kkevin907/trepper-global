@@ -13,20 +13,20 @@ orte.sort((a, b) => {
   return new Date(b.data.dateFrom).getTime() - new Date(a.data.dateFrom).getTime();
 });
 
-const costLabels = ['', 'Günstig', 'Mittel', 'Teuer'];
-const costColors = ['', '#10B981', '#F97316', '#EF4444'];
+const costColors  = ['', '#10B981', '#22C55E', '#F97316', '#EF4444', '#DC2626'];
+const costLabels  = ['', 'Günstig', 'Günstig', 'Bezahlbar', 'Teuer', 'Sehr teuer'];
 ---
 
 <Layout
   title="Orte"
-  description="Alle Orte, die Kevin besucht hat — persönliche Erfahrungsberichte, Food-Spots, Tipps und Highlights."
+  description="Alle Orte wo ich war. Was sich gelohnt hat, was nicht und wo man gut essen kann."
 >
 
   <div class="oi-header">
     <div class="oi-header-inner">
       <a href="/" class="oi-back">← Zurück</a>
       <h1 class="oi-title">Meine Orte</h1>
-      <p class="oi-sub">Persönliche Berichte aus jedem Ort — Food-Spots, Highlights, Tipps.</p>
+      <p class="oi-sub">Was ich erlebt hab. Was sich lohnt und was nicht.</p>
     </div>
   </div>
 
@@ -44,7 +44,6 @@ const costColors = ['', '#10B981', '#F97316', '#EF4444'];
             const dateFrom = new Date(d.dateFrom).toLocaleDateString('de-DE', { month: 'short', year: 'numeric' });
             const dateTo   = new Date(d.dateTo).toLocaleDateString('de-DE', { month: 'short', year: 'numeric' });
             const stars    = '★'.repeat(d.rating) + '☆'.repeat(5 - d.rating);
-            const euros    = '€'.repeat(d.costLevel);
             const isReal   = !d.highlights[0].startsWith('TODO');
 
             return (
@@ -69,8 +68,8 @@ const costColors = ['', '#10B981', '#F97316', '#EF4444'];
                   <div class="oi-card-chips">
                     {isReal && <span class="oi-chip oi-chip-report">📖 Bericht lesen</span>}
                     <span class="oi-chip oi-chip-vibe">{d.vibe}</span>
-                    <span class="oi-chip" style={`color:${costColors[d.costLevel]};border-color:${costColors[d.costLevel]}20;background:${costColors[d.costLevel]}10;`}>
-                      {euros}
+                    <span class="oi-chip oi-chip-cost" style={`color:${costColors[d.costLevel]};border-color:${costColors[d.costLevel]}30;background:${costColors[d.costLevel]}12;`}>
+                      {costLabels[d.costLevel]}
                     </span>
                     <span class="oi-chip oi-chip-stars">{stars}</span>
                   </div>
@@ -249,5 +248,12 @@ const costColors = ['', '#10B981', '#F97316', '#EF4444'];
   /* RESPONSIVE */
   @media (max-width: 600px) {
     .oi-grid { grid-template-columns: 1fr; }
+    .oi-header { padding: 1.75rem 1.25rem; }
+    .oi-wrap { padding: 1.5rem 1.25rem 3rem; }
+  }
+  @media (max-width: 380px) {
+    .oi-header { padding: 1.5rem 1rem; }
+    .oi-wrap { padding: 1.25rem 1rem 2.5rem; }
+    .oi-card-title { font-size: 1.1rem; }
   }
 </style>

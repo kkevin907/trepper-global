@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Über mich" description="Wer ist Kevin Trepper — und warum macht er das?">
+<Layout title="Über mich" description="Ich bin Kevin, 20, aus Solingen. Hier erfährst du wer ich bin und warum ich das mache.">
   <div class="page-header">
     <div class="page-header-inner">
       <span class="page-badge">Über mich</span>
@@ -25,7 +25,7 @@ import Layout from '../layouts/Layout.astro';
           <div class="quick-profile">
             <div class="qp-row">
               <span class="qp-label">Alter</span>
-              <span class="qp-val">20 Jahre</span>
+              <span class="qp-val" id="about-age">–</span>
             </div>
             <div class="qp-row">
               <span class="qp-label">Heimat</span>
@@ -57,8 +57,8 @@ import Layout from '../layouts/Layout.astro';
 
           <div class="about-body">
             <p>
-              Ich bin Kevin, 20, aus Solingen. 2023 Abitur gemacht — und schon während der Vorbereitung
-              auf mein Spanisch-Mündliche bin ich spontan solo nach Gijón gefahren, um die Sprache direkt vor Ort zu üben.
+              Ich bin Kevin, <span id="about-age-inline">20</span>, aus Solingen. 2023 Abitur gemacht — und schon während der Vorbereitung
+              kurz vor meiner mündlichen Spanischprüfung bin ich spontan solo nach Gijón gefahren, um die Sprache direkt vor Ort zu üben.
               Erster Solotrip. Seitdem weiß ich: Es macht keinen Unterschied, ob ich alleine reise,
               mit Freunden oder mit der Familie — Hauptsache unterwegs.
             </p>
@@ -327,10 +327,29 @@ import Layout from '../layouts/Layout.astro';
 
   @media (max-width: 700px) {
     .about-grid { grid-template-columns: 1fr; }
-    .photo-img { aspect-ratio: 4/3; object-position: center 20%; }
+    .photo-img { aspect-ratio: 3/2; object-position: 60% 100%; transform: scale(1.35); transform-origin: 60% 100%; }
     .about-body { font-size: 0.95rem; }
     .about-cta { flex-direction: column; }
-    .about-cta a { justify-content: center; }
+    .about-cta a { justify-content: center; width: 100%; }
     .about-name { font-size: 1.8rem; }
+    .about-wrap { padding: 2rem 1.25rem 3rem; }
+    .page-header { padding: 2rem 1.25rem; }
+  }
+  @media (max-width: 380px) {
+    .about-wrap { padding: 1.5rem 1rem 2.5rem; }
+    .page-header { padding: 1.5rem 1rem; }
+    .about-name { font-size: 1.5rem; }
+    .qp-row { padding: .45rem .75rem; font-size: .78rem; }
   }
 </style>
+
+<script is:inline>
+  (function () {
+    var bday = new Date('2005-03-21');
+    var today = new Date();
+    var age = today.getFullYear() - bday.getFullYear();
+    if (today < new Date(today.getFullYear(), bday.getMonth(), bday.getDate())) age--;
+    var els = [document.getElementById('about-age'), document.getElementById('about-age-inline')];
+    els.forEach(function(el) { if (el) el.textContent = age + (el.id === 'about-age' ? ' Jahre' : ''); });
+  })();
+</script>

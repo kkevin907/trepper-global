@@ -3,15 +3,14 @@ title: "London"
 stationId: "london"
 country: "Vereinigtes Königreich"
 flag: "🇬🇧"
-dateFrom: "2026-04-16"
-dateTo: "2026-04-18"
+dateFrom: "2026-04-07"
+dateTo: "2026-04-09"
 nights: 2
 vibe: "East End Energy"
-costLevel: 3
+costLevel: 4
 mapCenter:
   lat: 51.5074
   lon: -0.1278
-budgetPerDay: "100–180 €"
 rating: 4
 coverImage: ""
 highlights:

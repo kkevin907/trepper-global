@@ -7,11 +7,10 @@ dateFrom: "2026-04-14"
 dateTo: "2026-04-17"
 nights: 3
 vibe: Miradouros & Pastéis de Nata
-costLevel: 2
+costLevel: 3
 mapCenter:
   lat: 38.7223
   lon: -9.1393
-budgetPerDay: "60–100 €"
 rating: 4
 highlights:
   - "[Miradouro de São Pedro de Alcântara](https://maps.google.com/?q=Miradouro+de+São+Pedro+de+Alcântara+Lissabon) — erster Ausblick über Lissabon, Livemusik, mit dem Elevador da Glória hochgefahren"

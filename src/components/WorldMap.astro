@@ -64,11 +64,18 @@ const doFilters    = showFilters;
     var stations = JSON.parse(stationsJSON);
     var orteIds  = JSON.parse(orteIdsJSON);
 
-    var map = L.map(mapId, { scrollWheelZoom: false, zoomControl: true });
+    var map = L.map(mapId, {
+      scrollWheelZoom: false,
+      zoomControl: true,
+      worldCopyJump: false,
+      maxBounds: [[-85, -210], [85, 210]],
+      maxBoundsViscosity: 1.0,
+    });
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
       maxZoom: 18,
+      noWrap: true,
     }).addTo(map);
 
     var colorMap = {

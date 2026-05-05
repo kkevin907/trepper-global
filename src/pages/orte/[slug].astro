@@ -21,15 +21,14 @@ function ml(text: string): string {
 const dateFrom = new Date(d.dateFrom).toLocaleDateString('de-DE', { month: 'long', year: 'numeric' });
 const dateTo   = new Date(d.dateTo).toLocaleDateString('de-DE', { month: 'long', year: 'numeric' });
 
-const costLabels = ['', 'Günstig', 'Mittel', 'Teuer'];
-const costColors = ['', '#10B981', '#F97316', '#EF4444'];
-const costBg     = ['', '#D1FAE5', '#FFF7ED', '#FEE2E2'];
+const costLabels = ['', 'Günstig', 'Günstig', 'Bezahlbar', 'Teuer', 'Sehr teuer'];
+const costColors = ['', '#10B981',      '#22C55E', '#F97316', '#EF4444', '#DC2626'];
+const costBg     = ['', '#D1FAE5',      '#DCFCE7', '#FFF7ED', '#FEE2E2', '#FFE4E4'];
 const stars = '★'.repeat(d.rating) + '☆'.repeat(5 - d.rating);
 
 // Food spots with coordinates for map
 const mapSpots = (d.foodSpots || []).filter((f: any) => f.lat && f.lon);
 const mapCenter = (d as any).mapCenter;
-const budgetPerDay = (d as any).budgetPerDay;
 
 const mapData = JSON.stringify({
   center: mapCenter || null,
@@ -46,7 +45,7 @@ const mapData = JSON.stringify({
 
 <Layout
   title={d.title}
-  description={`Kevin in ${d.title} — persönlicher Erfahrungsbericht, Food-Spots, Tipps und Highlights.`}
+  description={`Ich war in ${d.title}. Was ich dort gemacht hab, wo ich gegessen hab und was sich wirklich lohnt.`}
 >
 
   <!-- HEADER -->
@@ -65,7 +64,7 @@ const mapData = JSON.stringify({
         <span class="or-chip">{d.nights} {d.nights === 1 ? 'Nacht' : 'Nächte'}</span>
         <span class="or-chip or-chip-vibe">{d.vibe}</span>
         <span class="or-chip" style={`color:${costColors[d.costLevel]};border-color:${costColors[d.costLevel]}40;background:${costBg[d.costLevel]};`}>
-          {'€'.repeat(d.costLevel)} · {costLabels[d.costLevel]}
+          💰 {costLabels[d.costLevel]}
         </span>
         <span class="or-chip or-chip-stars" title={`${d.rating}/5`}>{stars}</span>
       </div>
@@ -141,38 +140,21 @@ const mapData = JSON.stringify({
         <div class="or-sidebar">
 
           <!-- BUDGET KARTE -->
-          {budgetPerDay && (
-            <div class="or-sidebar-card or-budget-card">
-              <h3 class="or-sidebar-title">💰 Budget-Einschätzung</h3>
-              <div class="or-budget-level">
-                {[1,2,3].map(i => (
-                  <div class={`or-budget-dot ${i <= d.costLevel ? 'or-budget-dot--active' : ''}`}
-                       style={i <= d.costLevel ? `background:${costColors[d.costLevel]}` : ''}></div>
-                ))}
-                <span class="or-budget-label" style={`color:${costColors[d.costLevel]}`}>
-                  {costLabels[d.costLevel]}
-                </span>
-              </div>
-              <div class="or-budget-amount">
-                <span class="or-budget-num">{budgetPerDay}</span>
-                <span class="or-budget-sub">pro Person / Tag</span>
-              </div>
-              <div class="or-budget-rows">
-                <div class="or-budget-row">
-                  <span>🏨 Unterkunft</span>
-                  <span>{d.costLevel === 1 ? 'ab 15 €' : d.costLevel === 2 ? 'ab 25 €' : 'ab 60 €'}</span>
-                </div>
-                <div class="or-budget-row">
-                  <span>🍽️ Essen</span>
-                  <span>{d.costLevel === 1 ? '10–20 €' : d.costLevel === 2 ? '20–40 €' : '40–80 €'}</span>
-                </div>
-                <div class="or-budget-row">
-                  <span>🚌 Transport</span>
-                  <span>{d.costLevel === 1 ? '2–5 €' : d.costLevel === 2 ? '5–15 €' : '10–25 €'}</span>
-                </div>
-              </div>
+          <div class="or-sidebar-card or-budget-card">
+            <h3 class="or-sidebar-title">💰 Preis&shy;einschätzung</h3>
+            <div class="or-budget-dots">
+              {[1,2,3,4,5].map(i => (
+                <div class={`or-budget-dot ${i <= d.costLevel ? 'or-budget-dot--active' : ''}`}
+                     style={i <= d.costLevel ? `background:${costColors[d.costLevel]}` : ''}></div>
+              ))}
             </div>
-          )}
+            <div class="or-budget-label-row">
+              <span class="or-budget-label" style={`color:${costColors[d.costLevel]};background:${costBg[d.costLevel]}`}>
+                {costLabels[d.costLevel]}
+              </span>
+              <span class="or-budget-scale">{d.costLevel} / 5</span>
+            </div>
+          </div>
 
           <!-- HIGHLIGHTS -->
           <div class="or-sidebar-card">
@@ -249,12 +231,13 @@ const mapData = JSON.stringify({
       const mapEl = document.getElementById('or-map');
       if (!mapEl) return;
 
-      const map = L.map('or-map', { zoomControl: true, scrollWheelZoom: false })
+      const map = L.map('or-map', { zoomControl: true, scrollWheelZoom: false, worldCopyJump: false, maxBounds: [[-85,-210],[85,210]], maxBoundsViscosity: 1.0 })
         .setView([parsed.center.lat, parsed.center.lon], 13);
 
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         maxZoom: 19,
+        noWrap: true,
       }).addTo(map);
 
       // Custom marker icon
@@ -273,11 +256,6 @@ const mapData = JSON.stringify({
         });
       }
 
-      // Center marker
-      L.marker([parsed.center.lat, parsed.center.lon], {
-        icon: makeIcon('#F97316'),
-      }).addTo(map);
-
       // Food spot markers
       const starStr = (n) => '★'.repeat(n) + '☆'.repeat(5 - n);
       parsed.spots.forEach(function (spot) {
@@ -295,10 +273,7 @@ const mapData = JSON.stringify({
 
       // Fit bounds to all markers if spots exist
       if (parsed.spots.length > 0) {
-        const allCoords = [
-          [parsed.center.lat, parsed.center.lon],
-          ...parsed.spots.map(s => [s.lat, s.lon]),
-        ];
+        const allCoords = parsed.spots.map(s => [s.lat, s.lon]);
         map.fitBounds(allCoords, { padding: [32, 32], maxZoom: 14 });
       }
     }
@@ -379,18 +354,12 @@ const mapData = JSON.stringify({
 
   /* BUDGET CARD */
   .or-budget-card { background:var(--bg-soft); }
-  .or-budget-level { display:flex; align-items:center; gap:.4rem; margin-bottom:.85rem; }
-  .or-budget-dot { width:12px; height:12px; border-radius:50%; background:var(--border); }
-  .or-budget-dot--active { }
-  .or-budget-label { font-size:.8rem; font-weight:700; margin-left:.25rem; }
-  .or-budget-amount { display:flex; align-items:baseline; gap:.4rem; margin-bottom:.9rem; }
-  .or-budget-num { font-size:1.5rem; font-weight:800; letter-spacing:-.03em; color:var(--text); }
-  .or-budget-sub { font-size:.75rem; color:var(--text-light); }
-  .or-budget-rows { display:flex; flex-direction:column; gap:0; border:1.5px solid var(--border); border-radius:8px; overflow:hidden; }
-  .or-budget-row { display:flex; justify-content:space-between; align-items:center; padding:.45rem .75rem; font-size:.8rem; border-bottom:1px solid var(--border); background:white; }
-  .or-budget-row:last-child { border-bottom:none; }
-  .or-budget-row span:first-child { color:var(--text-mid); }
-  .or-budget-row span:last-child { font-weight:700; color:var(--text); }
+  .or-budget-dots { display:flex; align-items:center; gap:6px; margin-bottom:.75rem; }
+  .or-budget-dot { width:14px; height:14px; border-radius:50%; background:#E2E8F0; flex-shrink:0; }
+  .or-budget-dot--active { box-shadow:0 1px 3px rgba(0,0,0,.15); }
+  .or-budget-label-row { display:flex; align-items:center; justify-content:space-between; }
+  .or-budget-label { font-size:.78rem; font-weight:700; padding:.25rem .7rem; border-radius:100px; }
+  .or-budget-scale { font-size:.75rem; color:var(--text-light); font-weight:600; }
 
   /* LISTS */
   .or-list { list-style:none; display:flex; flex-direction:column; gap:.45rem; }
@@ -410,6 +379,10 @@ const mapData = JSON.stringify({
   .or-market-tip  { font-size:.78rem; color:var(--text-light); line-height:1.5; }
 
   /* RESPONSIVE */
+  :global(.leaflet-popup-content-wrapper) {
+    border-radius: 10px !important;
+    box-shadow: 0 4px 16px rgba(15,23,42,.12) !important;
+  }
   @media (max-width: 900px) {
     .or-grid { grid-template-columns:1fr; }
     .or-sidebar { display:grid; grid-template-columns:1fr 1fr; }
@@ -417,7 +390,7 @@ const mapData = JSON.stringify({
     .or-header { padding:1.75rem 1.25rem; }
     .or-wrap { padding:1.5rem 1.25rem 3rem; }
     .or-cover img { height:240px; }
-    .or-map { height:300px; }
+    .or-map { height:320px; }
   }
   @media (max-width: 600px) {
     .or-sidebar { grid-template-columns:1fr; }
@@ -427,6 +400,19 @@ const mapData = JSON.stringify({
     .or-chip { font-size:.7rem; padding:.22rem .65rem; }
     .or-title { font-size:clamp(1.6rem,8vw,2.5rem); }
     .or-flag { font-size:2.5rem; }
+    .or-map { height:300px; }
+    :global(.leaflet-popup-content-wrapper) { max-width: 160px !important; }
+    :global(.leaflet-popup-content) { font-size: 11px !important; margin: 8px 10px !important; }
+    .or-header { padding:1.75rem 1.25rem; }
+    .or-wrap { padding:1.5rem 1.25rem 3rem; }
+  }
+  @media (max-width: 380px) {
+    .or-header { padding:1.25rem 1rem; }
+    .or-wrap { padding:1.25rem 1rem 2.5rem; }
+    .or-title { font-size:1.5rem; }
+    .or-photo-grid { grid-template-columns:1fr; }
     .or-map { height:260px; }
+    .or-food-card { padding:.75rem; }
+    .or-highlight-list { font-size:.85rem; }
   }
 </style>

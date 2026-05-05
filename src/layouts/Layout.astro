@@ -7,7 +7,7 @@ interface Props {
 
 const {
   title,
-  description = "Kevins persönliches Reise-Logbuch — von Solingen in die Welt.",
+  description = "Kevins Reise-Logbuch. Von Solingen nach Asien und weiter. Alle Stops, Food-Spots und was wirklich passiert ist.",
   ogImage = "/og-default.png",
 } = Astro.props;
 
@@ -71,7 +71,7 @@ const fullTitle    = title === "Home" ? "Trepper Global — Von Solingen in die 
           <a href="/orte" class:list={["nav-link", { active: currentPath.startsWith("/orte") }]}>Orte</a>
           <a href="/route" class:list={["nav-link", { active: currentPath === "/route" }]}>Route</a>
           <a href="/about" class:list={["nav-link", { active: currentPath === "/about" }]}>Über mich</a>
-          <a href="/newsletter" class:list={["nav-link nav-link--nl", { active: currentPath === "/newsletter" }]}>Newsletter</a>
+          <a href="/live-dabei" class:list={["nav-link nav-link--nl", { active: currentPath === "/live-dabei" }]}>Live dabei</a>
         </div>
         <button class="nav-burger" id="nav-burger" aria-label="Menü">
           <span></span><span></span><span></span>
@@ -103,6 +103,7 @@ const fullTitle    = title === "Home" ? "Trepper Global — Von Solingen in die 
       <div class="footer-inner">
         <span>Kevin Trepper · Unterwegs seit 2026</span>
         <div class="footer-right">
+          <a href="mailto:kevin@trepper-global.de" class="footer-link">kevin@trepper-global.de</a>
           <a href="/impressum" class="footer-link">Impressum</a>
           <span class="footer-instagram">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
@@ -285,6 +286,11 @@ const fullTitle    = title === "Home" ? "Trepper Global — Von Solingen in die 
     .nav-links--open { display: flex; }
     .nav-link { padding: .75rem 1rem; border-radius: 10px; font-size: .95rem; }
     .nav { position: sticky; }
+  }
+  @media (max-width: 380px) {
+    .nav-inner { padding: 0 1rem; }
+    .footer-inner { flex-direction: column; gap: .75rem; align-items: flex-start; }
+    .footer { padding: 1.25rem 1rem; margin-top: 2.5rem; }
   }
 
   .nav-link-live { display: inline-flex; align-items: center; gap: 5px; }

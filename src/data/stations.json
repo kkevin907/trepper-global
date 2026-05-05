@@ -13,7 +13,7 @@
     "currencySymbol": "€",
     "dateFrom": null,
     "dateTo": null,
-    "description": "Heimatbasis — von hier geht die Reise los.",
+    "description": "Heimat. Von hier geht es am 9. Juni los.",
     "details": {
       "highlights": [
         "Klingenmuseum",
@@ -939,7 +939,7 @@
     "currencySymbol": "£",
     "dateFrom": "2026-04-06",
     "dateTo": "2026-04-09",
-    "description": "Großstadt-Kurztrip — Kultur, Food, Themse.",
+    "description": "Drei Tage London. Regen, gutes Essen und alles zu teuer.",
     "details": {
       "highlights": [
         "Tower Bridge",
@@ -955,7 +955,7 @@
         "Brick Lane Bagels",
         "Dishoom Curry"
       ],
-      "tips": "Oyster Card für den Tube kaufen. Museen meist kostenlos. Rechtsverkehr beachten.",
+      "tips": "Oyster Card holen, das spart einiges. Die großen Museen sind fast alle kostenlos. Und aufpassen: die fahren links.",
       "bestFor": [
         "Kultur",
         "Street Food",
@@ -1020,7 +1020,7 @@
     "currencySymbol": "€",
     "dateFrom": "2026-04-10",
     "dateTo": "2026-04-13",
-    "description": "Insel im Atlantik — Levadas, Natur, Blumeninsel.",
+    "description": "Wandern, Mietauto und Levadas. Kleine Insel, viel zu sehen.",
     "details": {
       "highlights": [
         "Pico do Arieiro",
@@ -1035,7 +1035,7 @@
         "Poncha",
         "Lapas (Napfschnecken)"
       ],
-      "tips": "Mietwagen empfehlenswert. Levada-Wanderungen früh starten. Im April angenehme 20°C.",
+      "tips": "Ohne Mietwagen kommt man nicht weit. Levadas früh anfangen, nachmittags wird es voll. Im April war es perfektes Wetter zum Wandern.",
       "bestFor": [
         "Wandern",
         "Natur",
@@ -1094,7 +1094,7 @@
     "currencySymbol": "€",
     "dateFrom": "2026-04-14",
     "dateTo": "2026-04-17",
-    "description": "Portugals Hauptstadt — Tram 28, Pastéis, Fado.",
+    "description": "Steile Straßen, günstige Pastéis, viel Sonne. Ist anstrengend zu laufen aber trotzdem eine der schönsten Städte.",
     "details": {
       "highlights": [
         "Alfama",
@@ -1110,7 +1110,7 @@
         "Bifanas",
         "Ginjinha"
       ],
-      "tips": "Lissabon ist sehr hügelig — gutes Schuhwerk nötig. Tuk-Tuks für steile Straßen. Früh in Cafés frühstücken.",
+      "tips": "Gutes Schuhwerk ist Pflicht, die Stadt ist hügeliger als man denkt. Früh in die Cafés wenn man in Ruhe sitzen will.",
       "bestFor": [
         "Kultur",
         "Architektur",
@@ -1175,7 +1175,7 @@
     "currencySymbol": "€",
     "dateFrom": "2026-04-18",
     "dateTo": "2026-04-21",
-    "description": "Spanische Hauptstadt — Museen, Tapas, Lebendigkeit.",
+    "description": "Madrid ist laut, groß und lebendig. Bestes Essen meiner ganzen Warmup-Trips.",
     "details": {
       "highlights": [
         "Prado Museum",
@@ -1191,7 +1191,7 @@
         "Jamón Ibérico",
         "Churros con Chocolate"
       ],
-      "tips": "Spanier essen spät — Abendessen erst ab 21 Uhr. Museen montags oft geschlossen. Siesta beachten.",
+      "tips": "Nicht vor 21 Uhr zum Abendessen gehen, sonst sitzt man alleine. Prado und Reina Sofía nicht auf einen Montag legen.",
       "bestFor": [
         "Kunst & Kultur",
         "Nachtleben",
@@ -1268,7 +1268,7 @@
         "La Canela — Empanadas & Backwaren",
         "Wegbier vom Lidl für die Promenade"
       ],
-      "tips": "Clubticket mindestens 1 Monat im Voraus buchen. Shuttle Bus für 3,50 € vom Flughafen.",
+      "tips": "Club-Tickets lang im Voraus buchen, sonst teuer oder ausverkauft. Shuttle vom Flughafen kostet 3,50 €, lohnt sich.",
       "bestFor": [
         "Clubnächte",
         "Opening Season",
@@ -1320,7 +1320,7 @@
     "currencySymbol": "MAD",
     "dateFrom": "2026-05-01",
     "dateTo": "2026-05-31",
-    "description": "Atlantikküste, Fischerhafen, Surfen — Marokko erkunden.",
+    "description": "Marokko mit meinem Vater. Essaouira, Taghazout, frischer Fisch am Hafen.",
     "details": {
       "highlights": [
         "Medina Essaouira (UNESCO)",
@@ -1335,7 +1335,7 @@
         "Msemen (Pfannkuchen)",
         "Minztee"
       ],
-      "tips": "Preise im Souk verhandeln. Taghazout ist 15 min entfernt — ideal zum Surfen. Surfboard-Verleih vor Ort günstig.",
+      "tips": "Im Souk immer verhandeln. Taghazout ist 15 Minuten weg und viel entspannter als Agadir. Surfboards direkt am Strand leihen.",
       "bestFor": [
         "Surfen",
         "Kultur",

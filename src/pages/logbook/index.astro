@@ -24,12 +24,12 @@ const daysLeft = Math.max(0, Math.ceil((target.getTime() - now.getTime()) / 8640
 const started  = daysLeft <= 0;
 ---
 
-<Layout title="Logbuch" description="Kevins persönliches Reise-Tagebuch — alle Einträge chronologisch.">
+<Layout title="Logbuch" description="Alles was ich unterwegs erlebe, in der Reihenfolge wie es passiert ist.">
   <div class="page-header">
     <div class="page-header-inner">
       <span class="page-badge">Logbuch</span>
       <h1 class="page-title">Alle Einträge</h1>
-      <p class="page-sub">Chronologisch, persönlich, ungeschönt. Wie ein Brief aus der Ferne.</p>
+      <p class="page-sub">Alles was passiert ist, so wie es war.</p>
     </div>
   </div>
 
@@ -42,8 +42,8 @@ const started  = daysLeft <= 0;
           <div class="lb-countdown">
             <span class="lb-countdown-dot"></span>
             {started
-              ? <span class="lb-countdown-text">Die Weltreise hat begonnen — erste Einträge folgen bald.</span>
-              : <span class="lb-countdown-text">Das Logbuch startet mit dem Abflug — <strong>9. Juni 2026</strong>, noch <strong>{daysLeft} Tage</strong>.</span>
+              ? <span class="lb-countdown-text">Die Reise hat angefangen. Erste Einträge kommen bald.</span>
+              : <span class="lb-countdown-text">Das Logbuch startet am <strong>9. Juni 2026</strong> mit dem Abflug. Noch <strong>{daysLeft} Tage</strong>.</span>
             }
           </div>
 
@@ -52,14 +52,14 @@ const started  = daysLeft <= 0;
             <p class="lb-bridge-label">Schon jetzt lesen</p>
             <h2 class="lb-bridge-title">Reiseberichte aus dem Warm-up</h2>
             <p class="lb-bridge-sub">
-              Bevor die Weltreise startet, sind schon einige Trips gemacht worden.
-              Alle Erfahrungen, Food-Spots und Tipps gibt es hier:
+              Vor der Weltreise hab ich schon einige Trips gemacht. Hier die Berichte dazu:
             </p>
 
             <div class="lb-orte-grid">
               {orteEntries.map(ort => {
                 const d = ort.data;
-                const costColors = ['', '#10B981', '#F97316', '#EF4444'];
+                const costColors = ['', '#10B981', '#22C55E', '#F97316', '#EF4444', '#DC2626'];
+                const costLabels = ['', 'Günstig', 'Günstig', 'Bezahlbar', 'Teuer', 'Sehr teuer'];
                 const stars = '★'.repeat(d.rating) + '☆'.repeat(5 - d.rating);
                 return (
                   <a href={`/orte/${ort.id}`} class="lb-ort-card">
@@ -73,7 +73,7 @@ const started  = daysLeft <= 0;
                     </div>
                     <div class="lb-ort-chips">
                       <span class="lb-ort-vibe">{d.vibe}</span>
-                      <span class="lb-ort-cost" style={`color:${costColors[d.costLevel]}`}>{'€'.repeat(d.costLevel)}</span>
+                      <span class="lb-ort-cost" style={`color:${costColors[d.costLevel]}`}>{costLabels[d.costLevel]}</span>
                     </div>
                     <div class="lb-ort-cta">📖 Bericht lesen →</div>
                   </a>

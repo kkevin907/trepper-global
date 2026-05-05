@@ -7,11 +7,10 @@ dateFrom: "2026-04-18"
 dateTo: "2026-04-21"
 nights: 3
 vibe: Tapas & Großstadtpuls
-costLevel: 2
+costLevel: 3
 mapCenter:
   lat: 40.4168
   lon: -3.7038
-budgetPerDay: "60–100 €"
 rating: 4
 highlights:
   - "[El Tigre](https://maps.google.com/?q=El+Tigre+Calle+Infantas+30+Madrid) — Sidrería mit kostenlosem Tapas-Wahnsinn zu jedem Drink, unbedingt hingehen"

@@ -8,11 +8,10 @@ dateTo: "2026-04-26"
 nights: 1
 vibe: One Night Only
 description: Eine Nacht, kein Hotel, kein Schlaf — Ibiza Opening Night 2026 mit Skepta im Hï.
-costLevel: 3
+costLevel: 5
 mapCenter:
   lat: 38.9088
   lon: 1.4312
-budgetPerDay: "80–150 €"
 rating: 5
 highlights:
   - "[Hï Ibiza](https://www.hiibiza.com/) Opening Night 2026"

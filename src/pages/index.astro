@@ -118,30 +118,20 @@ const locLon = currentStation.lon;
 
       </div>
 
-      <!-- Topbar: Standort + Countdown -->
+      <!-- Topbar: Standort -->
       <div class="ph-topbar">
         <LocationBadge location={currentStation.name} country={currentStation.country} flag={currentStation.flag} />
-        {!started ? (
-          <div class="ph-chip">
-            <span class="ph-chip-num">{daysLeft}</span>
-            <span class="ph-chip-txt">Tage</span>
-          </div>
-        ) : (
-          <div class="ph-chip ph-chip-go">
-            <span class="ph-chip-txt">🌏 Unterwegs!</span>
-          </div>
-        )}
       </div>
 
       <!-- Kompakte Headline -->
       <div class="ph-headline-block">
-        <p class="ph-eyebrow">Persönliches Reise-Logbuch</p>
+        <p class="ph-eyebrow">Reise-Logbuch von Kevin</p>
         <h1 class="ph-title">
           Von Solingen<br />
           <span class="ph-grad">in die Welt.</span>
         </h1>
         <p class="ph-sub">
-          Von Solingen nach Asien — alle Stops, alle Geschichten, live mitverfolgen.
+          Alle Stops, was ich dort erlebt hab und wo man gut isst. Direkt von unterwegs.
         </p>
       </div>
 
@@ -156,6 +146,16 @@ const locLon = currentStation.lon;
           Route
         </a>
         <a href="/about" class="ph-btn-ghost">Über mich</a>
+        {!started ? (
+          <div class="ph-chip">
+            <span class="ph-chip-num">{daysLeft}</span>
+            <span class="ph-chip-txt">Tage bis Abflug</span>
+          </div>
+        ) : (
+          <div class="ph-chip ph-chip-go">
+            <span class="ph-chip-txt">🌏 Unterwegs!</span>
+          </div>
+        )}
       </div>
 
       <!-- Stats -->
@@ -168,11 +168,6 @@ const locLon = currentStation.lon;
         <div class="ph-stat">
           <span class="ph-stat-n" style="color:#0EA5E9;">{orteCount}</span>
           <span class="ph-stat-l">Reiseberichte</span>
-        </div>
-        <div class="ph-stat-sep"></div>
-        <div class="ph-stat">
-          <span class="ph-stat-n" style="color:#10B981;">{started ? '🛫' : daysLeft}</span>
-          <span class="ph-stat-l">{started ? 'Unterwegs!' : 'Tage bis Abflug'}</span>
         </div>
         <div class="ph-stat-sep"></div>
         <div class="ph-stat">
@@ -198,7 +193,7 @@ const locLon = currentStation.lon;
   <div class="ph-wrap">
     <div class="ph-sec-label" style="color:#F97316;">Der Plan</div>
     <h2 class="ph-sec-title">Mein 2026</h2>
-    <p class="ph-sec-sub">Alle Stops — zieh die Timeline nach rechts für die Weltreise.</p>
+    <p class="ph-sec-sub">Alle Stops — <span class="ph-swipe-hint">← swipen →</span> für die Weltreise.</p>
 
     <div class="ph-tl-outer">
       <div class="ph-tl-scroll" id="ph-timeline">
@@ -960,20 +955,39 @@ const locLon = currentStation.lon;
   }
   .ph-mid-line  { width: 20px; height: 2px; background: linear-gradient(to right, transparent, #F97316); }
   .ph-mid-line2 { width: 20px; height: 2px; background: linear-gradient(to right, #0EA5E9, transparent); }
+  .ph-hero { padding: 1.5rem 1.25rem 2rem; }
+  .ph-hero-left { gap: 1rem; }
   .ph-hero-right { height: 240px; }
-  .ph-stats { flex-wrap: wrap; gap: 1rem 1.5rem; }
-  .ph-stat  { min-width: 80px; }
+  .ph-stats { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .ph-stats::-webkit-scrollbar { display: none; }
+  .ph-stat  { padding: .65rem .5rem; flex-shrink: 0; }
+  .ph-stat-n { font-size: 1.1rem; }
+  .ph-stat-l { font-size: .6rem; }
   .ph-stat-sep { display: none; }
   .ph-cards { grid-template-columns: 1fr; }
   .ph-topbar { flex-direction: row; align-items: center; }
-  .ph-chip { display: none; }
+  .ph-chip { display: inline-flex; font-size: .7rem; padding: .3rem .7rem; }
+  .ph-chip-num { font-size: 1rem; }
+  .ph-chip-txt { font-size: .65rem; }
   .ph-locinfo { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; border-radius: 10px; }
   .ph-locinfo::-webkit-scrollbar { display: none; }
   .ph-li-block { padding: .4rem .65rem; flex-shrink: 0; }
   .ph-li-label { font-size: .56rem; }
   .ph-li-val { font-size: .75rem; }
   .ph-li-time { width: 54px; }
+  .ph-actions { flex-wrap: wrap; gap: 6px; }
+  .ph-btn-primary, .ph-btn-secondary { flex: 1; justify-content: center; min-width: 120px; }
+  .ph-btn-ghost { width: 100%; justify-content: center; }
   .ph-sec-sub { font-size: .85rem; }
+  .ph-swipe-hint { display: inline-block; background: var(--coral-light); color: var(--coral); font-weight: 700; font-size: .75rem; padding: 1px 8px; border-radius: 100px; border: 1px solid var(--coral-mid); }
   .ph-tl-outer { margin-top: 1rem; }
+}
+
+@media (max-width: 380px) {
+  .ph-hero { padding: 1.25rem 1rem 1.75rem; }
+  .ph-title { font-size: 1.75rem; }
+  .ph-hero-right { height: 200px; }
+  .ph-btn-primary, .ph-btn-secondary, .ph-btn-ghost { font-size: .82rem; padding: .55rem .9rem; }
+  .ph-chip { font-size: .62rem; padding: .25rem .55rem; }
 }
 </style>

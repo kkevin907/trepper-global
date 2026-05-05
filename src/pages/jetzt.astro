@@ -45,7 +45,7 @@ function gmapsUrl(label: string, city: string, lat?: number, lon?: number) {
 
 <Layout
   title={`Gerade in ${currentStation.name}`}
-  description={`Kevin ist gerade in ${currentStation.name}, ${currentStation.country}. Alle Infos, Highlights und Tipps.`}
+  description={`Ich bin gerade in ${currentStation.name}. Was es dort zu sehen gibt, wo man gut isst und was ich davon halte.`}
 >
 
   <!-- HEADER -->
@@ -69,7 +69,7 @@ function gmapsUrl(label: string, city: string, lat?: number, lon?: number) {
 
         <!-- Live-Infos -->
         <div class="jt-live-col">
-          <h2 class="jt-section-title">Live vor Ort</h2>
+          <h2 class="jt-section-title">Vor Ort</h2>
           <div class="jt-live-cards" id="jt-live"
             data-tz={currentStation.timezone}
             data-lat={currentStation.lat}
@@ -150,7 +150,7 @@ function gmapsUrl(label: string, city: string, lat?: number, lon?: number) {
             <h2 class="jt-section-title">
               <span class="jt-section-icon">🍜</span> Unbedingt essen
             </h2>
-            <p class="jt-must-eat-hint">Typische Gerichte & Spezialitäten — auf der Karte oben findest du konkrete Restaurants.</p>
+            <p class="jt-must-eat-hint">Typische Gerichte von dort. Konkrete Läden zeigt die Karte oben.</p>
             <div class="jt-tags">
               {details.mustEat.map((e: string) => (
                 <span class="jt-tag jt-tag--green">{e}</span>
@@ -162,7 +162,7 @@ function gmapsUrl(label: string, city: string, lat?: number, lon?: number) {
           {details.bestFor && details.bestFor.length > 0 && (
             <div class="jt-section">
               <h2 class="jt-section-title">
-                <span class="jt-section-icon">✨</span> Perfekt für
+                <span class="jt-section-icon">✨</span> Gut wenn du...
               </h2>
               <div class="jt-tags">
                 {details.bestFor.map((b: string) => (
@@ -188,7 +188,7 @@ function gmapsUrl(label: string, city: string, lat?: number, lon?: number) {
       <div class="jt-logbook-cta">
         <div>
           <p class="jt-cta-label">Tagebuch</p>
-          <p class="jt-cta-text">Alle Einträge aus {currentStation.name} im Logbuch lesen</p>
+          <p class="jt-cta-text">Alle Einträge aus {currentStation.name} lesen</p>
         </div>
         <a href="/logbook" class="jt-cta-btn">Zum Logbuch →</a>
       </div>
@@ -264,14 +264,14 @@ function gmapsUrl(label: string, city: string, lat?: number, lon?: number) {
   function initCityMap() {
     if (!window.L) { setTimeout(initCityMap, 100); return; }
 
-    var map = L.map('jetzt-city-map', { zoomControl: true, scrollWheelZoom: false });
+    var map = L.map('jetzt-city-map', { zoomControl: true, scrollWheelZoom: false, worldCopyJump: false, maxBounds: [[-85,-210],[85,210]], maxBoundsViscosity: 1.0 });
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap',
       maxZoom: 18,
     }).addTo(map);
 
-    var popupOpts = { maxWidth: 220, className: 'jt-leaflet-popup' };
+    var popupOpts = { maxWidth: 180, className: 'jt-leaflet-popup' };
 
     function mapsLink(lat, lon, name) {
       return 'https://www.google.com/maps?q=' + lat + ',' + lon + '&query_place=' + encodeURIComponent(name);
@@ -291,14 +291,6 @@ function gmapsUrl(label: string, city: string, lat?: number, lon?: number) {
         + '</div>';
     }
 
-    // Center marker (orange)
-    var centerIcon = L.divIcon({
-      html: '<div style="width:14px;height:14px;border-radius:50%;background:#F97316;border:3px solid white;box-shadow:0 2px 6px rgba(0,0,0,0.35);"></div>',
-      className: '',
-      iconSize: [14, 14],
-      iconAnchor: [7, 7],
-    });
-
     // Spot markers
     var sightIcon = L.divIcon({
       html: '<div style="width:11px;height:11px;border-radius:50%;background:#0EA5E9;border:2px solid white;box-shadow:0 1px 4px rgba(0,0,0,0.3);"></div>',
@@ -314,11 +306,6 @@ function gmapsUrl(label: string, city: string, lat?: number, lon?: number) {
     });
 
     var allMarkers = [];
-
-    var centerMarker = L.marker([parsed.center.lat, parsed.center.lon], { icon: centerIcon });
-    centerMarker.bindPopup(popupHtml(parsed.name, '📍 Aktueller Standort', {bg:'#FFF7ED',text:'#C2410C'}, parsed.center.lat, parsed.center.lon), popupOpts);
-    centerMarker.addTo(map);
-    allMarkers.push(centerMarker);
 
     parsed.spots.forEach(function (spot) {
       var isFood = spot.type === 'food';
@@ -452,6 +439,8 @@ function gmapsUrl(label: string, city: string, lat?: number, lon?: number) {
 
   /* MAP COL */
   .jt-map-col { border-radius: 16px; overflow: hidden; }
+  #jetzt-city-map { height: 300px; }
+  @media (max-width: 800px) { #jetzt-city-map { height: 360px; } }
 
   /* SECTIONS */
   .jt-section {
@@ -522,13 +511,19 @@ function gmapsUrl(label: string, city: string, lat?: number, lon?: number) {
 
   /* Leaflet Popup Override */
   :global(.jt-leaflet-popup .leaflet-popup-content-wrapper) {
-    border-radius: 12px !important;
-    box-shadow: 0 6px 24px rgba(15,23,42,0.14) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 16px rgba(15,23,42,0.14) !important;
     padding: 0 !important;
     border: 1.5px solid #E2E8F0 !important;
+    max-width: 180px !important;
   }
   :global(.jt-leaflet-popup .leaflet-popup-content) {
-    margin: 12px 14px !important;
+    margin: 9px 11px !important;
+    font-size: .8rem !important;
+  }
+  @media (max-width: 800px) {
+    :global(.jt-leaflet-popup .leaflet-popup-content-wrapper) { max-width: 160px !important; }
+    :global(.jt-leaflet-popup .leaflet-popup-content) { margin: 7px 9px !important; }
   }
   :global(.jt-leaflet-popup .leaflet-popup-tip-container) {
     margin-top: -1px;
@@ -547,5 +542,14 @@ function gmapsUrl(label: string, city: string, lat?: number, lon?: number) {
     .jt-tags { gap: .4rem; }
     .jt-tag { font-size: .75rem; padding: .3rem .7rem; }
     .jt-section-title { font-size: .95rem; }
+    .jt-logbook-cta { flex-direction: column; align-items: flex-start; }
+    .jt-cta-btn { width: 100%; text-align: center; justify-content: center; }
+  }
+  @media (max-width: 380px) {
+    .jt-header { padding: 1.5rem 1rem; }
+    .jt-wrap { padding: 1.25rem 1rem 3rem; }
+    .jt-live-cards { grid-template-columns: 1fr; }
+    .jt-title { font-size: 1.8rem; }
+    .jt-tag { font-size: .7rem; }
   }
 </style>
