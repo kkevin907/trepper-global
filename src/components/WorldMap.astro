@@ -9,6 +9,8 @@ interface Props {
   showRoute?: boolean;
   showFilters?: boolean;
   currentStationId?: string;
+  centerOnCurrent?: boolean;
+  centerZoom?: number;
 }
 
 const {
@@ -17,16 +19,20 @@ const {
   showRoute = true,
   showFilters = false,
   currentStationId = config.currentStationId,
+  centerOnCurrent = false,
+  centerZoom = 9,
 } = Astro.props;
 
 // IDs die einen Erfahrungsbericht haben
 const orteEntries = await getCollection('orte', ({ data }) => !data.draft);
 const orteIds = orteEntries.map(o => o.data.stationId);
 
-const stationsJSON = JSON.stringify(stations);
-const orteIdsJSON  = JSON.stringify(orteIds);
-const doRoute      = showRoute;
-const doFilters    = showFilters;
+const stationsJSON    = JSON.stringify(stations);
+const orteIdsJSON     = JSON.stringify(orteIds);
+const doRoute         = showRoute;
+const doFilters       = showFilters;
+const doCenterCurrent = centerOnCurrent;
+const doCenterZoom    = centerZoom;
 ---
 
 <div class="map-outer-wrap">
@@ -55,7 +61,7 @@ const doFilters    = showFilters;
   }
 </style>
 
-<script is:inline define:vars={{ stationsJSON, orteIdsJSON, mapId, doRoute, doFilters, currentStationId }}>
+<script is:inline define:vars={{ stationsJSON, orteIdsJSON, mapId, doRoute, doFilters, currentStationId, doCenterCurrent, doCenterZoom }}>
 (function() {
   function initMap() {
     if (typeof window.L === 'undefined') { setTimeout(initMap, 100); return; }
@@ -183,9 +189,19 @@ const doFilters    = showFilters;
       grp.addLayer(marker);
     });
 
-    // Bounds
-    var allCoords = stations.map(function(s) { return [s.lat, s.lon]; });
-    map.fitBounds(L.latLngBounds(allCoords), { padding: [40, 40] });
+    // Bounds / Zoom
+    if (doCenterCurrent) {
+      var cur = stations.find(function(s) { return s.id === currentStationId; });
+      if (cur) {
+        map.setView([cur.lat, cur.lon], doCenterZoom);
+      } else {
+        var allCoords = stations.map(function(s) { return [s.lat, s.lon]; });
+        map.fitBounds(L.latLngBounds(allCoords), { padding: [40, 40] });
+      }
+    } else {
+      var allCoords = stations.map(function(s) { return [s.lat, s.lon]; });
+      map.fitBounds(L.latLngBounds(allCoords), { padding: [40, 40] });
+    }
 
     // ── FILTER BUTTONS ──────────────────────────────────────
     if (doFilters) {

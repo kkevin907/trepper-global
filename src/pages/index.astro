@@ -126,10 +126,22 @@ const locLon = currentStation.lon;
       <!-- Kompakte Headline -->
       <div class="ph-headline-block">
         <p class="ph-eyebrow">Reise-Logbuch von Kevin</p>
-        <h1 class="ph-title">
-          Von Solingen<br />
-          <span class="ph-grad">in die Welt.</span>
-        </h1>
+        <div class="ph-title-row">
+          <h1 class="ph-title">
+            Von Solingen<br />
+            <span class="ph-grad">in die Welt.</span>
+          </h1>
+          {!started ? (
+            <div class="ph-chip ph-chip--inline">
+              <span class="ph-chip-num">{daysLeft}</span>
+              <span class="ph-chip-txt">Tage bis Abflug</span>
+            </div>
+          ) : (
+            <div class="ph-chip ph-chip-go ph-chip--inline">
+              <span class="ph-chip-txt">🌏 Unterwegs!</span>
+            </div>
+          )}
+        </div>
         <p class="ph-sub">
           Alle Stops, was ich dort erlebt hab und wo man gut isst. Direkt von unterwegs.
         </p>
@@ -147,12 +159,12 @@ const locLon = currentStation.lon;
         </a>
         <a href="/about" class="ph-btn-ghost">Über mich</a>
         {!started ? (
-          <div class="ph-chip">
+          <div class="ph-chip ph-chip--desktop">
             <span class="ph-chip-num">{daysLeft}</span>
             <span class="ph-chip-txt">Tage bis Abflug</span>
           </div>
         ) : (
-          <div class="ph-chip ph-chip-go">
+          <div class="ph-chip ph-chip-go ph-chip--desktop">
             <span class="ph-chip-txt">🌏 Unterwegs!</span>
           </div>
         )}
@@ -180,7 +192,7 @@ const locLon = currentStation.lon;
 
     <!-- RECHTE SPALTE: Karte direkt sichtbar -->
     <div class="ph-hero-right">
-      <WorldMap height="100%" mapId="home-map" showRoute={false} showFilters={true} />
+      <WorldMap height="100%" mapId="home-map" showRoute={false} showFilters={true} centerOnCurrent={true} centerZoom={10} />
     </div>
 
   </div>
@@ -526,6 +538,17 @@ const locLon = currentStation.lon;
   flex-direction: column;
   gap: 1.4rem;
 }
+
+/* Titel + Chip nebeneinander */
+.ph-title-row {
+  display: flex;
+  align-items: flex-start;
+  gap: .75rem;
+  flex-wrap: wrap;
+}
+.ph-title-row .ph-title { flex: 1; min-width: 0; }
+.ph-chip--inline  { display: none; align-self: flex-end; margin-bottom: .4rem; }
+.ph-chip--desktop { display: inline-flex; }
 
 /* ── LOC-INFO STRIP ── */
 .ph-locinfo {
@@ -956,8 +979,18 @@ const locLon = currentStation.lon;
   .ph-mid-line  { width: 20px; height: 2px; background: linear-gradient(to right, transparent, #F97316); }
   .ph-mid-line2 { width: 20px; height: 2px; background: linear-gradient(to right, #0EA5E9, transparent); }
   .ph-hero { padding: 1.5rem 1.25rem 2rem; }
-  .ph-hero-left { gap: 1rem; }
-  .ph-hero-right { height: 240px; }
+  .ph-hero-left { gap: .9rem; }
+  .ph-hero-right { height: 380px; }
+
+  /* Locinfo + Eyebrow auf Mobile verstecken — spart viel Platz */
+  .ph-locinfo { display: none; }
+  .ph-eyebrow { display: none; }
+  .ph-sub     { display: none; }
+
+  /* Chip: im Titel-Block zeigen, bei Buttons verstecken */
+  .ph-chip--inline  { display: inline-flex; }
+  .ph-chip--desktop { display: none; }
+
   .ph-stats { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
   .ph-stats::-webkit-scrollbar { display: none; }
   .ph-stat  { padding: .65rem .5rem; flex-shrink: 0; }
@@ -966,15 +999,9 @@ const locLon = currentStation.lon;
   .ph-stat-sep { display: none; }
   .ph-cards { grid-template-columns: 1fr; }
   .ph-topbar { flex-direction: row; align-items: center; }
-  .ph-chip { display: inline-flex; font-size: .7rem; padding: .3rem .7rem; }
+  .ph-chip { font-size: .7rem; padding: .3rem .7rem; }
   .ph-chip-num { font-size: 1rem; }
   .ph-chip-txt { font-size: .65rem; }
-  .ph-locinfo { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; border-radius: 10px; }
-  .ph-locinfo::-webkit-scrollbar { display: none; }
-  .ph-li-block { padding: .4rem .65rem; flex-shrink: 0; }
-  .ph-li-label { font-size: .56rem; }
-  .ph-li-val { font-size: .75rem; }
-  .ph-li-time { width: 54px; }
   .ph-actions { flex-wrap: wrap; gap: 6px; }
   .ph-btn-primary, .ph-btn-secondary { flex: 1; justify-content: center; min-width: 120px; }
   .ph-btn-ghost { width: 100%; justify-content: center; }
@@ -986,7 +1013,7 @@ const locLon = currentStation.lon;
 @media (max-width: 380px) {
   .ph-hero { padding: 1.25rem 1rem 1.75rem; }
   .ph-title { font-size: 1.75rem; }
-  .ph-hero-right { height: 200px; }
+  .ph-hero-right { height: 320px; }
   .ph-btn-primary, .ph-btn-secondary, .ph-btn-ghost { font-size: .82rem; padding: .55rem .9rem; }
   .ph-chip { font-size: .62rem; padding: .25rem .55rem; }
 }
