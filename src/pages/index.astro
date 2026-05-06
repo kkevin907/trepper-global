@@ -648,8 +648,6 @@ const locLon = currentStation.lon;
 
 /* ── BUTTONS ── */
 .ph-actions { display: flex; gap: 8px; flex-wrap: wrap; }
-.ph-btn-ghost { display: none; }
-
 .ph-btn-primary,
 .ph-btn-secondary,
 .ph-btn-ghost {
@@ -679,6 +677,7 @@ const locLon = currentStation.lon;
 }
 .ph-btn-secondary:hover { background: #0284C7; transform: translateY(-2px); }
 .ph-btn-ghost {
+  display: none;
   background: #ffffff;
   color: #64748B !important;
   border-color: #E2E8F0;
