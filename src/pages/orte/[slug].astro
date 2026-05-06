@@ -85,14 +85,14 @@ const mapData = JSON.stringify({
             </div>
           )}
 
-          <div class="or-prose">
+          <div class="or-prose reveal">
             <Content />
           </div>
 
           <!-- FOOD SPOTS -->
           <div class="or-section">
             <h2 class="or-section-title">🍽️ Food-Spots</h2>
-            <div class="or-food-list">
+            <div class="or-food-list reveal-stagger">
               {d.foodSpots.map((f: any) => (
                 <div class="or-food-card">
                   <div class="or-food-header">
@@ -114,7 +114,7 @@ const mapData = JSON.stringify({
 
           <!-- STADTKARTE -->
           {mapCenter && (
-            <div class="or-section">
+            <div class="or-section reveal">
               <h2 class="or-section-title">🗺️ Karte & Food-Spots</h2>
               <div class="or-map-wrap">
                 <div id="or-map" class="or-map"></div>
@@ -126,7 +126,7 @@ const mapData = JSON.stringify({
           )}
 
           <!-- FOTOS -->
-          <div class="or-section">
+          <div class="or-section reveal">
             <h2 class="or-section-title">📷 Fotos</h2>
             <div class="or-photo-grid">
               <div class="or-photo-empty">
@@ -138,7 +138,7 @@ const mapData = JSON.stringify({
         </div>
 
         <!-- ── RECHTE SPALTE ── -->
-        <div class="or-sidebar">
+        <div class="or-sidebar reveal-stagger">
 
           <!-- BUDGET KARTE -->
           <div class="or-sidebar-card or-budget-card">

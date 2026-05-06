@@ -23,8 +23,8 @@ orte.sort((a, b) => {
   <div class="oi-header">
     <div class="oi-header-inner">
       <a href="/" class="oi-back">← Zurück</a>
-      <h1 class="oi-title">Meine Orte</h1>
-      <p class="oi-sub">Was ich erlebt hab. Was sich lohnt und was nicht.</p>
+      <h1 class="oi-title reveal">Meine Orte</h1>
+      <p class="oi-sub reveal">Was ich erlebt hab. Was sich lohnt und was nicht.</p>
     </div>
   </div>
 
@@ -36,7 +36,7 @@ orte.sort((a, b) => {
           <p>Noch keine Berichte veröffentlicht.</p>
         </div>
       ) : (
-        <div class="oi-grid">
+        <div class="oi-grid reveal-stagger">
           {orte.map(ort => {
             const d = ort.data;
             const dateFrom = new Date(d.dateFrom).toLocaleDateString('de-DE', { day: 'numeric', month: 'short' });
