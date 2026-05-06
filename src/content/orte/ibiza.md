@@ -7,7 +7,7 @@ dateFrom: "2026-04-25"
 dateTo: "2026-04-26"
 nights: 1
 vibe: One Night Only
-description: Eine Nacht, kein Hotel, kein Schlaf — Ibiza Opening Night 2026 mit Skepta im Hï.
+description: Eine Nacht, kein Hotel, kein Schlaf. Ibiza Opening Night 2026 im Hï.
 costLevel: 5
 mapCenter:
   lat: 38.9088
@@ -15,15 +15,13 @@ mapCenter:
 rating: 5
 highlights:
   - "[Hï Ibiza](https://www.hiibiza.com/) Opening Night 2026"
-  - "Skepta — Más Tiempo Residency"
   - "[Sonnenaufgang am Playa d'en Bossa](https://maps.google.com/?q=Playa+d%27en+Bossa+Ibiza)"
-  - "[La Canela](https://maps.google.com/?q=La+Canela+Ibiza+Stadt) — handgemachte Bäckerei"
-  - "Shuttle Bus für 3,50 € direkt in die Stadt"
+  - "[La Canela](https://maps.google.com/?q=La+Canela+Ibiza+Stadt). Handgemachte Bäckerei, erste Adresse nach der Nacht."
 foodSpots:
   - name: La Canela
     lat: 38.9088
     lon: 1.4312
-    what: Empanadas, süße Backwaren — alles frisch und handgemacht
+    what: Empanadas, süße Backwaren. Alles frisch und handgemacht.
     stars: 5
     area: Ibiza Stadt
     tip: Erste Bäckerei die morgens öffnet — perfekt nach der Clubnacht
@@ -31,22 +29,21 @@ foodSpots:
   - name: Murphy's Ibiza
     lat: 38.8844
     lon: 1.4025
-    what: Irish Pub an der Clubmeile — Guinness für 10 €
+    what: Irish Pub an der Clubmeile. Guinness für 10 €.
     stars: 3
     area: Playa d'en Bossa
-    tip: Teuer, aber Ibiza-Standard. Guter Startpunkt mit guter Stimmung
+    tip: Teuer, aber Ibiza-Standard. Guter Startpunkt mit guter Stimmung.
     link: "https://maps.google.com/?q=Murphy%27s+Irish+Bar+Playa+d%27en+Bossa+Ibiza"
 skip:
-  - "Clubtickets am selben Abend kaufen — bis zu 200 € statt 75 €"
-  - "Tickets mit Einlass erst ab 6 Uhr — klingt günstig, bringt aber kaum etwas"
-  - "Ohne Gepäckreservierung ankommen — [Easy Lockers](https://easylockersibiza.com/) immer vorab buchen"
+  - "Clubtickets am selben Abend kaufen. Kostet bis zu 200 € statt 75 €."
+  - "Tickets mit Einlass erst ab 6 Uhr. Klingt günstig, bringt aber kaum etwas."
+  - "Ohne Gepäckreservierung ankommen. [Easy Lockers](https://easylockersibiza.com/) immer vorab buchen."
 tips:
-  - "[Hï Ibiza](https://www.hiibiza.com/) — Clubticket mindestens 1 Monat im Voraus buchen, Opening Night 75 € statt 200 €"
-  - "[Easy Lockers Ibiza](https://easylockersibiza.com/) vorab online reservieren — kein Walk-in"
-  - "Shuttle Bus Flughafen ↔ Stadt je 3,50 € pro Person — kein Taxi nötig"
+  - "[Hï Ibiza](https://www.hiibiza.com/). Clubticket mindestens 1 Monat im Voraus buchen. Opening Night 75 € statt 200 €."
+  - "[Easy Lockers Ibiza](https://easylockersibiza.com/) vorab online reservieren. Kein Walk-in."
+  - "Shuttle Bus Flughafen ↔ Stadt je 3,50 € pro Person. Kein Taxi nötig."
   - "Großer Lidl am Stadtrand: Getränke für die Promenade zu normalen Preisen"
-  - "Nachts nur rund 11°C — leichte Jacke einpacken"
-bestArea: Playa d'en Bossa — Clubs, Strandpromenade, Sonnenaufgang
+bestArea: "Playa d'en Bossa. Clubs, Strandpromenade, Sonnenaufgang."
 draft: false
 ---
 
@@ -73,7 +70,7 @@ Eine Nacht, kein Hotel, kein Schlaf — und trotzdem der stärkste Abschluss des
 
 Zur Preisfrage beim Clubticket: Wir hatten einen Monat vorher gebucht — **75 €**. Der Norweger den wir kennenlernten buchte zwei Tage davor: **200 €** für dasselbe Ticket. Ein Holländer kaufte noch am selben Abend: **70 € — aber erst ab 6 Uhr gültig**, also kaum noch Zeit zum Feiern.
 
-**Sonnenaufgang.** Nach 6 Uhr im Morgengrauen am Playa d'en Bossa zurück in Richtung Stadt gelaufen. Kühl mit rund 11°C, aber einer dieser Momente, die man nicht vergisst.
+**Sonnenaufgang.** Nach 6 Uhr im Morgengrauen am Playa d'en Bossa zurück in Richtung Stadt gelaufen — einer dieser Momente, die man nicht vergisst.
 
 **La Canela.** Erste Bäckerei die offen hatte. Empanadas, süße Teigwaren — alles frisch und handgemacht. Für diese Qualität absolut fair.
 

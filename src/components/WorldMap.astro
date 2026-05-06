@@ -20,7 +20,7 @@ const {
   showFilters = false,
   currentStationId = config.currentStationId,
   centerOnCurrent = false,
-  centerZoom = 9,
+  centerZoom = 4,
 } = Astro.props;
 
 // IDs die einen Erfahrungsbericht haben
@@ -116,8 +116,18 @@ const doCenterZoom    = centerZoom;
       }
     }
 
-    // Marker
+    // Marker — ein Pin pro Land (höchste Priorität gewinnt)
+    var statusPriority = { current: 5, home: 4, visited: 3, planned: 3, upcoming: 2 };
+    var countryBest = {};
     stations.forEach(function(s) {
+      var key = s.country;
+      if (!countryBest[key] || (statusPriority[s.status] || 0) > (statusPriority[countryBest[key].status] || 0)) {
+        countryBest[key] = s;
+      }
+    });
+    var dedupedStations = Object.keys(countryBest).map(function(k) { return countryBest[k]; });
+
+    dedupedStations.forEach(function(s) {
       var color  = colorMap[s.status] || '#94A3B8';
       var label  = labelMap[s.status] || s.status;
       var dim    = (s.status === 'upcoming') ? '0.65' : '1';
@@ -151,35 +161,33 @@ const doCenterZoom    = centerZoom;
 
       var dateStr = '';
       if (s.dateFrom) {
-        dateStr = new Date(s.dateFrom).toLocaleDateString('de-DE', { month: 'long', year: 'numeric' });
-        if (s.dateTo) dateStr += ' – ' + new Date(s.dateTo).toLocaleDateString('de-DE', { month: 'short' });
+        dateStr = new Date(s.dateFrom).toLocaleDateString('de-DE', { month: 'short', year: 'numeric' });
       }
 
-      var worldreiseNote = (s.status === 'upcoming')
-        ? '<div style="margin-top:7px;font-size:0.72rem;color:#F97316;font-weight:700;">🌏 Weltreise · Abflug 9. Juni 2026</div>'
-        : '';
+      var badge = isHere
+        ? '<span style="background:#FFF7ED;border:1.5px solid #FDBA74;color:#C2410C;font-size:0.62rem;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;padding:2px 7px;border-radius:100px;">📍 Hier</span>'
+        : (s.status === 'upcoming'
+          ? '<span style="background:#FFF7ED;border:1.5px solid #FDBA74;color:#F97316;font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;padding:2px 7px;border-radius:100px;">🌏 Weltreise</span>'
+          : '<span style="background:' + color + '22;color:' + color + ';font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;padding:2px 7px;border-radius:100px;">' + label + '</span>');
 
       var reportLink = orteIds.indexOf(s.id) !== -1
-        ? '<a href="/orte/' + s.id + '" style="display:inline-flex;align-items:center;gap:4px;margin-top:10px;font-size:0.78rem;font-weight:700;color:#F97316;text-decoration:none;background:#FFF7ED;border:1.5px solid #FDBA74;padding:4px 10px;border-radius:100px;">📖 Zum Erfahrungsbericht →</a>'
+        ? '<a href="/orte/' + s.id + '" style="display:block;margin-top:8px;font-size:0.76rem;font-weight:700;color:#F97316;text-decoration:none;background:#FFF7ED;border:1.5px solid #FDBA74;padding:5px 10px;border-radius:8px;text-align:center;">Zum Bericht →</a>'
         : '';
-
-      var hierBadge = isHere
-        ? '<div style="display:inline-flex;align-items:center;gap:5px;background:#FFF7ED;border:1.5px solid #FDBA74;color:#C2410C;font-size:0.68rem;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;padding:3px 9px;border-radius:100px;margin-bottom:8px;">📍 Aktueller Standort</div>'
-        : '<div style="display:inline-block;background:' + color + '22;color:' + color + ';font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;padding:2px 9px;border-radius:100px;margin-bottom:8px;">' + label + '</div>';
 
       var marker = L.marker([s.lat, s.lon], { icon: icon });
       marker.bindPopup(
-        '<div style="font-family:system-ui,sans-serif;min-width:175px;padding:4px 2px;">'
-        + '<div style="font-size:1.4rem;margin-bottom:4px;">' + s.flag + '</div>'
-        + '<div style="font-weight:800;font-size:1rem;color:#0F172A;margin-bottom:2px;">' + s.name + '</div>'
-        + '<div style="color:#64748B;font-size:0.8rem;margin-bottom:8px;">' + s.country + '</div>'
-        + hierBadge
-        + '<div style="font-size:0.82rem;color:#475569;line-height:1.5;">' + s.description + '</div>'
-        + (dateStr ? '<div style="margin-top:7px;font-size:0.75rem;color:' + color + ';font-weight:600;">' + dateStr + '</div>' : '')
-        + worldreiseNote
+        '<div style="font-family:system-ui,sans-serif;min-width:160px;max-width:200px;padding:2px 0;">'
+        + '<div style="display:flex;align-items:center;gap:7px;margin-bottom:5px;">'
+        +   '<span style="font-size:1.3rem;line-height:1;">' + s.flag + '</span>'
+        +   '<div>'
+        +     '<div style="font-weight:800;font-size:0.92rem;color:#0F172A;line-height:1.2;">' + s.name + '</div>'
+        +     '<div style="color:#94A3B8;font-size:0.72rem;">' + s.country + (dateStr ? ' · ' + dateStr : '') + '</div>'
+        +   '</div>'
+        + '</div>'
+        + badge
         + reportLink
         + '</div>',
-        { maxWidth: 250 }
+        { maxWidth: 220 }
       );
 
       // current + planned → in passende Gruppe einordnen

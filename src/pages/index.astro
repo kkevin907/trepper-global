@@ -158,16 +158,6 @@ const locLon = currentStation.lon;
           Route
         </a>
         <a href="/about" class="ph-btn-ghost">Über mich</a>
-        {!started ? (
-          <div class="ph-chip ph-chip--desktop">
-            <span class="ph-chip-num">{daysLeft}</span>
-            <span class="ph-chip-txt">Tage bis Abflug</span>
-          </div>
-        ) : (
-          <div class="ph-chip ph-chip-go ph-chip--desktop">
-            <span class="ph-chip-txt">🌏 Unterwegs!</span>
-          </div>
-        )}
       </div>
 
       <!-- Stats -->
@@ -192,7 +182,7 @@ const locLon = currentStation.lon;
 
     <!-- RECHTE SPALTE: Karte direkt sichtbar -->
     <div class="ph-hero-right">
-      <WorldMap height="100%" mapId="home-map" showRoute={false} showFilters={true} centerOnCurrent={true} centerZoom={10} />
+      <WorldMap height="100%" mapId="home-map" showRoute={false} showFilters={true} centerOnCurrent={true} centerZoom={4} />
     </div>
 
   </div>
@@ -548,7 +538,6 @@ const locLon = currentStation.lon;
 }
 .ph-title-row .ph-title { flex: 1; min-width: 0; }
 .ph-chip--inline  { display: none; align-self: flex-end; margin-bottom: .4rem; }
-.ph-chip--desktop { display: inline-flex; }
 
 /* ── LOC-INFO STRIP ── */
 .ph-locinfo {
@@ -989,7 +978,6 @@ const locLon = currentStation.lon;
 
   /* Chip: im Titel-Block zeigen, bei Buttons verstecken */
   .ph-chip--inline  { display: inline-flex; }
-  .ph-chip--desktop { display: none; }
 
   .ph-stats { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
   .ph-stats::-webkit-scrollbar { display: none; }

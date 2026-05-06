@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
 ---
 
 <Layout title="Über mich" description="Ich bin Kevin, 20, aus Solingen. Hier erfährst du wer ich bin und warum ich das mache.">
@@ -32,8 +33,8 @@ import Layout from '../layouts/Layout.astro';
               <span class="qp-val">Solingen, DE</span>
             </div>
             <div class="qp-row">
-              <span class="qp-label">Reist seit</span>
-              <span class="qp-val">2023 · Solo</span>
+              <span class="qp-label">Erster Solotrip</span>
+              <span class="qp-val">2023 · Gijón</span>
             </div>
             <div class="qp-row">
               <span class="qp-label">Abflug</span>
@@ -41,7 +42,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
             <div class="qp-row">
               <span class="qp-label">Reisestil</span>
-              <span class="qp-val">Spontan, kein Plan</span>
+              <span class="qp-val">Spontan</span>
             </div>
           </div>
 
@@ -75,30 +76,7 @@ import Layout from '../layouts/Layout.astro';
             </p>
           </div>
 
-          <!-- PLAN BLOCK -->
-          <div class="plan-block">
-            <div class="plan-item">
-              <span class="plan-icon">✈️</span>
-              <div>
-                <div class="plan-label">Abflug</div>
-                <div class="plan-val">9. Juni 2026 · Solingen → Istanbul → Bangkok</div>
-              </div>
-            </div>
-            <div class="plan-item">
-              <span class="plan-icon">🗺️</span>
-              <div>
-                <div class="plan-label">Erster Stop</div>
-                <div class="plan-val">Thailand — was danach kommt, entscheide ich unterwegs</div>
-              </div>
-            </div>
-            <div class="plan-item">
-              <span class="plan-icon">📖</span>
-              <div>
-                <div class="plan-label">Diese Seite</div>
-                <div class="plan-val">Archiv, Erinnerung, Empfehlung — für alle, die mitreisen wollen</div>
-              </div>
-            </div>
-          </div>
+          <NewsletterSignup variant="inline" />
 
           <div class="about-cta">
             <a href="/route" class="btn-primary">
@@ -243,40 +221,8 @@ import Layout from '../layouts/Layout.astro';
     margin-bottom: 1.5rem;
   }
 
-  /* PLAN BLOCK */
-  .plan-block {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    border: 1.5px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-    margin-bottom: 1.75rem;
-  }
-  .plan-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.85rem;
-    padding: 0.9rem 1.1rem;
-    border-bottom: 1px solid var(--border);
-    background: white;
-    transition: background 0.12s;
-  }
-  .plan-item:last-child { border-bottom: none; }
-  .plan-item:hover { background: var(--bg-soft); }
-  .plan-icon { font-size: 1.1rem; line-height: 1.4; flex-shrink: 0; }
-  .plan-label {
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-    color: var(--text-light);
-    margin-bottom: 0.2rem;
-  }
-  .plan-val { font-size: 0.9rem; color: var(--text); font-weight: 500; line-height: 1.5; }
-
   /* CTA */
-  .about-cta { display: flex; gap: 0.65rem; flex-wrap: wrap; }
+  .about-cta { display: flex; gap: 0.65rem; flex-wrap: wrap; margin-top: 1.75rem; }
 
   .btn-primary {
     display: inline-flex;
@@ -327,9 +273,9 @@ import Layout from '../layouts/Layout.astro';
 
   @media (max-width: 700px) {
     .about-grid { grid-template-columns: 1fr; }
-    .photo-img { aspect-ratio: 3/2; object-position: 60% 100%; transform: scale(1.35); transform-origin: 60% 100%; }
+    .photo-img { aspect-ratio: 3/2; object-position: 60% 25%; transform: scale(1.35); transform-origin: 60% 25%; }
     .about-body { font-size: 0.95rem; }
-    .about-cta { flex-direction: column; }
+    .about-cta { flex-direction: column; margin-top: 1.25rem; }
     .about-cta a { justify-content: center; width: 100%; }
     .about-name { font-size: 1.8rem; }
     .about-wrap { padding: 2rem 1.25rem 3rem; }

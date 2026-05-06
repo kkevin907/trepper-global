@@ -13,8 +13,6 @@ orte.sort((a, b) => {
   return new Date(b.data.dateFrom).getTime() - new Date(a.data.dateFrom).getTime();
 });
 
-const costColors  = ['', '#10B981', '#22C55E', '#F97316', '#EF4444', '#DC2626'];
-const costLabels  = ['', 'Günstig', 'Günstig', 'Bezahlbar', 'Teuer', 'Sehr teuer'];
 ---
 
 <Layout
@@ -41,13 +39,14 @@ const costLabels  = ['', 'Günstig', 'Günstig', 'Bezahlbar', 'Teuer', 'Sehr teu
         <div class="oi-grid">
           {orte.map(ort => {
             const d = ort.data;
-            const dateFrom = new Date(d.dateFrom).toLocaleDateString('de-DE', { month: 'short', year: 'numeric' });
-            const dateTo   = new Date(d.dateTo).toLocaleDateString('de-DE', { month: 'short', year: 'numeric' });
-            const stars    = '★'.repeat(d.rating) + '☆'.repeat(5 - d.rating);
+            const dateFrom = new Date(d.dateFrom).toLocaleDateString('de-DE', { day: 'numeric', month: 'short' });
+            const dateTo   = new Date(d.dateTo).toLocaleDateString('de-DE', { day: 'numeric', month: 'short', year: 'numeric' });
             const isReal   = !d.highlights[0].startsWith('TODO');
+            const Tag      = isReal ? 'a' : 'div';
+            const props    = isReal ? { href: `/orte/${ort.id}` } : {};
 
             return (
-              <a href={`/orte/${ort.id}`} class={`oi-card${isReal ? '' : ' oi-card--soon'}`}>
+              <Tag {...props} class={`oi-card${isReal ? ' oi-card--link' : ' oi-card--soon'}`}>
                 {d.coverImage ? (
                   <div class="oi-card-img">
                     <img src={d.coverImage} alt={d.title} />
@@ -55,26 +54,19 @@ const costLabels  = ['', 'Günstig', 'Günstig', 'Bezahlbar', 'Teuer', 'Sehr teu
                 ) : (
                   <div class="oi-card-img oi-card-img--empty">
                     <span class="oi-card-flag">{d.flag}</span>
-                    {!isReal && <span class="oi-coming-soon">Bericht folgt bald</span>}
+                    {!isReal && <span class="oi-coming-soon">Bericht folgt</span>}
                   </div>
                 )}
                 <div class="oi-card-body">
                   <div class="oi-card-meta">
-                    <span class="oi-card-country">{d.flag} {d.country}</span>
-                    <span class="oi-card-nights">{d.nights} Nächte</span>
+                    <span class="oi-card-country">{d.country}</span>
+                    <span class="oi-card-nights">{d.nights}N</span>
                   </div>
                   <h2 class="oi-card-title">{d.title}</h2>
                   <p class="oi-card-dates">{dateFrom} – {dateTo}</p>
-                  <div class="oi-card-chips">
-                    {isReal && <span class="oi-chip oi-chip-report">📖 Bericht lesen</span>}
-                    <span class="oi-chip oi-chip-vibe">{d.vibe}</span>
-                    <span class="oi-chip oi-chip-cost" style={`color:${costColors[d.costLevel]};border-color:${costColors[d.costLevel]}30;background:${costColors[d.costLevel]}12;`}>
-                      {costLabels[d.costLevel]}
-                    </span>
-                    <span class="oi-chip oi-chip-stars">{stars}</span>
-                  </div>
                 </div>
-              </a>
+                {isReal && <span class="oi-card-arrow">→</span>}
+              </Tag>
             );
           })}
         </div>
@@ -145,15 +137,21 @@ const costLabels  = ['', 'Günstig', 'Günstig', 'Bezahlbar', 'Teuer', 'Sehr teu
     border-radius: 16px;
     overflow: hidden;
     text-decoration: none;
-    transition: box-shadow .2s, transform .2s;
+    position: relative;
+    transition: box-shadow .2s, transform .2s, border-color .2s;
   }
-  .oi-card:hover {
+  .oi-card--link:hover {
     box-shadow: 0 8px 32px rgba(0,0,0,.08);
     transform: translateY(-2px);
+    border-color: var(--coral-mid);
+  }
+  .oi-card--soon {
+    opacity: .6;
+    cursor: default;
   }
 
   .oi-card-img {
-    height: 180px;
+    height: 160px;
     overflow: hidden;
     background: #F1F5F9;
   }
@@ -163,87 +161,81 @@ const costLabels  = ['', 'Günstig', 'Günstig', 'Bezahlbar', 'Teuer', 'Sehr teu
     object-fit: cover;
     transition: transform .3s;
   }
-  .oi-card:hover .oi-card-img img { transform: scale(1.04); }
+  .oi-card--link:hover .oi-card-img img { transform: scale(1.04); }
 
   .oi-card-img--empty {
     display: flex;
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, #F8FAFC, #F1F5F9);
+    position: relative;
   }
-  .oi-card-flag { font-size: 3.5rem; }
+  .oi-card-flag { font-size: 3rem; }
 
-  .oi-card-body { padding: 1.1rem 1.25rem 1.25rem; }
+  .oi-card-body { padding: 1rem 1.1rem 1rem; flex: 1; }
 
   .oi-card-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: .45rem;
+    margin-bottom: .3rem;
   }
   .oi-card-country {
-    font-size: .75rem;
+    font-size: .72rem;
     font-weight: 600;
     color: var(--text-light);
     text-transform: uppercase;
     letter-spacing: .05em;
   }
   .oi-card-nights {
-    font-size: .72rem;
+    font-size: .7rem;
     font-weight: 600;
     color: var(--text-light);
     background: #F1F5F9;
-    padding: 2px 8px;
+    padding: 2px 7px;
     border-radius: 100px;
   }
 
   .oi-card-title {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     font-weight: 800;
     letter-spacing: -.03em;
     color: var(--text);
     margin-bottom: .2rem;
   }
   .oi-card-dates {
-    font-size: .78rem;
+    font-size: .75rem;
     color: var(--text-light);
-    margin-bottom: .75rem;
   }
 
-  .oi-card-chips { display: flex; flex-wrap: wrap; gap: .4rem; }
-  .oi-chip {
-    display: inline-block;
-    padding: .22rem .65rem;
-    border-radius: 100px;
-    font-size: .72rem;
-    font-weight: 600;
-    border: 1.5px solid var(--border);
-    background: #F8FAFC;
-    color: var(--text-mid);
-    white-space: nowrap;
+  .oi-card-arrow {
+    position: absolute;
+    bottom: 1rem;
+    right: 1.1rem;
+    font-size: .9rem;
+    color: var(--coral);
+    opacity: 0;
+    transition: opacity .2s, transform .2s;
   }
-  .oi-chip-vibe { background: var(--coral-light); color: #C2410C; border-color: var(--coral-mid); }
-  .oi-chip-stars  { color: #F59E0B; letter-spacing: 1px; border-color: #FEF3C720; background: #FEF3C730; }
-  .oi-chip-report { background: var(--coral-light); color: #C2410C; border-color: var(--coral-mid); }
+  .oi-card--link:hover .oi-card-arrow {
+    opacity: 1;
+    transform: translateX(3px);
+  }
 
-  /* Coming soon cards */
-  .oi-card--soon { opacity: .72; }
-  .oi-card--soon:hover { opacity: 1; }
   .oi-coming-soon {
     position: absolute;
     bottom: .6rem;
     left: 50%;
     transform: translateX(-50%);
-    background: rgba(15,23,42,.55);
+    background: rgba(15,23,42,.45);
     color: #fff;
-    font-size: .72rem;
+    font-size: .68rem;
     font-weight: 700;
     padding: 3px 10px;
     border-radius: 100px;
     white-space: nowrap;
     backdrop-filter: blur(4px);
   }
-  .oi-card-img--empty { position: relative; }
 
   /* RESPONSIVE */
   @media (max-width: 600px) {

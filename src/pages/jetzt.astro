@@ -38,8 +38,7 @@ if (details?.spots) {
   }
 }
 function gmapsUrl(label: string, city: string, lat?: number, lon?: number) {
-  if (lat && lon) return `https://www.google.com/maps?q=${lat},${lon}`;
-  return `https://www.google.com/maps/search/${encodeURIComponent(label + ' ' + city)}`;
+  return `https://maps.google.com/?q=${encodeURIComponent(label + ' ' + city)}`;
 }
 ---
 

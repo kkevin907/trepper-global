@@ -20,13 +20,13 @@ highlights:
   - "Fahrradtour nach [Brouwershaven](https://maps.google.com/?q=Brouwershaven+Zeeland) & [Zierikzee](https://maps.google.com/?q=Zierikzee+Zeeland) — Zeeland vom Wasser aus"
 foodSpots:
   - name: Basil Thai Restaurant
-    what: Authentische Thai-Küche mitten in Renesse — eine der besten Optionen im Ort
+    what: Authentische Thai-Küche mitten in Renesse. Eine der besten Optionen im Ort.
     stars: 5
     area: Renesse Zentrum
     tip: "Vorsicht beim Schärfegrad — die scharfen Gerichte sind wirklich scharf. Lieber eine Stufe milder bestellen."
     link: "https://basilthai.nl/"
   - name: Strandclub Horizon
-    what: Gehobener Beach Club direkt am Strand — modernes Interior, sehr gutes Essen
+    what: Gehobener Beach Club direkt am Strand. Modernes Interior, sehr gutes Essen.
     stars: 4
     area: Strand Renesse Oost
     tip: Unbedingt vorab reservieren — zu Feiertagen und Wochenenden sonst kein Platz
@@ -38,21 +38,21 @@ foodSpots:
     tip: Gute Alternative wenn man keinen Tisch woanders bekommt
     link: "https://eetcafedelozevisser.nl/"
   - name: Het Wapen van Zeeland
-    what: Traditionelles Restaurant im historischen Gebäude von 1651 — gut und verlässlich
+    what: Traditionelles Restaurant im historischen Gebäude von 1651. Gut und verlässlich.
     stars: 4
     area: Renesse Zentrum
     tip: Kein Reservieren nötig — einfach vorbeigehen und reinsetzen
     link: "https://www.hetwapenvanzeeland.nl/"
 skip:
-  - "Seehund-Safari mit hohen Erwartungen — Seehunde auf der Oosterschelde sind sehr weit weg und kaum zu erkennen"
-  - "Scharfe Gerichte bei Basil Thai ohne Schärfetoleranz — besser nachfragen"
+  - "Seehund-Safari mit hohen Erwartungen. Die Seehunde auf der Oosterschelde sind sehr weit weg und kaum zu erkennen."
+  - "Scharfe Gerichte bei Basil Thai ohne Schärfetoleranz. Lieber vorher nachfragen."
 tips:
   - "Fahrrad mieten ist Pflicht — Renesse lebt vom Radfahren, alles erreichbar, auch mit [Hundeanhänger](https://maps.google.com/?q=Renesse+Zeeland)"
   - "[Alpaca en Falabella Ranch Kerkwerve](https://alpaca-falabellaranch.nl/) vorab buchen — Alpaka-Wanderungen auf Anfrage"
   - "[Strandclub Horizon](https://www.strandclubhorizon.nl/) unbedingt reservieren, besonders an Feiertagen"
   - "[Badhotel Renesse](https://maps.google.com/?q=Badhotel+Renesse) — super Remote-Work-Spot mit Frühstücksbuffet, ruhige Lobby"
   - "[Bar de Stulp](https://www.bardestulp.com/) checkt Agenda — regelmäßig Konzerte, Easter Rockfest am Ostersonntag"
-bestArea: Westlich des Zentrums nahe Strandaufgang — kurze Wege zum Strand und 5 Minuten mit dem Rad ins Dorf
+bestArea: "Westlich des Zentrums nahe Strandaufgang. Kurze Wege zum Strand und 5 Minuten mit dem Rad ins Dorf."
 draft: false
 ---
 

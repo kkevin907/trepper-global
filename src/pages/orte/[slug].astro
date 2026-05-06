@@ -39,6 +39,7 @@ const mapData = JSON.stringify({
     stars: f.stars,
     area: f.area || '',
     what: f.what || '',
+    link: f.link || '',
   })),
 });
 ---
@@ -259,12 +260,17 @@ const mapData = JSON.stringify({
       // Food spot markers
       const starStr = (n) => '★'.repeat(n) + '☆'.repeat(5 - n);
       parsed.spots.forEach(function (spot) {
+        const mapsHref = spot.link || ('https://maps.google.com/?q=' + encodeURIComponent(spot.name));
         const popup = `
           <div style="font-family:sans-serif;min-width:160px;">
             <div style="font-weight:800;font-size:13px;color:#0F172A;margin-bottom:2px;">${spot.name}</div>
             <div style="font-size:11px;color:#F59E0B;margin-bottom:4px;">${starStr(spot.stars)}</div>
             ${spot.area ? `<div style="font-size:11px;color:#64748B;">📍 ${spot.area}</div>` : ''}
             ${spot.what ? `<div style="font-size:11px;color:#475569;margin-top:4px;line-height:1.4;">${spot.what}</div>` : ''}
+            <a href="${mapsHref}" target="_blank" rel="noopener"
+               style="display:inline-flex;align-items:center;gap:4px;margin-top:8px;font-size:11px;font-weight:700;
+                      color:#F97316;text-decoration:none;background:#FFF7ED;border:1px solid #FDBA74;
+                      padding:3px 9px;border-radius:6px;">↗ Google Maps</a>
           </div>`;
         L.marker([spot.lat, spot.lon], { icon: makeIcon('#0F172A') })
           .addTo(map)

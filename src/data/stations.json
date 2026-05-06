@@ -16,10 +16,11 @@
     "description": "Heimat. Von hier geht es am 9. Juni los.",
     "details": {
       "highlights": [
-        "Klingenmuseum",
         "Müngstener Brücke",
         "Schloss Burg",
-        "Gräfrather Markt"
+        "Kaffeehaus Solingen",
+        "Gräfrather Markt",
+        "Klingenmuseum"
       ],
       "mustEat": [
         "Bergische Waffeln",
@@ -1696,7 +1697,7 @@
   },
   {
     "id": "malaysia",
-    "name": "Kuala Lumpur",
+    "name": "Malaysia",
     "country": "Malaysia",
     "flag": "🇲🇾",
     "lat": 3.139,
@@ -1836,70 +1837,6 @@
           "lat": -8.3405,
           "lon": 115.092,
           "type": "food"
-        }
-      ]
-    }
-  },
-  {
-    "id": "newzealand",
-    "name": "Neuseeland",
-    "country": "Neuseeland",
-    "flag": "🇳🇿",
-    "lat": -40.9006,
-    "lon": 174.886,
-    "status": "upcoming",
-    "phase": "main",
-    "timezone": "Pacific/Auckland",
-    "currency": "NZD",
-    "currencySymbol": "NZ$",
-    "dateFrom": null,
-    "dateTo": null,
-    "description": "Atemberaubende Landschaft, Natur pur — das Ende der Welt.",
-    "details": {
-      "highlights": [
-        "Milford Sound",
-        "Tongariro Alpine Crossing",
-        "Abel Tasman Nationalpark",
-        "Hobbiton",
-        "Franz Josef Gletscher",
-        "Bay of Islands"
-      ],
-      "mustEat": [
-        "Hāngi (Māori-Erdofen)",
-        "Meat Pie",
-        "Pavlova",
-        "L&P Limo",
-        "Green-lipped Mussels"
-      ],
-      "tips": "Mietwagen Pflicht — ÖPNV kaum vorhanden. Linksverkehr! Campervans sehr beliebt. DOC Hütten für Trekking buchen.",
-      "bestFor": [
-        "Trekking",
-        "Natur",
-        "Abenteuer",
-        "Fotografie"
-      ],
-      "visa": "Kein Visum, aber NZeTA erforderlich (ca. 17 NZD, online)",
-      "language": "Englisch, Māori",
-      "transport": "Mietwagen / Campervan, Inlandsflüge, InterCity Bus",
-      "plug": "Typ I (230V) — Adapter nötig!",
-      "spots": [
-        {
-          "name": "Milford Sound",
-          "lat": -44.6413,
-          "lon": 167.8974,
-          "type": "sight"
-        },
-        {
-          "name": "Tongariro Crossing",
-          "lat": -39.1307,
-          "lon": 175.5874,
-          "type": "sight"
-        },
-        {
-          "name": "Hobbiton",
-          "lat": -37.8572,
-          "lon": 175.682,
-          "type": "sight"
         }
       ]
     }

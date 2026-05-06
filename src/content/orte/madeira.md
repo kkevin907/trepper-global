@@ -23,7 +23,7 @@ foodSpots:
   - name: "Bar 101 / Beira Mar"
     lat: 32.8192
     lon: -17.2394
-    what: "PREGO — Steak-Sandwich auf Madeira, herzhaft und perfekt"
+    what: "PREGO. Steak-Sandwich auf Madeira, herzhaft und perfekt."
     stars: 5
     area: "Achadas da Cruz, Nordwesten"
     tip: "Unbedingt das PREGO bestellen. Klingt simpel, ist aber das Beste was du auf der Insel essen wirst."
@@ -37,18 +37,18 @@ markets:
   - name: "Mercado dos Lavradores"
     type: "Lebensmittelmarkt"
     when: "Mo–Sa"
-    tip: "Funchal's berühmter Markt — schön anzusehen, Preise für Touristen aber eher hoch."
+    tip: "Funchal's berühmter Markt. Schön anzusehen, aber die Preise für Touristen sind eher hoch."
     link: "https://maps.google.com/?q=Mercado+dos+Lavradores+Funchal+Madeira"
 skip:
-  - "Hochsaison ohne Mietwagenreservierung — Parkplätze an den Sehenswürdigkeiten sind begrenzt, im Sommer chaotisch"
-  - "Wetter im Norden und in den Bergen unterschätzen — Sonnenschein in Funchal bedeutet nichts für die Bergregionen"
+  - "Hochsaison ohne Mietwagenreservierung. Parkplätze an den Sehenswürdigkeiten sind begrenzt und im Sommer chaotisch."
+  - "Wetter im Norden und in den Bergen unterschätzen. Sonnenschein in Funchal bedeutet nichts für die Bergregionen."
 tips:
   - "Automatik-Mietwagen ist Pflicht — die Straßen sind steil, eng und kurvenreich"
   - "Madeira hat viele Mikroklimata: Süden fast immer warm, Berge oft neblig und kalt, Norden eher regnerisch"
   - "Der Nordwesten ([Paul do Mar](https://maps.google.com/?q=Paul+do+Mar+Madeira), [Jardim do Mar](https://maps.google.com/?q=Jardim+do+Mar+Madeira)) ist die schönste Ecke der Insel — dort Zeit einplanen"
   - "Früh starten für Wanderungen und Aussichtspunkte — vor den Reisegruppen am besten"
   - "Fürs nächste Mal: [Pico do Arieiro](https://maps.google.com/?q=Pico+do+Arieiro+Madeira), [Natural Pools Porto Moniz](https://maps.google.com/?q=Piscinas+Naturais+Porto+Moniz+Madeira), Korbschlitten in Monte"
-bestArea: "Nordwesten — Paul do Mar und Jardim do Mar. Ruhig, wild, authentisch und weit weg vom Tourismus."
+bestArea: "Nordwesten. Paul do Mar und Jardim do Mar. Ruhig, wild, authentisch und weit weg vom Tourismus."
 draft: false
 ---
 
