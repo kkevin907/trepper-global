@@ -41,8 +41,6 @@ const costLabels  = ['', 'Günstig', 'Günstig', 'Bezahlbar', 'Teuer', 'Sehr teu
         <div class="oi-grid reveal-stagger">
           {orte.map(ort => {
             const d = ort.data;
-            const dateFrom = new Date(d.dateFrom).toLocaleDateString('de-DE', { day: 'numeric', month: 'short' });
-            const dateTo   = new Date(d.dateTo).toLocaleDateString('de-DE', { day: 'numeric', month: 'short', year: 'numeric' });
             const isReal   = !d.highlights[0].startsWith('TODO');
             const Tag      = isReal ? 'a' : 'div';
             const props    = isReal ? { href: `/orte/${ort.id}` } : {};
@@ -64,7 +62,6 @@ const costLabels  = ['', 'Günstig', 'Günstig', 'Bezahlbar', 'Teuer', 'Sehr teu
                     <span class="oi-card-country">{d.country}</span>
                   </div>
                   <h2 class="oi-card-title">{d.title}</h2>
-                  <p class="oi-card-dates">{dateFrom} – {dateTo}</p>
                   <div class="oi-card-chips">
                     <span class="oi-chip oi-chip-vibe">{d.vibe}</span>
                     <span class="oi-chip oi-chip-cost" style={`color:${costColors[d.costLevel]};border-color:${costColors[d.costLevel]}30;background:${costColors[d.costLevel]}12;`}>
