@@ -72,7 +72,7 @@ Die **Cascata dos Anjos** bei Canhas war einen Abstecher wert — schöner Wasse
 
 **Zum Essen:** Die Bäckereien auf der Insel sind unterschätzt — frisch, günstig, gut. Aber das absolute Muss ist das **PREGO** in der **Bar 101**. Ein Steak-Sandwich das eigentlich nichts Besonderes klingen soll, aber das Beste ist was du auf der Insel essen wirst. Kein Scherz.
 
-<div class="or-photo-hint">📷 <em>Foto folgt: Das PREGO bei der Bar 101</em></div>
+<img src="/images/orte/madeira-prego-bar101.jpeg" alt="PREGO Steak-Sandwich bei der Bar 101 auf Madeira" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 **Wichtiger Hinweis fürs Fahren:** Automatik-Mietwagen buchen. Kein Optional, kein Nice-to-have — Pflicht. Die Straßen sind steil, eng und haben kaum Leitplanken. Parkplätze an den bekannten Aussichtspunkten sind außerdem begrenzt — im April war es noch entspannt, im Sommer soll das laut Einheimischen reines Chaos sein.
 
