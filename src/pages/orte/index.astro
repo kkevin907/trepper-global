@@ -13,6 +13,8 @@ orte.sort((a, b) => {
   return new Date(b.data.dateFrom).getTime() - new Date(a.data.dateFrom).getTime();
 });
 
+const costColors  = ['', '#10B981', '#22C55E', '#F97316', '#EF4444', '#DC2626'];
+const costLabels  = ['', 'Günstig', 'Günstig', 'Bezahlbar', 'Teuer', 'Sehr teuer'];
 ---
 
 <Layout
@@ -64,6 +66,13 @@ orte.sort((a, b) => {
                   </div>
                   <h2 class="oi-card-title">{d.title}</h2>
                   <p class="oi-card-dates">{dateFrom} – {dateTo}</p>
+                  <div class="oi-card-chips">
+                    <span class="oi-chip oi-chip-vibe">{d.vibe}</span>
+                    <span class="oi-chip oi-chip-cost" style={`color:${costColors[d.costLevel]};border-color:${costColors[d.costLevel]}30;background:${costColors[d.costLevel]}12;`}>
+                      {costLabels[d.costLevel]}
+                    </span>
+                    <span class="oi-chip oi-chip-stars">{'★'.repeat(d.rating)}{'☆'.repeat(5-d.rating)}</span>
+                  </div>
                 </div>
                 {isReal && <span class="oi-card-arrow">→</span>}
               </Tag>
@@ -237,11 +246,27 @@ orte.sort((a, b) => {
     backdrop-filter: blur(4px);
   }
 
+  .oi-card-chips { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .6rem; }
+  .oi-chip {
+    display: inline-block;
+    padding: .2rem .6rem;
+    border-radius: 100px;
+    font-size: .7rem;
+    font-weight: 600;
+    border: 1.5px solid var(--border);
+    background: #F8FAFC;
+    color: var(--text-mid);
+    white-space: nowrap;
+  }
+  .oi-chip-vibe  { background: var(--coral-light); color: #C2410C; border-color: var(--coral-mid); }
+  .oi-chip-stars { color: #F59E0B; letter-spacing: 1px; border-color: #FEF3C720; background: #FEF3C730; }
+
   /* RESPONSIVE */
   @media (max-width: 600px) {
     .oi-grid { grid-template-columns: 1fr; }
     .oi-header { padding: 1.75rem 1.25rem; }
     .oi-wrap { padding: 1.5rem 1.25rem 3rem; }
+    .oi-card-chips { display: none; }
   }
   @media (max-width: 380px) {
     .oi-header { padding: 1.5rem 1rem; }
