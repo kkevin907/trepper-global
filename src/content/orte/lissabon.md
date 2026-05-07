@@ -65,7 +65,6 @@ Wir haben nahe [Martim Moniz](https://maps.google.com/?q=Martim+Moniz+Lissabon) 
 
 **[Elevador da Glória](https://maps.google.com/?q=Elevador+da+Gloria+Lissabon) & [Miradouro de São Pedro de Alcântara](https://maps.google.com/?q=Miradouro+de+São+Pedro+de+Alcântara+Lissabon).** Der historische Aufzug fährt von der Praça dos Restauradores hinauf — oben erwartet einem einer der schönsten Ausblicke auf die Dächer von Lissabon. Livemusik, gutes Wetter, ein echter Moment.
 
-<img src="/images/orte/lissabon-miradouro-sao-pedro.jpeg" alt="Blick vom Miradouro de São Pedro de Alcântara über Lissabon — Castelo de São Jorge und Tejo" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 **[Praça do Comércio](https://maps.google.com/?q=Praça+do+Comércio+Lissabon) & [Arco da Rua Augusta](https://maps.google.com/?q=Arco+da+Rua+Augusta+Lissabon).** Der große Platz direkt am Tejo — der erste Blick auf die [Ponte 25 de Abril](https://maps.google.com/?q=Ponte+25+de+Abril+Lissabon) und den [Cristo Rei](https://maps.google.com/?q=Cristo+Rei+Almada) auf der anderen Seite. Wenn man durch den Triumphbogen tritt und plötzlich das Wasser vor einem hat, macht das Lissabon aus.
 
