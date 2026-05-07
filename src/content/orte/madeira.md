@@ -66,7 +66,7 @@ Was mich wirklich beeindruckt hat, war das **Wetter**. Madeira hat so viele Mikr
 
 Der **Fanal Forest** war ebenfalls ein Highlight — alte Lorbeerbäume im Nebel, komplett mystisch. Ich habe ihn schon abgehakt, aber beim nächsten Besuch würde ich früher morgens hingehen bevor der Nebel sich lichtet.
 
-<div class="or-photo-hint">📷 <em>Foto folgt: Fanal Forest — Lorbeerbäume im Morgennebel</em></div>
+<img src="/images/orte/madeira-fanal-forest.jpeg" alt="Fanal Forest — alte Lorbeerbäume auf Madeira" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 Die **Cascata dos Anjos** bei Canhas war einen Abstecher wert — schöner Wasserfall, etwas abseits der Touristenroute. Und die **Seilbahn da Cruz** war einer dieser Momente wo man einfach nur steht und schaut — runter zur Küste, Blick aufs Meer, perfekter Sonnenuntergang.
 
