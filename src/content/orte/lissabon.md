@@ -61,7 +61,7 @@ Wir haben nahe [Martim Moniz](https://maps.google.com/?q=Martim+Moniz+Lissabon) 
 
 **[Castelo de São Jorge](https://maps.google.com/?q=Castelo+de+São+Jorge+Lissabon).** Den Hügel hochgewandert durch die engen Gassen des Alfama-Viertels — die Gassen selbst sind das eigentliche Erlebnis. Das Castelo nur von außen gesehen, die Schlangen waren lang und hätten sich nicht gelohnt.
 
-<div class="or-photo-hint">📷 <em>Foto folgt: Gassen unterhalb des Castelo de São Jorge</em></div>
+<img src="/images/orte/lissabon-gassen.jpeg" alt="Gassen unterhalb des Castelo de São Jorge — Lissabon" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 **[Elevador da Glória](https://maps.google.com/?q=Elevador+da+Gloria+Lissabon) & [Miradouro de São Pedro de Alcântara](https://maps.google.com/?q=Miradouro+de+São+Pedro+de+Alcântara+Lissabon).** Der historische Aufzug fährt von der Praça dos Restauradores hinauf — oben erwartet einem einer der schönsten Ausblicke auf die Dächer von Lissabon. Livemusik, gutes Wetter, ein echter Moment.
 
