@@ -12,7 +12,7 @@ mapCenter:
   lat: 32.6491
   lon: -16.9071
 rating: 5
-coverImage: ""
+coverImage: "/images/orte/madeira-seixal-beach.jpeg"
 highlights:
   - "[Seixal Beach](https://maps.google.com/?q=Seixal+Beach+Madeira) — schwarzer Lavastrand, idyllisch, fast menschenleer im April"
   - "[Piscinas Naturais Porto Moniz](https://maps.google.com/?q=Piscinas+Naturais+Porto+Moniz+Madeira) — natürliche Lavapools direkt am Meer, ein Muss"
@@ -54,7 +54,7 @@ draft: false
 
 Madeira hat mich komplett überrumpelt. Ich hatte eine grüne Insel erwartet — bekommen habe ich eine Insel mit gefühlt zehn verschiedenen Welten auf einmal.
 
-<div class="or-photo-hint">📷 <em>Foto folgt: Seixal Beach — der schwarze Lavastrand von oben</em></div>
+<img src="/images/orte/madeira-seixal-beach.jpeg" alt="Seixal Beach — schwarzer Lavastrand auf Madeira" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 Der **Seixal Beach** war einer der ersten Strände die ich gesehen habe — schwarzer Lavasand, klares Wasser, und im April kaum Menschen. Schwimmen ist dort Pflicht. Auf der Insel gibt es außerdem **Piscinas Naturais**, natürliche Lavapools die direkt ins Meer übergehen. Das Wasser ist frisch, aber die Stimmung ist besser als jeder Hotelpool.
 
