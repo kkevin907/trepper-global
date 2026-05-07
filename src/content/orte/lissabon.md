@@ -51,6 +51,7 @@ tips:
   - "[Quinta da Arealva](https://wetravelportugal.com/quinta-da-arealva/) in Almada nicht verpassen. Vom Cristo Rei zu Fuß runter, dann am Wasser entlang."
   - "[Miradouro da Senhora do Monte](https://maps.google.com/?q=Miradouro+da+Senhora+do+Monte+Lissabon) ist der ruhigste Aussichtspunkt der Stadt. Weniger bekannt, 360-Grad-Blick."
 bestArea: Martim Moniz / Mouraria. Zentral, gute Anbindung, authentisches Lissabon direkt vor der Tür.
+coverImage: "/images/orte/lissabon-cristo-rei.jpeg"
 draft: false
 ---
 
@@ -74,7 +75,7 @@ Wir haben nahe [Martim Moniz](https://maps.google.com/?q=Martim+Moniz+Lissabon) 
 
 **Fähre nach [Cacilhas](https://maps.google.com/?q=Cacilhas+Almada) & [Cristo Rei](https://maps.google.com/?q=Cristo+Rei+Almada).** Von [Cais do Sodré](https://maps.google.com/?q=Cais+do+Sodré+Lissabon) rüber — wenige Minuten, wenig Geld, komplett andere Perspektive auf die Stadt. Durch [Almada](https://maps.google.com/?q=Almada+Portugal) hochgelaufen zur Christusstatue und von dort zurück auf Lissabon geschaut — ein Ort, der im Gedächtnis bleibt.
 
-<div class="or-photo-hint">📷 <em>Foto folgt: Cristo Rei — Blick zurück auf Lissabon</em></div>
+<img src="/images/orte/lissabon-cristo-rei.jpeg" alt="Cristo Rei — Almada bei Lissabon" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 **[Quinta da Arealva](https://wetravelportugal.com/quinta-da-arealva/) — das versteckte Highlight.** Den Weg vom Cristo Rei zu Fuß runter und am Wasser entlang — eine der besten Entscheidungen des Trips. Die Quinta ist eine verlassene Anlage direkt am Tejo-Ufer, komplett mit Streetart bedeckt, mit Brückenblick. Danach durch den [Jardim do Rio](https://maps.google.com/?q=Jardim+do+Rio+Almada) — ruhig, schön, weit weg vom Touristenstress. Diese Route kann ich sehr empfehlen.
 
