@@ -78,7 +78,7 @@ Wir haben nahe [Martim Moniz](https://maps.google.com/?q=Martim+Moniz+Lissabon) 
 
 **[Quinta da Arealva](https://wetravelportugal.com/quinta-da-arealva/) — das versteckte Highlight.** Den Weg vom Cristo Rei zu Fuß runter und am Wasser entlang — eine der besten Entscheidungen des Trips. Die Quinta ist eine verlassene Anlage direkt am Tejo-Ufer, komplett mit Streetart bedeckt, mit Brückenblick. Danach durch den [Jardim do Rio](https://maps.google.com/?q=Jardim+do+Rio+Almada) — ruhig, schön, weit weg vom Touristenstress. Diese Route kann ich sehr empfehlen.
 
-<div class="or-photo-hint">📷 <em>Foto folgt: Quinta da Arealva — Streetart und Brückenblick</em></div>
+<img src="/images/orte/lissabon-ponte-25-abril.jpeg" alt="Ponte 25 de Abril — Blick von der Quinta da Arealva" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 **[Manteigaria](https://manteigaria.com/en/).** Pastéis de Nata frisch aus dem Ofen — warm, mit Zimt und Puderzucker. Wer in Lissabon ist und dort keine isst, hat etwas falsch gemacht.
 
