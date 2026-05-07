@@ -85,10 +85,10 @@ const doCenterZoom    = centerZoom;
     }).addTo(map);
 
     var colorMap = {
-      home:     '#8B5CF6',
+      home:     '#94A3B8',
       visited:  '#10B981',
-      planned:  '#10B981', // wie visited
-      upcoming: '#F97316',
+      planned:  '#10B981',
+      upcoming: '#0EA5E9',
       current:  '#F97316',
     };
     var labelMap = {
@@ -135,7 +135,7 @@ const doCenterZoom    = centerZoom;
 
       var icon;
       if (isHere) {
-        // Großer "Du bist hier"-Marker: coral, doppelter Pulsring, weiße Mitte
+        // Aktueller Standort: coral, doppelter Pulsring, "HIER" Label
         icon = L.divIcon({
           className: '',
           html: '<div style="position:relative;width:52px;height:52px;">'
@@ -147,7 +147,18 @@ const doCenterZoom    = centerZoom;
           iconSize: [52, 52],
           iconAnchor: [26, 26],
         });
+      } else if (s.status === 'home') {
+        // Heimat: grau, klein, kein Puls — dezenter Referenzpunkt
+        icon = L.divIcon({
+          className: '',
+          html: '<div style="position:relative;width:22px;height:22px;">'
+              + '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:12px;height:12px;background:#94A3B8;border:2.5px solid white;border-radius:50%;box-shadow:0 1px 6px #94A3B880;"></div>'
+              + '</div>',
+          iconSize: [22, 22],
+          iconAnchor: [11, 11],
+        });
       } else {
+        // Alle anderen: Puls-Ring + Dot in Statusfarbe
         icon = L.divIcon({
           className: '',
           html: '<div style="position:relative;width:30px;height:30px;">'
@@ -167,7 +178,7 @@ const doCenterZoom    = centerZoom;
       var badge = isHere
         ? '<span style="background:#FFF7ED;border:1.5px solid #FDBA74;color:#C2410C;font-size:0.62rem;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;padding:2px 7px;border-radius:100px;">📍 Hier</span>'
         : (s.status === 'upcoming'
-          ? '<span style="background:#FFF7ED;border:1.5px solid #FDBA74;color:#F97316;font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;padding:2px 7px;border-radius:100px;">🌏 Weltreise</span>'
+          ? '<span style="background:#E0F2FE;border:1.5px solid #7DD3FC;color:#0369A1;font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;padding:2px 7px;border-radius:100px;">🌏 Weltreise</span>'
           : '<span style="background:' + color + '22;color:' + color + ';font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;padding:2px 7px;border-radius:100px;">' + label + '</span>');
 
       var reportLink = orteIds.indexOf(s.id) !== -1
@@ -245,9 +256,9 @@ const doCenterZoom    = centerZoom;
       }
 
       var filterDefs = [
-        { status: 'home',     label: '🏠 Heimat',   color: '#8B5CF6' },
+        { status: 'home',     label: '🏠 Heimat',   color: '#94A3B8' },
         { status: 'visited',  label: '✓ Besucht',   color: '#10B981' },
-        { status: 'upcoming', label: '🌏 Weltreise', color: '#F97316' },
+        { status: 'upcoming', label: '🌏 Weltreise', color: '#0EA5E9' },
       ];
 
       filterDefs.forEach(function(def) {
