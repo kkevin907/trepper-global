@@ -51,7 +51,7 @@ tips:
   - "[Quinta da Arealva](https://wetravelportugal.com/quinta-da-arealva/) in Almada nicht verpassen. Vom Cristo Rei zu Fuß runter, dann am Wasser entlang."
   - "[Miradouro da Senhora do Monte](https://maps.google.com/?q=Miradouro+da+Senhora+do+Monte+Lissabon) ist der ruhigste Aussichtspunkt der Stadt. Weniger bekannt, 360-Grad-Blick."
 bestArea: Martim Moniz / Mouraria. Zentral, gute Anbindung, authentisches Lissabon direkt vor der Tür.
-coverImage: "/images/orte/lissabon-cristo-rei.jpeg"
+coverImage: "/images/orte/lissabon-miradouro-sao-pedro.jpeg"
 draft: false
 ---
 
