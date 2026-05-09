@@ -60,7 +60,7 @@ Der **Seixal Beach** war einer der ersten Strände die ich gesehen habe — schw
 
 Was mich wirklich beeindruckt hat, war das **Wetter**. Madeira hat so viele Mikroklimata, dass es sich anfühlt als würde man zwischen verschiedenen Ländern fahren. Funchal im Süden? Warm, sonnig, 23 Grad. Zehn Minuten später in den Bergen? Dicker Nebel, 15 Grad, Regenjacke raus. Der Norden ist generell eher regnerisch — aber genau das macht den **Nordwesten** so grün und so schön.
 
-<div class="or-photo-hint">📷 <em>Foto folgt: Jardim do Mar — das Dorf von der Küstenstraße aus</em></div>
+<img src="/images/orte/madeira-jardim-do-mar.jpeg" alt="Küstenstraße bei Jardim do Mar — Madeira" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 **Paul do Mar** und **Jardim do Mar** sind zwei dieser kleinen Küstendörfer im Nordwesten, die man einfach nicht vergisst. Enge Gassen, das Meer direkt vor der Haustür, keine Touristenläden. Das ist das echte Madeira.
 
