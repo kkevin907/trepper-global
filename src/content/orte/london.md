@@ -92,13 +92,13 @@ bestArea: "Spitalfields / East End. Direkt bei Brick Lane und Old Spitalfields M
 draft: false
 ---
 
-Zwei Nächte in London — eigentlich zu wenig, aber genug, um zu merken, dass diese Stadt einen Rhythmus hat, der einfach zieht. Quartier direkt im Spitalfields-Viertel, östlich der City — eine der besseren Entscheidungen des Trips.
+Zwei Nächte in London. Eigentlich zu wenig, aber genug, um zu merken, dass diese Stadt einen Rhythmus hat, der einfach zieht. Quartier direkt im Spitalfields-Viertel, östlich der City. Eine der besseren Entscheidungen des Trips.
 
-Das Viertel rund um die **Brick Lane** und den **Old Spitalfields Market** hat eine Energie, die man so in Deutschland nicht kennt. Tagsüber Vintage-Stores, Kaffeeläden, Street Art — abends füllen sich die Pubs mit Leuten aus den umliegenden Büros und das Ganze bekommt eine völlig andere Atmosphäre. Erinnert an New York: dichte Backsteinfassaden, Mix-Kultur, das Tempo. Man fühlt sich außerdem sicherer als erwartet — entspannter als manche deutsche Großstadt.
+Das Viertel rund um die **Brick Lane** und den **Old Spitalfields Market** hat eine Energie, die man so in Deutschland nicht kennt. Tagsüber Vintage-Stores, Kaffeeläden, Street Art. Abends füllen sich die Pubs mit Leuten aus den umliegenden Büros und das Ganze bekommt eine völlig andere Atmosphäre. Erinnert an New York: dichte Backsteinfassaden, Mix-Kultur, das Tempo. Man fühlt sich außerdem sicherer als erwartet. Entspannter als manche deutsche Großstadt.
 
 <div class="or-photo-hint">📷 <em>Foto folgt: Old Spitalfields Market — der Vintage-Stand</em></div>
 
-**Essen war gut, aber teuer** — das ist bei London halt so.
+**Essen war gut, aber teuer.** Das ist bei London halt so.
 
 Der **Sky Garden** war ein echtes Highlight — kostenlos, Ausblick über ganz London von einem Wolkenkratzer mitten in der City. Vorher online buchen, sonst kommt man nicht rein.
 
@@ -110,4 +110,4 @@ Der **Uber Boat** auf der Themse ist eine dieser Sachen, die man als Transport b
 
 <div class="or-photo-hint">📷 <em>Foto folgt: St. James's Park — der Blick Richtung Buckingham Palace</em></div>
 
-London packt einen sofort, ist aber nicht günstig. Wer smart plant — kostenlose Museen, Uber Boat statt Taxi, Spitalfields statt Zentrum — kriegt trotzdem ein sehr gutes Erlebnis für sein Geld.
+London packt einen sofort, ist aber nicht günstig. Wer smart plant, kriegt trotzdem ein sehr gutes Erlebnis für sein Geld: kostenlose Museen, Uber Boat statt Taxi, Spitalfields statt Zentrum.

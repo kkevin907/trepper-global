@@ -110,10 +110,10 @@ Drei Nächte Madrid, Airbnb in [Canillejas](https://maps.google.com/?q=Canilleja
 
 <img src="/images/orte/madrid-el-tigre.png" alt="El Tigre Bar — Madrid" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
-**[Parque del Retiro](https://maps.google.com/?q=Parque+del+Retiro+Madrid).** Der große Stadtpark — riesig, gepflegt, perfekt für einen Nachmittag, wenn man nach ein paar Tagen Großstadt Abstand braucht.
+**[Parque del Retiro](https://maps.google.com/?q=Parque+del+Retiro+Madrid).** Der große Stadtpark. Riesig, gepflegt, perfekt für einen Nachmittag, wenn man nach ein paar Tagen Großstadt Abstand braucht.
 
 <img src="/images/orte/madrid-retiro-park.jpeg" alt="Parque del Retiro — Madrid" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
-**Beinahe verpasster Flug.** Am letzten Morgen fast den Flug nach Ibiza verpasst — 55 Minuten vor Abflug noch nicht durch die Sicherheitskontrolle. Madrid-Barajas ist gigantisch, Wege zwischen Gates lang. **Mindestens 2 Stunden vor Abflug am Flughafen sein** — ohne Puffer wird's eng.
+**Beinahe verpasster Flug.** Am letzten Morgen fast den Flug nach Ibiza verpasst. 55 Minuten vor Abflug noch nicht durch die Sicherheitskontrolle. Madrid-Barajas ist gigantisch, die Wege zwischen den Gates sind lang. **Mindestens 2 Stunden vor Abflug am Flughafen sein.** Ohne Puffer wird's eng.
 
 Madrid lässt einen nicht los.

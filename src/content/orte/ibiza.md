@@ -60,7 +60,7 @@ bestArea: "Playa d'en Bossa. Clubs, Strandpromenade, Sonnenaufgang."
 draft: false
 ---
 
-Eine Nacht, kein Hotel, kein Schlaf — und trotzdem der stärkste Abschluss des Trips. Landung 19 Uhr, Abflug 09:30 Uhr am nächsten Morgen. Alles dazwischen war Ibiza.
+Eine Nacht, kein Hotel, kein Schlaf. Und trotzdem der stärkste Abschluss des Trips. Landung 19 Uhr, Abflug 09:30 Uhr am nächsten Morgen. Alles dazwischen war Ibiza.
 
 **Ankunft & Gepäck.** Direkt vom Flughafen für 3,50 € pro Person mit dem Shuttle in die Stadt. Gepäck bei <a href="https://easylockersibiza.com/" target="_blank" rel="noopener">Easy Lockers Ibiza</a> eingeschlossen — Spind unbedingt vorab online reservieren, sonst gibt es keinen Platz.
 
@@ -81,9 +81,9 @@ Eine Nacht, kein Hotel, kein Schlaf — und trotzdem der stärkste Abschluss des
 
 <div class="or-photo-hint">📷 <em>Foto folgt: Hï Ibiza Außenbereich / Theatre Room</em></div>
 
-Zur Preisfrage beim Clubticket: Wir hatten einen Monat vorher gebucht — **75 €**. Der Norweger den wir kennenlernten buchte zwei Tage davor: **200 €** für dasselbe Ticket. Ein Holländer kaufte noch am selben Abend: **70 € — aber erst ab 6 Uhr gültig**, also kaum noch Zeit zum Feiern.
+Zur Preisfrage beim Clubticket: Wir hatten einen Monat vorher gebucht — **75 €**. Der Norweger den wir kennenlernten buchte zwei Tage davor: **200 €** für dasselbe Ticket. Ein Holländer kaufte noch am selben Abend: **70 €, aber erst ab 6 Uhr gültig**, also kaum noch Zeit zum Feiern.
 
-**Sonnenaufgang.** Nach 6 Uhr im Morgengrauen am Playa d'en Bossa zurück in Richtung Stadt gelaufen — einer dieser Momente, die man nicht vergisst.
+**Sonnenaufgang.** Nach 6 Uhr im Morgengrauen am Playa d'en Bossa zurück in Richtung Stadt gelaufen. Einer dieser Momente, die man nicht vergisst.
 
 **La Canela.** Erste Bäckerei die offen hatte. Empanadas, süße Teigwaren — alles frisch und handgemacht. Für diese Qualität absolut fair.
 

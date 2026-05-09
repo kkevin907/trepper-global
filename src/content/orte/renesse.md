@@ -13,11 +13,11 @@ mapCenter:
   lon: 3.7759
 rating: 4
 highlights:
-  - "[Alpaca en Falabella Ranch](https://alpaca-falabellaranch.nl/) in Kerkwerve — Alpaka-Wanderung, ein besonderes Erlebnis"
-  - "[Bar de Stulp](https://www.bardestulp.com/) — Osterkonzert am Ostersonntag, rockige Atmosphäre mitten im Dorf"
-  - "[Strandclub Horizon](https://www.strandclubhorizon.nl/) — fancy Beach Club, neu eröffnet, innen sehr beeindruckend"
-  - "[Westerlichttoren Nieuw-Haamstede](https://burghhaamstede.com/en/lighthouse/9167/lighthouse-west-schouwen-haamstede.html) — Leuchtturm in den Dünen, schön beim Strandspaziergang"
-  - "Fahrradtour nach [Brouwershaven](https://maps.google.com/?q=Brouwershaven+Zeeland) & [Zierikzee](https://maps.google.com/?q=Zierikzee+Zeeland) — Zeeland vom Wasser aus"
+  - "[Alpaca en Falabella Ranch](https://alpaca-falabellaranch.nl/) in Kerkwerve. Alpaka-Wanderung, ein besonderes Erlebnis"
+  - "[Bar de Stulp](https://www.bardestulp.com/). Osterkonzert am Ostersonntag, rockige Atmosphäre mitten im Dorf"
+  - "[Strandclub Horizon](https://www.strandclubhorizon.nl/). Fancy Beach Club, neu eröffnet, innen sehr beeindruckend"
+  - "[Westerlichttoren Nieuw-Haamstede](https://burghhaamstede.com/en/lighthouse/9167/lighthouse-west-schouwen-haamstede.html). Leuchtturm in den Dünen, schön beim Strandspaziergang"
+  - "Fahrradtour nach [Brouwershaven](https://maps.google.com/?q=Brouwershaven+Zeeland) & [Zierikzee](https://maps.google.com/?q=Zierikzee+Zeeland). Zeeland vom Wasser aus"
 sights:
   - name: "Alpaca en Falabella Ranch (Kerkwerve)"
     lat: 51.6473
@@ -85,23 +85,23 @@ Eine Woche Renesse mit der Familie — Fahrräder, Strandhütten, Ostersonntag u
 
 **Unterkunft & Ankommen.** Ferienwohnung westlich des Zentrums, direkt nahe am Strandaufgang. Mit dem Fahrrad in fünf Minuten im Dorf, in zwei Minuten am Strand. Ideal.
 
-**Mit dem Rad unterwegs.** Das Fahrrad war das Hauptverkehrsmittel — mit Anhänger für den Hund, durch die Dünen, in die Nachbarorte. [Burgh-Haamstede](https://maps.google.com/?q=Burgh-Haamstede+Zeeland) liegt direkt nebenan und ist einen Besuch wert. Weiter geht's in Richtung [Brouwershaven](https://maps.google.com/?q=Brouwershaven+Zeeland) und [Zierikzee](https://maps.google.com/?q=Zierikzee+Zeeland) — Zierikzee ist eine historische Hansestadt mit über 500 denkmalgeschützten Gebäuden und lohnt sich für einen halben Tag.
+**Mit dem Rad unterwegs.** Das Fahrrad war das Hauptverkehrsmittel. Mit Anhänger für den Hund, durch die Dünen, in die Nachbarorte. [Burgh-Haamstede](https://maps.google.com/?q=Burgh-Haamstede+Zeeland) liegt direkt nebenan und ist einen Besuch wert. Weiter geht's in Richtung [Brouwershaven](https://maps.google.com/?q=Brouwershaven+Zeeland) und [Zierikzee](https://maps.google.com/?q=Zierikzee+Zeeland). Zierikzee ist eine historische Hansestadt mit über 500 denkmalgeschützten Gebäuden und lohnt sich für einen halben Tag.
 
 <div class="or-photo-hint">📷 <em>Foto folgt: Fahrradtour Richtung Brouwershaven</em></div>
 
 **Seehund-Safari auf der Oosterschelde.** Mit dem Schiff raus auf die [Oosterschelde](https://maps.google.com/?q=Oosterschelde+Zeeland) zu den Seehunden — die Idee ist toll, die Realität aber etwas ernüchternd. Die Tiere sind sehr weit weg und mit bloßem Auge kaum zu erkennen. Nett für die Atmosphäre, aber kein Must-do.
 
-**[Strandpaviljoen De Zwaluw](https://maps.google.com/?q=Strandpaviljoen+De+Zwaluw+Renesse).** Der Strandpavillon direkt beim Strandaufgang — ideal für ein kaltes Bier zwischendurch oder einen Kaffee nach dem Strandspaziergang. Kein Highlight, aber praktisch und entspannt.
+**[Strandpaviljoen De Zwaluw](https://maps.google.com/?q=Strandpaviljoen+De+Zwaluw+Renesse).** Der Strandpavillon direkt beim Strandaufgang. Ideal für ein kaltes Bier zwischendurch oder einen Kaffee nach dem Strandspaziergang. Kein Highlight, aber praktisch und entspannt.
 
 <div class="or-photo-hint">📷 <em>Foto folgt: Strandpaviljoen De Zwaluw</em></div>
 
 **Ostersonntag: [Bar de Stulp](https://www.bardestulp.com/).** Das Easter Rockfest am Ostersonntag war eine echte Überraschung — Rockmusik, volles Haus, mitten im Dorf. Die Bar gibt es seit 1969, macht regelmäßig Konzerte. Wer das trifft, hat Glück.
 
-**[Alpaca en Falabella Ranch](https://alpaca-falabellaranch.nl/), Kerkwerve.** Alpaka-Wanderung zum ersten Mal — und es war wirklich lustig. Ein paar Minuten mit einem Alpaka durch die Natur, das Tier an der Leine, und man fragt sich warum man das nicht öfter macht. Für Familien oder als kurze Auszeit absolut empfehlenswert. Vorab buchen.
+**[Alpaca en Falabella Ranch](https://alpaca-falabellaranch.nl/), Kerkwerve.** Alpaka-Wanderung zum ersten Mal. Und es war wirklich lustig. Ein paar Minuten mit einem Alpaka durch die Natur, das Tier an der Leine, und man fragt sich, warum man das nicht öfter macht. Für Familien oder als kurze Auszeit absolut empfehlenswert. Vorab buchen.
 
 <div class="or-photo-hint">📷 <em>Foto folgt: Alpaka-Wanderung in Kerkwerve</em></div>
 
-**[Strandclub Horizon](https://www.strandclubhorizon.nl/).** Relativ neu eröffnet, und man merkt es — modernes Interior, gutes Essen, Lage direkt am Strand. Ist gehobener und etwas teurer, lohnt sich aber. **Reservierung Pflicht**, besonders rund um Feiertage.
+**[Strandclub Horizon](https://www.strandclubhorizon.nl/).** Relativ neu eröffnet, und man merkt es. Modernes Interior, gutes Essen, Lage direkt am Strand. Ist gehobener und etwas teurer, lohnt sich aber. **Reservierung Pflicht**, besonders rund um Feiertage.
 
 **Remote Work: [Badhotel Renesse](https://maps.google.com/?q=Badhotel+Renesse).** Wer im Urlaub auch mal arbeiten muss — die Lobby des Badhotels ist ein ruhiger, angenehmer Arbeitsplatz mit sehr gutem Frühstücksbuffet. Kein Coworking-Space, aber für ein paar Stunden perfekt.
 
