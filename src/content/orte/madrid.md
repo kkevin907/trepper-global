@@ -67,7 +67,7 @@ Drei Nächte Madrid, Airbnb in [Canillejas](https://maps.google.com/?q=Canilleja
 
 **[Gran Vía](https://maps.google.com/?q=Gran+Via+Madrid) & El Corte Inglés.** Die Gran Vía ist laut, belebt, Großstadtgefühl pur. Im **El Corte Inglés Callao** einfach in den 9. Stock fahren — von der Gourmet-Terrasse schaut man kostenlos über die gesamte Gran Vía. Kein Ticket, einfach hochfahren.
 
-<div class="or-photo-hint">📷 <em>Foto folgt: Blick von der Gourmet Experience über die Gran Vía</em></div>
+<img src="/images/orte/madrid-stadtblick.png" alt="Stadtblick über Madrid von oben" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 **[El Tigre](https://maps.google.com/?q=El+Tigre+Calle+Infantas+30+Madrid) — das Highlight des Trips.** Man bestellt einen halben Liter Bier für ca. 7 €, und bekommt dazu ein komplettes Tablett mit Tapas: Croquetas, Chorizo, Patatas Bravas, Jamón. Gratis. Beim nächsten Drink kommt das nächste Tablett. Früh hingehen — es wird sehr voll. Absolutes Muss.
 
