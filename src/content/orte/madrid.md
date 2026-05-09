@@ -71,7 +71,7 @@ Drei Nächte Madrid, Airbnb in [Canillejas](https://maps.google.com/?q=Canilleja
 
 **[El Tigre](https://maps.google.com/?q=El+Tigre+Calle+Infantas+30+Madrid) — das Highlight des Trips.** Man bestellt einen halben Liter Bier für ca. 7 €, und bekommt dazu ein komplettes Tablett mit Tapas: Croquetas, Chorizo, Patatas Bravas, Jamón. Gratis. Beim nächsten Drink kommt das nächste Tablett. Früh hingehen — es wird sehr voll. Absolutes Muss.
 
-<div class="or-photo-hint">📷 <em>Foto folgt: El Tigre — Tapas-Teller auf dem Tisch</em></div>
+<img src="/images/orte/madrid-el-tigre.png" alt="El Tigre Bar — Madrid" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 **[Parque del Retiro](https://maps.google.com/?q=Parque+del+Retiro+Madrid).** Der große Stadtpark — riesig, gepflegt, perfekt für einen Nachmittag, wenn man nach ein paar Tagen Großstadt Abstand braucht.
 
