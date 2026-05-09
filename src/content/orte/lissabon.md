@@ -113,7 +113,7 @@ Wir haben nahe [Martim Moniz](https://maps.google.com/?q=Martim+Moniz+Lissabon) 
 
 **[Praça do Comércio](https://maps.google.com/?q=Praça+do+Comércio+Lissabon) & [Arco da Rua Augusta](https://maps.google.com/?q=Arco+da+Rua+Augusta+Lissabon).** Der große Platz direkt am Tejo. Der erste Blick auf die [Ponte 25 de Abril](https://maps.google.com/?q=Ponte+25+de+Abril+Lissabon) und den [Cristo Rei](https://maps.google.com/?q=Cristo+Rei+Almada) auf der anderen Seite. Wenn man durch den Triumphbogen tritt und plötzlich das Wasser vor einem hat, macht das Lissabon aus.
 
-**[O Trevo](https://maps.google.com/?q=O+Trevo+Lisbon+Praça+Luís+de+Camões) — Bifana.** Das klassische Pork-Sandwich. Günstig, deftig, echt. Soll sogar von Anthony Bourdain empfohlen worden sein. Danach frisch gepressten Orangensaft aus dem Supermarkt. 1 Liter für ca. 3,50 €, die Maschinen gibt es überall.
+**[O Trevo](https://maps.google.com/?q=O+Trevo+Lisbon+Praça+Luís+de+Camões): Bifana.** Das klassische Pork-Sandwich. Günstig, deftig, echt. Soll sogar von Anthony Bourdain empfohlen worden sein. Danach frisch gepressten Orangensaft aus dem Supermarkt. 1 Liter für ca. 3,50 €, die Maschinen gibt es überall.
 
 **Miradouros abends.** Gebäck besorgt und dann zu den Aussichtspunkten: [Miradouro de Santa Luzia](https://maps.google.com/?q=Miradouro+de+Santa+Luzia+Lissabon) und [Miradouro das Portas do Sol](https://maps.google.com/?q=Miradouro+das+Portas+do+Sol+Lissabon). Beide mit Blick über das Alfama Richtung Tejo, beide schön zum Sonnenuntergang. [Bairro Alto](https://maps.google.com/?q=Bairro+Alto+Lissabon) danach. Nett, aber touristisch und überteuert.
 
@@ -121,7 +121,7 @@ Wir haben nahe [Martim Moniz](https://maps.google.com/?q=Martim+Moniz+Lissabon) 
 
 <img src="/images/orte/lissabon-cristo-rei.jpeg" alt="Cristo Rei — Almada bei Lissabon" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
-**[Quinta da Arealva](https://wetravelportugal.com/quinta-da-arealva/) — das versteckte Highlight.** Den Weg vom Cristo Rei zu Fuß runter und am Wasser entlang. Eine der besten Entscheidungen des Trips. Die Quinta ist eine verlassene Anlage direkt am Tejo-Ufer, komplett mit Streetart bedeckt, mit Brückenblick. Danach durch den [Jardim do Rio](https://maps.google.com/?q=Jardim+do+Rio+Almada). Ruhig, schön, weit weg vom Touristenstress. Diese Route kann ich sehr empfehlen.
+**[Quinta da Arealva](https://wetravelportugal.com/quinta-da-arealva/): das versteckte Highlight.** Den Weg vom Cristo Rei zu Fuß runter und am Wasser entlang. Eine der besten Entscheidungen des Trips. Die Quinta ist eine verlassene Anlage direkt am Tejo-Ufer, komplett mit Streetart bedeckt, mit Brückenblick. Danach durch den [Jardim do Rio](https://maps.google.com/?q=Jardim+do+Rio+Almada). Ruhig, schön, weit weg vom Touristenstress. Diese Route kann ich sehr empfehlen.
 
 <img src="/images/orte/lissabon-ponte-25-abril.jpeg" alt="Ponte 25 de Abril — Blick von der Quinta da Arealva" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 

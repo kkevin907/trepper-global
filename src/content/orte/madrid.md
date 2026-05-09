@@ -78,35 +78,35 @@ foodSpots:
     what: Feinkost-Foodcourt im 9. Stock mit Panoramablick über die Gran Vía
     stars: 4
     area: Plaza del Callao
-    tip: Einfach reingehen und hochfahren — kein Eintritt, kostenlose Aussicht, gutes Essen auf mehreren Ständen
+    tip: Einfach reingehen und hochfahren. Kein Eintritt, kostenlose Aussicht, gutes Essen auf mehreren Ständen
     link: "https://maps.google.com/?q=El+Corte+Ingles+Callao+Madrid"
 skip:
   - "Palacio Real innen. Schlangen enorm, Außenansicht und Jardines de Sabatini reichen völlig."
   - "Taxi vom Flughafen. Stadtbus für 1,50 € fährt direkt und braucht 15–20 Minuten."
 tips:
-  - "Stadtbus vom [Flughafen Barajas](https://maps.google.com/?q=Aeropuerto+Adolfo+Suárez+Madrid-Barajas) für ca. 1,50 € — fährt direkt ins Zentrum und in die Vororte, kein Taxi nötig"
-  - "Madrid-Barajas ist riesig — stressfrei mindestens 2 Stunden vor Abflug da sein, die Wege und Sicherheitskontrollen fressen Zeit"
-  - "Rubellose von Straßenverkäufern kaufen — typisch Madrid, macht Spaß, kostet wenig"
-  - "[El Corte Inglés Callao](https://maps.google.com/?q=El+Corte+Ingles+Callao+Madrid) — einfach in den 9. Stock fahren und den Panoramablick über die Gran Vía genießen"
+  - "Stadtbus vom [Flughafen Barajas](https://maps.google.com/?q=Aeropuerto+Adolfo+Suárez+Madrid-Barajas) für ca. 1,50 €. Fährt direkt ins Zentrum, kein Taxi nötig"
+  - "Madrid-Barajas ist riesig. Stressfrei mindestens 2 Stunden vor Abflug da sein, die Wege und Sicherheitskontrollen fressen Zeit"
+  - "Rubellose von Straßenverkäufern kaufen. Typisch Madrid, macht Spaß, kostet wenig"
+  - "[El Corte Inglés Callao](https://maps.google.com/?q=El+Corte+Ingles+Callao+Madrid): einfach in den 9. Stock fahren und den Panoramablick über die Gran Vía genießen"
 bestArea: "La Latina & Centro. Alles fußläufig, mitten im Geschehen, historische Gassen."
 draft: false
 ---
 
 Drei Nächte Madrid, Airbnb in [Canillejas](https://maps.google.com/?q=Canillejas+Madrid), und direkt am ersten Abend war klar: Diese Stadt hat einen anderen Rhythmus als alles, was wir bisher hatten.
 
-**[La Latina](https://maps.google.com/?q=La+Latina+Madrid).** Den ersten Tag im Viertel La Latina gestartet — einem der ältesten Madrids. Enge Gassen, Tapas-Bars auf jedem zweiten Schritt, eine Energie, die sofort anzieht. Frühstück bei [Salt In Cake](https://maps.google.com/?q=Salt+In+Cake+Madrid) — gut gemacht, aber für Madrid-Verhältnisse eher auf der teuren Seite.
+**[La Latina](https://maps.google.com/?q=La+Latina+Madrid).** Den ersten Tag im Viertel La Latina gestartet, einem der ältesten Stadtteile Madrids. Enge Gassen, Tapas-Bars auf jedem zweiten Schritt, eine Energie, die sofort anzieht. Frühstück bei [Salt In Cake](https://maps.google.com/?q=Salt+In+Cake+Madrid). Gut gemacht, aber für Madrid-Verhältnisse eher auf der teuren Seite.
 
 <img src="/images/orte/madrid-la-latina.png" alt="Metro La Latina — Madrid" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
-**[Templo de Debod](https://www.esmadrid.com/en/tourist-information/temple-debod).** Ein echter Überraschungsmoment — mitten im Park steht ein 2.000 Jahre alter ägyptischer Tempel, Eintritt frei. Einfach hingehen — kostet nichts und bleibt im Gedächtnis.
+**[Templo de Debod](https://www.esmadrid.com/en/tourist-information/temple-debod).** Ein echter Überraschungsmoment. Mitten im Park steht ein 2.000 Jahre alter ägyptischer Tempel, Eintritt frei. Einfach hingehen. Kostet nichts und bleibt im Gedächtnis.
 
 <div class="or-photo-hint">📷 <em>Foto folgt: Templo de Debod bei Sonnenuntergang</em></div>
 
-**[Gran Vía](https://maps.google.com/?q=Gran+Via+Madrid) & El Corte Inglés.** Die Gran Vía ist laut, belebt, Großstadtgefühl pur. Im **El Corte Inglés Callao** einfach in den 9. Stock fahren — von der Gourmet-Terrasse schaut man kostenlos über die gesamte Gran Vía. Kein Ticket, einfach hochfahren.
+**[Gran Vía](https://maps.google.com/?q=Gran+Via+Madrid) & El Corte Inglés.** Die Gran Vía ist laut, belebt, Großstadtgefühl pur. Im **El Corte Inglés Callao** einfach in den 9. Stock fahren. Von der Gourmet-Terrasse schaut man kostenlos über die gesamte Gran Vía. Kein Ticket, einfach hochfahren.
 
 <img src="/images/orte/madrid-stadtblick.png" alt="Stadtblick über Madrid von oben" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
-**[El Tigre](https://maps.google.com/?q=El+Tigre+Calle+Infantas+30+Madrid) — das Highlight des Trips.** Man bestellt einen halben Liter Bier für ca. 7 €, und bekommt dazu ein komplettes Tablett mit Tapas: Croquetas, Chorizo, Patatas Bravas, Jamón. Gratis. Beim nächsten Drink kommt das nächste Tablett. Früh hingehen — es wird sehr voll. Absolutes Muss.
+**[El Tigre](https://maps.google.com/?q=El+Tigre+Calle+Infantas+30+Madrid): das Highlight des Trips.** Man bestellt einen halben Liter Bier für ca. 7 €, und bekommt dazu ein komplettes Tablett mit Tapas: Croquetas, Chorizo, Patatas Bravas, Jamón. Gratis. Beim nächsten Drink kommt das nächste Tablett. Früh hingehen. Es wird sehr voll. Absolutes Muss.
 
 <img src="/images/orte/madrid-el-tigre.png" alt="El Tigre Bar — Madrid" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 

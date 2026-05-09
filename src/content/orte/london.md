@@ -58,7 +58,7 @@ foodSpots:
     what: "Klassischer East-End-Pub. Bier, Vibes, genau so wie man es sich vorstellt."
     stars: 5
     area: "Spitalfields / City"
-    tip: "Abends hingehen wenn die lokalen Büroarbeiter nach der Arbeit reinkommen — das ist die echte Atmosphäre"
+    tip: "Abends hingehen, wenn die lokalen Büroarbeiter nach der Arbeit reinkommen. Das ist die echte Atmosphäre"
     link: "https://maps.google.com/?q=The+Wolfpack+Bar+London+Spitalfields"
   - name: "Borough Market"
     lat: 51.5055
@@ -84,10 +84,10 @@ skip:
   - "Touristenfallen rund um die Tower Bridge. Restaurants und Souvenirs direkt am Wasser sind deutlich zu teuer."
 tips:
   - "Oyster Card direkt am Flughafen kaufen. Günstiger und spart Warteschlangen an der U-Bahn."
-  - "Staatliche Museen kostenlos — [British Museum](https://www.britishmuseum.org/), [Tate Modern](https://www.tate.org.uk/visit/tate-modern), [National Gallery](https://www.nationalgallery.org.uk/), [V&A](https://www.vam.ac.uk/)"
-  - "[Sky Garden](https://skygarden.london/) kostenlos, aber online buchen — spontan kommt man nicht rein"
-  - "[Uber Boat by Thames Clippers](https://www.thamesclippers.com/) nutzen — schöner als die Tube und man sieht dabei die Stadt"
-  - "Spät essen gehen klappt hier gut — Küchen machen auch um 22 Uhr noch auf"
+  - "Staatliche Museen sind kostenlos: [British Museum](https://www.britishmuseum.org/), [Tate Modern](https://www.tate.org.uk/visit/tate-modern), [National Gallery](https://www.nationalgallery.org.uk/), [V&A](https://www.vam.ac.uk/)"
+  - "[Sky Garden](https://skygarden.london/) kostenlos, aber online buchen. Spontan kommt man nicht rein"
+  - "[Uber Boat by Thames Clippers](https://www.thamesclippers.com/) nutzen. Schöner als die Tube und man sieht dabei die Stadt"
+  - "Spät essen gehen klappt hier gut. Küchen machen auch um 22 Uhr noch auf"
 bestArea: "Spitalfields / East End. Direkt bei Brick Lane und Old Spitalfields Market. Lebhaft, sicher, gut angebunden."
 draft: false
 ---
@@ -100,7 +100,7 @@ Das Viertel rund um die **Brick Lane** und den **Old Spitalfields Market** hat e
 
 **Essen war gut, aber teuer.** Das ist bei London halt so.
 
-Der **Sky Garden** war ein echtes Highlight — kostenlos, Ausblick über ganz London von einem Wolkenkratzer mitten in der City. Vorher online buchen, sonst kommt man nicht rein.
+Der **Sky Garden** war ein echtes Highlight. Kostenlos, Ausblick über ganz London von einem Wolkenkratzer mitten in der City. Vorher online buchen, sonst kommt man nicht rein.
 
 <div class="or-photo-hint">📷 <em>Foto folgt: Sky Garden — Panoramablick über die Londoner Skyline</em></div>
 

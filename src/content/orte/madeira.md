@@ -61,7 +61,7 @@ foodSpots:
     what: "Frisches Brot, lokale Süßigkeiten, Poncha"
     stars: 4
     area: "Überall auf der Insel"
-    tip: "Einfach die kleinen lokalen Bäckereien nehmen — morgens frisch, günstig, gut."
+    tip: "Einfach die kleinen lokalen Bäckereien nehmen. Morgens frisch, günstig, gut."
 markets:
   - name: "Mercado dos Lavradores"
     type: "Lebensmittelmarkt"
@@ -72,10 +72,10 @@ skip:
   - "Hochsaison ohne Mietwagenreservierung. Parkplätze an den Sehenswürdigkeiten sind begrenzt und im Sommer chaotisch."
   - "Wetter im Norden und in den Bergen unterschätzen. Sonnenschein in Funchal bedeutet nichts für die Bergregionen."
 tips:
-  - "Automatik-Mietwagen ist Pflicht — die Straßen sind steil, eng und kurvenreich"
+  - "Automatik-Mietwagen ist Pflicht. Die Straßen sind steil, eng und kurvenreich"
   - "Madeira hat viele Mikroklimata: Süden fast immer warm, Berge oft neblig und kalt, Norden eher regnerisch"
-  - "Der Nordwesten ([Paul do Mar](https://maps.google.com/?q=Paul+do+Mar+Madeira), [Jardim do Mar](https://maps.google.com/?q=Jardim+do+Mar+Madeira)) ist die schönste Ecke der Insel — dort Zeit einplanen"
-  - "Früh starten für Wanderungen und Aussichtspunkte — vor den Reisegruppen am besten"
+  - "Der Nordwesten ([Paul do Mar](https://maps.google.com/?q=Paul+do+Mar+Madeira), [Jardim do Mar](https://maps.google.com/?q=Jardim+do+Mar+Madeira)) ist die schönste Ecke der Insel. Dort Zeit einplanen"
+  - "Früh starten für Wanderungen und Aussichtspunkte. Am besten vor den Reisegruppen"
   - "Fürs nächste Mal: [Pico do Arieiro](https://maps.google.com/?q=Pico+do+Arieiro+Madeira), [Natural Pools Porto Moniz](https://maps.google.com/?q=Piscinas+Naturais+Porto+Moniz+Madeira), Korbschlitten in Monte"
 bestArea: "Nordwesten. Paul do Mar und Jardim do Mar. Ruhig, wild, authentisch und weit weg vom Tourismus."
 draft: false
@@ -105,4 +105,4 @@ Die **Cascata dos Anjos** bei Canhas war einen Abstecher wert. Schöner Wasserfa
 
 **Wichtiger Hinweis fürs Fahren:** Automatik-Mietwagen buchen. Kein Optional, kein Nice-to-have. Pflicht. Die Straßen sind steil, eng und haben kaum Leitplanken. Parkplätze an den bekannten Aussichtspunkten sind außerdem begrenzt. Im April war es noch entspannt, im Sommer soll das laut Einheimischen reines Chaos sein.
 
-**Was ich beim nächsten Mal machen werde:** Pico do Arieiro (den hohen Berg), die Cristo-Statue, Natural Pools Porto Moniz — und den Korbschlitten in Monte, den habe ich diesmal ausgelassen.
+**Was ich beim nächsten Mal machen werde:** Pico do Arieiro, die Cristo-Statue, Natural Pools Porto Moniz. Und den Korbschlitten in Monte, den habe ich diesmal ausgelassen.
