@@ -59,7 +59,7 @@ Drei Nächte Madrid, Airbnb in [Canillejas](https://maps.google.com/?q=Canilleja
 
 **[La Latina](https://maps.google.com/?q=La+Latina+Madrid).** Den ersten Tag im Viertel La Latina gestartet — einem der ältesten Madrids. Enge Gassen, Tapas-Bars auf jedem zweiten Schritt, eine Energie, die sofort anzieht. Frühstück bei [Salt In Cake](https://maps.google.com/?q=Salt+In+Cake+Madrid) — gut gemacht, aber für Madrid-Verhältnisse eher auf der teuren Seite.
 
-<div class="or-photo-hint">📷 <em>Foto folgt: La Latina — enge Gassen am Morgen</em></div>
+<img src="/images/orte/madrid-la-latina.png" alt="Metro La Latina — Madrid" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 **[Templo de Debod](https://www.esmadrid.com/en/tourist-information/temple-debod).** Ein echter Überraschungsmoment — mitten im Park steht ein 2.000 Jahre alter ägyptischer Tempel, Eintritt frei. Einfach hingehen — kostet nichts und bleibt im Gedächtnis.
 
