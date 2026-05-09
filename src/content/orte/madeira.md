@@ -19,6 +19,35 @@ highlights:
   - "[Paul do Mar](https://maps.google.com/?q=Paul+do+Mar+Madeira) & [Jardim do Mar](https://maps.google.com/?q=Jardim+do+Mar+Madeira) — die schönsten Küstendörfer der Insel, Nordwesten"
   - "[Bar 101](https://maps.google.com/?q=Bar+101+Achadas+da+Cruz+Madeira) — bestes Steak-Sandwich der Insel (PREGO), unbedingt hingehen"
   - "[Fanal Forest](https://maps.google.com/?q=Fanal+Forest+Madeira) — Lorbeerwälder im Nebel, surreale Stimmung"
+sights:
+  - name: "Seixal Beach"
+    lat: 32.8286
+    lon: -17.1088
+    link: "https://maps.google.com/?q=Seixal+Beach+Madeira"
+  - name: "Piscinas Naturais Porto Moniz"
+    lat: 32.8623
+    lon: -17.1676
+    link: "https://maps.google.com/?q=Piscinas+Naturais+Porto+Moniz+Madeira"
+  - name: "Paul do Mar"
+    lat: 32.7558
+    lon: -17.1868
+    link: "https://maps.google.com/?q=Paul+do+Mar+Madeira"
+  - name: "Jardim do Mar"
+    lat: 32.7566
+    lon: -17.1737
+    link: "https://maps.google.com/?q=Jardim+do+Mar+Madeira"
+  - name: "Fanal Forest"
+    lat: 32.8071
+    lon: -17.1549
+    link: "https://maps.google.com/?q=Fanal+Forest+Madeira"
+  - name: "Cascata dos Anjos"
+    lat: 32.7386
+    lon: -17.0615
+    link: "https://maps.google.com/?q=Cascata+dos+Anjos+Madeira"
+  - name: "Seilbahn da Cruz"
+    lat: 32.7512
+    lon: -17.1048
+    link: "https://maps.google.com/?q=Teleférico+da+Cruz+Madeira"
 foodSpots:
   - name: "Bar 101 / Beira Mar"
     lat: 32.8192

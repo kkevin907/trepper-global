@@ -17,6 +17,19 @@ highlights:
   - "[Hï Ibiza](https://www.hiibiza.com/) Opening Night 2026"
   - "[Sonnenaufgang am Playa d'en Bossa](https://maps.google.com/?q=Playa+d%27en+Bossa+Ibiza)"
   - "[La Canela](https://maps.google.com/?q=La+Canela+Ibiza+Stadt). Handgemachte Bäckerei, erste Adresse nach der Nacht."
+sights:
+  - name: "Hï Ibiza"
+    lat: 38.8862
+    lon: 1.4097
+    link: "https://maps.google.com/?q=Hi+Ibiza+Club"
+  - name: "Playa d'en Bossa"
+    lat: 38.8888
+    lon: 1.4056
+    link: "https://maps.google.com/?q=Playa+d%27en+Bossa+Ibiza"
+  - name: "Dalt Vila (Altstadt)"
+    lat: 38.9067
+    lon: 1.4320
+    link: "https://maps.google.com/?q=Dalt+Vila+Ibiza"
 foodSpots:
   - name: La Canela
     lat: 38.9088

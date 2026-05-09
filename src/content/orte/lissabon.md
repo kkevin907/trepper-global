@@ -17,6 +17,51 @@ highlights:
   - "[Castelo de São Jorge](https://maps.google.com/?q=Castelo+de+São+Jorge+Lissabon) — der Weg durch die Gassen hoch ist das eigentliche Erlebnis"
   - "[Praça do Comércio](https://maps.google.com/?q=Praça+do+Comércio+Lissabon) & [Arco da Rua Augusta](https://maps.google.com/?q=Arco+da+Rua+Augusta+Lissabon) — erster Blick auf den Tejo, die Brücke und Cristo Rei"
   - "[Miradouro de Santa Luzia](https://maps.google.com/?q=Miradouro+de+Santa+Luzia+Lissabon) & [Miradouro das Portas do Sol](https://maps.google.com/?q=Miradouro+das+Portas+do+Sol+Lissabon) — abends mit Gebäck, Blick über das Alfama Richtung Tejo"
+sights:
+  - name: "Cristo Rei"
+    lat: 38.6429
+    lon: -9.1746
+    link: "https://maps.google.com/?q=Cristo+Rei+Almada"
+  - name: "Quinta da Arealva"
+    lat: 38.6415
+    lon: -9.1685
+    link: "https://maps.google.com/?q=Quinta+da+Arealva+Almada"
+  - name: "Castelo de São Jorge"
+    lat: 38.7139
+    lon: -9.1334
+    link: "https://maps.google.com/?q=Castelo+de+São+Jorge+Lissabon"
+  - name: "Praça do Comércio"
+    lat: 38.7075
+    lon: -9.1364
+    link: "https://maps.google.com/?q=Praça+do+Comércio+Lissabon"
+  - name: "Arco da Rua Augusta"
+    lat: 38.7086
+    lon: -9.1373
+    link: "https://maps.google.com/?q=Arco+da+Rua+Augusta+Lissabon"
+  - name: "Miradouro de Santa Luzia"
+    lat: 38.7121
+    lon: -9.1296
+    link: "https://maps.google.com/?q=Miradouro+de+Santa+Luzia+Lissabon"
+  - name: "Miradouro das Portas do Sol"
+    lat: 38.7124
+    lon: -9.1286
+    link: "https://maps.google.com/?q=Miradouro+das+Portas+do+Sol+Lissabon"
+  - name: "Elevador da Glória"
+    lat: 38.7147
+    lon: -9.1414
+    link: "https://maps.google.com/?q=Elevador+da+Gloria+Lissabon"
+  - name: "Miradouro de São Pedro de Alcântara"
+    lat: 38.7154
+    lon: -9.1423
+    link: "https://maps.google.com/?q=Miradouro+de+São+Pedro+de+Alcântara+Lissabon"
+  - name: "Miradouro da Senhora do Monte"
+    lat: 38.7206
+    lon: -9.1348
+    link: "https://maps.google.com/?q=Miradouro+da+Senhora+do+Monte+Lissabon"
+  - name: "Cais do Sodré (Fähre)"
+    lat: 38.7073
+    lon: -9.1459
+    link: "https://maps.google.com/?q=Cais+do+Sodré+Lissabon"
 foodSpots:
   - name: Manteigaria
     lat: 38.7108

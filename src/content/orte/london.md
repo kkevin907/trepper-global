@@ -18,6 +18,31 @@ highlights:
   - "[Brick Lane](https://maps.google.com/?q=Brick+Lane+London) & [Old Spitalfields Market](https://oldspitalfieldsmarket.com/). Vintage-Feeling pur, der Stand im Markt ist ein echter Geheimtipp."
   - "[Uber Boat by Thames Clippers](https://www.thamesclippers.com/) auf der Themse. Bestes Preis-Erlebnis-Verhältnis der Stadt."
   - "[St. James's Park](https://maps.google.com/?q=St+James+Park+London) & [Kensington Gardens](https://maps.google.com/?q=Kensington+Gardens+London). Mitten in der City und trotzdem komplett ruhig."
+sights:
+  - name: "Sky Garden"
+    lat: 51.5101
+    lon: -0.0889
+    link: "https://maps.google.com/?q=Sky+Garden+London"
+  - name: "Brick Lane"
+    lat: 51.5222
+    lon: -0.0706
+    link: "https://maps.google.com/?q=Brick+Lane+London"
+  - name: "Old Spitalfields Market"
+    lat: 51.5191
+    lon: -0.0773
+    link: "https://maps.google.com/?q=Old+Spitalfields+Market+London"
+  - name: "Thames Clippers (Tower Pier)"
+    lat: 51.5049
+    lon: -0.0766
+    link: "https://maps.google.com/?q=Tower+Millennium+Pier+London"
+  - name: "St. James's Park"
+    lat: 51.5025
+    lon: -0.1354
+    link: "https://maps.google.com/?q=St+James+Park+London"
+  - name: "Kensington Gardens"
+    lat: 51.5069
+    lon: -0.1806
+    link: "https://maps.google.com/?q=Kensington+Gardens+London"
 foodSpots:
   - name: "YUU Kitchen"
     lat: 51.5191

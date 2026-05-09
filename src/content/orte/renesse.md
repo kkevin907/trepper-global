@@ -18,6 +18,31 @@ highlights:
   - "[Strandclub Horizon](https://www.strandclubhorizon.nl/) — fancy Beach Club, neu eröffnet, innen sehr beeindruckend"
   - "[Westerlichttoren Nieuw-Haamstede](https://burghhaamstede.com/en/lighthouse/9167/lighthouse-west-schouwen-haamstede.html) — Leuchtturm in den Dünen, schön beim Strandspaziergang"
   - "Fahrradtour nach [Brouwershaven](https://maps.google.com/?q=Brouwershaven+Zeeland) & [Zierikzee](https://maps.google.com/?q=Zierikzee+Zeeland) — Zeeland vom Wasser aus"
+sights:
+  - name: "Alpaca en Falabella Ranch (Kerkwerve)"
+    lat: 51.6473
+    lon: 3.7973
+    link: "https://alpaca-falabellaranch.nl/"
+  - name: "Bar de Stulp"
+    lat: 51.6608
+    lon: 3.7777
+    link: "https://maps.google.com/?q=Bar+de+Stulp+Renesse"
+  - name: "Strandclub Horizon"
+    lat: 51.6622
+    lon: 3.7696
+    link: "https://maps.google.com/?q=Strandclub+Horizon+Renesse"
+  - name: "Westerlichttoren Nieuw-Haamstede"
+    lat: 51.6878
+    lon: 3.7461
+    link: "https://maps.google.com/?q=Westerlichttoren+Nieuw-Haamstede"
+  - name: "Brouwershaven"
+    lat: 51.6981
+    lon: 3.9164
+    link: "https://maps.google.com/?q=Brouwershaven+Zeeland"
+  - name: "Zierikzee"
+    lat: 51.6484
+    lon: 3.9168
+    link: "https://maps.google.com/?q=Zierikzee+Zeeland"
 foodSpots:
   - name: Basil Thai Restaurant
     what: Authentische Thai-Küche mitten in Renesse. Eine der besten Optionen im Ort.

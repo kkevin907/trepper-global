@@ -28,6 +28,7 @@ const stars = '★'.repeat(d.rating) + '☆'.repeat(5 - d.rating);
 
 // Food spots with coordinates for map
 const mapSpots = (d.foodSpots || []).filter((f: any) => f.lat && f.lon);
+const mapSights = ((d as any).sights || []).filter((s: any) => s.lat && s.lon);
 const mapCenter = (d as any).mapCenter;
 
 const mapData = JSON.stringify({
@@ -40,6 +41,12 @@ const mapData = JSON.stringify({
     area: f.area || '',
     what: f.what || '',
     link: f.link || '',
+  })),
+  sights: mapSights.map((s: any) => ({
+    name: s.name,
+    lat: s.lat,
+    lon: s.lon,
+    link: s.link || '',
   })),
 });
 ---
@@ -115,12 +122,13 @@ const mapData = JSON.stringify({
           <!-- STADTKARTE -->
           {mapCenter && (
             <div class="or-section reveal">
-              <h2 class="or-section-title">🗺️ Karte & Food-Spots</h2>
+              <h2 class="or-section-title">🗺️ Karte</h2>
               <div class="or-map-wrap">
                 <div id="or-map" class="or-map"></div>
-                {mapSpots.length > 0 && (
-                  <p class="or-map-hint">📍 {mapSpots.length} Food-Spot{mapSpots.length > 1 ? 's' : ''} markiert — auf Marker klicken für Details</p>
-                )}
+                <div class="or-map-legend">
+                  {mapSights.length > 0 && <span class="or-map-legend-item or-map-legend-item--sight">Sehenswürdigkeiten</span>}
+                  {mapSpots.length > 0 && <span class="or-map-legend-item or-map-legend-item--food">Food-Spots</span>}
+                </div>
               </div>
             </div>
           )}
@@ -257,7 +265,23 @@ const mapData = JSON.stringify({
         });
       }
 
-      // Food spot markers
+      // Sight markers (coral)
+      (parsed.sights || []).forEach(function (sight) {
+        const mapsHref = sight.link || ('https://maps.google.com/?q=' + encodeURIComponent(sight.name));
+        const popup = `
+          <div style="font-family:sans-serif;min-width:160px;">
+            <div style="font-weight:800;font-size:13px;color:#0F172A;margin-bottom:6px;">${sight.name}</div>
+            <a href="${mapsHref}" target="_blank" rel="noopener"
+               style="display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;
+                      color:#F97316;text-decoration:none;background:#FFF7ED;border:1px solid #FDBA74;
+                      padding:3px 9px;border-radius:6px;">↗ Google Maps</a>
+          </div>`;
+        L.marker([sight.lat, sight.lon], { icon: makeIcon('#F97316') })
+          .addTo(map)
+          .bindPopup(popup);
+      });
+
+      // Food spot markers (black)
       const starStr = (n) => '★'.repeat(n) + '☆'.repeat(5 - n);
       parsed.spots.forEach(function (spot) {
         const mapsHref = spot.link || ('https://maps.google.com/?q=' + encodeURIComponent(spot.name));
@@ -277,10 +301,13 @@ const mapData = JSON.stringify({
           .bindPopup(popup);
       });
 
-      // Fit bounds to all markers if spots exist
-      if (parsed.spots.length > 0) {
-        const allCoords = parsed.spots.map(s => [s.lat, s.lon]);
-        map.fitBounds(allCoords, { padding: [32, 32], maxZoom: 14 });
+      // Fit bounds to all markers
+      const allCoords = [
+        ...(parsed.sights || []).map(s => [s.lat, s.lon]),
+        ...parsed.spots.map(s => [s.lat, s.lon]),
+      ];
+      if (allCoords.length > 0) {
+        map.fitBounds(allCoords, { padding: [40, 40], maxZoom: 14 });
       }
     }
 
@@ -344,7 +371,13 @@ const mapData = JSON.stringify({
   /* MAP */
   .or-map-wrap { border-radius:14px; overflow:hidden; border:1.5px solid var(--border); }
   .or-map { height:380px; width:100%; }
-  .or-map-hint { font-size:.78rem; color:var(--text-light); margin-top:.6rem; text-align:center; }
+  .or-map-legend { display:flex; gap:.6rem; flex-wrap:wrap; margin-top:.6rem; justify-content:center; }
+  .or-map-legend-item { font-size:.72rem; font-weight:600; padding:.2rem .65rem; border-radius:100px; display:inline-flex; align-items:center; gap:.35rem; }
+  .or-map-legend-item::before { content:''; display:inline-block; width:10px; height:10px; border-radius:50%; }
+  .or-map-legend-item--sight { background:#FFF7ED; color:#C2410C; border:1.5px solid #FDBA74; }
+  .or-map-legend-item--sight::before { background:#F97316; }
+  .or-map-legend-item--food { background:#F8FAFC; color:var(--text-mid); border:1.5px solid var(--border); }
+  .or-map-legend-item--food::before { background:#0F172A; }
 
   /* PHOTOS */
   .or-photo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:.75rem; }

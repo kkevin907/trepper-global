@@ -18,6 +18,43 @@ highlights:
   - "[Palacio Real](https://maps.google.com/?q=Palacio+Real+Madrid) & [Jardines de Sabatini](https://maps.google.com/?q=Jardines+de+Sabatini+Madrid). Beeindruckende Kulisse, Garten zum Entspannen."
   - "[El Corte Inglés Gourmet Experience](https://maps.google.com/?q=El+Corte+Ingles+Callao+Madrid). 9. Stock, kostenloser Panoramablick über Gran Vía und die Innenstadt."
   - "[Parque del Retiro](https://maps.google.com/?q=Parque+del+Retiro+Madrid). Riesiger Stadtpark, Bootsfahren auf dem See, Entspannung pur."
+sights:
+  - name: "Templo de Debod"
+    lat: 40.4237
+    lon: -3.7184
+    link: "https://maps.google.com/?q=Templo+de+Debod+Madrid"
+  - name: "Palacio Real"
+    lat: 40.4179
+    lon: -3.7143
+    link: "https://maps.google.com/?q=Palacio+Real+Madrid"
+  - name: "Jardines de Sabatini"
+    lat: 40.4192
+    lon: -3.7147
+    link: "https://maps.google.com/?q=Jardines+de+Sabatini+Madrid"
+  - name: "La Latina"
+    lat: 40.4135
+    lon: -3.7093
+    link: "https://maps.google.com/?q=La+Latina+Madrid"
+  - name: "Plaza Mayor"
+    lat: 40.4153
+    lon: -3.7073
+    link: "https://maps.google.com/?q=Plaza+Mayor+Madrid"
+  - name: "Puerta del Sol"
+    lat: 40.4169
+    lon: -3.7037
+    link: "https://maps.google.com/?q=Puerta+del+Sol+Madrid"
+  - name: "Gran Vía"
+    lat: 40.4200
+    lon: -3.7025
+    link: "https://maps.google.com/?q=Gran+Via+Madrid"
+  - name: "El Corte Inglés Callao (Gourmet Experience)"
+    lat: 40.4198
+    lon: -3.7047
+    link: "https://maps.google.com/?q=El+Corte+Ingles+Callao+Madrid"
+  - name: "Parque del Retiro"
+    lat: 40.4153
+    lon: -3.6825
+    link: "https://maps.google.com/?q=Parque+del+Retiro+Madrid"
 foodSpots:
   - name: El Tigre
     lat: 40.4213
