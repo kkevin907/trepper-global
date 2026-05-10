@@ -80,6 +80,8 @@ Eine Nacht, kein Hotel, kein Schlaf. Und trotzdem der stärkste Abschluss des Tr
   </div>
 </details>
 
+<img src="/images/orte/ibiza-skepta.png" alt="Skepta auf der Bühne — Theatre Room, Hï Ibiza Opening Night 2026" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
+
 <img src="/images/orte/ibiza-hi-ibiza.png" alt="Hï Ibiza — Schild von außen bei Nacht" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 Zur Preisfrage beim Clubticket: Wir hatten einen Monat vorher gebucht: **75 €**. Der Norweger, den wir kennenlernten, buchte zwei Tage davor: **200 €** für dasselbe Ticket. Ein Holländer kaufte noch am selben Abend: **70 €, aber erst ab 6 Uhr gültig**, also kaum noch Zeit zum Feiern.
