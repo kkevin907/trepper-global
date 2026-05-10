@@ -8,6 +8,7 @@ dateTo: "2026-04-21"
 nights: 3
 vibe: Tapas & Großstadtpuls
 costLevel: 3
+coverImage: "/images/orte/madrid-stadtblick.jpg"
 mapCenter:
   lat: 40.4168
   lon: -3.7038
