@@ -9,7 +9,7 @@ nights: 1
 vibe: One Night Only
 description: Eine Nacht, kein Hotel, kein Schlaf. Ibiza Opening Night 2026 im Hï.
 costLevel: 5
-coverImage: "/images/orte/ibiza-sign.png"
+coverImage: "/images/orte/ibiza-sign.jpg"
 mapCenter:
   lat: 38.9088
   lon: 1.4312
@@ -79,15 +79,15 @@ Eine Nacht, kein Hotel, kein Schlaf. Und trotzdem der stärkste Abschluss des Tr
   </div>
 </details>
 
-<img src="/images/orte/ibiza-skepta.png" alt="Skepta auf der Bühne — Theatre Room, Hï Ibiza Opening Night 2026" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
+<img src="/images/orte/ibiza-skepta.jpg" alt="Skepta auf der Bühne — Theatre Room, Hï Ibiza Opening Night 2026" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
-<img src="/images/orte/ibiza-hi-ibiza.png" alt="Hï Ibiza — Schild von außen bei Nacht" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
+<img src="/images/orte/ibiza-hi-ibiza.jpg" alt="Hï Ibiza — Schild von außen bei Nacht" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 Zur Preisfrage beim Clubticket: Wir hatten einen Monat vorher gebucht: **75 €**. Der Norweger, den wir kennenlernten, buchte zwei Tage davor: **200 €** für dasselbe Ticket. Ein Holländer kaufte noch am selben Abend: **70 €, aber erst ab 6 Uhr gültig**, also kaum noch Zeit zum Feiern.
 
 **Sonnenaufgang.** Nach 6 Uhr im Morgengrauen am Playa d'en Bossa zurück in Richtung Stadt gelaufen. Einer dieser Momente, die man nicht vergisst.
 
-<img src="/images/orte/ibiza-sonnenaufgang.png" alt="Ibiza bei Sonnenaufgang — Blick auf die Stadt vom Wasser" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
+<img src="/images/orte/ibiza-sonnenaufgang.jpg" alt="Ibiza bei Sonnenaufgang — Blick auf die Stadt vom Wasser" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 **La Canela.** Erste Bäckerei, die offen hatte. Empanadas, süße Teigwaren. Alles frisch und handgemacht. Für diese Qualität absolut fair.
 

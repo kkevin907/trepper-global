@@ -96,7 +96,7 @@ Drei Nächte Madrid, Airbnb in [Canillejas](https://maps.google.com/?q=Canilleja
 
 **[La Latina](https://maps.google.com/?q=La+Latina+Madrid).** Den ersten Tag im Viertel La Latina gestartet, einem der ältesten Stadtteile Madrids. Enge Gassen, Tapas-Bars auf jedem zweiten Schritt, eine Energie, die sofort anzieht. Frühstück bei [Salt In Cake](https://maps.google.com/?q=Salt+In+Cake+Madrid). Gut gemacht, aber für Madrid-Verhältnisse eher auf der teuren Seite.
 
-<img src="/images/orte/madrid-la-latina.png" alt="Metro La Latina — Madrid" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
+<img src="/images/orte/madrid-la-latina.jpg" alt="Metro La Latina — Madrid" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 **[Templo de Debod](https://www.esmadrid.com/en/tourist-information/temple-debod).** Ein echter Überraschungsmoment. Mitten im Park steht ein 2.000 Jahre alter ägyptischer Tempel, Eintritt frei. Einfach hingehen. Kostet nichts und bleibt im Gedächtnis.
 
@@ -104,11 +104,11 @@ Drei Nächte Madrid, Airbnb in [Canillejas](https://maps.google.com/?q=Canilleja
 
 **[Gran Vía](https://maps.google.com/?q=Gran+Via+Madrid) & El Corte Inglés.** Die Gran Vía ist laut, belebt, Großstadtgefühl pur. Im **El Corte Inglés Callao** einfach in den 9. Stock fahren. Von der Gourmet-Terrasse schaut man kostenlos über die gesamte Gran Vía. Kein Ticket, einfach hochfahren.
 
-<img src="/images/orte/madrid-stadtblick.png" alt="Stadtblick über Madrid von oben" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
+<img src="/images/orte/madrid-stadtblick.jpg" alt="Stadtblick über Madrid von oben" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 **[El Tigre](https://maps.google.com/?q=El+Tigre+Calle+Infantas+30+Madrid): das Highlight des Trips.** Man bestellt einen halben Liter Bier für ca. 7 €, und bekommt dazu ein komplettes Tablett mit Tapas: Croquetas, Chorizo, Patatas Bravas, Jamón. Gratis. Beim nächsten Drink kommt das nächste Tablett. Früh hingehen. Es wird sehr voll. Absolutes Muss.
 
-<img src="/images/orte/madrid-el-tigre.png" alt="El Tigre Bar — Madrid" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
+<img src="/images/orte/madrid-el-tigre.jpg" alt="El Tigre Bar — Madrid" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 **[Parque del Retiro](https://maps.google.com/?q=Parque+del+Retiro+Madrid).** Der große Stadtpark. Riesig, gepflegt, perfekt für einen Nachmittag, wenn man nach ein paar Tagen Großstadt Abstand braucht.
 
