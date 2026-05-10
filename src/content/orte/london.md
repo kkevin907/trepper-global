@@ -12,7 +12,7 @@ mapCenter:
   lat: 51.5074
   lon: -0.1278
 rating: 4
-coverImage: ""
+coverImage: "/images/orte/london-tower-bridge.png"
 highlights:
   - "[Sky Garden](https://skygarden.london/). Kostenloser Ausblick über ganz London, aber unbedingt vorab online buchen."
   - "[Brick Lane](https://maps.google.com/?q=Brick+Lane+London) & [Old Spitalfields Market](https://oldspitalfieldsmarket.com/). Vintage-Feeling pur, der Stand im Markt ist ein echter Geheimtipp."
