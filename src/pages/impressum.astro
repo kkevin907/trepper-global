@@ -202,4 +202,14 @@ import Layout from '../layouts/Layout.astro';
     font-size: .82rem;
     color: var(--text-light);
   }
+
+  @media (max-width: 600px) {
+    .imp-header { padding: 2rem 1.25rem 1.5rem; }
+    .imp-wrap { padding: 1.5rem 1.25rem 3rem; }
+  }
+  @media (max-width: 380px) {
+    .imp-header { padding: 1.5rem 1rem 1.25rem; }
+    .imp-wrap { padding: 1.25rem 1rem 2.5rem; }
+    .imp-section p { font-size: .88rem; }
+  }
 </style>
