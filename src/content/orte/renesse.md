@@ -78,6 +78,7 @@ tips:
   - "[Badhotel Renesse](https://maps.google.com/?q=Badhotel+Renesse): super Remote-Work-Spot mit Frühstücksbuffet, ruhige Lobby"
   - "[Bar de Stulp](https://www.bardestulp.com/) Agenda checken. Regelmäßig Konzerte, Easter Rockfest am Ostersonntag"
 bestArea: "Westlich des Zentrums nahe Strandaufgang. Kurze Wege zum Strand und 5 Minuten mit dem Rad ins Dorf."
+coverImage: "/images/orte/renesse-alpakas.jpeg"
 draft: false
 ---
 
@@ -99,7 +100,7 @@ Eine Woche Renesse mit der Familie. Fahrräder, Strandhütten, Ostersonntag und 
 
 **[Alpaca en Falabella Ranch](https://alpaca-falabellaranch.nl/), Kerkwerve.** Alpaka-Wanderung zum ersten Mal. Und es war wirklich lustig. Ein paar Minuten mit einem Alpaka durch die Natur, das Tier an der Leine, und man fragt sich, warum man das nicht öfter macht. Für Familien oder als kurze Auszeit absolut empfehlenswert. Vorab buchen.
 
-<div class="or-photo-hint">📷 <em>Foto folgt: Alpaka-Wanderung in Kerkwerve</em></div>
+<img src="/images/orte/renesse-alpakas.jpeg" alt="Alpakas auf der Alpaca en Falabella Ranch in Kerkwerve bei Renesse" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 **[Strandclub Horizon](https://www.strandclubhorizon.nl/).** Relativ neu eröffnet, und man merkt es. Modernes Interior, gutes Essen, Lage direkt am Strand. Ist gehobener und etwas teurer, lohnt sich aber. **Reservierung Pflicht**, besonders rund um Feiertage.
 
