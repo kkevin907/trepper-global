@@ -107,3 +107,5 @@ Eine Woche Renesse mit der Familie. Fahrräder, Strandhütten, Ostersonntag und 
 **Remote Work: [Badhotel Renesse](https://maps.google.com/?q=Badhotel+Renesse).** Wer im Urlaub auch mal arbeiten muss: Die Lobby des Badhotels ist ein ruhiger, angenehmer Arbeitsplatz mit sehr gutem Frühstücksbuffet. Kein Coworking-Space, aber für ein paar Stunden perfekt.
 
 **[Westerlichttoren](https://burghhaamstede.com/en/lighthouse/9167/lighthouse-west-schouwen-haamstede.html) Nieuw-Haamstede.** Der rot-weiß gestreifte Leuchtturm liegt in den Dünen und ist 53 Meter hoch. Schön als Ziel für einen Strandspaziergang. Vom Strand aus sieht er besonders gut aus. Danach noch einen Stopp beim [Strandpaviljoen De Strandloper](https://maps.google.com/?q=Strandpaviljoen+De+Strandloper+Nieuw-Haamstede) für ein Getränk.
+
+<img src="/images/orte/renesse-leuchtturm.jpeg" alt="Westerlichttoren Nieuw-Haamstede — rot-weißer Leuchtturm in den Dünen" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
