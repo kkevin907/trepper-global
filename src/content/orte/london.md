@@ -18,6 +18,7 @@ highlights:
   - "[Brick Lane](https://maps.google.com/?q=Brick+Lane+London) & [Old Spitalfields Market](https://oldspitalfieldsmarket.com/). Vintage-Feeling pur, der Stand im Markt ist ein echter Geheimtipp."
   - "[Uber Boat by Thames Clippers](https://www.thamesclippers.com/) auf der Themse. Bestes Preis-Erlebnis-Verhältnis der Stadt."
   - "[St. James's Park](https://maps.google.com/?q=St+James+Park+London) & [Kensington Gardens](https://maps.google.com/?q=Kensington+Gardens+London). Mitten in der City und trotzdem komplett ruhig."
+  - "[British Museum](https://www.britishmuseum.org/). Kostenlos, Parthenon-Skulpturen allein sind den Besuch wert."
 sights:
   - name: "Sky Garden"
     lat: 51.5101
@@ -43,6 +44,10 @@ sights:
     lat: 51.5069
     lon: -0.1806
     link: "https://maps.google.com/?q=Kensington+Gardens+London"
+  - name: "British Museum"
+    lat: 51.5194
+    lon: -0.1270
+    link: "https://www.britishmuseum.org/"
 foodSpots:
   - name: "YUU Kitchen"
     lat: 51.5191
@@ -105,6 +110,10 @@ Der **Sky Garden** war ein echtes Highlight. Kostenlos, Ausblick über ganz Lond
 <div class="or-photo-hint">📷 <em>Foto folgt: Sky Garden — Panoramablick über die Londoner Skyline</em></div>
 
 Der **Uber Boat** auf der Themse ist eine dieser Sachen, die man als Transport bucht und dann merkt, dass es eigentlich eine Sightseeing-Tour ist. Günstig, entspannt, man sieht in 20 Minuten mehr als in einer Stunde zu Fuß.
+
+**[British Museum](https://www.britishmuseum.org/).** Eintritt kostenlos, Sammlung unbezahlbar. Die griechischen Parthenon-Skulpturen allein sind einen Besuch wert. Wer Museen mag, kann hier problemlos einen halben Tag verbringen.
+
+<img src="/images/orte/london-british-museum.png" alt="Parthenon-Skulpturen im British Museum — London" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 **St. James's Park** und die **Kensington Gardens** sind trotz ihrer Lage mitten in der Stadt erstaunlich ruhig und grün. Einfach reinlaufen, kein Eintritt.
 
