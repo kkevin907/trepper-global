@@ -9,6 +9,7 @@ nights: 1
 vibe: One Night Only
 description: Eine Nacht, kein Hotel, kein Schlaf. Ibiza Opening Night 2026 im Hï.
 costLevel: 5
+coverImage: "/images/orte/ibiza-sign.png"
 mapCenter:
   lat: 38.9088
   lon: 1.4312
