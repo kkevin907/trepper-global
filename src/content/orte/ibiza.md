@@ -67,7 +67,6 @@ Eine Nacht, kein Hotel, kein Schlaf. Und trotzdem der stärkste Abschluss des Tr
 
 **Ibiza Stadt & Weg zur Meile.** Kurz durch die Stadt gelaufen, am großen Lidl am Stadtrand noch Getränke besorgt. Dann zu Fuß an der Strandpromenade entlang Richtung Playa d'en Bossa.
 
-<div class="or-photo-hint">📷 <em>Foto folgt: Promenade Richtung Playa d'en Bossa</em></div>
 
 **Murphy's Ibiza.** Erste Bar des Abends direkt an der Clubmeile. Guinness für 10 €. Teuer, aber Ibiza-Standard. Dort haben wir einen Norweger kennengelernt, der den Rest der Nacht mit uns weitergezogen ist.
 
@@ -87,6 +86,8 @@ Eine Nacht, kein Hotel, kein Schlaf. Und trotzdem der stärkste Abschluss des Tr
 Zur Preisfrage beim Clubticket: Wir hatten einen Monat vorher gebucht: **75 €**. Der Norweger, den wir kennenlernten, buchte zwei Tage davor: **200 €** für dasselbe Ticket. Ein Holländer kaufte noch am selben Abend: **70 €, aber erst ab 6 Uhr gültig**, also kaum noch Zeit zum Feiern.
 
 **Sonnenaufgang.** Nach 6 Uhr im Morgengrauen am Playa d'en Bossa zurück in Richtung Stadt gelaufen. Einer dieser Momente, die man nicht vergisst.
+
+<img src="/images/orte/ibiza-sonnenaufgang.png" alt="Ibiza bei Sonnenaufgang — Blick auf die Stadt vom Wasser" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 **La Canela.** Erste Bäckerei, die offen hatte. Empanadas, süße Teigwaren. Alles frisch und handgemacht. Für diese Qualität absolut fair.
 
