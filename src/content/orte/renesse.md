@@ -78,7 +78,7 @@ tips:
   - "[Badhotel Renesse](https://maps.google.com/?q=Badhotel+Renesse): super Remote-Work-Spot mit Frühstücksbuffet, ruhige Lobby"
   - "[Bar de Stulp](https://www.bardestulp.com/) Agenda checken. Regelmäßig Konzerte, Easter Rockfest am Ostersonntag"
 bestArea: "Westlich des Zentrums nahe Strandaufgang. Kurze Wege zum Strand und 5 Minuten mit dem Rad ins Dorf."
-coverImage: "/images/orte/renesse-alpakas.jpeg"
+coverImage: "/images/orte/renesse-strand.jpeg"
 draft: false
 ---
 
