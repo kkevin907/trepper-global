@@ -107,7 +107,7 @@ Das Viertel rund um die **Brick Lane** und den **Old Spitalfields Market** hat e
 
 Der **Sky Garden** war ein echtes Highlight. Kostenlos, Ausblick über ganz London von einem Wolkenkratzer mitten in der City. Vorher online buchen, sonst kommt man nicht rein.
 
-<div class="or-photo-hint">📷 <em>Foto folgt: Sky Garden — Panoramablick über die Londoner Skyline</em></div>
+<img src="/images/orte/london-sky-garden.jpeg" alt="Sky Garden — Dachgarten im Walkie-Talkie-Tower, London" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 Der **Uber Boat** auf der Themse ist eine dieser Sachen, die man als Transport bucht und dann merkt, dass es eigentlich eine Sightseeing-Tour ist. Günstig, entspannt, man sieht in 20 Minuten mehr als in einer Stunde zu Fuß.
 
