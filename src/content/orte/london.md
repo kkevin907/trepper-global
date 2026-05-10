@@ -117,8 +117,8 @@ Der **Uber Boat** auf der Themse ist eine dieser Sachen, die man als Transport b
 
 <img src="/images/orte/london-british-museum.png" alt="Parthenon-Skulpturen im British Museum — London" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
-**St. James's Park** und die **Kensington Gardens** sind trotz ihrer Lage mitten in der Stadt erstaunlich ruhig und grün. Einfach reinlaufen, kein Eintritt.
+**St. James's Park** und die **Kensington Gardens** sind trotz ihrer Lage mitten in der Stadt erstaunlich ruhig und grün. Einfach reinlaufen, kein Eintritt. Der Park endet direkt am **Buckingham Palace** — man läuft quasi durch den Garten und steht plötzlich davor.
 
-<div class="or-photo-hint">📷 <em>Foto folgt: St. James's Park — der Blick Richtung Buckingham Palace</em></div>
+<img src="/images/orte/london-buckingham-palace.jpeg" alt="Buckingham Palace — Eingangstor mit Wappen, London" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 London packt einen sofort, ist aber nicht günstig. Wer smart plant, kriegt trotzdem ein sehr gutes Erlebnis für sein Geld: kostenlose Museen, Uber Boat statt Taxi, Spitalfields statt Zentrum.
