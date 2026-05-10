@@ -111,6 +111,8 @@ Der **Sky Garden** war ein echtes Highlight. Kostenlos, Ausblick über ganz Lond
 
 Der **Uber Boat** auf der Themse ist eine dieser Sachen, die man als Transport bucht und dann merkt, dass es eigentlich eine Sightseeing-Tour ist. Günstig, entspannt, man sieht in 20 Minuten mehr als in einer Stunde zu Fuß.
 
+<img src="/images/orte/london-thames-skyline.png" alt="Londoner Skyline bei Nacht vom Uber Boat auf der Themse" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
+
 **[British Museum](https://www.britishmuseum.org/).** Eintritt kostenlos, Sammlung unbezahlbar. Die griechischen Parthenon-Skulpturen allein sind einen Besuch wert. Wer Museen mag, kann hier problemlos einen halben Tag verbringen.
 
 <img src="/images/orte/london-british-museum.png" alt="Parthenon-Skulpturen im British Museum — London" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
