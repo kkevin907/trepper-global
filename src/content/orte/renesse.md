@@ -94,7 +94,7 @@ Eine Woche Renesse mit der Familie. Fahrräder, Strandhütten, Ostersonntag und 
 
 **[Strandpaviljoen De Zwaluw](https://maps.google.com/?q=Strandpaviljoen+De+Zwaluw+Renesse).** Der Strandpavillon direkt beim Strandaufgang. Ideal für ein kaltes Bier zwischendurch oder einen Kaffee nach dem Strandspaziergang. Kein Highlight, aber praktisch und entspannt.
 
-<div class="or-photo-hint">📷 <em>Foto folgt: Strandpaviljoen De Zwaluw</em></div>
+<img src="/images/orte/renesse-strand.jpeg" alt="Strand von Renesse bei Sonnenuntergang — Dünen und Nordsee" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 **Ostersonntag: [Bar de Stulp](https://www.bardestulp.com/).** Das Easter Rockfest am Ostersonntag war eine echte Überraschung. Rockmusik, volles Haus, mitten im Dorf. Die Bar gibt es seit 1969, macht regelmäßig Konzerte. Wer das trifft, hat Glück.
 
