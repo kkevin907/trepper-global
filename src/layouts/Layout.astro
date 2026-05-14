@@ -25,6 +25,10 @@ const fullTitle    = title === "Home" ? "Trepper Global — Von Solingen in die 
     <meta name="description" content={description} />
     <title>{fullTitle}</title>
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
     <!-- Canonical -->
     <link rel="canonical" href={canonicalURL} />
 
@@ -104,10 +108,15 @@ const fullTitle    = title === "Home" ? "Trepper Global — Von Solingen in die 
         <div class="footer-right">
           <a href="mailto:kevin@trepper-global.de" class="footer-link">kevin@trepper-global.de</a>
           <a href="/impressum" class="footer-link">Impressum</a>
-          <span class="footer-instagram">
+          <a href="/datenschutz" class="footer-link">Datenschutz</a>
+          <a href="https://instagram.com/kevin.ontour" target="_blank" rel="noopener" class="footer-instagram">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            @kevin.ontour
-          </span>
+            Instagram
+          </a>
+          <a href="https://tiktok.com/@kevin.ontour" target="_blank" rel="noopener" class="footer-instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+            TikTok
+          </a>
         </div>
       </div>
     </footer>
@@ -368,7 +377,12 @@ const fullTitle    = title === "Home" ? "Trepper Global — Von Solingen in die 
     display: flex;
     align-items: center;
     gap: 6px;
+    color: var(--text-light);
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: color .15s;
   }
+  .footer-instagram:hover { color: var(--coral); }
 
   @media (max-width: 700px) {
     .footer {

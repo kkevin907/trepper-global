@@ -22,11 +22,12 @@ const costLabels  = ['', 'Günstig', 'Günstig', 'Bezahlbar', 'Teuer', 'Sehr teu
   description="Alle Orte wo ich war. Was sich gelohnt hat, was nicht und wo man gut essen kann."
 >
 
+  <a href="/" class="oi-sticky-back">← Zurück</a>
+
   <div class="oi-header">
     <div class="oi-header-inner">
-      <a href="/" class="oi-back">← Zurück</a>
       <h1 class="oi-title reveal">Meine Orte</h1>
-      <p class="oi-sub reveal">Was ich erlebt hab. Was sich lohnt und was nicht.</p>
+      <p class="oi-sub reveal">Jeden Ort. Ehrlich bewertet.</p>
     </div>
   </div>
 
@@ -60,6 +61,7 @@ const costLabels  = ['', 'Günstig', 'Günstig', 'Bezahlbar', 'Teuer', 'Sehr teu
                 <div class="oi-card-body">
                   <div class="oi-card-meta">
                     <span class="oi-card-country">{d.country}</span>
+                    <span class="oi-card-date">{new Date(d.dateFrom).toLocaleDateString('de-DE', { month: 'long', year: 'numeric' })}</span>
                   </div>
                   <h2 class="oi-card-title">{d.title}</h2>
                   <div class="oi-card-chips">
@@ -91,16 +93,30 @@ const costLabels  = ['', 'Günstig', 'Günstig', 'Bezahlbar', 'Teuer', 'Sehr teu
   }
   .oi-header-inner { max-width: 1100px; margin: 0 auto; }
 
-  .oi-back {
-    display: inline-block;
-    font-size: .82rem;
-    font-weight: 600;
+  .oi-sticky-back {
+    position: fixed;
+    top: 76px;
+    left: 1.25rem;
+    z-index: 201;
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    padding: .35rem .85rem;
+    border-radius: 100px;
+    font-size: .78rem;
+    font-weight: 700;
     color: var(--text-mid);
-    margin-bottom: 1.25rem;
+    background: rgba(255,255,255,0.9);
+    border: 1.5px solid var(--border);
     text-decoration: none;
-    transition: color .15s;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 8px rgba(0,0,0,.07);
+    transition: color .15s, box-shadow .15s;
   }
-  .oi-back:hover { color: var(--coral); }
+  .oi-sticky-back:hover { color: var(--coral); box-shadow: 0 4px 16px rgba(0,0,0,.1); }
+  @media (max-width: 600px) {
+    .oi-sticky-back { top: 72px; left: .75rem; font-size: .72rem; padding: .28rem .7rem; }
+  }
 
   .oi-title {
     font-size: clamp(2rem, 5vw, 3rem);
@@ -156,7 +172,7 @@ const costLabels  = ['', 'Günstig', 'Günstig', 'Bezahlbar', 'Teuer', 'Sehr teu
   }
 
   .oi-card-img {
-    height: 160px;
+    height: 200px;
     overflow: hidden;
     background: #F1F5F9;
   }
@@ -191,6 +207,11 @@ const costLabels  = ['', 'Günstig', 'Günstig', 'Bezahlbar', 'Teuer', 'Sehr teu
     color: var(--text-light);
     text-transform: uppercase;
     letter-spacing: .05em;
+  }
+  .oi-card-date {
+    font-size: .72rem;
+    font-weight: 600;
+    color: var(--text-light);
   }
   .oi-card-nights {
     font-size: .7rem;
@@ -262,7 +283,8 @@ const costLabels  = ['', 'Günstig', 'Günstig', 'Bezahlbar', 'Teuer', 'Sehr teu
     .oi-grid { grid-template-columns: 1fr; }
     .oi-header { padding: 1.75rem 1.25rem; }
     .oi-wrap { padding: 1.5rem 1.25rem 3rem; }
-    .oi-card-chips { display: none; }
+    .oi-card-chips { display: flex; }
+    .oi-chip { font-size: .65rem; padding: .18rem .5rem; }
   }
   @media (max-width: 380px) {
     .oi-header { padding: 1.5rem 1rem; }

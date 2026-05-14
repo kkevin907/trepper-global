@@ -28,7 +28,7 @@ const stars = '★'.repeat(d.rating) + '☆'.repeat(5 - d.rating);
 
 // Food spots with coordinates for map
 const mapSpots = (d.foodSpots || []).filter((f: any) => f.lat && f.lon);
-const mapSights = ((d as any).sights || []).filter((s: any) => s.lat && s.lon);
+const mapSights = (d.sights || []).filter((s: any) => s.lat && s.lon);
 const mapCenter = (d as any).mapCenter;
 
 const mapData = JSON.stringify({
@@ -56,10 +56,12 @@ const mapData = JSON.stringify({
   description={`Ich war in ${d.title}. Was ich dort gemacht hab, wo ich gegessen hab und was sich wirklich lohnt.`}
 >
 
+  <!-- STICKY BACK -->
+  <a href="/orte" class="or-sticky-back">← Alle Orte</a>
+
   <!-- HEADER -->
   <div class="or-header">
     <div class="or-header-inner">
-      <a href="/orte" class="or-back">← Alle Orte</a>
       <div class="or-meta">
         <span class="or-flag">{d.flag}</span>
         <div>
@@ -124,24 +126,15 @@ const mapData = JSON.stringify({
             <div class="or-section reveal">
               <h2 class="or-section-title">🗺️ Karte</h2>
               <div class="or-map-wrap">
-                <div id="or-map" class="or-map"></div>
-                <div class="or-map-legend">
-                  {mapSights.length > 0 && <span class="or-map-legend-item or-map-legend-item--sight">Sehenswürdigkeiten</span>}
-                  {mapSpots.length > 0 && <span class="or-map-legend-item or-map-legend-item--food">Food-Spots</span>}
+                <div class="or-map-filters" id="or-map-filters">
+                  {mapSights.length > 0 && <button class="or-map-filter or-map-filter--sight active" data-type="sight">📍 Sehenswürdigkeiten</button>}
+                  {mapSpots.length > 0 && <button class="or-map-filter or-map-filter--food active" data-type="food">🍽️ Food-Spots</button>}
                 </div>
+                <div id="or-map" class="or-map"></div>
               </div>
             </div>
           )}
 
-          <!-- FOTOS -->
-          <div class="or-section reveal">
-            <h2 class="or-section-title">📷 Fotos</h2>
-            <div class="or-photo-grid">
-              <div class="or-photo-empty">
-                <span>Fotos folgen bald</span>
-              </div>
-            </div>
-          </div>
 
         </div>
 
@@ -185,7 +178,7 @@ const mapData = JSON.stringify({
                       : <div class="or-market-name">{m.name}</div>
                     }
                     <div class="or-market-meta">
-                      <span class="or-market-type">{m.type}</span>
+                      {m.type && <span class="or-market-type">{m.type}</span>}
                       {m.when && <span class="or-market-when">{m.when}</span>}
                     </div>
                     {m.tip && <p class="or-market-tip">{m.tip}</p>}
@@ -265,6 +258,10 @@ const mapData = JSON.stringify({
         });
       }
 
+      // Layer groups for filtering
+      const sightLayer = L.layerGroup().addTo(map);
+      const foodLayer  = L.layerGroup().addTo(map);
+
       // Sight markers (coral)
       (parsed.sights || []).forEach(function (sight) {
         const mapsHref = sight.link || ('https://maps.google.com/?q=' + encodeURIComponent(sight.name));
@@ -277,7 +274,7 @@ const mapData = JSON.stringify({
                       padding:3px 9px;border-radius:6px;">↗ Google Maps</a>
           </div>`;
         L.marker([sight.lat, sight.lon], { icon: makeIcon('#F97316') })
-          .addTo(map)
+          .addTo(sightLayer)
           .bindPopup(popup);
       });
 
@@ -297,7 +294,7 @@ const mapData = JSON.stringify({
                       padding:3px 9px;border-radius:6px;">↗ Google Maps</a>
           </div>`;
         L.marker([spot.lat, spot.lon], { icon: makeIcon('#0F172A') })
-          .addTo(map)
+          .addTo(foodLayer)
           .bindPopup(popup);
       });
 
@@ -309,6 +306,20 @@ const mapData = JSON.stringify({
       if (allCoords.length > 0) {
         map.fitBounds(allCoords, { padding: [40, 40], maxZoom: 14 });
       }
+
+      // Filter button logic
+      document.querySelectorAll('.or-map-filter').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const type = btn.getAttribute('data-type');
+          const isActive = btn.classList.contains('active');
+          btn.classList.toggle('active', !isActive);
+          if (type === 'sight') {
+            if (!isActive) { sightLayer.addTo(map); } else { map.removeLayer(sightLayer); }
+          } else if (type === 'food') {
+            if (!isActive) { foodLayer.addTo(map); } else { map.removeLayer(foodLayer); }
+          }
+        });
+      });
     }
 
     if (document.readyState === 'loading') {
@@ -320,6 +331,32 @@ const mapData = JSON.stringify({
 </script>
 
 <style>
+  /* STICKY BACK */
+  .or-sticky-back {
+    position: fixed;
+    top: 76px;
+    left: 1.25rem;
+    z-index: 201;
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    padding: .35rem .85rem;
+    border-radius: 100px;
+    font-size: .78rem;
+    font-weight: 700;
+    color: var(--text-mid);
+    background: rgba(255,255,255,0.9);
+    border: 1.5px solid var(--border);
+    text-decoration: none;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 8px rgba(0,0,0,.07);
+    transition: color .15s, box-shadow .15s;
+  }
+  .or-sticky-back:hover { color: var(--coral); box-shadow: 0 4px 16px rgba(0,0,0,.1); }
+  @media (max-width: 600px) {
+    .or-sticky-back { top: 72px; left: .75rem; font-size: .72rem; padding: .28rem .7rem; }
+  }
+
   /* HEADER */
   .or-header { background: linear-gradient(160deg,#F8FAFC 0%,#ffffff 60%); border-bottom:1px solid var(--border); padding:2.5rem 1.5rem; }
   .or-header-inner { max-width:1100px; margin:0 auto; }
@@ -370,6 +407,17 @@ const mapData = JSON.stringify({
 
   /* MAP */
   .or-map-wrap { border-radius:14px; overflow:hidden; border:1.5px solid var(--border); }
+  .or-map-filters { display:flex; gap:.5rem; padding:.65rem .75rem; background:#F8FAFC; border-bottom:1.5px solid var(--border); flex-wrap:wrap; }
+  .or-map-filter {
+    display:inline-flex; align-items:center; gap:.3rem;
+    padding:.3rem .75rem; border-radius:100px; font-size:.72rem; font-weight:700;
+    border:1.5px solid var(--border); background:#ffffff; color:var(--text-light);
+    cursor:pointer; transition:all .15s; white-space:nowrap;
+    opacity:.45;
+  }
+  .or-map-filter.active { opacity:1; }
+  .or-map-filter--sight.active { background:#FFF7ED; color:#C2410C; border-color:#FDBA74; }
+  .or-map-filter--food.active  { background:#F1F5F9; color:var(--text); border-color:#CBD5E1; }
   .or-map { height:380px; width:100%; }
   .or-map-legend { display:flex; gap:.6rem; flex-wrap:wrap; margin-top:.6rem; justify-content:center; }
   .or-map-legend-item { font-size:.72rem; font-weight:600; padding:.2rem .65rem; border-radius:100px; display:inline-flex; align-items:center; gap:.35rem; }

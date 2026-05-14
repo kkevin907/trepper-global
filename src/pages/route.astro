@@ -23,6 +23,16 @@ const statusColors: Record<string, string> = {
   current:  '#F97316',
 };
 
+function formatDateRange(dateFrom: string, dateTo?: string): string {
+  const from = new Date(dateFrom);
+  const fromStr = from.toLocaleDateString('de-DE', { month: 'long', year: 'numeric' });
+  if (!dateTo) return fromStr;
+  const to = new Date(dateTo);
+  const sameMonth = from.getMonth() === to.getMonth() && from.getFullYear() === to.getFullYear();
+  if (sameMonth) return fromStr;
+  return `${fromStr} → ${to.toLocaleDateString('de-DE', { month: 'long', year: 'numeric' })}`;
+}
+
 const preStations     = stations.filter(s => s.phase === 'home' || s.phase === 'pre');
 const history2022     = stations.filter(s => s.phase === 'history' && s.year === 2022);
 const history2023     = stations.filter(s => s.phase === 'history' && s.year === 2023);
@@ -45,7 +55,7 @@ const mainStations    = stations.filter(s => s.phase === 'main');
     <div class="route-inner">
 
       <!-- KARTE MIT FILTER-BUTTONS -->
-      <WorldMap height="520px" mapId="route-map" showRoute={false} showFilters={true} />
+      <WorldMap height="520px" mapId="route-map" showRoute={false} showFilters={true} centerOnCurrent={true} centerZoom={3} />
 
       <!-- TIMELINE -->
       <div class="timeline-section">
@@ -82,7 +92,7 @@ const mainStations    = stations.filter(s => s.phase === 'main');
                         <span class="station-country">{station.country}</span>
                         <span class="station-badge" style={`background:${color}20;color:${color};`}>{label}</span>
                       </div>
-                      <p class="station-desc">{station.description}</p>
+                      {station.status !== 'upcoming' && station.description && <p class="station-desc">{station.description}</p>}
                     </div>
                   </div>
                 );
@@ -120,10 +130,10 @@ const mainStations    = stations.filter(s => s.phase === 'main');
                         }
                         <span class="station-country">{station.country}</span>
                       </div>
-                      <p class="station-desc">{station.description}</p>
+
                       {station.dateFrom && (
                         <div class="station-dates">
-                          {new Date(station.dateFrom).toLocaleDateString('de-DE', { month: 'long', year: 'numeric' })}
+                          {formatDateRange(station.dateFrom, station.dateTo)}
                         </div>
                       )}
                     </div>
@@ -163,11 +173,10 @@ const mainStations    = stations.filter(s => s.phase === 'main');
                         }
                         <span class="station-country">{station.country}</span>
                       </div>
-                      <p class="station-desc">{station.description}</p>
+
                       {station.dateFrom && (
                         <div class="station-dates">
-                          {new Date(station.dateFrom).toLocaleDateString('de-DE', { month: 'long', year: 'numeric' })}
-                          {station.dateTo && ` → ${new Date(station.dateTo).toLocaleDateString('de-DE', { month: 'long', year: 'numeric' })}`}
+                          {formatDateRange(station.dateFrom, station.dateTo)}
                         </div>
                       )}
                     </div>
@@ -207,11 +216,10 @@ const mainStations    = stations.filter(s => s.phase === 'main');
                         }
                         <span class="station-country">{station.country}</span>
                       </div>
-                      <p class="station-desc">{station.description}</p>
+
                       {station.dateFrom && (
                         <div class="station-dates">
-                          {new Date(station.dateFrom).toLocaleDateString('de-DE', { month: 'long', year: 'numeric' })}
-                          {station.dateTo && ` → ${new Date(station.dateTo).toLocaleDateString('de-DE', { month: 'long', year: 'numeric' })}`}
+                          {formatDateRange(station.dateFrom, station.dateTo)}
                         </div>
                       )}
                     </div>
@@ -251,11 +259,10 @@ const mainStations    = stations.filter(s => s.phase === 'main');
                         }
                         <span class="station-country">{station.country}</span>
                       </div>
-                      <p class="station-desc">{station.description}</p>
+
                       {station.dateFrom && (
                         <div class="station-dates">
-                          {new Date(station.dateFrom).toLocaleDateString('de-DE', { month: 'long', year: 'numeric' })}
-                          {station.dateTo && ` → ${new Date(station.dateTo).toLocaleDateString('de-DE', { month: 'long', year: 'numeric' })}`}
+                          {formatDateRange(station.dateFrom, station.dateTo)}
                         </div>
                       )}
                     </div>
@@ -272,7 +279,7 @@ const mainStations    = stations.filter(s => s.phase === 'main');
             <span class="sgroup-icon">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
             </span>
-            <span class="sgroup-title">2026 — Vor dem Start</span>
+            <span class="sgroup-title">2026 · Vor dem Start</span>
             <span class="sgroup-count">{warmupStations.length} Stops</span>
           </summary>
           <div class="sgroup-body">
@@ -298,11 +305,10 @@ const mainStations    = stations.filter(s => s.phase === 'main');
                         <span class="station-badge" style={`background:${color}20;color:${color};`}>{label}</span>
                         {hasReport && <span class="station-report-badge">📖 Bericht</span>}
                       </div>
-                      <p class="station-desc">{station.description}</p>
+
                       {station.dateFrom && (
                         <div class="station-dates">
-                          {new Date(station.dateFrom).toLocaleDateString('de-DE', { month: 'long', year: 'numeric' })}
-                          {station.dateTo && ` → ${new Date(station.dateTo).toLocaleDateString('de-DE', { month: 'long', year: 'numeric' })}`}
+                          {formatDateRange(station.dateFrom, station.dateTo)}
                         </div>
                       )}
                     </div>
@@ -345,7 +351,7 @@ const mainStations    = stations.filter(s => s.phase === 'main');
                         <span class="station-badge" style={`background:${color}20;color:${color};`}>{label}</span>
                         {hasReport && <span class="station-report-badge">📖 Bericht</span>}
                       </div>
-                      <p class="station-desc">{station.description}</p>
+                      {station.status !== 'upcoming' && station.description && <p class="station-desc">{station.description}</p>}
                     </div>
                   </div>
                 );
@@ -360,7 +366,6 @@ const mainStations    = stations.filter(s => s.phase === 'main');
                     <span class="station-flag">🌍</span>
                     <span class="station-name" style="color:#94A3B8;">Weitere Stationen</span>
                   </div>
-                  <p class="station-desc" style="font-style:italic;">Die Route entwickelt sich mit der Reise…</p>
                 </div>
               </div>
             </div>
@@ -532,6 +537,7 @@ const mainStations    = stations.filter(s => s.phase === 'main');
     border-radius: 100px;
     margin-left: .25rem;
   }
+
   .station-desc  { font-size: .88rem; color: var(--text-mid); line-height: 1.6; margin-bottom: .35rem; }
   .station-dates { font-size: .78rem; color: var(--sc, var(--text-light)); font-weight: 600; }
 
@@ -544,6 +550,13 @@ const mainStations    = stations.filter(s => s.phase === 'main');
     .station-name { font-size: .95rem; }
     .station-header { flex-wrap: wrap; gap: .3rem; }
     .timeline-title { font-size: 1.1rem; }
+  }
+  @media (max-width: 480px) {
+    .page-header { padding: 1.6rem 1.1rem; }
+    .route-wrap { padding: 1.4rem 1.1rem 3rem; }
+    .station-name { font-size: .9rem; }
+    .station-desc { font-size: .84rem; }
+    .timeline-title { font-size: 1rem; }
   }
   @media (max-width: 380px) {
     .page-header { padding: 1.5rem 1rem; }

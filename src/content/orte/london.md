@@ -15,10 +15,9 @@ rating: 4
 coverImage: "/images/orte/london-tower-bridge.jpg"
 highlights:
   - "[Sky Garden](https://skygarden.london/). Kostenloser Ausblick über ganz London, aber unbedingt vorab online buchen."
-  - "[Brick Lane](https://maps.google.com/?q=Brick+Lane+London) & [Old Spitalfields Market](https://oldspitalfieldsmarket.com/). Vintage-Feeling pur, der Stand im Markt ist ein echter Geheimtipp."
-  - "[Uber Boat by Thames Clippers](https://www.thamesclippers.com/) auf der Themse. Bestes Preis-Erlebnis-Verhältnis der Stadt."
+  - "[Brick Lane](https://maps.google.com/?q=Brick+Lane+London) & [Old Spitalfields Market](https://oldspitalfieldsmarket.com/). Gut zum Window Shopping, aber überteuerte Vintage Läden."
   - "[St. James's Park](https://maps.google.com/?q=St+James+Park+London) & [Kensington Gardens](https://maps.google.com/?q=Kensington+Gardens+London). Mitten in der City und trotzdem komplett ruhig."
-  - "[British Museum](https://www.britishmuseum.org/). Kostenlos, Parthenon-Skulpturen allein sind den Besuch wert."
+  - "[British Museum](https://www.britishmuseum.org/). Kostenlos, griechische Sammlung sehenswert."
 sights:
   - name: "Sky Garden"
     lat: 51.5101
@@ -48,77 +47,74 @@ sights:
     lat: 51.5194
     lon: -0.1270
     link: "https://www.britishmuseum.org/"
+  - name: "Buckingham Palace"
+    lat: 51.5014
+    lon: -0.1419
+    link: "https://maps.google.com/?q=Buckingham+Palace+London"
 foodSpots:
   - name: "YUU Kitchen"
     lat: 51.5191
     lon: -0.0773
-    what: "Asiatische Bao Buns & Small Plates. Frisch, kreativ, sättigend."
+    what: "Asiatische Bao Buns & Small Plates."
     stars: 5
     area: "Spitalfields"
-    tip: "Mittagszeit einplanen, dann ist es weniger voll. Direkt am Old Spitalfields Market."
+    tip: "Mittagszeit, direkt am Old Spitalfields Market."
     link: "https://www.yuukitchen.com/"
-  - name: "The Wolfpack Bar"
-    lat: 51.5206
-    lon: -0.0781
-    what: "Klassischer East-End-Pub. Bier, Vibes, genau so wie man es sich vorstellt."
+  - name: "The Woolpack"
+    lat: 51.5008
+    lon: -0.0820
+    what: "Klassischer Pub an der Bermondsey Street."
     stars: 5
-    area: "Spitalfields / City"
-    tip: "Abends hingehen, wenn die lokalen Büroarbeiter nach der Arbeit reinkommen. Das ist die echte Atmosphäre"
-    link: "https://maps.google.com/?q=The+Wolfpack+Bar+London+Spitalfields"
+    area: "Bermondsey"
+    tip: "Abends hingehen, wenn die Büroarbeiter nach der Arbeit kommen."
+    link: "https://maps.google.com/?q=The+Woolpack+98+Bermondsey+Street+London"
   - name: "Borough Market"
     lat: 51.5055
     lon: -0.0905
-    what: "Street Food & Feinkost von allem was die Welt zu bieten hat"
+    what: "Street Food & Feinkost aus aller Welt."
     stars: 4
     area: "Southwark"
-    tip: "Eher früh am Morgen kommen, mittags ist es voll und die besten Sachen sind weg"
+    tip: "Früh kommen, mittags ist es voll."
     link: "https://boroughmarket.org.uk/"
 markets:
   - name: "Old Spitalfields Market"
-    type: "Vintage & Design"
-    when: "täglich, Vintage vor allem am Wochenende"
-    tip: "Der Vintage-Stand ganz hinten rechts ist der Beste. Sehr faire Preise im Vergleich zu den Läden draußen auf der Brick Lane."
+    when: "täglich"
     link: "https://oldspitalfieldsmarket.com/"
   - name: "Brick Lane Market"
-    type: "Flohmarkt & Vintage"
     when: "Sonntag"
-    tip: "Cooles Ambiente, aber die meisten Shops sind teuer. Eher zum Schauen als zum Kaufen."
+    tip: "Nettes Ambiente, aber die meisten Shops sind teuer."
     link: "https://maps.google.com/?q=Brick+Lane+Market+London"
 skip:
   - "Vintage-Shops entlang der Brick Lane. Tolle Auswahl, aber fast alle sehr überteuert."
-  - "Touristenfallen rund um die Tower Bridge. Restaurants und Souvenirs direkt am Wasser sind deutlich zu teuer."
+  - "Manche Randbezirke Londons sind weniger sicher. Kurz informieren, welche Gegenden man besser meidet."
 tips:
-  - "Oyster Card direkt am Flughafen kaufen. Günstiger und spart Warteschlangen an der U-Bahn."
   - "Staatliche Museen sind kostenlos: [British Museum](https://www.britishmuseum.org/), [Tate Modern](https://www.tate.org.uk/visit/tate-modern), [National Gallery](https://www.nationalgallery.org.uk/), [V&A](https://www.vam.ac.uk/)"
   - "[Sky Garden](https://skygarden.london/) kostenlos, aber online buchen. Spontan kommt man nicht rein"
   - "[Uber Boat by Thames Clippers](https://www.thamesclippers.com/) nutzen. Schöner als die Tube und man sieht dabei die Stadt"
-  - "Spät essen gehen klappt hier gut. Küchen machen auch um 22 Uhr noch auf"
-bestArea: "Spitalfields / East End. Direkt bei Brick Lane und Old Spitalfields Market. Lebhaft, sicher, gut angebunden."
+bestArea: "Spitalfields."
 draft: false
 ---
 
-Zwei Nächte in London. Eigentlich zu wenig, aber genug, um zu merken, dass diese Stadt einen Rhythmus hat, der einfach zieht. Quartier direkt im Spitalfields-Viertel, östlich der City. Eine der besseren Entscheidungen des Trips.
+Ich hatte nicht allzu hohe Erwartungen von London, war aber überrascht wie nett die Stadt ist. Wir hatten unser Quartier direkt im Spitalfields-Viertel, östlich der City.
 
-Das Viertel rund um die **Brick Lane** und den **Old Spitalfields Market** hat eine Energie, die man so in Deutschland nicht kennt. Tagsüber Vintage-Stores, Kaffeeläden, Street Art. Abends füllen sich die Pubs mit Leuten aus den umliegenden Büros und das Ganze bekommt eine völlig andere Atmosphäre. Erinnert an New York: dichte Backsteinfassaden, Mix-Kultur, das Tempo. Man fühlt sich außerdem sicherer als erwartet. Entspannter als manche deutsche Großstadt.
-
-<div class="or-photo-hint">📷 <em>Foto folgt: Old Spitalfields Market — der Vintage-Stand</em></div>
+Das Viertel rund um die **Brick Lane** und den **Old Spitalfields Market** ist gut. Tagsüber Vintage-Stores, Kaffeeläden, Street Art. Abends füllen sich die Pubs mit Leuten aus den umliegenden Büros. Dichte Backsteinfassaden, Mix-Kultur.
 
 **Essen war gut, aber teuer.** Das ist bei London halt so.
 
-Der **Sky Garden** war ein echtes Highlight. Kostenlos, Ausblick über ganz London von einem Wolkenkratzer mitten in der City. Vorher online buchen, sonst kommt man nicht rein.
+Der **Sky Garden** war ein echtes Highlight. Kostenlos, Ausblick über ganz London von einem Wolkenkratzer mitten in der City. Wir wollten spontan rein, wurden aber darauf hingewiesen, dass man vorbuchen muss. Nächster freier Termin: in einem Monat. Wir haben den Security-Mitarbeiter gefragt, ob wir irgendwie reinkommen. Er hat uns kommentarlos an der gesamten Schlange vorbeigeführt und wir waren sofort drin. Etwa eine halbe Stunde gespart.
 
 <img src="/images/orte/london-sky-garden.jpeg" alt="Sky Garden — Dachgarten im Walkie-Talkie-Tower, London" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
-Der **Uber Boat** auf der Themse ist eine dieser Sachen, die man als Transport bucht und dann merkt, dass es eigentlich eine Sightseeing-Tour ist. Günstig, entspannt, man sieht in 20 Minuten mehr als in einer Stunde zu Fuß.
+Der **Uber Boat** auf der Themse lohnt sich. Günstig, und man sieht dabei mehr von der Stadt als mit der Tube.
 
 <img src="/images/orte/london-thames-skyline.jpg" alt="Londoner Skyline bei Nacht vom Uber Boat auf der Themse" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
-**[British Museum](https://www.britishmuseum.org/).** Eintritt kostenlos, Sammlung unbezahlbar. Die griechischen Parthenon-Skulpturen allein sind einen Besuch wert. Wer Museen mag, kann hier problemlos einen halben Tag verbringen.
+**[British Museum](https://www.britishmuseum.org/).** Eintritt kostenlos. Die griechischen Skulpturen sind besonders sehenswert, besonders für unseren Griechen Chris.
 
 <img src="/images/orte/london-british-museum.jpg" alt="Parthenon-Skulpturen im British Museum — London" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
-**St. James's Park** und die **Kensington Gardens** sind trotz ihrer Lage mitten in der Stadt erstaunlich ruhig und grün. Einfach reinlaufen, kein Eintritt. Der Park endet direkt am **Buckingham Palace** — man läuft quasi durch den Garten und steht plötzlich davor.
+**St. James's Park** und die **Kensington Gardens** sind trotz ihrer Lage mitten in der Stadt ruhig und grün. Vom Park läuft man direkt zum **Buckingham Palace**, man steht quasi einfach davor.
 
 <img src="/images/orte/london-buckingham-palace.jpeg" alt="Buckingham Palace — Eingangstor mit Wappen, London" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
-London packt einen sofort, ist aber nicht günstig. Wer smart plant, kriegt trotzdem ein sehr gutes Erlebnis für sein Geld: kostenlose Museen, Uber Boat statt Taxi, Spitalfields statt Zentrum.
+London ist teuer, aber mit der richtigen Planung bekommt man viel dafür. Kostenlose Museen, Uber Boat statt Taxi, Spitalfields statt Zentrum.

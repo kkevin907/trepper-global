@@ -142,9 +142,6 @@ const locLon = currentStation.lon;
             </div>
           )}
         </div>
-        <p class="ph-sub">
-          Alle Stops, was ich dort erlebt hab und wo man gut isst. Direkt von unterwegs.
-        </p>
       </div>
 
       <!-- Buttons -->
@@ -177,6 +174,15 @@ const locLon = currentStation.lon;
       <WorldMap height="100%" mapId="home-map" showRoute={false} showFilters={true} centerOnCurrent={true} centerZoom={4} />
     </div>
 
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     NEWSLETTER
+═══════════════════════════════════════════════════════ -->
+<section class="ph-sec ph-sec-soft ph-sec-nl reveal">
+  <div class="ph-wrap">
+    <NewsletterSignup variant="section" />
   </div>
 </section>
 
@@ -448,31 +454,31 @@ const locLon = currentStation.lon;
 </script>
 
 <!-- ═══════════════════════════════════════════════════════
-     LOGBUCH — Letzte Einträge
-═══════════════════════════════════════════════════════ -->
-
-<!-- ═══════════════════════════════════════════════════════
-     NEWSLETTER
-═══════════════════════════════════════════════════════ -->
-<section class="ph-sec ph-sec-soft reveal">
-  <div class="ph-wrap">
-    <NewsletterSignup variant="section" />
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════
-     INSTAGRAM
+     SOCIAL
 ═══════════════════════════════════════════════════════ -->
 <section class="ph-ig reveal">
-  <div class="ph-wrap" style="display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;">
-    <div class="ph-ig-icon">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+  <div class="ph-wrap ph-social-grid">
+    <div class="ph-social-row">
+      <div class="ph-ig-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </div>
+      <div style="flex:1;">
+        <strong style="font-size:1rem;font-weight:700;color:#0F172A;display:block;">Instagram</strong>
+        <p style="font-size:.875rem;color:#64748B;margin-top:2px;">Videos, Stories & Updates direkt vom Trip.</p>
+      </div>
+      <a href="https://instagram.com/kevin.ontour" target="_blank" rel="noopener" class="ph-ig-btn">Zum Profil</a>
     </div>
-    <div style="flex:1;">
-      <strong style="font-size:1rem;font-weight:700;color:#0F172A;display:block;">Auf Instagram mitverfolgen</strong>
-      <p style="font-size:.875rem;color:#64748B;margin-top:2px;">Fotos, Stories, Updates in Echtzeit — @kevin.ontour</p>
+    <div class="ph-social-divider"></div>
+    <div class="ph-social-row">
+      <div class="ph-ig-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+      </div>
+      <div style="flex:1;">
+        <strong style="font-size:1rem;font-weight:700;color:#0F172A;display:block;">TikTok</strong>
+        <p style="font-size:.875rem;color:#64748B;margin-top:2px;">Videos direkt aus dem Trip.</p>
+      </div>
+      <a href="https://tiktok.com/@kevin.ontour" target="_blank" rel="noopener" class="ph-ig-btn">Zum Profil</a>
     </div>
-    <a href="https://instagram.com/kevin.ontour" target="_blank" rel="noopener" class="ph-ig-btn">Zum Profil</a>
   </div>
 </section>
 
@@ -489,11 +495,10 @@ const locLon = currentStation.lon;
   position: relative;
   overflow: hidden;
   background: #ffffff;
-  padding: 3rem 1.5rem 2.5rem;
+  padding: 0.75rem 1.5rem;
   border-bottom: 1px solid #E2E8F0;
-  min-height: calc(100vh - 64px);
   display: flex;
-  align-items: center;
+  align-items: stretch;
 }
 
 .ph-blob { position:absolute; border-radius:50%; filter:blur(80px); pointer-events:none; z-index:0; }
@@ -517,7 +522,7 @@ const locLon = currentStation.lon;
 .ph-hero-left {
   display: flex;
   flex-direction: column;
-  gap: 1.4rem;
+  gap: 1rem;
 }
 
 /* Titel + Chip nebeneinander */
@@ -730,6 +735,7 @@ const locLon = currentStation.lon;
 
 /* ── SECTIONS ── */
 .ph-sec { padding: 3.5rem 1.5rem; border-bottom: 1px solid #E2E8F0; }
+.ph-sec-nl { padding: 1.5rem 1.5rem; }
 .ph-sec-soft  { background: #F8FAFC; }
 .ph-sec-white { background: #ffffff; }
 .ph-ig {
@@ -912,7 +918,13 @@ const locLon = currentStation.lon;
 .ph-card-excerpt { font-size: .84rem; color: #64748B; line-height: 1.7; flex: 1; }
 .ph-card-foot    { padding: 9px 18px; font-size: .8rem; font-weight: 700; }
 
-/* ── INSTAGRAM ── */
+/* ── SOCIAL ── */
+.ph-social-grid { display: flex; flex-direction: column; gap: 0; }
+.ph-social-row  { display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap; padding: 1.25rem 0; }
+.ph-social-row:first-child { padding-top: 0; }
+.ph-social-row:last-child  { padding-bottom: 0; }
+.ph-social-divider { height: 1px; background: var(--border); }
+
 .ph-ig-icon {
   width: 48px; height: 48px; border-radius: 13px; flex-shrink: 0;
   background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
@@ -940,8 +952,7 @@ const locLon = currentStation.lon;
     max-width: 700px;
   }
   .ph-hero {
-    min-height: auto;
-    padding: 2.5rem 1.5rem;
+    padding: 0.75rem 1.5rem;
   }
   .ph-hero-right {
     height: 360px;
@@ -958,7 +969,7 @@ const locLon = currentStation.lon;
   }
   .ph-mid-line  { width: 20px; height: 2px; background: linear-gradient(to right, transparent, #F97316); }
   .ph-mid-line2 { width: 20px; height: 2px; background: linear-gradient(to right, #0EA5E9, transparent); }
-  .ph-hero { padding: 1.5rem 1.25rem 2rem; }
+  .ph-hero { padding: 0.5rem 1.25rem; }
   .ph-hero-left { gap: .9rem; }
   .ph-hero-right { height: 380px; }
 
@@ -991,7 +1002,7 @@ const locLon = currentStation.lon;
 }
 
 @media (max-width: 380px) {
-  .ph-hero { padding: 1.25rem 1rem 1.75rem; }
+  .ph-hero { padding: 0.5rem 1rem; }
   .ph-title { font-size: 1.75rem; }
   .ph-hero-right { height: 320px; }
   .ph-btn-primary, .ph-btn-secondary, .ph-btn-ghost { font-size: .82rem; padding: .55rem .9rem; }

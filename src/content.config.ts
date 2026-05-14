@@ -32,6 +32,12 @@ const orte = defineCollection({
       lat: z.number(),
       lon: z.number(),
     }).optional(),
+    sights: z.array(z.object({
+      name: z.string(),
+      lat:  z.number(),
+      lon:  z.number(),
+      link: z.string().optional(),
+    })).optional().default([]),
     foodSpots: z.array(z.object({
       name:   z.string(),
       what:   z.string(),
@@ -44,7 +50,7 @@ const orte = defineCollection({
     })),
     markets: z.array(z.object({
       name: z.string(),
-      type: z.string(),
+      type: z.string().optional(),
       when: z.string().optional(),
       tip:  z.string().optional(),
       link: z.string().optional(),

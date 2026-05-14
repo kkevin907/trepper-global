@@ -149,7 +149,6 @@ function gmapsUrl(label: string, city: string, lat?: number, lon?: number) {
             <h2 class="jt-section-title">
               <span class="jt-section-icon">🍜</span> Unbedingt essen
             </h2>
-            <p class="jt-must-eat-hint">Typische Gerichte von dort. Konkrete Läden zeigt die Karte oben.</p>
             <div class="jt-tags">
               {details.mustEat.map((e: string) => (
                 <span class="jt-tag jt-tag--green">{e}</span>
@@ -183,14 +182,6 @@ function gmapsUrl(label: string, city: string, lat?: number, lon?: number) {
         </>
       )}
 
-      <!-- LOGBUCH-LINK -->
-      <div class="jt-logbook-cta">
-        <div>
-          <p class="jt-cta-label">Tagebuch</p>
-          <p class="jt-cta-text">Alle Einträge aus {currentStation.name} lesen</p>
-        </div>
-        <a href="/logbook" class="jt-cta-btn">Zum Logbuch →</a>
-      </div>
 
     </div>
   </div>
@@ -373,7 +364,7 @@ function gmapsUrl(label: string, city: string, lat?: number, lon?: number) {
   .jt-desc    { font-size: 1rem; color: var(--text-mid); line-height: 1.7; max-width: 640px; }
 
   /* WRAP */
-  .jt-wrap  { padding: 2.5rem 1.5rem 5rem; }
+  .jt-wrap  { padding: 2.5rem 1.5rem 2rem; }
   .jt-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 2.5rem; }
 
   /* TOP GRID */
@@ -440,6 +431,7 @@ function gmapsUrl(label: string, city: string, lat?: number, lon?: number) {
   .jt-map-col { border-radius: 16px; overflow: hidden; }
   #jetzt-city-map { height: 300px; }
   @media (max-width: 800px) { #jetzt-city-map { height: 360px; } }
+  @media (max-width: 480px) { #jetzt-city-map { height: 260px; } }
 
   /* SECTIONS */
   .jt-section {
