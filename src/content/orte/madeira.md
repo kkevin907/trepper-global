@@ -11,7 +11,7 @@ costLevel: 3
 mapCenter:
   lat: 32.6491
   lon: -16.9071
-rating: 5
+rating: 4
 coverImage: "/images/orte/madeira-seixal-beach.jpeg"
 highlights:
   - "[Seixal Beach](https://maps.google.com/?q=Seixal+Beach+Madeira). Schwarzer Lavastrand, idyllisch."
