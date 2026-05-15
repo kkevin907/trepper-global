@@ -128,6 +128,7 @@ const fullTitle    = title === "Home" ? "Trepper Global — Von Solingen in die 
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    min-width: 0;
   }
 
   :root {
@@ -161,11 +162,21 @@ const fullTitle    = title === "Home" ? "Trepper Global — Von Solingen in die 
     background: var(--bg);
     color: var(--text);
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100%;
   }
 
-  body { min-height: 100vh; display: flex; flex-direction: column; }
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+  }
   main { flex: 1; }
-  img  { max-width: 100%; border-radius: var(--radius-sm); }
+  img  { max-width: 100%; height: auto; border-radius: var(--radius-sm); }
+
   a    { color: inherit; text-decoration: none; }
 
   /* ── SCROLL ANIMATIONS ──
