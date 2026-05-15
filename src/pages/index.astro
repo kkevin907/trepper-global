@@ -97,7 +97,7 @@ const locLon = currentStation.lon;
         <div class="ph-li-block">
           <span class="ph-li-label">
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            Währung vor Ort
+            Währung<span class="ph-label-extra"> vor Ort</span>
           </span>
           <span class="ph-li-val">{locCurrencyDisplay}</span>
           <span class="ph-li-rate" id="ph-li-rate"></span>
@@ -108,7 +108,7 @@ const locLon = currentStation.lon;
         <div class="ph-li-block">
           <span class="ph-li-label">
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 1 0 5 5"/><path d="M12 2v2M12 12v2M4.22 4.22l1.42 1.42M18.36 5.64l1.42-1.42M2 12h2M20 12h2"/><circle cx="16" cy="6" r="3"/></svg>
-            Wetter vor Ort
+            Wetter<span class="ph-label-extra"> vor Ort</span>
           </span>
           <span class="ph-li-val" id="ph-li-weather">
             <span id="ph-weather-icon" style="font-size:.95rem;line-height:1;">–</span>
@@ -147,6 +147,8 @@ const locLon = currentStation.lon;
       <!-- Buttons -->
       <div class="ph-actions">
         <a href="/about" class="ph-btn-ghost">Über mich</a>
+        <a href="/orte" class="ph-btn-ghost ph-btn-mobile-only">Orte</a>
+        <a href="/route" class="ph-btn-ghost ph-btn-mobile-only">Route</a>
       </div>
 
       <!-- Stats -->
@@ -464,7 +466,7 @@ const locLon = currentStation.lon;
       </div>
       <div style="flex:1;">
         <strong style="font-size:1rem;font-weight:700;color:#0F172A;display:block;">Instagram</strong>
-        <p style="font-size:.875rem;color:#64748B;margin-top:2px;">Videos, Stories & Updates direkt vom Trip.</p>
+        <p style="font-size:.875rem;color:#64748B;margin-top:2px;">Updates direkt vom Trip.</p>
       </div>
       <a href="https://instagram.com/kevin.ontour" target="_blank" rel="noopener" class="ph-ig-btn">Zum Profil</a>
     </div>
@@ -475,7 +477,7 @@ const locLon = currentStation.lon;
       </div>
       <div style="flex:1;">
         <strong style="font-size:1rem;font-weight:700;color:#0F172A;display:block;">TikTok</strong>
-        <p style="font-size:.875rem;color:#64748B;margin-top:2px;">Videos direkt aus dem Trip.</p>
+        <p style="font-size:.875rem;color:#64748B;margin-top:2px;">Updates direkt vom Trip.</p>
       </div>
       <a href="https://tiktok.com/@kevin.ontour" target="_blank" rel="noopener" class="ph-ig-btn">Zum Profil</a>
     </div>
@@ -959,6 +961,12 @@ const locLon = currentStation.lon;
   }
 }
 
+/* Nur sichtbar wenn Hamburger aktiv (≤680px) */
+.ph-btn-mobile-only { display: none; }
+@media (max-width: 680px) {
+  .ph-btn-mobile-only { display: inline-flex; }
+}
+
 @media (max-width: 700px) {
   .ph-phases { grid-template-columns: 1fr; }
   .ph-mid {
@@ -999,6 +1007,7 @@ const locLon = currentStation.lon;
 @media (max-width: 480px) {
   .ph-locinfo { max-width: 100%; overflow-x: auto; width: 100%; }
   .ph-li-block { padding: .45rem .65rem; }
+  .ph-label-extra { display: none; }
 }
 
 @media (max-width: 380px) {
