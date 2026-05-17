@@ -97,9 +97,7 @@ Eine Woche Renesse mit der Familie. Fahrräder, Strand, Ostersonntag und Alpakas
 
 **Mit dem Rad unterwegs.** Wir sind fast überall mit dem Rad hin. Mit Anhänger für den Hund, durch die Dünen, in die Nachbarorte. [Burgh-Haamstede](https://maps.google.com/?q=Burgh-Haamstede+Zeeland) liegt direkt nebenan und ist einen Besuch wert. Weiter geht's in Richtung [Brouwershaven](https://maps.google.com/?q=Brouwershaven+Zeeland) und [Zierikzee](https://maps.google.com/?q=Zierikzee+Zeeland). Zierikzee ist eine historische Hansestadt mit über 500 denkmalgeschützten Gebäuden und lohnt sich für einen halben Tag.
 
-
 **Seehund-Safari auf der Oosterschelde.** Mit dem Schiff raus auf die [Oosterschelde](https://maps.google.com/?q=Oosterschelde+Zeeland) zu den Seehunden. Die Idee ist toll, die Realität aber etwas ernüchternd. Die Tiere sind sehr weit weg und mit bloßem Auge kaum zu erkennen. Nett für die Atmosphäre, aber kein Must-do.
-
 
 **Ostersonntag: [Bar de Stulp](https://maps.google.com/?q=Bar+de+Stulp+Renesse+Zeeland).** Das Easter Rockfest am Ostersonntag war eine echte Überraschung. Die Bar macht regelmäßig Rockkonzerte mitten im Dorf.
 

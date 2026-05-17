@@ -108,8 +108,6 @@ Wir haben nahe [Martim Moniz](https://maps.google.com/?q=Martim+Moniz+Lissabon) 
 
 **[Miradouro de São Pedro de Alcântara](https://maps.google.com/?q=Miradouro+de+São+Pedro+de+Alcântara+Lissabon).** Schöner Aussichtspunkt über die Dächer von Lissabon. Da war Livemusik, war ganz nett.
 
-
-
 **[O Trevo](https://maps.google.com/?q=O+Trevo+Lisbon+Praça+Luís+de+Camões): Bifana.** Das klassische Pork-Sandwich. Günstig, deftig, echt. Soll sogar von Anthony Bourdain empfohlen worden sein. Danach haben wir noch frisch gepressten Orangensaft aus dem Supermarkt besorgt.
 
 **Miradouros abends.** Wir haben Gebäck besorgt und sind dann zu den Aussichtspunkten: [Miradouro de Santa Luzia](https://maps.google.com/?q=Miradouro+de+Santa+Luzia+Lissabon) und [Miradouro das Portas do Sol](https://maps.google.com/?q=Miradouro+das+Portas+do+Sol+Lissabon). Beide mit Blick über das Alfama Richtung Tejo, beide schön zum Sonnenuntergang.
@@ -122,4 +120,4 @@ Wir haben nahe [Martim Moniz](https://maps.google.com/?q=Martim+Moniz+Lissabon) 
 
 **[Manteigaria](https://maps.google.com/?q=Manteigaria+Lissabon+Portugal).** Die Pastéis de Nata kommen frisch aus dem Ofen. Warm, mit Zimt und Puderzucker. Wer in Lissabon ist und dort keine isst, hat etwas falsch gemacht.
 
-Lissabon hat mehr zu bieten als man denkt. Würde ich wieder hingehen.
+Lissabon hat mehr zu bieten, als man denkt. Würde ich wieder hingehen.

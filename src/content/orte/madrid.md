@@ -105,7 +105,7 @@ Drei Nächte Madrid. Wir hatten ein Airbnb in [Canillejas](https://maps.google.c
 
 <img src="/images/orte/madrid-el-tigre.jpg" alt="El Tigre Bar — Madrid" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
-**[Parque del Retiro](https://maps.google.com/?q=Parque+del+Retiro+Madrid).** Der große Stadtpark. Riesig, gepflegt, perfekt für einen Nachmittag, wenn man nach ein paar Tagen Großstadt entspannen möchte.
+**[Parque del Retiro](https://maps.google.com/?q=Parque+del+Retiro+Madrid).** Der große Stadtpark. Riesig, gepflegt, perfekt für einen Nachmittag, wenn man sich nach ein paar Tagen Großstadt entspannen möchte.
 
 <img src="/images/orte/madrid-retiro-park.jpeg" alt="Parque del Retiro — Madrid" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 

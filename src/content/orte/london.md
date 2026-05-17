@@ -95,7 +95,7 @@ bestArea: "Spitalfields."
 draft: false
 ---
 
-Ich hatte nicht allzu hohe Erwartungen von London, war aber überrascht wie nett die Stadt ist. Wir hatten unser Quartier direkt im Spitalfields-Viertel, östlich der City.
+Ich hatte nicht allzu hohe Erwartungen von London, war aber überrascht, wie nett die Stadt ist. Wir hatten unser Quartier direkt im Spitalfields-Viertel, östlich der City.
 
 Das Viertel rund um die **Brick Lane** und den **Old Spitalfields Market** ist gut. Tagsüber Vintage-Stores, Kaffeeläden, Street Art. Abends füllen sich die Pubs mit Leuten aus den umliegenden Büros. Dichte Backsteinfassaden, Mix-Kultur.
 

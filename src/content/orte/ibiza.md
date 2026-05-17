@@ -55,6 +55,7 @@ draft: false
 Eine Nacht, kein Hotel, kein Schlaf. Landung 19 Uhr, Abflug 09:30 Uhr am nächsten Morgen. Alles dazwischen war Ibiza.
 
 **Ankunft & Gepäck.** Wir sind direkt vom Flughafen für 3,50 € pro Person mit dem Shuttle in die Stadt gefahren. Das Gepäck haben wir bei <a href="https://easylockersibiza.com/" target="_blank" rel="noopener">Easy Lockers Ibiza</a> eingeschlossen.
+
 **Ibiza Stadt & Weg zur Meile.** Wir sind kurz durch die Stadt gelaufen und haben am großen Lidl am Stadtrand noch Getränke besorgt. Dann sind wir zu Fuß an der Strandpromenade entlang Richtung Playa d'en Bossa weitergegangen.
 
 **Murphy's Ibiza.** Die erste Bar des Abends war direkt an der Clubmeile. Guinness für 10 €, teuer, aber Ibiza-Standard. Dort haben wir einen Norweger kennengelernt, der den Rest der Nacht mit uns weitergezogen ist.
