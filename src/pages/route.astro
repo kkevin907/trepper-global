@@ -520,7 +520,7 @@ const mainStations    = stations.filter(s => s.phase === 'main');
   .station-name--link { color: var(--coral); text-decoration: none; transition: opacity .15s; }
   .station-name--link::after { content: ' ↗'; font-size: .75em; opacity: .6; font-weight: 400; }
   .station-name--link:hover { opacity: .75; }
-  .station-report-link { display: inline-flex; align-items: center; gap: 4px; margin-top: .4rem; font-size: .78rem; font-weight: 700; color: var(--coral); text-decoration: none; opacity: .85; transition: opacity .15s; }
+  .station-report-link { display: inline-flex; align-items: center; gap: 4px; margin-top: .4rem; font-size: .78rem; font-weight: 700; color: var(--coral); text-decoration: none; opacity: .85; transition: opacity .15s; white-space: nowrap; }
   .station-report-link:hover { opacity: 1; }
   .station-report-badge {
     font-size: .68rem;
