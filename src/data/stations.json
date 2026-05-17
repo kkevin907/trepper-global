@@ -1402,6 +1402,74 @@
     "description": "Bereist."
   },
   {
+    "id": "essaouira",
+    "name": "Essaouira",
+    "country": "Marokko",
+    "flag": "🇲🇦",
+    "lat": 31.5085,
+    "lon": -9.7595,
+    "status": "current",
+    "phase": "warmup",
+    "timezone": "Africa/Casablanca",
+    "currency": "MAD",
+    "currencySymbol": "DH",
+    "dateFrom": "2026-05-17",
+    "dateTo": null,
+    "description": "Gerade hier.",
+    "details": {
+      "highlights": [
+        "Medina (UNESCO-Weltkulturerbe)",
+        "Hafen mit blauen Fischerbooten",
+        "Skala de la Ville",
+        "Windsurfen am Strand",
+        "Gnawa-Musik in der Altstadt"
+      ],
+      "mustEat": [
+        "Gegrillte Sardinen am Hafen",
+        "Frischer Calamari",
+        "Couscous",
+        "Arganöl-Produkte"
+      ],
+      "tips": "Medina zu Fuß erkunden. Hafen morgens für frischen Fisch. Wind kann stark sein — Jacke mitnehmen.",
+      "bestFor": [
+        "Altstadt & Medina",
+        "Strand & Wind",
+        "Fischrestaurants",
+        "Fotografie"
+      ],
+      "visa": "Kein Visum für Deutsche (bis 90 Tage)",
+      "language": "Arabisch, Darija, Französisch",
+      "transport": "Zu Fuß in der Medina, Taxis für größere Strecken",
+      "plug": "Typ C/E (220V)",
+      "spots": [
+        {
+          "name": "Medina Essaouira",
+          "lat": 31.5126,
+          "lon": -9.7702,
+          "type": "sight"
+        },
+        {
+          "name": "Port de Pêche",
+          "lat": 31.5077,
+          "lon": -9.7778,
+          "type": "sight"
+        },
+        {
+          "name": "Skala de la Ville",
+          "lat": 31.5145,
+          "lon": -9.7763,
+          "type": "sight"
+        },
+        {
+          "name": "Plage d'Essaouira",
+          "lat": 31.5012,
+          "lon": -9.7622,
+          "type": "sight"
+        }
+      ]
+    }
+  },
+  {
     "id": "istanbul",
     "name": "Istanbul",
     "country": "Türkei",
