@@ -93,6 +93,7 @@ const mainStations    = stations.filter(s => s.phase === 'main');
                         <span class="station-badge" style={`background:${color}20;color:${color};`}>{label}</span>
                       </div>
                       {station.status !== 'upcoming' && station.description && <p class="station-desc">{station.description}</p>}
+                      {hasReport && <a href={`/orte/${station.id}`} class="station-report-link">Reisebericht lesen →</a>}
                     </div>
                   </div>
                 );
@@ -352,6 +353,7 @@ const mainStations    = stations.filter(s => s.phase === 'main');
                         {hasReport && <span class="station-report-badge">📖 Bericht</span>}
                       </div>
                       {station.status !== 'upcoming' && station.description && <p class="station-desc">{station.description}</p>}
+                      {hasReport && <a href={`/orte/${station.id}`} class="station-report-link">Reisebericht lesen →</a>}
                     </div>
                   </div>
                 );
@@ -515,8 +517,11 @@ const mainStations    = stations.filter(s => s.phase === 'main');
   .station-header  { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; margin-bottom: .35rem; }
   .station-flag    { font-size: 1.1rem; line-height: 1; }
   .station-name    { font-size: 1.05rem; font-weight: 700; letter-spacing: -.02em; }
-  .station-name--link { color: var(--text); text-decoration: none; transition: color .15s; }
-  .station-name--link:hover { color: var(--coral); }
+  .station-name--link { color: var(--coral); text-decoration: none; transition: opacity .15s; }
+  .station-name--link::after { content: ' ↗'; font-size: .75em; opacity: .6; font-weight: 400; }
+  .station-name--link:hover { opacity: .75; }
+  .station-report-link { display: inline-flex; align-items: center; gap: 4px; margin-top: .4rem; font-size: .78rem; font-weight: 700; color: var(--coral); text-decoration: none; opacity: .85; transition: opacity .15s; }
+  .station-report-link:hover { opacity: 1; }
   .station-report-badge {
     font-size: .68rem;
     font-weight: 700;

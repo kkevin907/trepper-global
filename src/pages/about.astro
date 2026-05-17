@@ -200,7 +200,9 @@ import NewsletterSignup from '../components/NewsletterSignup.astro';
     border-radius: var(--radius-sm);
     border: 1px solid var(--border);
   }
-  .photo-card-ig a { color: #E1306C; font-weight: 700; }
+  .photo-card-ig a { color: #E1306C; font-weight: 700; text-decoration: none; }
+  .photo-card-ig a::after { content: ' ↗'; font-size: .75em; opacity: .6; font-weight: 400; }
+  .photo-card-ig a:hover { text-decoration: underline; }
 
   /* ── TEXT COL ── */
   .about-name {
