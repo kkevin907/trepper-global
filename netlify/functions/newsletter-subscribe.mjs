@@ -35,14 +35,13 @@ export default async (request) => {
   }
 
   try {
-    const res = await fetch('https://connect.mailerlite.com/api/subscribers', {
+    const res = await fetch(`https://api.mailerlite.com/api/v2/groups/${groupId}/subscribers`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${apiKey}`,
-        'Accept': 'application/json',
+        'X-MailerLite-ApiKey': apiKey,
       },
-      body: JSON.stringify({ email, groups: [groupId] }),
+      body: JSON.stringify({ email }),
     });
 
     if (res.ok) {

@@ -1308,7 +1308,7 @@
     }
   },
   {
-    "id": "essaouira",
+    "id": "essaouira-taghazout",
     "name": "Essaouira & Taghazout",
     "country": "Marokko",
     "flag": "🇲🇦",
@@ -1321,7 +1321,7 @@
     "currencySymbol": "MAD",
     "dateFrom": "2026-05-01",
     "dateTo": "2026-05-31",
-    "description": "Marokko mit meinem Vater. Essaouira, Taghazout, frischer Fisch am Hafen.",
+    "description": "Essaouira, Taghazout, frischer Fisch am Hafen.",
     "details": {
       "highlights": [
         "Medina Essaouira (UNESCO)",
