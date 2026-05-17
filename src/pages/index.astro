@@ -15,11 +15,6 @@ const orteCount = orteIdSet.size;
 const warmupVisited = stationsData.filter(s => s.phase === 'warmup' && s.status === 'visited').length;
 
 
-const target   = new Date('2026-06-09T00:00:00');
-const now      = new Date();
-const daysLeft = Math.max(0, Math.ceil((target.getTime() - now.getTime()) / 86400000));
-const started  = daysLeft <= 0;
-
 // Kilometer berechnen — Haversine über alle besuchten Stationen (home + visited)
 function haversine(lat1: number, lon1: number, lat2: number, lon2: number): number {
   const R = 6371;
@@ -131,16 +126,10 @@ const locLon = currentStation.lon;
             Von Solingen<br />
             <span class="ph-grad">in die Welt.</span>
           </h1>
-          {!started ? (
-            <div class="ph-chip ph-chip--inline">
-              <span class="ph-chip-num">{daysLeft}</span>
-              <span class="ph-chip-txt">Tage bis Abflug</span>
-            </div>
-          ) : (
-            <div class="ph-chip ph-chip-go ph-chip--inline">
-              <span class="ph-chip-txt">🌏 Unterwegs!</span>
-            </div>
-          )}
+          <div class="ph-chip ph-chip--inline" id="ph-chip-countdown">
+            <span class="ph-chip-num" id="ph-chip-num">–</span>
+            <span class="ph-chip-txt" id="ph-chip-label">Tage bis Abflug</span>
+          </div>
         </div>
       </div>
 
@@ -444,14 +433,47 @@ const locLon = currentStation.lon;
     setInterval(tick, 1000);
   }
 
+  // Tage bis Abflug / Tage unterwegs — live, kein Build nötig
+  function updateCountdown() {
+    var ABFLUG = new Date('2026-06-09T00:00:00');
+    var now    = new Date();
+    var chip   = document.getElementById('ph-chip-countdown');
+    var numEl  = document.getElementById('ph-chip-num');
+    var lblEl  = document.getElementById('ph-chip-label');
+    if (!chip || !numEl || !lblEl) return;
+
+    chip.style.display = 'inline-flex';
+
+    if (now < ABFLUG) {
+      var daysLeft = Math.ceil((ABFLUG.getTime() - now.getTime()) / 86400000);
+      numEl.textContent = daysLeft;
+      lblEl.textContent = 'Tage bis Abflug';
+      chip.classList.remove('ph-chip-go');
+    } else {
+      var daysOn = Math.floor((now.getTime() - ABFLUG.getTime()) / 86400000);
+      numEl.textContent = daysOn;
+      lblEl.textContent = 'Tage unterwegs';
+      chip.classList.add('ph-chip-go');
+    }
+  }
+
+  // Tagesgrenze abfangen: jede Minute prüfen ob sich der Tag geändert hat
+  var _lastDay = new Date().getDate();
+  function checkDayRollover() {
+    var d = new Date().getDate();
+    if (d !== _lastDay) { _lastDay = d; updateCountdown(); }
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () { initTimeline(); initClock(); initWeather(); initExchangeRate(); });
+    document.addEventListener('DOMContentLoaded', function () { initTimeline(); initClock(); initWeather(); initExchangeRate(); updateCountdown(); });
   } else {
     initTimeline();
     initClock();
     initWeather();
     initExchangeRate();
+    updateCountdown();
   }
+  setInterval(checkDayRollover, 60 * 1000);
 })();
 </script>
 
