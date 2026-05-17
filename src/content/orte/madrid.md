@@ -15,7 +15,7 @@ mapCenter:
 rating: 4
 highlights:
   - "[El Tigre](https://maps.google.com/?q=El+Tigre+Calle+Infantas+30+Madrid). Sidrería mit kostenlosen Tapas zu jedem Drink."
-  - "[Templo de Debod](https://www.esmadrid.com/en/tourist-information/temple-debod). Ägyptischer Tempel mitten in Madrid, Aussicht über die ganze Stadt."
+  - "[Templo de Debod](https://maps.google.com/?q=Templo+de+Debod+Madrid). Ägyptischer Tempel mitten in Madrid, Aussicht über die ganze Stadt."
   - "[Palacio Real](https://maps.google.com/?q=Palacio+Real+Madrid) & [Jardines de Sabatini](https://maps.google.com/?q=Jardines+de+Sabatini+Madrid). Beeindruckende Kulisse, Garten zum Entspannen."
   - "[El Corte Inglés Gourmet Experience](https://maps.google.com/?q=El+Corte+Ingles+Callao+Madrid). 9. Stock, kostenloser Panoramablick über Gran Vía und die Innenstadt."
   - "[Parque del Retiro](https://maps.google.com/?q=Parque+del+Retiro+Madrid). Riesiger Stadtpark, Entspannung pur."
@@ -97,7 +97,7 @@ Drei Nächte Madrid. Wir hatten ein Airbnb in [Canillejas](https://maps.google.c
 
 <img src="/images/orte/madrid-la-latina.jpg" alt="Metro La Latina — Madrid" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
-**[Templo de Debod](https://www.esmadrid.com/en/tourist-information/temple-debod).** Auf einem Hügel im Park steht ein ägyptischer Tempel. Von dort hat man eine schöne Aussicht über die Stadt.
+**[Templo de Debod](https://maps.google.com/?q=Templo+de+Debod+Madrid).** Auf einem Hügel im Park steht ein ägyptischer Tempel. Von dort hat man eine schöne Aussicht über die Stadt.
 
 **[Gran Vía](https://maps.google.com/?q=Gran+Via+Madrid) & El Corte Inglés.** Die Gran Vía ist laut, belebt, Großstadtgefühl pur. Im **El Corte Inglés Callao** einfach in den 9. Stock fahren. Von der Gourmet-Terrasse schaut man kostenlos über die gesamte Gran Vía. Kein Ticket, einfach hochfahren.
 

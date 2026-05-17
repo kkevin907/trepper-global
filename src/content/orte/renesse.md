@@ -13,16 +13,16 @@ mapCenter:
   lon: 3.7759
 rating: 4
 highlights:
-  - "[Alpaca en Falabella Ranch](https://alpaca-falabellaranch.nl/) in Kerkwerve. Einmal mit einem Alpaka spazieren. Lohnt sich."
-  - "[Bar de Stulp](https://www.bardestulp.com/). Osterkonzert am Ostersonntag, mitten im Dorf"
-  - "[Strandclub Horizon](https://www.strandclubhorizon.nl/). Neu eröffneter Beach Club, innen nett eingerichtet"
-  - "[Westerlichttoren Nieuw-Haamstede](https://burghhaamstede.com/en/lighthouse/9167/lighthouse-west-schouwen-haamstede.html). Nett in der Nähe der Dünen, gut für einen Strandspaziergang"
+  - "[Alpaca en Falabella Ranch](https://maps.google.com/?q=Alpaca+en+Falabella+Ranch+Kerkwerve+Zeeland) in Kerkwerve. Einmal mit einem Alpaka spazieren. Lohnt sich."
+  - "[Bar de Stulp](https://maps.google.com/?q=Bar+de+Stulp+Renesse+Zeeland). Osterkonzert am Ostersonntag, mitten im Dorf"
+  - "[Strandclub Horizon](https://maps.google.com/?q=Strandclub+Horizon+Renesse+Zeeland). Neu eröffneter Beach Club, innen nett eingerichtet"
+  - "[Westerlichttoren Nieuw-Haamstede](https://maps.google.com/?q=Westerlichttoren+Nieuw-Haamstede+Zeeland). Nett in der Nähe der Dünen, gut für einen Strandspaziergang"
   - "Fahrradtour nach [Brouwershaven](https://maps.google.com/?q=Brouwershaven+Zeeland) & [Zierikzee](https://maps.google.com/?q=Zierikzee+Zeeland)."
 sights:
   - name: "Alpaca en Falabella Ranch (Kerkwerve)"
     lat: 51.7028
     lon: 3.8794
-    link: "https://alpaca-falabellaranch.nl/"
+    link: "https://maps.google.com/?q=Alpaca+en+Falabella+Ranch+Kerkwerve+Zeeland"
   - name: "Bar de Stulp"
     lat: 51.7278
     lon: 3.7805
@@ -55,15 +55,15 @@ foodSpots:
     stars: 5
     area: Renesse Zentrum
     tip: "Schärfegrad einen runter bestellen."
-    link: "https://basilthai.nl/"
+    link: "https://maps.google.com/?q=Basil+Thai+Restaurant+Renesse+Zeeland"
   - name: Strandclub Horizon
-    lat: 51.7320
-    lon: 3.7622
+    lat: 51.7335
+    lon: 3.7730
     what: Gehobener Beach Club direkt am Strand. Modernes Interior, sehr gutes Essen.
     stars: 4
-    area: Strand Renesse Oost
+    area: Strand Renesse
     tip: "Reservierung Pflicht."
-    link: "https://www.strandclubhorizon.nl/"
+    link: "https://maps.google.com/?q=Strandclub+Horizon+Renesse+Zeeland"
   - name: Eetcafé De Loze Visser
     lat: 51.7275
     lon: 3.7762
@@ -71,7 +71,7 @@ foodSpots:
     stars: 4
     area: Renesse
     tip: "Wenn man woanders keinen Tisch bekommt."
-    link: "https://eetcafedelozevisser.nl/"
+    link: "https://maps.google.com/?q=Eetcafé+De+Loze+Visser+Renesse+Zeeland"
   - name: Het Wapen van Zeeland
     lat: 51.7272
     lon: 3.7756
@@ -79,13 +79,13 @@ foodSpots:
     stars: 4
     area: Renesse Zentrum
     tip: "Kein Reservieren nötig."
-    link: "https://www.hetwapenvanzeeland.nl/"
+    link: "https://maps.google.com/?q=Het+Wapen+van+Zeeland+Renesse+Zeeland"
 skip:
   - "Seehund-Safari mit hohen Erwartungen. Die Seehunde auf der Oosterschelde sind sehr weit weg und kaum zu erkennen."
 tips:
   - "Fahrradfahren ist Pflicht. Alles ist mit dem Rad erreichbar."
-  - "[Alpaca en Falabella Ranch Kerkwerve](https://alpaca-falabellaranch.nl/): Alpakawanderung vorab buchen."
-  - "[Strandclub Horizon](https://www.strandclubhorizon.nl/) unbedingt reservieren, besonders an Feiertagen"
+  - "[Alpaca en Falabella Ranch Kerkwerve](https://maps.google.com/?q=Alpaca+en+Falabella+Ranch+Kerkwerve+Zeeland): Alpakawanderung vorab buchen."
+  - "[Strandclub Horizon](https://maps.google.com/?q=Strandclub+Horizon+Renesse+Zeeland) unbedingt reservieren, besonders an Feiertagen"
 bestArea: "Westlich des Zentrums nahe Strandaufgang. Kurze Wege zum Strand und 5 Minuten mit dem Rad ins Dorf."
 coverImage: "/images/orte/renesse-strand.jpeg"
 draft: false
@@ -101,16 +101,16 @@ Eine Woche Renesse mit der Familie. Fahrräder, Strand, Ostersonntag und Alpakas
 **Seehund-Safari auf der Oosterschelde.** Mit dem Schiff raus auf die [Oosterschelde](https://maps.google.com/?q=Oosterschelde+Zeeland) zu den Seehunden. Die Idee ist toll, die Realität aber etwas ernüchternd. Die Tiere sind sehr weit weg und mit bloßem Auge kaum zu erkennen. Nett für die Atmosphäre, aber kein Must-do.
 
 
-**Ostersonntag: [Bar de Stulp](https://www.bardestulp.com/).** Das Easter Rockfest am Ostersonntag war eine echte Überraschung. Die Bar macht regelmäßig Rockkonzerte mitten im Dorf.
+**Ostersonntag: [Bar de Stulp](https://maps.google.com/?q=Bar+de+Stulp+Renesse+Zeeland).** Das Easter Rockfest am Ostersonntag war eine echte Überraschung. Die Bar macht regelmäßig Rockkonzerte mitten im Dorf.
 
-**[Alpaca en Falabella Ranch](https://alpaca-falabellaranch.nl/), Kerkwerve.** Alpaka-Wanderung zum ersten Mal. Man nimmt das Tier an die Leine und läuft damit durch die Natur. War eine Erfahrung, die ich auf jeden Fall noch mal machen werde.
+**[Alpaca en Falabella Ranch](https://maps.google.com/?q=Alpaca+en+Falabella+Ranch+Kerkwerve+Zeeland), Kerkwerve.** Alpaka-Wanderung zum ersten Mal. Man nimmt das Tier an die Leine und läuft damit durch die Natur. War eine Erfahrung, die ich auf jeden Fall noch mal machen werde.
 
 <img src="/images/orte/renesse-alpakas.jpeg" alt="Alpakas auf der Alpaca en Falabella Ranch in Kerkwerve bei Renesse" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
-**[Strandclub Horizon](https://www.strandclubhorizon.nl/).** Relativ neu eröffnet, und man merkt es. Modernes Interior, gutes Essen, Lage direkt am Strand. Ist gehobener und etwas teurer, lohnt sich aber. **Reservierung Pflicht**, besonders rund um Feiertage.
+**[Strandclub Horizon](https://maps.google.com/?q=Strandclub+Horizon+Renesse+Zeeland).** Relativ neu eröffnet, und man merkt es. Modernes Interior, gutes Essen, Lage direkt am Strand. Ist gehobener und etwas teurer, lohnt sich aber. **Reservierung Pflicht**, besonders rund um Feiertage.
 
 **Remote Work: [Badhotel Renesse](https://maps.google.com/?q=Badhotel+Renesse).** Wer im Urlaub auch mal arbeiten muss: Die Lobby des Badhotels ist ein ruhiger, angenehmer Arbeitsplatz mit sehr gutem Frühstücksbuffet. Für ein paar Stunden perfekt.
 
-**[Westerlichttoren](https://burghhaamstede.com/en/lighthouse/9167/lighthouse-west-schouwen-haamstede.html) Nieuw-Haamstede.** Der Leuchtturm liegt in der Nähe der Dünen. Nett als Ziel für einen Strandspaziergang. Danach noch einen Stopp beim [Strandpaviljoen De Strandloper](https://maps.google.com/?q=Strandpaviljoen+De+Strandloper+Nieuw-Haamstede) für ein Getränk.
+**[Westerlichttoren](https://maps.google.com/?q=Westerlichttoren+Nieuw-Haamstede+Zeeland) Nieuw-Haamstede.** Der Leuchtturm liegt in der Nähe der Dünen. Nett als Ziel für einen Strandspaziergang. Danach noch einen Stopp beim [Strandpaviljoen De Strandloper](https://maps.google.com/?q=Strandpaviljoen+De+Strandloper+Nieuw-Haamstede) für ein Getränk.
 
 <img src="/images/orte/renesse-leuchtturm.jpeg" alt="Westerlichttoren Nieuw-Haamstede — rot-weißer Leuchtturm in den Dünen" style="width:100%;border-radius:12px;margin:0.5rem 0;" />

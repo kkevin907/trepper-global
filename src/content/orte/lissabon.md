@@ -13,7 +13,7 @@ mapCenter:
   lon: -9.1393
 rating: 4
 highlights:
-  - "[Cristo Rei](https://maps.google.com/?q=Cristo+Rei+Almada) & [Quinta da Arealva](https://wetravelportugal.com/quinta-da-arealva/). Mit der Fähre rüber, zu Fuß hoch zur Statue, dann am Wasser entlang durch die verlassene Anlage mit Streetart und Brückenblick"
+  - "[Cristo Rei](https://maps.google.com/?q=Cristo+Rei+Almada) & [Quinta da Arealva](https://maps.google.com/?q=Quinta+da+Arealva+Almada+Portugal). Mit der Fähre rüber, zu Fuß hoch zur Statue, dann am Wasser entlang durch die verlassene Anlage mit Streetart und Brückenblick"
   - "[Castelo de São Jorge](https://maps.google.com/?q=Castelo+de+São+Jorge+Lissabon). Der Weg durch die Gassen hoch ist das eigentliche Erlebnis"
   - "[Praça do Comércio](https://maps.google.com/?q=Praça+do+Comércio+Lissabon). Großer Platz direkt am Tejo, erster Blick aufs Wasser."
   - "[Miradouro de Santa Luzia](https://maps.google.com/?q=Miradouro+de+Santa+Luzia+Lissabon) & [Miradouro das Portas do Sol](https://maps.google.com/?q=Miradouro+das+Portas+do+Sol+Lissabon). Abends mit Gebäck, Blick über das Alfama Richtung Tejo"
@@ -70,7 +70,7 @@ foodSpots:
     stars: 5
     area: Chiado / auch im Time Out Market
     tip: Warm essen mit Zimt und Puderzucker.
-    link: "https://manteigaria.com/en/"
+    link: "https://maps.google.com/?q=Manteigaria+Lissabon+Portugal"
   - name: O Trevo
     lat: 38.71
     lon: -9.1428
@@ -116,10 +116,10 @@ Wir haben nahe [Martim Moniz](https://maps.google.com/?q=Martim+Moniz+Lissabon) 
 
 <img src="/images/orte/lissabon-cristo-rei.jpeg" alt="Cristo Rei — Almada bei Lissabon" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
-**[Quinta da Arealva](https://wetravelportugal.com/quinta-da-arealva/): das versteckte Highlight.** Wir sind den Weg vom Cristo Rei zu Fuß runter und am Wasser entlang gegangen. Die Quinta ist eine verlassene Anlage direkt am Tejo-Ufer, komplett mit Streetart bedeckt, mit Brückenblick. Danach sind wir noch durch den [Jardim do Rio](https://maps.google.com/?q=Jardim+do+Rio+Almada) gelaufen. Ruhig, schön, weit weg vom Touristenstress. Diese Route kann ich sehr empfehlen.
+**[Quinta da Arealva](https://maps.google.com/?q=Quinta+da+Arealva+Almada+Portugal): das versteckte Highlight.** Wir sind den Weg vom Cristo Rei zu Fuß runter und am Wasser entlang gegangen. Die Quinta ist eine verlassene Anlage direkt am Tejo-Ufer, komplett mit Streetart bedeckt, mit Brückenblick. Danach sind wir noch durch den [Jardim do Rio](https://maps.google.com/?q=Jardim+do+Rio+Almada) gelaufen. Ruhig, schön, weit weg vom Touristenstress. Diese Route kann ich sehr empfehlen.
 
 <img src="/images/orte/lissabon-ponte-25-abril.jpeg" alt="Ponte 25 de Abril — Blick von der Quinta da Arealva" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
-**[Manteigaria](https://manteigaria.com/en/).** Die Pastéis de Nata kommen frisch aus dem Ofen. Warm, mit Zimt und Puderzucker. Wer in Lissabon ist und dort keine isst, hat etwas falsch gemacht.
+**[Manteigaria](https://maps.google.com/?q=Manteigaria+Lissabon+Portugal).** Die Pastéis de Nata kommen frisch aus dem Ofen. Warm, mit Zimt und Puderzucker. Wer in Lissabon ist und dort keine isst, hat etwas falsch gemacht.
 
 Lissabon hat mehr zu bieten als man denkt. Würde ich wieder hingehen.

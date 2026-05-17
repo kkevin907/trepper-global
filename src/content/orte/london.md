@@ -14,10 +14,10 @@ mapCenter:
 rating: 4
 coverImage: "/images/orte/london-tower-bridge.jpg"
 highlights:
-  - "[Sky Garden](https://skygarden.london/). Kostenloser Ausblick über ganz London, aber unbedingt vorab online buchen."
-  - "[Brick Lane](https://maps.google.com/?q=Brick+Lane+London) & [Old Spitalfields Market](https://oldspitalfieldsmarket.com/). Gut zum Window Shopping, aber überteuerte Vintage Läden."
+  - "[Sky Garden](https://maps.google.com/?q=Sky+Garden+London). Kostenloser Ausblick über ganz London, aber unbedingt vorab online buchen."
+  - "[Brick Lane](https://maps.google.com/?q=Brick+Lane+London) & [Old Spitalfields Market](https://maps.google.com/?q=Old+Spitalfields+Market+London). Gut zum Window Shopping, aber überteuerte Vintage Läden."
   - "[St. James's Park](https://maps.google.com/?q=St+James+Park+London) & [Kensington Gardens](https://maps.google.com/?q=Kensington+Gardens+London). Mitten in der City und trotzdem komplett ruhig."
-  - "[British Museum](https://www.britishmuseum.org/). Kostenlos, griechische Sammlung sehenswert."
+  - "[British Museum](https://maps.google.com/?q=British+Museum+London). Kostenlos, griechische Sammlung sehenswert."
 sights:
   - name: "Sky Garden"
     lat: 51.5101
@@ -46,7 +46,7 @@ sights:
   - name: "British Museum"
     lat: 51.5194
     lon: -0.1270
-    link: "https://www.britishmuseum.org/"
+    link: "https://maps.google.com/?q=British+Museum+London"
   - name: "Buckingham Palace"
     lat: 51.5014
     lon: -0.1419
@@ -59,7 +59,7 @@ foodSpots:
     stars: 5
     area: "Spitalfields"
     tip: "Mittagszeit, direkt am Old Spitalfields Market."
-    link: "https://www.yuukitchen.com/"
+    link: "https://maps.google.com/?q=YUU+Kitchen+Spitalfields+London"
   - name: "The Woolpack"
     lat: 51.5008
     lon: -0.0820
@@ -75,11 +75,11 @@ foodSpots:
     stars: 4
     area: "Southwark"
     tip: "Früh kommen, mittags ist es voll."
-    link: "https://boroughmarket.org.uk/"
+    link: "https://maps.google.com/?q=Borough+Market+London"
 markets:
   - name: "Old Spitalfields Market"
     when: "täglich"
-    link: "https://oldspitalfieldsmarket.com/"
+    link: "https://maps.google.com/?q=Old+Spitalfields+Market+London"
   - name: "Brick Lane Market"
     when: "Sonntag"
     tip: "Nettes Ambiente, aber die meisten Shops sind teuer."
@@ -88,9 +88,9 @@ skip:
   - "Vintage-Shops entlang der Brick Lane. Tolle Auswahl, aber fast alle sehr überteuert."
   - "Manche Randbezirke Londons sind weniger sicher. Kurz informieren, welche Gegenden man besser meidet."
 tips:
-  - "Staatliche Museen sind kostenlos: [British Museum](https://www.britishmuseum.org/), [Tate Modern](https://www.tate.org.uk/visit/tate-modern), [National Gallery](https://www.nationalgallery.org.uk/), [V&A](https://www.vam.ac.uk/)"
-  - "[Sky Garden](https://skygarden.london/) kostenlos, aber online buchen. Spontan kommt man nicht rein"
-  - "[Uber Boat by Thames Clippers](https://www.thamesclippers.com/) nutzen. Schöner als die Tube und man sieht dabei die Stadt"
+  - "Staatliche Museen sind kostenlos: [British Museum](https://maps.google.com/?q=British+Museum+London), [Tate Modern](https://maps.google.com/?q=Tate+Modern+London), [National Gallery](https://maps.google.com/?q=National+Gallery+London), [V&A](https://maps.google.com/?q=Victoria+and+Albert+Museum+London)"
+  - "[Sky Garden](https://maps.google.com/?q=Sky+Garden+London) kostenlos, aber online buchen. Spontan kommt man nicht rein"
+  - "[Uber Boat by Thames Clippers](https://maps.google.com/?q=Thames+Clippers+Tower+Pier+London) nutzen. Schöner als die Tube und man sieht dabei die Stadt"
 bestArea: "Spitalfields."
 draft: false
 ---
@@ -109,7 +109,7 @@ Der **Uber Boat** auf der Themse lohnt sich. Günstig, und man sieht dabei mehr 
 
 <img src="/images/orte/london-thames-skyline.jpg" alt="Londoner Skyline bei Nacht vom Uber Boat auf der Themse" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
-**[British Museum](https://www.britishmuseum.org/).** Eintritt kostenlos. Die griechischen Skulpturen sind besonders sehenswert, besonders für unseren Griechen Chris.
+**[British Museum](https://maps.google.com/?q=British+Museum+London).** Eintritt kostenlos. Die griechischen Skulpturen sind besonders sehenswert, besonders für unseren Griechen Chris.
 
 <img src="/images/orte/london-british-museum.jpg" alt="Parthenon-Skulpturen im British Museum — London" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 

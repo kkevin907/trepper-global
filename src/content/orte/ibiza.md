@@ -15,7 +15,7 @@ mapCenter:
   lon: 1.4312
 rating: 5
 highlights:
-  - "[Hï Ibiza](https://www.hiibiza.com/) Opening Night 2026"
+  - "[Hï Ibiza](https://maps.google.com/?q=Hi+Ibiza+Club+Playa+den+Bossa) Opening Night 2026"
   - "[Sonnenaufgang am Playa d'en Bossa](https://maps.google.com/?q=Playa+d%27en+Bossa+Ibiza)"
   - "[La Canela](https://maps.google.com/?q=La+Canela+Ibiza+Stadt). Handgemachte Bäckerei, erste Adresse nach der Nacht."
 sights:
@@ -45,7 +45,7 @@ skip:
   - "Beim Ticketkauf auf die Einlasszeit achten. Manche Tickets sind erst ab 6 Uhr morgens gültig."
   - "Gepäckfach ohne Reservierung suchen. [Easy Lockers](https://easylockersibiza.com/) nur vorab online buchbar."
 tips:
-  - "[Hï Ibiza](https://www.hiibiza.com/). Clubticket mindestens 1 Monat im Voraus buchen. Opening Night 75 € statt 200 €."
+  - "[Hï Ibiza](https://maps.google.com/?q=Hi+Ibiza+Club+Playa+den+Bossa). Clubticket mindestens 1 Monat im Voraus buchen. Opening Night 75 € statt 200 €."
   - "[Easy Lockers Ibiza](https://easylockersibiza.com/) vorab online reservieren. Kein Walk-in."
   - "Shuttle Bus Flughafen ↔ Stadt je 3,50 € pro Person. Kein Taxi nötig."
   - "Großer Lidl am Stadtrand: Getränke für die Promenade zu normalen Preisen"
