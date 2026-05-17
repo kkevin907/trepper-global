@@ -71,7 +71,7 @@ Eine Nacht, kein Hotel, kein Schlaf. Landung 19 Uhr, Abflug 09:30 Uhr am nächst
 
 <img src="/images/orte/ibiza-skepta.jpg" alt="Skepta auf der Bühne — Theatre Room, Hï Ibiza Opening Night 2026" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
-Zur Preisfrage beim Clubticket: Wir hatten einen Monat vorher gebucht: **75 €**. Der Norweger, den wir kennenlernten, buchte zwei Tage davor: **200 €** für dasselbe Ticket. Ein Holländer kaufte noch am selben Abend: **70 €, aber erst ab 6 Uhr gültig**.
+Zur Preisfrage beim Clubticket: Wir hatten einen Monat vorher gebucht: **75 €**. Der Norweger, den wir kennenlernten, buchte zwei Tage davor: **200 €** für das gleiche Ticket. Ein Holländer kaufte noch am selben Abend: **70 €, aber erst ab 6 Uhr gültig**.
 
 **Sonnenaufgang.** Wir sind nach 6 Uhr im Morgengrauen am Playa d'en Bossa zurück in Richtung Stadt gelaufen. So endet eine Nacht auf Ibiza.
 
