@@ -105,10 +105,7 @@ const mapData = JSON.stringify({
               {d.foodSpots.map((f: any) => (
                 <div class="or-food-card">
                   <div class="or-food-header">
-                    {f.link
-                      ? <a href={f.link} target="_blank" rel="noopener noreferrer" class="or-food-name or-food-name--link">{f.name} ↗</a>
-                      : <span class="or-food-name">{f.name}</span>
-                    }
+                    <span class="or-food-name">{f.name}</span>
                     <span class="or-food-stars">{'★'.repeat(f.stars)}{'☆'.repeat(5-f.stars)}</span>
                   </div>
                   <p class="or-food-what">{f.what}</p>
@@ -116,6 +113,12 @@ const mapData = JSON.stringify({
                     {f.area && <span class="or-food-area">📍 {f.area}</span>}
                     {f.tip  && <span class="or-food-tip">💬 {f.tip}</span>}
                   </div>
+                  {f.link && (
+                    <a href={f.link} target="_blank" rel="noopener noreferrer" class="or-gmaps-btn">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                      Google Maps öffnen
+                    </a>
+                  )}
                 </div>
               ))}
             </div>
@@ -181,15 +184,18 @@ const mapData = JSON.stringify({
                 <div class="or-market-list">
                   {d.markets.map((m: any) => (
                     <div class="or-market">
-                      {m.link
-                        ? <a href={m.link} target="_blank" rel="noopener noreferrer" class="or-market-name or-market-name--link">{m.name} ↗</a>
-                        : <div class="or-market-name">{m.name}</div>
-                      }
+                      <div class="or-market-name">{m.name}</div>
                       <div class="or-market-meta">
                         {m.type && <span class="or-market-type">{m.type}</span>}
                         {m.when && <span class="or-market-when">{m.when}</span>}
                       </div>
                       {m.tip && <p class="or-market-tip">{m.tip}</p>}
+                      {m.link && (
+                        <a href={m.link} target="_blank" rel="noopener noreferrer" class="or-gmaps-btn">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                          Google Maps öffnen
+                        </a>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -407,13 +413,30 @@ const mapData = JSON.stringify({
   .or-food-card:hover { box-shadow:var(--shadow); }
   .or-food-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:.3rem; }
   .or-food-name { font-size:.95rem; font-weight:700; color:var(--text); }
-  .or-food-name--link { text-decoration:none; color:var(--coral); transition:opacity .15s; }
-  .or-food-name--link:hover { opacity:.75; }
   .or-food-stars { color:#F59E0B; font-size:.85rem; letter-spacing:1px; }
   .or-food-what  { font-size:.85rem; color:var(--text-mid); margin-bottom:.4rem; }
   .or-food-meta  { display:flex; flex-wrap:wrap; gap:.5rem; }
   .or-food-area  { font-size:.75rem; color:var(--text-light); }
   .or-food-tip   { font-size:.75rem; color:var(--coral); font-weight:600; }
+
+  /* GOOGLE MAPS BUTTON */
+  .or-gmaps-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: .55rem;
+    padding: .32rem .8rem;
+    border-radius: 100px;
+    font-size: .75rem;
+    font-weight: 700;
+    color: #1A73E8;
+    background: #EBF3FD;
+    border: 1.5px solid #C5D8F8;
+    text-decoration: none;
+    transition: background .15s, border-color .15s;
+    white-space: nowrap;
+  }
+  .or-gmaps-btn:hover { background: #D2E7FB; border-color: #93C0F6; }
 
   /* MAP */
   .or-map-wrap { border-radius:14px; overflow:hidden; border:1.5px solid var(--border); }
@@ -471,7 +494,6 @@ const mapData = JSON.stringify({
   .or-market { padding-bottom:.75rem; border-bottom:1px solid var(--border); }
   .or-market:last-child { border-bottom:none; padding-bottom:0; }
   .or-market-name { font-size:.88rem; font-weight:700; color:var(--text); margin-bottom:.2rem; }
-  .or-market-name--link { font-size:.88rem; font-weight:700; color:var(--coral); text-decoration:none; display:block; margin-bottom:.2rem; }
   .or-market-meta { display:flex; gap:.5rem; margin-bottom:.2rem; }
   .or-market-type { font-size:.72rem; font-weight:600; background:#F1F5F9; color:var(--text-mid); padding:1px 7px; border-radius:100px; }
   .or-market-when { font-size:.72rem; font-weight:600; background:var(--green-light); color:#065F46; padding:1px 7px; border-radius:100px; }
