@@ -401,8 +401,24 @@ const mapData = JSON.stringify({
   .or-prose strong { color:var(--text); font-weight:700; }
   :global(.or-photo-hint) { display:flex; align-items:center; gap:.5rem; background:#F8FAFC; border:2px dashed var(--border); border-radius:10px; padding:.75rem 1rem; margin:1.25rem 0; font-size:.82rem; color:var(--text-light); }
   :global(.or-photo-hint em) { font-style:normal; color:var(--text-light); }
-  :global(.or-inline-link) { color:var(--coral); text-decoration:underline; text-decoration-color:var(--coral-mid); text-underline-offset:2px; transition:opacity .15s; }
-  :global(.or-inline-link:hover) { opacity:.75; }
+  :global(.or-inline-link) {
+    color: #C2410C;
+    background: #FFF7ED;
+    border: 1px solid #FDBA74;
+    border-radius: 4px;
+    padding: 0px 5px 1px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background .15s, border-color .15s;
+    font-size: 0.94em;
+  }
+  :global(.or-inline-link::after) {
+    content: ' ↗';
+    font-size: 0.78em;
+    opacity: 0.6;
+    font-weight: 400;
+  }
+  :global(.or-inline-link:hover) { background: #FEF3C7; border-color: #FCD34D; }
 
   .or-section { margin-bottom:2.5rem; }
   .or-section-title { font-size:1.1rem; font-weight:800; letter-spacing:-.02em; color:var(--text); margin-bottom:1rem; padding-bottom:.6rem; border-bottom:2px solid var(--border); }
