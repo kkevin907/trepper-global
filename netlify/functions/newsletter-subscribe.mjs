@@ -24,8 +24,8 @@ export default async (request) => {
     });
   }
 
-  const apiKey  = process.env.MAILERLITE_API_KEY;
-  const groupId = process.env.MAILERLITE_GROUP_ID;
+  const apiKey  = (process.env.MAILERLITE_API_KEY  || '').trim();
+  const groupId = (process.env.MAILERLITE_GROUP_ID || '').trim();
 
   if (!apiKey || !groupId) {
     return new Response(JSON.stringify({ success: false, error: 'Server-Konfigurationsfehler.' }), {
@@ -35,13 +35,14 @@ export default async (request) => {
   }
 
   try {
-    const res = await fetch(`https://api.mailerlite.com/api/v2/groups/${groupId}/subscribers`, {
+    const res = await fetch('https://connect.mailerlite.com/api/subscribers', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'X-MailerLite-ApiKey': apiKey,
+        'Authorization': `Bearer ${apiKey}`,
+        'Accept': 'application/json',
       },
-      body: JSON.stringify({ email }),
+      body: JSON.stringify({ email, groups: [groupId] }),
     });
 
     if (res.ok) {
