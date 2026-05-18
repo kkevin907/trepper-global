@@ -428,9 +428,12 @@ function gmapsUrl(label: string, city: string, lat?: number, lon?: number) {
   }
 
   /* MAP COL */
-  .jt-map-col { border-radius: 16px; overflow: hidden; }
+  .jt-map-col { padding-top: .5rem; }
   #jetzt-city-map { height: 300px; }
-  @media (max-width: 800px) { #jetzt-city-map { height: 360px; } }
+  @media (max-width: 800px) {
+    #jetzt-city-map { height: 360px; }
+    .jt-map-col { padding-top: 1.5rem; }
+  }
   @media (max-width: 480px) { #jetzt-city-map { height: 260px; } }
 
   /* SECTIONS */
