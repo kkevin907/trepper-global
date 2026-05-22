@@ -24,8 +24,8 @@ export default async function handler(req, context) {
     });
   }
 
-  const apiKey   = process.env.MAILERLITE_API_KEY;
-  const groupId  = process.env.MAILERLITE_GROUP_ID;
+  const apiKey   = (process.env.MAILERLITE_API_KEY  || '').replace(/\s/g, '');
+  const groupId  = (process.env.MAILERLITE_GROUP_ID || '').trim();
 
   if (!apiKey) {
     return new Response(JSON.stringify({ error: 'Newsletter momentan nicht verfügbar.' }), {
