@@ -114,13 +114,9 @@ const fullTitle    = title === "Home" ? "Trepper Global — Von Solingen in die 
         <h2 class="fb-title" id="fb-title">Feedback</h2>
         <p class="fb-sub">Was funktioniert nicht? Was könnte besser sein? Alles willkommen.</p>
 
-        <!-- Netlify Forms detection -->
-        <form name="feedback" data-netlify="true" netlify-honeypot="bot-field" hidden>
-          <input type="text" name="nachricht" />
-          <input type="email" name="email" />
-        </form>
-
-        <form class="fb-form" id="fb-form" novalidate>
+        <form class="fb-form" id="fb-form" name="feedback" method="POST" data-netlify="true" netlify novalidate>
+          <input type="hidden" name="form-name" value="feedback" />
+          <input type="text" name="bot-field" style="display:none" aria-hidden="true" />
           <textarea
             id="fb-msg"
             name="nachricht"
@@ -680,7 +676,7 @@ const fullTitle    = title === "Home" ? "Trepper Global — Von Solingen in die 
       submit.classList.add('loading');
 
       try {
-        await fetch('/', {
+        await fetch(window.location.pathname, {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: new URLSearchParams({
