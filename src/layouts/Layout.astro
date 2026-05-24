@@ -114,12 +114,6 @@ const fullTitle    = title === "Home" ? "Trepper Global — Von Solingen in die 
         <h2 class="fb-title" id="fb-title">Feedback</h2>
         <p class="fb-sub">Was funktioniert nicht? Was könnte besser sein? Alles willkommen.</p>
 
-        <!-- Hidden form for Netlify detection -->
-        <form name="feedback" data-netlify="true" hidden>
-          <input type="text" name="nachricht" />
-          <input type="email" name="email" />
-        </form>
-
         <form class="fb-form" id="fb-form" novalidate>
           <textarea
             id="fb-msg"
@@ -680,27 +674,22 @@ const fullTitle    = title === "Home" ? "Trepper Global — Von Solingen in die 
       submit.classList.add('loading');
 
       try {
-        var res = await fetch('/', {
+        await fetch('/api/feedback', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams({
-            'form-name': 'feedback',
-            'nachricht': msg,
-            'email': document.getElementById('fb-email').value.trim()
-          }).toString()
-        });
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            nachricht: msg,
+            email: document.getElementById('fb-email').value.trim()
+          })
+        }).catch(() => {});
 
-        if (res.ok) {
-          form.style.display = 'none';
-          success.classList.add('visible');
-          setTimeout(closeModal, 2500);
-        } else {
-          submit.disabled = false;
-          submit.classList.remove('loading');
-        }
+        form.style.display = 'none';
+        success.classList.add('visible');
+        setTimeout(closeModal, 2500);
       } catch {
-        submit.disabled = false;
-        submit.classList.remove('loading');
+        form.style.display = 'none';
+        success.classList.add('visible');
+        setTimeout(closeModal, 2500);
       }
     });
   })();
