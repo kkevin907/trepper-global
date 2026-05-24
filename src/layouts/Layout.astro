@@ -59,6 +59,35 @@ const fullTitle    = title === "Home" ? "Trepper Global — Von Solingen in die 
 
     <!-- Umami Analytics -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="8742655c-5cd6-46e5-975a-c6c96d5b58f6"></script>
+
+    <!-- JSON-LD: WebSite + Person (global) -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://trepper-global.de/#website",
+          "url": "https://trepper-global.de",
+          "name": "Trepper Global",
+          "description": "Kevins Reise-Logbuch. Von Solingen nach Asien und weiter. Alle Stops, Food-Spots und was wirklich passiert ist.",
+          "inLanguage": "de-DE",
+          "publisher": { "@id": "https://trepper-global.de/#person" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://trepper-global.de/#person",
+          "name": "Kevin Trepper",
+          "url": "https://trepper-global.de/about",
+          "sameAs": [
+            "https://instagram.com/kevin.ontour",
+            "https://tiktok.com/@kevin.ontour"
+          ]
+        }
+      ]
+    })} />
+
+    <!-- Slot für seiten-spezifische JSON-LD-Schemas -->
+    <slot name="head" />
   </head>
   <body>
     <nav class="nav">

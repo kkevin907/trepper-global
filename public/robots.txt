@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://trepper.global/sitemap-index.xml
+Sitemap: https://trepper-global.de/sitemap-index.xml

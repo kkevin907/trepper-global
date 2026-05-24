@@ -53,8 +53,43 @@ const mapData = JSON.stringify({
 
 <Layout
   title={d.title}
-  description={`Ich war in ${d.title}. Was ich dort gemacht hab, wo ich gegessen hab und was sich wirklich lohnt.`}
+  description={`Ich war in ${d.title}. Was ich dort gemacht habe, wo ich gegessen habe und was sich wirklich lohnt.`}
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": `${d.title} – Was ich dort gemacht habe`,
+      "description": `Ich war in ${d.title}. Was ich dort gemacht habe, wo ich gegessen habe und was sich wirklich lohnt.`,
+      "url": `https://trepper-global.de/orte/${ort.id}`,
+      "datePublished": new Date(d.dateFrom).toISOString().split('T')[0],
+      "dateModified": new Date(d.dateTo).toISOString().split('T')[0],
+      ...(d.coverImage ? { "image": `https://trepper-global.de${d.coverImage}` } : {}),
+      "author": {
+        "@type": "Person",
+        "@id": "https://trepper-global.de/#person",
+        "name": "Kevin Trepper",
+        "url": "https://trepper-global.de/about"
+      },
+      "publisher": {
+        "@type": "Person",
+        "@id": "https://trepper-global.de/#person",
+        "name": "Kevin Trepper"
+      },
+      "about": {
+        "@type": "Place",
+        "name": d.title,
+        "address": { "@type": "PostalAddress", "addressCountry": d.country }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": d.rating,
+        "bestRating": 5,
+        "worstRating": 1,
+        "ratingCount": 1
+      }
+    })} />
+  </Fragment>
 
   <!-- STICKY BACK -->
   <a href="/orte" class="or-sticky-back">← Alle Orte</a>
