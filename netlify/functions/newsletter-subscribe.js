@@ -1,8 +1,20 @@
+const CORS_HEADERS = {
+  'Content-Type': 'application/json',
+  'Access-Control-Allow-Origin': 'https://trepper-global.de',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type',
+};
+
 export default async function handler(req, context) {
+  // Preflight
+  if (req.method === 'OPTIONS') {
+    return new Response(null, { status: 204, headers: CORS_HEADERS });
+  }
+
   if (req.method !== 'POST') {
     return new Response(JSON.stringify({ error: 'Method not allowed' }), {
       status: 405,
-      headers: { 'Content-Type': 'application/json' },
+      headers: CORS_HEADERS,
     });
   }
 
@@ -12,7 +24,7 @@ export default async function handler(req, context) {
   } catch {
     return new Response(JSON.stringify({ error: 'Ungültige Anfrage' }), {
       status: 400,
-      headers: { 'Content-Type': 'application/json' },
+      headers: CORS_HEADERS,
     });
   }
 
@@ -20,17 +32,17 @@ export default async function handler(req, context) {
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return new Response(JSON.stringify({ error: 'Bitte gib eine gültige E-Mail-Adresse ein.' }), {
       status: 400,
-      headers: { 'Content-Type': 'application/json' },
+      headers: CORS_HEADERS,
     });
   }
 
-  const apiKey   = (process.env.MAILERLITE_API_KEY  || '').replace(/\s/g, '');
-  const groupId  = (process.env.MAILERLITE_GROUP_ID || '').trim();
+  const apiKey  = (process.env.MAILERLITE_API_KEY  || '').replace(/\s/g, '');
+  const groupId = (process.env.MAILERLITE_GROUP_ID || '').trim();
 
   if (!apiKey) {
     return new Response(JSON.stringify({ error: 'Newsletter momentan nicht verfügbar.' }), {
       status: 503,
-      headers: { 'Content-Type': 'application/json' },
+      headers: CORS_HEADERS,
     });
   }
 
@@ -51,15 +63,19 @@ export default async function handler(req, context) {
   if (mlRes.status === 200 || mlRes.status === 201) {
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
-      headers: { 'Content-Type': 'application/json' },
+      headers: CORS_HEADERS,
     });
   }
 
-  const err = await mlRes.json().catch(() => ({}));
-  const message = err?.message || 'Unbekannter Fehler';
+  // Generic error — don't leak internal API details
+  const status = mlRes.status;
+  const message = status === 422
+    ? 'Diese E-Mail-Adresse ist ungültig.'
+    : 'Newsletter momentan nicht verfügbar. Versuch es später nochmal.';
+
   return new Response(JSON.stringify({ error: message }), {
-    status: mlRes.status,
-    headers: { 'Content-Type': 'application/json' },
+    status: 400,
+    headers: CORS_HEADERS,
   });
 }
 

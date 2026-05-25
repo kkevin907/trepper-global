@@ -50,12 +50,12 @@ import WorldMap from '../components/WorldMap.astro';
         <a href="/logbook" class="nf-btn nf-btn--ghost">Zum Logbuch</a>
       </div>
 
-      <a href="javascript:history.back()" class="nf-back">
+      <button class="nf-back" onclick="history.back()">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="15 18 9 12 15 6"/>
         </svg>
         Zurück zur letzten Seite
-      </a>
+      </button>
     </div>
   </div>
 
@@ -272,6 +272,11 @@ import WorldMap from '../components/WorldMap.astro';
     color: var(--text-light);
     transition: color .15s;
     margin-top: -.25rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
   }
   .nf-back:hover { color: var(--text-mid); }
 
