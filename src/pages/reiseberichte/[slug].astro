@@ -61,7 +61,7 @@ const mapData = JSON.stringify({
       "@type": "BlogPosting",
       "headline": `${d.title} – Was ich dort gemacht habe`,
       "description": `Ich war in ${d.title}. Was ich dort gemacht habe, wo ich gegessen habe und was sich wirklich lohnt.`,
-      "url": `https://trepper-global.de/orte/${ort.id}`,
+      "url": `https://trepper-global.de/reiseberichte/${ort.id}`,
       "datePublished": new Date(d.dateFrom).toISOString().split('T')[0],
       "dateModified": new Date(d.dateTo).toISOString().split('T')[0],
       ...(d.coverImage ? { "image": `https://trepper-global.de${d.coverImage}` } : {}),
@@ -92,7 +92,7 @@ const mapData = JSON.stringify({
   </Fragment>
 
   <!-- STICKY BACK -->
-  <a href="/orte" class="or-sticky-back">← Alle Orte</a>
+  <a href="/reiseberichte" class="or-sticky-back">← Alle Reiseberichte</a>
 
   <!-- HEADER -->
   <div class="or-header">

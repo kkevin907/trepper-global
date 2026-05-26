@@ -62,7 +62,7 @@ const started  = daysLeft <= 0;
                 const costLabels = ['', 'Günstig', 'Günstig', 'Bezahlbar', 'Teuer', 'Sehr teuer'];
                 const stars = '★'.repeat(d.rating) + '☆'.repeat(5 - d.rating);
                 return (
-                  <a href={`/orte/${ort.id}`} class="lb-ort-card">
+                  <a href={`/reiseberichte/${ort.id}`} class="lb-ort-card">
                     <div class="lb-ort-top">
                       <span class="lb-ort-flag">{d.flag}</span>
                       <div>
@@ -81,7 +81,7 @@ const started  = daysLeft <= 0;
               })}
             </div>
 
-            <a href="/orte" class="lb-all-link">Alle Orte ansehen →</a>
+            <a href="/reiseberichte" class="lb-all-link">Alle Reiseberichte →</a>
           </div>
 
         </div>

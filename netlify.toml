@@ -45,6 +45,17 @@
   to     = "/live-dabei"
   status = 301
 
+# Alte /orte-URLs auf /reiseberichte umleiten
+[[redirects]]
+  from   = "/orte"
+  to     = "/reiseberichte"
+  status = 301
+
+[[redirects]]
+  from   = "/orte/*"
+  to     = "/reiseberichte/:splat"
+  status = 301
+
 # 404 auf eigene Fehlerseite routen
 [[redirects]]
   from   = "/*"

@@ -18,7 +18,7 @@ const costLabels  = ['', 'Günstig', 'Günstig', 'Bezahlbar', 'Teuer', 'Sehr teu
 ---
 
 <Layout
-  title="Orte"
+  title="Reiseberichte"
   description="Alle Orte wo ich war. Was sich gelohnt hat, was nicht und wo man gut essen kann."
 >
 
@@ -26,7 +26,7 @@ const costLabels  = ['', 'Günstig', 'Günstig', 'Bezahlbar', 'Teuer', 'Sehr teu
 
   <div class="oi-header">
     <div class="oi-header-inner">
-      <h1 class="oi-title reveal">Meine Orte</h1>
+      <h1 class="oi-title reveal">Reiseberichte</h1>
       <p class="oi-sub reveal">Jeder Ort. Ehrlich bewertet.</p>
     </div>
   </div>
@@ -44,7 +44,7 @@ const costLabels  = ['', 'Günstig', 'Günstig', 'Bezahlbar', 'Teuer', 'Sehr teu
             const d = ort.data;
             const isReal   = !d.highlights[0].startsWith('TODO');
             const Tag      = isReal ? 'a' : 'div';
-            const props    = isReal ? { href: `/orte/${ort.id}` } : {};
+            const props    = isReal ? { href: `/reiseberichte/${ort.id}` } : {};
 
             return (
               <Tag {...props} class={`oi-card${isReal ? ' oi-card--link' : ' oi-card--soon'}`}>

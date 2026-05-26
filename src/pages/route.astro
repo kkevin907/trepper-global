@@ -86,14 +86,14 @@ const mainStations    = stations.filter(s => s.phase === 'main');
                       <div class="station-header">
                         <span class="station-flag">{station.flag}</span>
                         {hasReport
-                          ? <a href={`/orte/${station.id}`} class="station-name station-name--link">{station.name}</a>
+                          ? <a href={`/reiseberichte/${station.id}`} class="station-name station-name--link">{station.name}</a>
                           : <span class="station-name">{station.name}</span>
                         }
                         <span class="station-country">{station.country}</span>
                         <span class="station-badge" style={`background:${color}20;color:${color};`}>{label}</span>
                       </div>
                       {station.status !== 'upcoming' && station.description && <p class="station-desc">{station.description}</p>}
-                      {hasReport && <a href={`/orte/${station.id}`} class="station-report-link">Reisebericht lesen →</a>}
+                      {hasReport && <a href={`/reiseberichte/${station.id}`} class="station-report-link">Reisebericht lesen →</a>}
                     </div>
                   </div>
                 );
@@ -126,7 +126,7 @@ const mainStations    = stations.filter(s => s.phase === 'main');
                       <div class="station-header">
                         <span class="station-flag">{station.flag}</span>
                         {hasReport
-                          ? <a href={`/orte/${station.id}`} class="station-name station-name--link">{station.name}</a>
+                          ? <a href={`/reiseberichte/${station.id}`} class="station-name station-name--link">{station.name}</a>
                           : <span class="station-name">{station.name}</span>
                         }
                         <span class="station-country">{station.country}</span>
@@ -169,7 +169,7 @@ const mainStations    = stations.filter(s => s.phase === 'main');
                       <div class="station-header">
                         <span class="station-flag">{station.flag}</span>
                         {hasReport
-                          ? <a href={`/orte/${station.id}`} class="station-name station-name--link">{station.name}</a>
+                          ? <a href={`/reiseberichte/${station.id}`} class="station-name station-name--link">{station.name}</a>
                           : <span class="station-name">{station.name}</span>
                         }
                         <span class="station-country">{station.country}</span>
@@ -212,7 +212,7 @@ const mainStations    = stations.filter(s => s.phase === 'main');
                       <div class="station-header">
                         <span class="station-flag">{station.flag}</span>
                         {hasReport
-                          ? <a href={`/orte/${station.id}`} class="station-name station-name--link">{station.name}</a>
+                          ? <a href={`/reiseberichte/${station.id}`} class="station-name station-name--link">{station.name}</a>
                           : <span class="station-name">{station.name}</span>
                         }
                         <span class="station-country">{station.country}</span>
@@ -255,7 +255,7 @@ const mainStations    = stations.filter(s => s.phase === 'main');
                       <div class="station-header">
                         <span class="station-flag">{station.flag}</span>
                         {hasReport
-                          ? <a href={`/orte/${station.id}`} class="station-name station-name--link">{station.name}</a>
+                          ? <a href={`/reiseberichte/${station.id}`} class="station-name station-name--link">{station.name}</a>
                           : <span class="station-name">{station.name}</span>
                         }
                         <span class="station-country">{station.country}</span>
@@ -299,7 +299,7 @@ const mainStations    = stations.filter(s => s.phase === 'main');
                       <div class="station-header">
                         <span class="station-flag">{station.flag}</span>
                         {hasReport
-                          ? <a href={`/orte/${station.id}`} class="station-name station-name--link">{station.name}</a>
+                          ? <a href={`/reiseberichte/${station.id}`} class="station-name station-name--link">{station.name}</a>
                           : <span class="station-name">{station.name}</span>
                         }
                         <span class="station-country">{station.country}</span>
@@ -345,7 +345,7 @@ const mainStations    = stations.filter(s => s.phase === 'main');
                       <div class="station-header">
                         <span class="station-flag">{station.flag}</span>
                         {hasReport
-                          ? <a href={`/orte/${station.id}`} class="station-name station-name--link">{station.name}</a>
+                          ? <a href={`/reiseberichte/${station.id}`} class="station-name station-name--link">{station.name}</a>
                           : <span class="station-name">{station.name}</span>
                         }
                         <span class="station-country">{station.country}</span>
@@ -353,7 +353,7 @@ const mainStations    = stations.filter(s => s.phase === 'main');
                         {hasReport && <span class="station-report-badge">📖 Bericht</span>}
                       </div>
                       {station.status !== 'upcoming' && station.description && <p class="station-desc">{station.description}</p>}
-                      {hasReport && <a href={`/orte/${station.id}`} class="station-report-link">Reisebericht lesen →</a>}
+                      {hasReport && <a href={`/reiseberichte/${station.id}`} class="station-report-link">Reisebericht lesen →</a>}
                     </div>
                   </div>
                 );

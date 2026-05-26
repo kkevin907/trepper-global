@@ -136,7 +136,7 @@ const locLon = currentStation.lon;
       <!-- Buttons -->
       <div class="ph-actions">
         <a href="/about" class="ph-btn-ghost">Über mich</a>
-        <a href="/orte" class="ph-btn-ghost ph-btn-mobile-only">Orte</a>
+        <a href="/reiseberichte" class="ph-btn-ghost ph-btn-mobile-only">Reiseberichte</a>
         <a href="/route" class="ph-btn-ghost ph-btn-mobile-only">Route</a>
       </div>
 
@@ -226,7 +226,7 @@ const locLon = currentStation.lon;
                 <div class="ph-tl-top">
                   <span class="ph-tl-flag">{s.flag}</span>
                   {orteIdSet.has(s.id)
-                    ? <a href={`/orte/${s.id}`} class="ph-tl-name ph-tl-name--link">{s.name}</a>
+                    ? <a href={`/reiseberichte/${s.id}`} class="ph-tl-name ph-tl-name--link">{s.name}</a>
                     : <span class="ph-tl-name">{s.name}</span>
                   }
                 </div>

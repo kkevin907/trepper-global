@@ -197,7 +197,7 @@ const doFitVisitedOnly = fitVisitedOnly;
           : '<span style="background:' + color + '22;color:' + color + ';font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;padding:2px 7px;border-radius:100px;">' + label + '</span>');
 
       var reportLink = orteIds.indexOf(s.id) !== -1
-        ? '<a href="/orte/' + s.id + '" style="display:block;margin-top:8px;font-size:0.76rem;font-weight:700;color:#F97316;text-decoration:none;background:#FFF7ED;border:1.5px solid #FDBA74;padding:5px 10px;border-radius:8px;text-align:center;">Zum Bericht →</a>'
+        ? '<a href="/reiseberichte/' + s.id + '" style="display:block;margin-top:8px;font-size:0.76rem;font-weight:700;color:#F97316;text-decoration:none;background:#FFF7ED;border:1.5px solid #FDBA74;padding:5px 10px;border-radius:8px;text-align:center;">Zum Bericht →</a>'
         : '';
 
       var marker = L.marker([s.lat, s.lon], { icon: icon });
