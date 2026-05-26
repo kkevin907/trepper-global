@@ -260,6 +260,27 @@ const locLon = currentStation.lon;
             </>
           ))}
 
+          <!-- 🏠 AKTUELL: Solingen — bis 9. Juni, danach ausblenden -->
+          {new Date() < new Date('2026-06-09T13:45:00+02:00') && (
+            <>
+              <div class="ph-tl-stop ph-tl-stop--current">
+                <div class="ph-tl-top">
+                  <span class="ph-tl-flag">🇩🇪</span>
+                  <span class="ph-tl-name">Solingen</span>
+                </div>
+                <div class="ph-tl-dot-row">
+                  <div class="ph-tl-dot ph-tl-dot--current">
+                    <span class="ph-tl-dot-pulse"></span>
+                  </div>
+                </div>
+                <div class="ph-tl-bot">
+                  <span class="ph-tl-badge ph-tl-badge--current">Jetzt hier</span>
+                </div>
+              </div>
+              <div class="ph-tl-line tl-solid"></div>
+            </>
+          )}
+
           <!-- 🌏 START — Abflug 9. Juni -->
           <div class="ph-tl-start" id="ph-tl-start-marker">
             <div class="ph-tl-top"><span class="ph-tl-start-label">Abflug<br/>Asien</span></div>
@@ -1043,6 +1064,32 @@ const locLon = currentStation.lon;
   padding: 2px 7px;
   border-radius: 100px;
   white-space: nowrap;
+}
+
+/* Aktueller Standort */
+.ph-tl-dot--current {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #F97316;
+  box-shadow: 0 0 0 3px #F9731622;
+  position: relative;
+}
+.ph-tl-dot-pulse {
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 2px solid rgba(249,115,22,.4);
+  animation: tlpulse 2s ease-in-out infinite;
+}
+@keyframes tlpulse {
+  0%,100% { transform: scale(1); opacity: 1; }
+  50%      { transform: scale(1.6); opacity: 0; }
+}
+.ph-tl-badge--current {
+  background: #FFF7ED;
+  color: #C2410C;
+  border: 1.5px solid #FDBA74;
 }
 
 /* Connecting lines */
