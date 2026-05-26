@@ -1211,32 +1211,33 @@ const locLon = currentStation.lon;
   background: white;
   border: 1.5px solid var(--border);
   border-radius: 20px;
-  max-width: 680px;
+  max-width: 720px;
   margin: 0 auto;
-  box-shadow: 0 4px 20px rgba(15,23,42,.08);
+  box-shadow: 0 4px 24px rgba(15,23,42,.07);
   overflow: hidden;
 }
 
 .ph-at-photo-wrap {
-  width: 190px;
+  width: 240px;
   flex-shrink: 0;
   overflow: hidden;
+  position: relative;
 }
 
 .ph-at-img {
   width: 100%;
   height: 100%;
-  min-height: 250px;
+  min-height: 280px;
   object-fit: cover;
-  object-position: 60% 58%;
-  transform: scale(1.3);
-  transform-origin: 60% 55%;
+  object-position: 62% 30%;
+  transform: scale(1.55);
+  transform-origin: 62% 28%;
   display: block;
 }
 
 .ph-at-body {
   flex: 1;
-  padding: 1.5rem 1.75rem;
+  padding: 1.75rem 2rem;
   min-width: 0;
   display: flex;
   flex-direction: column;
@@ -1244,20 +1245,20 @@ const locLon = currentStation.lon;
 }
 
 .ph-at-label {
-  font-size: .7rem;
+  font-size: .68rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: .08em;
-  color: var(--text-light);
-  margin-bottom: .25rem;
+  letter-spacing: .1em;
+  color: var(--coral);
+  margin-bottom: .35rem;
 }
 
 .ph-at-name {
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 800;
-  letter-spacing: -.03em;
+  letter-spacing: -.04em;
   color: var(--text);
-  margin-bottom: .9rem;
+  margin-bottom: 1rem;
 }
 
 .ph-at-facts {
@@ -1265,16 +1266,16 @@ const locLon = currentStation.lon;
   border: 1.5px solid var(--border);
   border-radius: 10px;
   overflow: hidden;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.25rem;
 }
 
 .ph-at-facts li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: .45rem .75rem;
+  padding: .5rem .85rem;
   border-bottom: 1px solid var(--border);
-  font-size: .82rem;
+  font-size: .83rem;
 }
 .ph-at-facts li:last-child { border-bottom: none; }
 
@@ -1289,38 +1290,49 @@ const locLon = currentStation.lon;
   text-align: right;
 }
 
-.ph-at-coral { color: var(--coral); }
+.ph-at-coral { color: var(--coral); font-weight: 700; }
 
 .ph-at-btn {
   display: inline-flex;
   align-items: center;
   gap: .3rem;
-  font-size: .82rem;
+  font-size: .85rem;
   font-weight: 700;
   color: white;
   background: var(--coral);
-  padding: .5rem 1rem;
+  padding: .55rem 1.1rem;
   border-radius: 100px;
   text-decoration: none;
-  transition: background .15s, transform .15s;
+  transition: background .15s, transform .15s, box-shadow .15s;
   align-self: flex-start;
 }
-.ph-at-btn:hover { background: #EA6A0A; transform: translateY(-1px); }
+.ph-at-btn:hover {
+  background: #EA6A0A;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(249,115,22,.35);
+}
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
+  .ph-at-photo-wrap { width: 160px; }
+  .ph-at-img { min-height: 240px; }
+  .ph-at-body { padding: 1.25rem 1.35rem; }
+  .ph-at-name { font-size: 1.25rem; margin-bottom: .8rem; }
+  .ph-at-facts li { font-size: .78rem; padding: .42rem .7rem; }
+}
+
+@media (max-width: 480px) {
   .ph-about-teaser { padding: 1.5rem 1.25rem 0; }
-  .ph-at-photo-wrap { width: 140px; }
-  .ph-at-img { min-height: 210px; }
-  .ph-at-body { padding: 1.1rem 1.1rem; }
-  .ph-at-name { font-size: 1.15rem; margin-bottom: .75rem; }
-  .ph-at-facts li { font-size: .77rem; padding: .4rem .65rem; }
+  .ph-at-card { flex-direction: column; }
+  .ph-at-photo-wrap { width: 100%; height: 200px; }
+  .ph-at-img { min-height: unset; height: 200px; object-position: 62% 20%; transform: scale(1.4); transform-origin: 62% 18%; }
+  .ph-at-body { padding: 1.25rem; }
+  .ph-at-name { font-size: 1.2rem; }
 }
 
 @media (max-width: 380px) {
-  .ph-at-photo-wrap { width: 115px; }
-  .ph-at-img { min-height: 185px; }
-  .ph-at-body { padding: .9rem; }
-  .ph-at-name { font-size: 1.05rem; }
+  .ph-at-body { padding: .9rem 1rem; }
+  .ph-at-name { font-size: 1.1rem; }
+  .ph-at-facts li { font-size: .75rem; }
 }
 
 /* ── REISEBERICHTE TEASER ── */
