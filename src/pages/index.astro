@@ -609,6 +609,7 @@ const locLon = currentStation.lon;
   border-bottom: 1px solid #E2E8F0;
   display: flex;
   align-items: stretch;
+  max-height: calc(100svh - 64px);
 }
 
 .ph-blob { position:absolute; border-radius:50%; filter:blur(80px); pointer-events:none; z-index:0; }
@@ -882,7 +883,7 @@ const locLon = currentStation.lon;
 
 /* ── HERO RIGHT (Map) ── */
 .ph-hero-right {
-  height: 480px;
+  height: min(480px, calc(100svh - 220px));
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 8px 40px rgba(15,23,42,.13);
