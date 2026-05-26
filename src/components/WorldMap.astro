@@ -73,6 +73,14 @@ const doFitVisitedOnly = fitVisitedOnly;
     var stations = JSON.parse(stationsJSON);
     var orteIds  = JSON.parse(orteIdsJSON);
 
+    // Ab 9. Juni 2026 automatisch auf erste Hauptreise-Station umschalten
+    var DEPARTURE = new Date('2026-06-09T00:00:00');
+    var effectiveCurrentId = currentStationId;
+    if (new Date() >= DEPARTURE) {
+      var firstMain = stations.find(function(s) { return s.phase === 'main'; });
+      if (firstMain) effectiveCurrentId = firstMain.id;
+    }
+
     var map = L.map(mapId, {
       scrollWheelZoom: false,
       zoomControl: true,
@@ -134,7 +142,7 @@ const doFitVisitedOnly = fitVisitedOnly;
       var color  = colorMap[s.status] || '#94A3B8';
       var label  = labelMap[s.status] || s.status;
       var dim    = (s.status === 'upcoming') ? '0.65' : '1';
-      var isHere = s.id === currentStationId;
+      var isHere = s.id === effectiveCurrentId;
 
       var icon;
       if (isHere) {
@@ -213,7 +221,7 @@ const doFitVisitedOnly = fitVisitedOnly;
 
     // Bounds / Zoom
     if (doCenterCurrent) {
-      var cur = stations.find(function(s) { return s.id === currentStationId; });
+      var cur = stations.find(function(s) { return s.id === effectiveCurrentId; });
       if (cur) {
         map.setView([cur.lat, cur.lon], doCenterZoom);
       } else {
