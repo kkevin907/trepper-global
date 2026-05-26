@@ -263,7 +263,7 @@ const locLon = currentStation.lon;
           <!-- 🏠 AKTUELL: Solingen — bis 9. Juni, danach ausblenden -->
           {new Date() < new Date('2026-06-09T13:45:00+02:00') && (
             <>
-              <div class="ph-tl-stop ph-tl-stop--current">
+              <div class="ph-tl-stop ph-tl-stop--current" id="ph-tl-current">
                 <div class="ph-tl-top">
                   <span class="ph-tl-flag">🇩🇪</span>
                   <span class="ph-tl-name">Solingen</span>
@@ -354,10 +354,17 @@ const locLon = currentStation.lon;
 (function () {
   function initTimeline() {
     var container = document.getElementById('ph-timeline');
-    var marker    = document.getElementById('ph-tl-start-marker');
-    if (!container || !marker) return;
+    if (!container) return;
 
-    // 🌏-Marker zentrieren
+    // Aktuellen Stop zentrieren:
+    // Vor Abflug → Solingen (#ph-tl-current), danach → Abflug-Marker (#ph-tl-start-marker)
+    var ABFLUG  = new Date('2026-06-09T13:45:00+02:00');
+    var marker  = new Date() < ABFLUG
+      ? document.getElementById('ph-tl-current')
+      : document.getElementById('ph-tl-start-marker');
+    if (!marker) marker = document.getElementById('ph-tl-start-marker');
+    if (!marker) return;
+
     function centerMarker() {
       var cw = container.offsetWidth;
       var ml = marker.offsetLeft;
