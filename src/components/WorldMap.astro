@@ -145,8 +145,8 @@ const doFitVisitedOnly = fitVisitedOnly;
       var isHere = s.id === effectiveCurrentId;
 
       var icon;
-      if (isHere) {
-        // Aktueller Standort: coral, doppelter Pulsring, "HIER" Label
+      if (isHere && s.status !== 'home') {
+        // Aktuell unterwegs: coral, doppelter Pulsring, "HIER" Label
         icon = L.divIcon({
           className: '',
           html: '<div style="position:relative;width:52px;height:52px;">'
@@ -159,10 +159,14 @@ const doFitVisitedOnly = fitVisitedOnly;
           iconAnchor: [26, 26],
         });
       } else if (s.status === 'home') {
-        // Heimat: grau, klein, kein Puls — dezenter Referenzpunkt
+        // Heimat: grau — mit HIER-Label wenn aktueller Standort, sonst dezenter Punkt
+        var hereLabel = isHere
+          ? '<div style="position:absolute;top:-18px;left:50%;transform:translateX(-50%);background:#94A3B8;color:white;font-size:9px;font-weight:800;font-family:system-ui,sans-serif;letter-spacing:.04em;padding:2px 6px;border-radius:100px;white-space:nowrap;">HIER</div>'
+          : '';
         icon = L.divIcon({
           className: '',
           html: '<div style="position:relative;width:22px;height:22px;">'
+              + hereLabel
               + '<div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:12px;height:12px;background:#94A3B8;border:2.5px solid white;border-radius:50%;box-shadow:0 1px 6px #94A3B880;"></div>'
               + '</div>',
           iconSize: [22, 22],
@@ -186,7 +190,7 @@ const doFitVisitedOnly = fitVisitedOnly;
         dateStr = new Date(s.dateFrom).toLocaleDateString('de-DE', { month: 'short', year: 'numeric' });
       }
 
-      var badge = isHere
+      var badge = (isHere && s.status !== 'home')
         ? '<span style="background:#FFF7ED;border:1.5px solid #FDBA74;color:#C2410C;font-size:0.62rem;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;padding:2px 7px;border-radius:100px;">📍 Hier</span>'
         : (s.status === 'upcoming'
           ? '<span style="background:#E0F2FE;border:1.5px solid #7DD3FC;color:#0369A1;font-size:0.62rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;padding:2px 7px;border-radius:100px;">🌏 Weltreise</span>'
