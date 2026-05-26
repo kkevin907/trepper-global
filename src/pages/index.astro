@@ -8,8 +8,17 @@ import config from '../data/config.json';
 import { getCollection } from 'astro:content';
 
 const orteEntries = await getCollection('orte', ({ data }) => !data.draft);
-const orteIdSet = new Set(orteEntries.filter(o => !o.data.highlights[0].startsWith('TODO')).map(o => o.data.stationId));
+const realOrte = orteEntries.filter(o => !o.data.highlights[0].startsWith('TODO'));
+const orteIdSet = new Set(realOrte.map(o => o.data.stationId));
 const orteCount = orteIdSet.size;
+
+// Neueste 4 Berichte für den Homepage-Teaser
+const recentOrte = [...realOrte]
+  .sort((a, b) => new Date(b.data.dateFrom).getTime() - new Date(a.data.dateFrom).getTime())
+  .slice(0, 4);
+
+const costColors = ['', '#10B981', '#22C55E', '#F97316', '#EF4444', '#DC2626'];
+const costLabels = ['', 'Günstig', 'Günstig', 'Bezahlbar', 'Teuer', 'Sehr teuer'];
 
 // Warmup-Stops die bereits besucht wurden
 const warmupVisited = stationsData.filter(s => s.phase === 'warmup' && s.status === 'visited').length;
@@ -516,6 +525,54 @@ const locLon = currentStation.lon;
     </div>
   </div>
 </section>
+
+<!-- ═══════════════════════════════════════════════════════
+     REISEBERICHTE TEASER
+═══════════════════════════════════════════════════════ -->
+{recentOrte.length > 0 && (
+  <section class="ph-sec ph-reports reveal">
+    <div class="ph-wrap">
+      <div class="ph-reports-head">
+        <div>
+          <p class="ph-sec-label" style="color:#10B981;">Reiseberichte</p>
+          <h2 class="ph-sec-title">Was ich bisher gesehen habe.</h2>
+        </div>
+        <a href="/reiseberichte" class="ph-reports-all">Alle ansehen →</a>
+      </div>
+      <div class="ph-reports-grid">
+        {recentOrte.map(ort => {
+          const d = ort.data;
+          const stars = '★'.repeat(d.rating) + '☆'.repeat(5 - d.rating);
+          return (
+            <a href={`/reiseberichte/${ort.id}`} class="ph-report-card">
+              {d.coverImage ? (
+                <div class="ph-report-img">
+                  <img src={d.coverImage} alt={d.title} loading="lazy" />
+                </div>
+              ) : (
+                <div class="ph-report-img ph-report-img--empty">
+                  <span style="font-size:2.5rem;">{d.flag}</span>
+                </div>
+              )}
+              <div class="ph-report-body">
+                <p class="ph-report-meta">{d.flag} {d.country}</p>
+                <h3 class="ph-report-title">{d.title}</h3>
+                <div class="ph-report-chips">
+                  <span class="ph-report-vibe">{d.vibe}</span>
+                  <span class="ph-report-cost" style={`color:${costColors[d.costLevel]}`}>{costLabels[d.costLevel]}</span>
+                  <span class="ph-report-stars">{stars}</span>
+                </div>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+      <div class="ph-reports-footer">
+        <a href="/reiseberichte" class="ph-reports-cta">Alle Reiseberichte ansehen →</a>
+      </div>
+    </div>
+  </section>
+)}
 
 </div><!-- /.pg-home -->
 </Layout>
@@ -1182,5 +1239,168 @@ const locLon = currentStation.lon;
   .ph-at-img { min-height: 180px; }
   .ph-at-body { padding: 1rem; }
   .ph-at-name { font-size: 1.1rem; }
+}
+
+/* ── REISEBERICHTE TEASER ── */
+.ph-reports { padding: 2.5rem 1.5rem 0; }
+
+.ph-reports-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 1100px;
+  margin: 0 auto 1.5rem;
+}
+
+.ph-reports-all {
+  font-size: .85rem;
+  font-weight: 700;
+  color: var(--text-mid);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color .15s;
+  flex-shrink: 0;
+}
+.ph-reports-all:hover { color: var(--coral); }
+
+.ph-reports-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.ph-report-card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: box-shadow .15s, transform .15s;
+}
+.ph-report-card:hover {
+  box-shadow: 0 6px 24px rgba(15,23,42,.1);
+  transform: translateY(-2px);
+}
+
+.ph-report-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+.ph-report-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+  transition: transform .3s;
+}
+.ph-report-card:hover .ph-report-img img { transform: scale(1.04); }
+
+.ph-report-img--empty {
+  background: var(--bg-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ph-report-body {
+  padding: .9rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+  flex: 1;
+}
+
+.ph-report-meta {
+  font-size: .72rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.ph-report-title {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: -.02em;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.ph-report-chips {
+  display: flex;
+  gap: .4rem;
+  flex-wrap: wrap;
+  margin-top: .1rem;
+}
+
+.ph-report-vibe {
+  font-size: .7rem;
+  font-weight: 600;
+  color: #C2410C;
+  background: var(--coral-light);
+  border: 1px solid var(--coral-mid);
+  padding: 1px 7px;
+  border-radius: 100px;
+}
+
+.ph-report-cost {
+  font-size: .7rem;
+  font-weight: 600;
+  padding: 1px 7px;
+  border-radius: 100px;
+  background: currentColor;
+  color: inherit;
+  /* trick: text color via inline style, bg tinted */
+  background: transparent;
+  border: 1px solid currentColor;
+  opacity: .85;
+}
+
+.ph-report-stars {
+  font-size: .7rem;
+  color: #F59E0B;
+  letter-spacing: 1px;
+}
+
+.ph-reports-footer {
+  max-width: 1100px;
+  margin: 1.25rem auto 0;
+  text-align: center;
+}
+
+.ph-reports-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  font-size: .88rem;
+  font-weight: 700;
+  color: var(--text-mid);
+  text-decoration: none;
+  padding: .6rem 1.4rem;
+  border: 1.5px solid var(--border);
+  border-radius: 100px;
+  background: white;
+  transition: border-color .15s, color .15s;
+}
+.ph-reports-cta:hover { border-color: #CBD5E1; color: var(--text); }
+
+@media (max-width: 900px) {
+  .ph-reports-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .ph-reports { padding: 2rem 1.25rem 0; }
+  .ph-reports-head { align-items: flex-start; flex-direction: column; gap: .5rem; margin-bottom: 1rem; }
+  .ph-reports-grid { grid-template-columns: repeat(2, 1fr); gap: .75rem; }
+  .ph-report-title { font-size: .92rem; }
+}
+
+@media (max-width: 380px) {
+  .ph-reports-grid { grid-template-columns: 1fr; }
 }
 </style>
