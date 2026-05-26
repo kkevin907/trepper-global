@@ -135,9 +135,17 @@ const locLon = currentStation.lon;
             Von Solingen<br />
             <span class="ph-grad">in die Welt.</span>
           </h1>
-          <div class="ph-chip ph-chip--inline" id="ph-chip-countdown">
-            <span class="ph-chip-num" id="ph-chip-num">–</span>
-            <span class="ph-chip-txt" id="ph-chip-label">Tage bis Abflug</span>
+          <div class="ph-chip ph-chip--inline ph-chip--countdown" id="ph-chip-countdown">
+            <div class="ph-cd-units" id="ph-cd-units">
+              <div class="ph-cd-unit"><span class="ph-cd-num" id="ph-cd-d">–</span><span class="ph-cd-lbl">Tage</span></div>
+              <span class="ph-cd-sep">:</span>
+              <div class="ph-cd-unit"><span class="ph-cd-num" id="ph-cd-h">–</span><span class="ph-cd-lbl">Std</span></div>
+              <span class="ph-cd-sep">:</span>
+              <div class="ph-cd-unit"><span class="ph-cd-num" id="ph-cd-m">–</span><span class="ph-cd-lbl">Min</span></div>
+              <span class="ph-cd-sep">:</span>
+              <div class="ph-cd-unit"><span class="ph-cd-num" id="ph-cd-s">–</span><span class="ph-cd-lbl">Sek</span></div>
+            </div>
+            <span class="ph-cd-label" id="ph-cd-label">bis Abflug</span>
           </div>
         </div>
       </div>
@@ -465,47 +473,57 @@ const locLon = currentStation.lon;
     setInterval(tick, 1000);
   }
 
-  // Tage bis Abflug / Tage unterwegs — live, kein Build nötig
+  // Countdown: Tage/Std/Min/Sek bis Abflug, danach Tage unterwegs
   function updateCountdown() {
-    var ABFLUG = new Date('2026-06-09T00:00:00');
+    var ABFLUG = new Date('2026-06-09T13:45:00+02:00');
     var now    = new Date();
     var chip   = document.getElementById('ph-chip-countdown');
-    var numEl  = document.getElementById('ph-chip-num');
-    var lblEl  = document.getElementById('ph-chip-label');
-    if (!chip || !numEl || !lblEl) return;
+    var units  = document.getElementById('ph-cd-units');
+    var label  = document.getElementById('ph-cd-label');
+    var elD    = document.getElementById('ph-cd-d');
+    var elH    = document.getElementById('ph-cd-h');
+    var elM    = document.getElementById('ph-cd-m');
+    var elS    = document.getElementById('ph-cd-s');
+    if (!chip || !elD || !elH || !elM || !elS || !label) return;
 
     chip.style.display = 'inline-flex';
 
     if (now < ABFLUG) {
-      var daysLeft = Math.ceil((ABFLUG.getTime() - now.getTime()) / 86400000);
-      numEl.textContent = daysLeft;
-      lblEl.textContent = 'Tage bis Abflug';
+      var diff = ABFLUG.getTime() - now.getTime();
+      var d = Math.floor(diff / 86400000);
+      var h = Math.floor((diff % 86400000) / 3600000);
+      var m = Math.floor((diff % 3600000) / 60000);
+      var s = Math.floor((diff % 60000) / 1000);
+      elD.textContent = d;
+      elH.textContent = String(h).padStart(2, '0');
+      elM.textContent = String(m).padStart(2, '0');
+      elS.textContent = String(s).padStart(2, '0');
+      label.textContent = 'bis Abflug';
+      if (units) units.style.display = 'flex';
       chip.classList.remove('ph-chip-go');
     } else {
       var daysOn = Math.floor((now.getTime() - ABFLUG.getTime()) / 86400000);
-      numEl.textContent = daysOn;
-      lblEl.textContent = 'Tage unterwegs';
+      elD.textContent = daysOn;
+      label.textContent = 'Tage unterwegs';
+      // Stunden/Minuten/Sekunden nach Abflug ausblenden
+      if (units) {
+        var unitEls = units.querySelectorAll('.ph-cd-unit, .ph-cd-sep');
+        unitEls.forEach(function(el, i) { if (i > 0) el.style.display = 'none'; });
+      }
       chip.classList.add('ph-chip-go');
     }
   }
 
-  // Tagesgrenze abfangen: jede Minute prüfen ob sich der Tag geändert hat
-  var _lastDay = new Date().getDate();
-  function checkDayRollover() {
-    var d = new Date().getDate();
-    if (d !== _lastDay) { _lastDay = d; updateCountdown(); }
-  }
-
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () { initTimeline(); initClock(); initWeather(); initExchangeRate(); updateCountdown(); });
+    document.addEventListener('DOMContentLoaded', function () { initTimeline(); initClock(); initWeather(); initExchangeRate(); updateCountdown(); setInterval(updateCountdown, 1000); });
   } else {
     initTimeline();
     initClock();
     initWeather();
     initExchangeRate();
     updateCountdown();
+    setInterval(updateCountdown, 1000);
   }
-  setInterval(checkDayRollover, 60 * 1000);
 })();
 </script>
 
@@ -712,6 +730,61 @@ const locLon = currentStation.lon;
 .ph-chip-num { font-size: 1.25rem; font-weight: 800; color: #92400E; letter-spacing: -.03em; line-height: 1; }
 .ph-chip-txt { font-size: .75rem; font-weight: 700; color: #92400E; }
 .ph-chip-go .ph-chip-txt { color: #065F46; }
+
+/* Countdown-Chip: D:H:M:S */
+.ph-chip--countdown {
+  align-items: center;
+  gap: 6px;
+  border-radius: 14px;
+  padding: .4rem .9rem;
+  flex-direction: column;
+}
+.ph-cd-units {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.ph-cd-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 28px;
+}
+.ph-cd-num {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #92400E;
+  letter-spacing: -.03em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.ph-cd-lbl {
+  font-size: .6rem;
+  font-weight: 700;
+  color: #B45309;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin-top: 1px;
+}
+.ph-cd-sep {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #D97706;
+  line-height: 1;
+  align-self: flex-start;
+  padding-top: 1px;
+}
+.ph-cd-label {
+  font-size: .72rem;
+  font-weight: 700;
+  color: #92400E;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.ph-chip-go .ph-cd-num,
+.ph-chip-go .ph-cd-label { color: #065F46; }
+.ph-chip-go .ph-cd-lbl   { color: #047857; }
+.ph-chip-go .ph-cd-sep   { color: #059669; }
 
 .ph-eyebrow {
   font-size: .72rem;
@@ -1056,6 +1129,9 @@ const locLon = currentStation.lon;
   .ph-chip { font-size:.68rem; padding:.28rem .7rem; }
   .ph-chip-num { font-size:1rem; }
   .ph-chip-txt { font-size:.65rem; }
+  .ph-cd-num { font-size:1rem; }
+  .ph-cd-lbl { font-size:.55rem; }
+  .ph-chip--countdown { padding:.35rem .8rem; }
 }
 
 /* Nur sichtbar wenn Hamburger aktiv (≤680px) */
@@ -1094,6 +1170,10 @@ const locLon = currentStation.lon;
   .ph-chip { font-size: .7rem; padding: .3rem .7rem; }
   .ph-chip-num { font-size: 1rem; }
   .ph-chip-txt { font-size: .65rem; }
+  .ph-cd-num { font-size: .95rem; }
+  .ph-cd-lbl { font-size: .52rem; }
+  .ph-cd-sep { font-size: 1rem; }
+  .ph-chip--countdown { padding: .3rem .7rem; }
   .ph-actions { flex-wrap: wrap; gap: 6px; justify-content: center; }
   .ph-actions a { flex: 1; min-width: 80px; text-align: center; justify-content: center; }
   .ph-btn-ghost { display: inline-flex; width: auto; justify-content: center; font-size: .8rem; padding: .45rem .9rem; }
