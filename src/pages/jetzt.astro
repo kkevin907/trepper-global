@@ -21,8 +21,7 @@ const distKm = Math.round(haversine(solingen.lat, solingen.lon, currentStation.l
 const isHome = distKm === 0;
 const details = (currentStation as any).details;
 
-const currencyNames = new Intl.DisplayNames(['de'], { type: 'currency' });
-const currencyName = currencyNames.of(currentStation.currency) || currentStation.currency;
+const currencyName = currentStation.currency;
 
 const cityMapData = JSON.stringify({
   center: { lat: currentStation.lat, lon: currentStation.lon },

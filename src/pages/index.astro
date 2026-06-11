@@ -58,10 +58,7 @@ const solingen = stationsData.find(s => s.id === 'solingen')!;
 const distKm = Math.round(haversine(solingen.lat, solingen.lon, currentStation.lat, currentStation.lon));
 const distDisplay = distKm === 0 ? 'Heimat' : `${distKm.toLocaleString('de-DE')} km`;
 const locTimezone = currentStation.timezone || 'Europe/Berlin';
-// Währungsname auf Deutsch via Intl.DisplayNames
-const currencyNames = new Intl.DisplayNames(['de'], { type: 'currency' });
-const locCurrencyName = currencyNames.of(currentStation.currency) || currentStation.currency;
-const locCurrencyDisplay = `${currentStation.currencySymbol} ${locCurrencyName}`;
+const locCurrencyDisplay = `${currentStation.currencySymbol} ${currentStation.currency}`;
 const locStationName = currentStation.name;
 const locLat = currentStation.lat;
 const locLon = currentStation.lon;
@@ -311,12 +308,26 @@ const locLon = currentStation.lon;
           })()}
           <div class="ph-tl-line tl-dash"></div>
 
+          <!-- Kuala Lumpur — Jetzt hier -->
+          <div class="ph-tl-stop">
+            <div class="ph-tl-top">
+              <span class="ph-tl-flag">🇲🇾</span>
+              <span class="ph-tl-name">Kuala Lumpur</span>
+            </div>
+            <div class="ph-tl-dot-row">
+              <div class="ph-tl-dot" style="background:#F97316;box-shadow:0 0 0 3px #F9731622;"></div>
+            </div>
+            <div class="ph-tl-bot">
+              <span class="ph-tl-badge" style="background:#FFF7ED;color:#C2410C;border:1.5px solid #FDBA74;">ab 11. Jun</span>
+            </div>
+          </div>
+          <div class="ph-tl-line tl-dash"></div>
+
           <!-- GEPLANT: orange, dashed -->
           {[
-            { flag:'🇹🇭', name:'Bangkok',      date:'ab 11. Jun' },
+            { flag:'🇹🇭', name:'Bangkok'       },
             { flag:'🇭🇰', name:'Hongkong',     date:'ab 2. Jul'  },
             { flag:'🇻🇳', name:'Vietnam'       },
-            { flag:'🇲🇾', name:'Kuala Lumpur'  },
             { flag:'🇮🇩', name:'Bali'          },
             { flag:'🇳🇿', name:'Neuseeland'    },
           ].map((s, i, arr) => (

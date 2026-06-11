@@ -73,13 +73,7 @@ const doFitVisitedOnly = fitVisitedOnly;
     var stations = JSON.parse(stationsJSON);
     var orteIds  = JSON.parse(orteIdsJSON);
 
-    // Ab 9. Juni 2026 automatisch auf erste Hauptreise-Station umschalten
-    var DEPARTURE = new Date('2026-06-09T00:00:00');
     var effectiveCurrentId = currentStationId;
-    if (new Date() >= DEPARTURE) {
-      var firstMain = stations.find(function(s) { return s.phase === 'main'; });
-      if (firstMain) effectiveCurrentId = firstMain.id;
-    }
 
     var map = L.map(mapId, {
       scrollWheelZoom: false,

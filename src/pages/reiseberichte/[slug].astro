@@ -24,7 +24,7 @@ const dateTo   = new Date(d.dateTo).toLocaleDateString('de-DE', { month: 'long',
 const costLabels = ['', 'Günstig', 'Günstig', 'Bezahlbar', 'Teuer', 'Sehr teuer'];
 const costColors = ['', '#10B981',      '#22C55E', '#F97316', '#EF4444', '#DC2626'];
 const costBg     = ['', '#D1FAE5',      '#DCFCE7', '#FFF7ED', '#FEE2E2', '#FFE4E4'];
-const stars = '★'.repeat(d.rating) + '☆'.repeat(5 - d.rating);
+const stars = '★'.repeat(Math.floor(d.rating)) + '☆'.repeat(5 - Math.floor(d.rating));
 
 // Food spots with coordinates for map
 const mapSpots = (d.foodSpots || []).filter((f: any) => f.lat && f.lon);
@@ -430,7 +430,7 @@ const mapData = JSON.stringify({
   /* MAIN */
   .or-cover { margin-bottom:2rem; border-radius:16px; overflow:hidden; }
   .or-cover img { width:100%; height:380px; object-fit:cover; border-radius:16px; }
-  .or-prose { font-size:.97rem; color:var(--text-mid); line-height:1.85; margin-bottom:2.5rem; hyphens:auto; -webkit-hyphens:auto; overflow-wrap:break-word; }
+  .or-prose { font-size:1.02rem; color:var(--text); line-height:1.9; margin-bottom:2.5rem; hyphens:auto; -webkit-hyphens:auto; overflow-wrap:break-word; max-width:640px; margin-left:auto; margin-right:auto; }
   .or-prose p { margin-bottom:1rem; }
   .or-prose p:last-child { margin-bottom:0; }
   .or-prose strong { color:var(--text); font-weight:700; }
@@ -590,7 +590,7 @@ const mapData = JSON.stringify({
     .or-map { height:260px; }
     .or-food-card { padding:.75rem; }
     .or-highlight-list { font-size:.85rem; }
-    .or-prose { hyphens:none; -webkit-hyphens:none; }
+    .or-prose { hyphens:none; -webkit-hyphens:none; max-width:100%; margin-left:0; margin-right:0; }
     /* Google Maps Button darf umbrechen */
     .or-gmaps-btn { white-space:normal; font-size:.72rem; }
   }
