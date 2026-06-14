@@ -4,13 +4,20 @@ import { getCollection } from 'astro:content';
 
 const orte = await getCollection('orte', ({ data }) => !data.draft);
 
-// Echte Berichte (kein TODO in highlights[0]) zuerst, dann nach Datum absteigend
+// Weltreise-Berichte (ab 9. Jun 2026) zuerst aufsteigend, dann Warmup absteigend
 const hasRealContent = (o: typeof orte[0]) => !o.data.highlights[0].startsWith('TODO');
+const WELTREISE_START = new Date('2026-06-09');
 orte.sort((a, b) => {
   const aReal = hasRealContent(a) ? 1 : 0;
   const bReal = hasRealContent(b) ? 1 : 0;
   if (bReal !== aReal) return bReal - aReal;
-  return new Date(b.data.dateFrom).getTime() - new Date(a.data.dateFrom).getTime();
+  const aDate = new Date(a.data.dateFrom);
+  const bDate = new Date(b.data.dateFrom);
+  const aMain = aDate >= WELTREISE_START ? 1 : 0;
+  const bMain = bDate >= WELTREISE_START ? 1 : 0;
+  if (bMain !== aMain) return bMain - aMain;
+  if (aMain && bMain) return aDate.getTime() - bDate.getTime();
+  return bDate.getTime() - aDate.getTime();
 });
 
 const costColors  = ['', '#10B981', '#22C55E', '#F97316', '#EF4444', '#DC2626'];
@@ -69,7 +76,7 @@ const costLabels  = ['', 'Günstig', 'Günstig', 'Bezahlbar', 'Teuer', 'Sehr teu
                     <span class="oi-chip oi-chip-cost" style={`color:${costColors[d.costLevel]};border-color:${costColors[d.costLevel]}30;background:${costColors[d.costLevel]}12;`}>
                       {costLabels[d.costLevel]}
                     </span>
-                    <span class="oi-chip oi-chip-stars">{'★'.repeat(d.rating)}{'☆'.repeat(5-d.rating)}</span>
+                    <span class="oi-chip oi-chip-stars">{'★'.repeat(Math.floor(d.rating))}{'☆'.repeat(5-Math.floor(d.rating))}</span>
                   </div>
                 </div>
                 {isReal && <span class="oi-card-arrow">→</span>}

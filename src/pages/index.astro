@@ -12,9 +12,18 @@ const realOrte = orteEntries.filter(o => !o.data.highlights[0].startsWith('TODO'
 const orteIdSet = new Set(realOrte.map(o => o.data.stationId));
 const orteCount = orteIdSet.size;
 
-// Neueste 4 Berichte für den Homepage-Teaser
+// Weltreise-Berichte zuerst (aufsteigend), dann Warmup (absteigend)
+const WELTREISE_START = new Date('2026-06-09');
 const recentOrte = [...realOrte]
-  .sort((a, b) => new Date(b.data.dateFrom).getTime() - new Date(a.data.dateFrom).getTime())
+  .sort((a, b) => {
+    const aDate = new Date(a.data.dateFrom);
+    const bDate = new Date(b.data.dateFrom);
+    const aMain = aDate >= WELTREISE_START ? 1 : 0;
+    const bMain = bDate >= WELTREISE_START ? 1 : 0;
+    if (bMain !== aMain) return bMain - aMain;
+    if (aMain && bMain) return aDate.getTime() - bDate.getTime();
+    return bDate.getTime() - aDate.getTime();
+  })
   .slice(0, 4);
 
 const costColors = ['', '#10B981', '#22C55E', '#F97316', '#EF4444', '#DC2626'];
@@ -37,7 +46,7 @@ function haversine(lat1: number, lon1: number, lat2: number, lon2: number): numb
 // km zurückgelegt — nur Weltreise (phase "main"), ab Solingen, chronologisch
 const home = stationsData.find(s => s.status === 'home')!;
 const worldTripVisited = stationsData
-  .filter(s => s.phase === 'main' && (s.status === 'visited' || s.status === 'current') && s.dateFrom)
+  .filter(s => s.phase === 'main' && s.dateFrom && new Date(s.dateFrom) <= _today)
   .sort((a, b) => new Date(a.dateFrom!).getTime() - new Date(b.dateFrom!).getTime());
 
 const traveled = worldTripVisited.length > 0 ? [home, ...worldTripVisited] : [];
@@ -51,8 +60,12 @@ const kmDisplay = kmTotal > 0
   : '0';
 
 
-// Aktueller Standort — gesteuert über src/data/config.json → currentStationId
-const currentStation = stationsData.find(s => s.id === config.currentStationId)
+// Aktueller Standort — date-basiert: aktuellste main-Station mit dateFrom <= heute
+const _today = new Date();
+const currentStation = stationsData
+  .filter(s => s.phase === 'main' && s.dateFrom && new Date(s.dateFrom) <= _today)
+  .sort((a, b) => new Date(b.dateFrom!).getTime() - new Date(a.dateFrom!).getTime())[0]
+  || stationsData.find(s => s.id === config.currentStationId)
   || stationsData.find(s => s.status === 'home')!;
 const solingen = stationsData.find(s => s.id === 'solingen')!;
 const distKm = Math.round(haversine(solingen.lat, solingen.lon, currentStation.lat, currentStation.lon));
@@ -308,17 +321,34 @@ const locLon = currentStation.lon;
           })()}
           <div class="ph-tl-line tl-dash"></div>
 
-          <!-- Kuala Lumpur — Jetzt hier -->
-          <div class="ph-tl-stop">
+          <!-- Kuala Lumpur -->
+          <div class="ph-tl-stop ph-tl-stop--current" id="ph-tl-kl-current">
             <div class="ph-tl-top">
               <span class="ph-tl-flag">🇲🇾</span>
               <span class="ph-tl-name">Kuala Lumpur</span>
             </div>
             <div class="ph-tl-dot-row">
-              <div class="ph-tl-dot" style="background:#F97316;box-shadow:0 0 0 3px #F9731622;"></div>
+              <div class="ph-tl-dot ph-tl-dot--current" id="ph-tl-kl-dot">
+                <span class="ph-tl-dot-pulse"></span>
+              </div>
             </div>
             <div class="ph-tl-bot">
-              <span class="ph-tl-badge" style="background:#FFF7ED;color:#C2410C;border:1.5px solid #FDBA74;">ab 11. Jun</span>
+              <span class="ph-tl-badge ph-tl-badge--current" id="ph-tl-kl-badge">Jetzt hier</span>
+            </div>
+          </div>
+          <div class="ph-tl-line tl-dash"></div>
+
+          <!-- Phuket -->
+          <div class="ph-tl-stop" id="ph-tl-phuket">
+            <div class="ph-tl-top">
+              <span class="ph-tl-flag">🇹🇭</span>
+              <span class="ph-tl-name">Phuket</span>
+            </div>
+            <div class="ph-tl-dot-row">
+              <div class="ph-tl-dot" id="ph-tl-phuket-dot" style="background:#F97316;opacity:.6;box-shadow:0 0 0 3px #F9731618;"></div>
+            </div>
+            <div class="ph-tl-bot">
+              <span class="ph-tl-badge" id="ph-tl-phuket-badge" style="background:#FFF7ED;color:#C2410C;">ab 16. Jun</span>
             </div>
           </div>
           <div class="ph-tl-line tl-dash"></div>
@@ -367,13 +397,32 @@ const locLon = currentStation.lon;
     var container = document.getElementById('ph-timeline');
     if (!container) return;
 
-    // Aktuellen Stop zentrieren:
-    // Vor Abflug → Solingen (#ph-tl-current), danach → Abflug-Marker (#ph-tl-start-marker)
-    var ABFLUG  = new Date('2026-06-09T13:45:00+02:00');
-    var marker  = new Date() < ABFLUG
+    // KL → Phuket Switch am 16. Juni
+    var PHUKET_DATE = new Date('2026-06-16T00:00:00');
+    var now = new Date();
+    if (now >= PHUKET_DATE) {
+      // KL auf visited umschalten
+      var klDot = document.getElementById('ph-tl-kl-dot');
+      var klBadge = document.getElementById('ph-tl-kl-badge');
+      var klStop = document.getElementById('ph-tl-kl-current');
+      if (klDot) { klDot.className = 'ph-tl-dot'; klDot.style.cssText = 'background:#10B981;box-shadow:0 0 0 3px #10B98122;'; var pulse = klDot.querySelector('.ph-tl-dot-pulse'); if (pulse) pulse.remove(); }
+      if (klBadge) { klBadge.className = 'ph-tl-badge'; klBadge.style.cssText = 'background:#D1FAE5;color:#065F46;'; klBadge.textContent = '✓ 11.–15. Jun'; }
+      if (klStop) klStop.className = 'ph-tl-stop';
+      // Phuket auf jetzt hier umschalten
+      var phuketDot = document.getElementById('ph-tl-phuket-dot');
+      var phuketBadge = document.getElementById('ph-tl-phuket-badge');
+      var phuketStop = document.getElementById('ph-tl-phuket');
+      if (phuketDot) { phuketDot.className = 'ph-tl-dot ph-tl-dot--current'; phuketDot.style.cssText = ''; var p2 = document.createElement('span'); p2.className = 'ph-tl-dot-pulse'; phuketDot.appendChild(p2); }
+      if (phuketBadge) { phuketBadge.className = 'ph-tl-badge ph-tl-badge--current'; phuketBadge.style.cssText = ''; phuketBadge.textContent = 'Jetzt hier'; }
+      if (phuketStop) phuketStop.className = 'ph-tl-stop ph-tl-stop--current';
+    }
+
+    // Aktuellen Stop zentrieren
+    var ABFLUG = new Date('2026-06-09T13:45:00+02:00');
+    var marker = new Date() < ABFLUG
       ? document.getElementById('ph-tl-current')
-      : document.getElementById('ph-tl-start-marker');
-    if (!marker) marker = document.getElementById('ph-tl-start-marker');
+      : (now >= PHUKET_DATE ? document.getElementById('ph-tl-phuket') : document.getElementById('ph-tl-kl-current'));
+    if (!marker) marker = document.getElementById('ph-tl-kl-current');
     if (!marker) return;
 
     function centerMarker() {
@@ -599,7 +648,7 @@ const locLon = currentStation.lon;
       <div class="ph-reports-grid">
         {recentOrte.map(ort => {
           const d = ort.data;
-          const stars = '★'.repeat(d.rating) + '☆'.repeat(5 - d.rating);
+          const stars = '★'.repeat(Math.floor(d.rating)) + '☆'.repeat(5 - Math.floor(d.rating));
           return (
             <a href={`/reiseberichte/${ort.id}`} class="ph-report-card">
               {d.coverImage ? (

@@ -1409,7 +1409,7 @@
     "lat": 41.0082,
     "lon": 28.9784,
     "status": "visited",
-    "phase": "warmup",
+    "phase": "main",
     "timezone": "Europe/Istanbul",
     "currency": "TRY",
     "currencySymbol": "₺",
@@ -1463,6 +1463,151 @@
           "lat": 41.0219,
           "lon": 29.0054,
           "type": "sight"
+        }
+      ]
+    }
+  },
+  {
+    "id": "malaysia",
+    "name": "Kuala Lumpur",
+    "country": "Malaysia",
+    "flag": "🇲🇾",
+    "lat": 3.139,
+    "lon": 101.6869,
+    "status": "current",
+    "phase": "main",
+    "timezone": "Asia/Kuala_Lumpur",
+    "currency": "MYR",
+    "currencySymbol": "RM",
+    "dateFrom": "2026-06-11",
+    "dateTo": null,
+    "description": "Petronas Towers, Kulinarik, Dschungel — Melting Pot Südostasiens.",
+    "details": {
+      "highlights": [
+        "Petronas Twin Towers",
+        "Batu Caves",
+        "Petaling Street (Chinatown)",
+        "KLCC Park",
+        "Bukit Bintang",
+        "Cameron Highlands (Tagesausflug)"
+      ],
+      "mustEat": [
+        "Nasi Lemak",
+        "Char Kway Teow",
+        "Roti Canai",
+        "Laksa",
+        "Teh Tarik (gezogener Tee)"
+      ],
+      "tips": "KL ist sehr günstig. Grab (Uber-Alternative) für alles nutzen. Moscheen erfordern Kopftuch für Frauen.",
+      "bestFor": [
+        "Food",
+        "Shopping",
+        "Wolkenkratzer",
+        "Multikultur"
+      ],
+      "visa": "Kein Visum für Deutsche (bis 90 Tage)",
+      "language": "Malaysisch, Englisch, Mandarin, Tamil",
+      "transport": "LRT/MRT, Monorail, Grab, Bus",
+      "plug": "Typ G (230V) — Adapter nötig!",
+      "spots": [
+        {
+          "name": "Petronas Twin Towers",
+          "lat": 3.1579,
+          "lon": 101.7119,
+          "type": "sight"
+        },
+        {
+          "name": "Batu Caves",
+          "lat": 3.2379,
+          "lon": 101.684,
+          "type": "sight"
+        },
+        {
+          "name": "Petaling Street",
+          "lat": 3.1436,
+          "lon": 101.6957,
+          "type": "food"
+        },
+        {
+          "name": "Nasi Lemak Restaurant",
+          "lat": 3.139,
+          "lon": 101.6869,
+          "type": "food"
+        }
+      ]
+    }
+  },
+  {
+    "id": "phuket",
+    "name": "Phuket",
+    "country": "Thailand",
+    "flag": "🇹🇭",
+    "lat": 7.8804,
+    "lon": 98.3923,
+    "status": "upcoming",
+    "phase": "main",
+    "timezone": "Asia/Bangkok",
+    "currency": "THB",
+    "currencySymbol": "฿",
+    "dateFrom": "2026-06-16",
+    "dateTo": null,
+    "description": "Strände, Inseln, Street Food — Südthailand.",
+    "details": {
+      "highlights": [
+        "Patong Beach",
+        "Big Buddha",
+        "Phi Phi Islands (Tagesausflug)",
+        "Phuket Old Town",
+        "Kata & Karon Beach"
+      ],
+      "mustEat": [
+        "Fresh Seafood am Rawai Beach",
+        "Pad Thai",
+        "Tom Yum Goong",
+        "Mango Sticky Rice",
+        "Roti mit Banane"
+      ],
+      "tips": "Grab für Transfers nutzen. Patong nachts laut — besser Kata oder Old Town zum Schlafen. Phi Phi früh morgens buchen.",
+      "bestFor": [
+        "Strände",
+        "Inseltouren",
+        "Schnorcheln",
+        "Street Food"
+      ],
+      "visa": "Visa on Arrival / kein Visum für Deutsche (bis 30 Tage)",
+      "language": "Thai, Englisch",
+      "transport": "Grab, Songthaew, Scooter",
+      "plug": "Typ A/B/C (220V)",
+      "spots": [
+        {
+          "name": "Patong Beach",
+          "lat": 7.8966,
+          "lon": 98.2908,
+          "type": "sight"
+        },
+        {
+          "name": "Big Buddha",
+          "lat": 7.8274,
+          "lon": 98.3108,
+          "type": "sight"
+        },
+        {
+          "name": "Phuket Old Town",
+          "lat": 7.8876,
+          "lon": 98.3881,
+          "type": "sight"
+        },
+        {
+          "name": "Kata Beach",
+          "lat": 7.8194,
+          "lon": 98.2983,
+          "type": "sight"
+        },
+        {
+          "name": "Rawai Seafood Market",
+          "lat": 7.7763,
+          "lon": 98.3219,
+          "type": "food"
         }
       ]
     }
@@ -1690,76 +1835,6 @@
           "name": "Bánh Mì Stand",
           "lat": 21.0275,
           "lon": 105.8412,
-          "type": "food"
-        }
-      ]
-    }
-  },
-  {
-    "id": "malaysia",
-    "name": "Kuala Lumpur",
-    "country": "Malaysia",
-    "flag": "🇲🇾",
-    "lat": 3.139,
-    "lon": 101.6869,
-    "status": "current",
-    "phase": "main",
-    "timezone": "Asia/Kuala_Lumpur",
-    "currency": "MYR",
-    "currencySymbol": "RM",
-    "dateFrom": "2026-06-11",
-    "dateTo": null,
-    "description": "Petronas Towers, Kulinarik, Dschungel — Melting Pot Südostasiens.",
-    "details": {
-      "highlights": [
-        "Petronas Twin Towers",
-        "Batu Caves",
-        "Petaling Street (Chinatown)",
-        "KLCC Park",
-        "Bukit Bintang",
-        "Cameron Highlands (Tagesausflug)"
-      ],
-      "mustEat": [
-        "Nasi Lemak",
-        "Char Kway Teow",
-        "Roti Canai",
-        "Laksa",
-        "Teh Tarik (gezogener Tee)"
-      ],
-      "tips": "KL ist sehr günstig. Grab (Uber-Alternative) für alles nutzen. Moscheen erfordern Kopftuch für Frauen.",
-      "bestFor": [
-        "Food",
-        "Shopping",
-        "Wolkenkratzer",
-        "Multikultur"
-      ],
-      "visa": "Kein Visum für Deutsche (bis 90 Tage)",
-      "language": "Malaysisch, Englisch, Mandarin, Tamil",
-      "transport": "LRT/MRT, Monorail, Grab, Bus",
-      "plug": "Typ G (230V) — Adapter nötig!",
-      "spots": [
-        {
-          "name": "Petronas Twin Towers",
-          "lat": 3.1579,
-          "lon": 101.7119,
-          "type": "sight"
-        },
-        {
-          "name": "Batu Caves",
-          "lat": 3.2379,
-          "lon": 101.684,
-          "type": "sight"
-        },
-        {
-          "name": "Petaling Street",
-          "lat": 3.1436,
-          "lon": 101.6957,
-          "type": "food"
-        },
-        {
-          "name": "Nasi Lemak Restaurant",
-          "lat": 3.139,
-          "lon": 101.6869,
           "type": "food"
         }
       ]

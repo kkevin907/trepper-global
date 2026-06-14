@@ -3,7 +3,11 @@ import Layout from '../layouts/Layout.astro';
 import stationsData from '../data/stations.json';
 import config from '../data/config.json';
 
-const currentStation = stationsData.find(s => s.id === config.currentStationId)
+const _today = new Date();
+const currentStation = stationsData
+  .filter(s => s.phase === 'main' && s.dateFrom && new Date(s.dateFrom) <= _today)
+  .sort((a, b) => new Date(b.dateFrom!).getTime() - new Date(a.dateFrom!).getTime())[0]
+  || stationsData.find(s => s.id === config.currentStationId)
   || stationsData.find(s => s.status === 'home')!;
 
 const solingen = stationsData.find(s => s.id === 'solingen')!;

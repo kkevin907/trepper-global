@@ -73,7 +73,21 @@ const doFitVisitedOnly = fitVisitedOnly;
     var stations = JSON.parse(stationsJSON);
     var orteIds  = JSON.parse(orteIdsJSON);
 
-    var effectiveCurrentId = currentStationId;
+    // Date-basierte Auto-Switch: aktuellste main-Station mit dateFrom <= heute
+    var today = new Date();
+    var activeMain = stations.filter(function(s) {
+      return s.phase === 'main' && s.dateFrom && new Date(s.dateFrom) <= today;
+    }).sort(function(a, b) {
+      return new Date(b.dateFrom).getTime() - new Date(a.dateFrom).getTime();
+    });
+    var effectiveCurrentId = activeMain.length > 0 ? activeMain[0].id : currentStationId;
+    // Status dynamisch anpassen: vergangene main-Stationen → visited, aktuelle → current
+    stations.forEach(function(s) {
+      if (s.phase === 'main' && s.dateFrom) {
+        if (s.id === effectiveCurrentId) { s.status = 'current'; }
+        else if (new Date(s.dateFrom) < today) { s.status = 'visited'; }
+      }
+    });
 
     var map = L.map(mapId, {
       scrollWheelZoom: false,
