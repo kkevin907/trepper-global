@@ -43,6 +43,9 @@ function haversine(lat1: number, lon1: number, lat2: number, lon2: number): numb
   return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 }
 
+// Aktueller Standort — date-basiert: aktuellste main-Station mit dateFrom <= heute
+const _today = new Date();
+
 // km zurückgelegt — nur Weltreise (phase "main"), ab Solingen, chronologisch
 const home = stationsData.find(s => s.status === 'home')!;
 const worldTripVisited = stationsData
@@ -58,10 +61,6 @@ for (let i = 1; i < traveled.length; i++) {
 const kmDisplay = kmTotal > 0
   ? Math.round(kmTotal).toLocaleString('de-DE')
   : '0';
-
-
-// Aktueller Standort — date-basiert: aktuellste main-Station mit dateFrom <= heute
-const _today = new Date();
 const currentStation = stationsData
   .filter(s => s.phase === 'main' && s.dateFrom && new Date(s.dateFrom) <= _today)
   .sort((a, b) => new Date(b.dateFrom!).getTime() - new Date(a.dateFrom!).getTime())[0]
