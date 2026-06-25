@@ -125,7 +125,7 @@ const mapData = JSON.stringify({
 
           {d.coverImage && (
             <div class="or-cover">
-              <img src={d.coverImage} alt={`${d.title} Titelbild`} />
+              <img src={d.coverImage} alt={`${d.title} Titelbild`} style={d.coverImagePosition ? `object-position:${d.coverImagePosition};` : undefined} />
             </div>
           )}
 

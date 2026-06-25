@@ -21,7 +21,7 @@ const recentOrte = [...realOrte]
     const aMain = aDate >= WELTREISE_START ? 1 : 0;
     const bMain = bDate >= WELTREISE_START ? 1 : 0;
     if (bMain !== aMain) return bMain - aMain;
-    if (aMain && bMain) return aDate.getTime() - bDate.getTime();
+    if (aMain && bMain) return bDate.getTime() - aDate.getTime();
     return bDate.getTime() - aDate.getTime();
   })
   .slice(0, 4);
@@ -352,6 +352,21 @@ const locLon = currentStation.lon;
           </div>
           <div class="ph-tl-line tl-dash"></div>
 
+          <!-- Koh Tao -->
+          <div class="ph-tl-stop" id="ph-tl-kohtao">
+            <div class="ph-tl-top">
+              <span class="ph-tl-flag">🇹🇭</span>
+              <span class="ph-tl-name">Koh Tao</span>
+            </div>
+            <div class="ph-tl-dot-row">
+              <div class="ph-tl-dot" id="ph-tl-kohtao-dot" style="background:#F97316;opacity:.6;box-shadow:0 0 0 3px #F9731618;"></div>
+            </div>
+            <div class="ph-tl-bot">
+              <span class="ph-tl-badge" id="ph-tl-kohtao-badge" style="background:#FFF7ED;color:#C2410C;">ab 19. Jun</span>
+            </div>
+          </div>
+          <div class="ph-tl-line tl-dash"></div>
+
           <!-- GEPLANT: orange, dashed -->
           {[
             { flag:'🇹🇭', name:'Bangkok'       },
@@ -396,31 +411,43 @@ const locLon = currentStation.lon;
     var container = document.getElementById('ph-timeline');
     if (!container) return;
 
-    // KL → Phuket Switch am 16. Juni
-    var PHUKET_DATE = new Date('2026-06-16T00:00:00');
     var now = new Date();
+    var PHUKET_DATE  = new Date('2026-06-16T00:00:00');
+    var KOHTAO_DATE  = new Date('2026-06-19T00:00:00');
+
+    function setVisited(dotId, badgeId, stopId, label) {
+      var dot   = document.getElementById(dotId);
+      var badge = document.getElementById(badgeId);
+      var stop  = document.getElementById(stopId);
+      if (dot)   { dot.className = 'ph-tl-dot'; dot.style.cssText = 'background:#10B981;box-shadow:0 0 0 3px #10B98122;'; var p = dot.querySelector('.ph-tl-dot-pulse'); if (p) p.remove(); }
+      if (badge) { badge.className = 'ph-tl-badge'; badge.style.cssText = 'background:#D1FAE5;color:#065F46;'; badge.textContent = label; }
+      if (stop)  { stop.className = 'ph-tl-stop'; }
+    }
+    function setCurrent(dotId, badgeId, stopId) {
+      var dot   = document.getElementById(dotId);
+      var badge = document.getElementById(badgeId);
+      var stop  = document.getElementById(stopId);
+      if (dot)   { dot.className = 'ph-tl-dot ph-tl-dot--current'; dot.style.cssText = ''; var p2 = document.createElement('span'); p2.className = 'ph-tl-dot-pulse'; dot.appendChild(p2); }
+      if (badge) { badge.className = 'ph-tl-badge ph-tl-badge--current'; badge.style.cssText = ''; badge.textContent = 'Jetzt hier'; }
+      if (stop)  { stop.className = 'ph-tl-stop ph-tl-stop--current'; }
+    }
+
     if (now >= PHUKET_DATE) {
-      // KL auf visited umschalten
-      var klDot = document.getElementById('ph-tl-kl-dot');
-      var klBadge = document.getElementById('ph-tl-kl-badge');
-      var klStop = document.getElementById('ph-tl-kl-current');
-      if (klDot) { klDot.className = 'ph-tl-dot'; klDot.style.cssText = 'background:#10B981;box-shadow:0 0 0 3px #10B98122;'; var pulse = klDot.querySelector('.ph-tl-dot-pulse'); if (pulse) pulse.remove(); }
-      if (klBadge) { klBadge.className = 'ph-tl-badge'; klBadge.style.cssText = 'background:#D1FAE5;color:#065F46;'; klBadge.textContent = '✓ 11.–15. Jun'; }
-      if (klStop) klStop.className = 'ph-tl-stop';
-      // Phuket auf jetzt hier umschalten
-      var phuketDot = document.getElementById('ph-tl-phuket-dot');
-      var phuketBadge = document.getElementById('ph-tl-phuket-badge');
-      var phuketStop = document.getElementById('ph-tl-phuket');
-      if (phuketDot) { phuketDot.className = 'ph-tl-dot ph-tl-dot--current'; phuketDot.style.cssText = ''; var p2 = document.createElement('span'); p2.className = 'ph-tl-dot-pulse'; phuketDot.appendChild(p2); }
-      if (phuketBadge) { phuketBadge.className = 'ph-tl-badge ph-tl-badge--current'; phuketBadge.style.cssText = ''; phuketBadge.textContent = 'Jetzt hier'; }
-      if (phuketStop) phuketStop.className = 'ph-tl-stop ph-tl-stop--current';
+      setVisited('ph-tl-kl-dot', 'ph-tl-kl-badge', 'ph-tl-kl-current', '✓ 11.–15. Jun');
+      setCurrent('ph-tl-phuket-dot', 'ph-tl-phuket-badge', 'ph-tl-phuket');
+    }
+    if (now >= KOHTAO_DATE) {
+      setVisited('ph-tl-phuket-dot', 'ph-tl-phuket-badge', 'ph-tl-phuket', '✓ 16.–18. Jun');
+      setCurrent('ph-tl-kohtao-dot', 'ph-tl-kohtao-badge', 'ph-tl-kohtao');
     }
 
     // Aktuellen Stop zentrieren
     var ABFLUG = new Date('2026-06-09T13:45:00+02:00');
-    var marker = new Date() < ABFLUG
+    var marker = now < ABFLUG
       ? document.getElementById('ph-tl-current')
-      : (now >= PHUKET_DATE ? document.getElementById('ph-tl-phuket') : document.getElementById('ph-tl-kl-current'));
+      : now >= KOHTAO_DATE ? document.getElementById('ph-tl-kohtao')
+      : now >= PHUKET_DATE ? document.getElementById('ph-tl-phuket')
+      : document.getElementById('ph-tl-kl-current');
     if (!marker) marker = document.getElementById('ph-tl-kl-current');
     if (!marker) return;
 

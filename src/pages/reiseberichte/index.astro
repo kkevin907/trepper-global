@@ -16,7 +16,7 @@ orte.sort((a, b) => {
   const aMain = aDate >= WELTREISE_START ? 1 : 0;
   const bMain = bDate >= WELTREISE_START ? 1 : 0;
   if (bMain !== aMain) return bMain - aMain;
-  if (aMain && bMain) return aDate.getTime() - bDate.getTime();
+  if (aMain && bMain) return bDate.getTime() - aDate.getTime();
   return bDate.getTime() - aDate.getTime();
 });
 

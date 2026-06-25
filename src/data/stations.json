@@ -1544,12 +1544,13 @@
     "flag": "🇹🇭",
     "lat": 7.8804,
     "lon": 98.3923,
-    "status": "current",
+    "status": "visited",
     "phase": "main",
     "timezone": "Asia/Bangkok",
     "currency": "THB",
     "currencySymbol": "฿",
     "dateFrom": "2026-06-16",
+    "dateTo": "2026-06-18",
     "dateTo": null,
     "description": "Strände, Inseln, Street Food — Südthailand.",
     "details": {
@@ -1608,6 +1609,53 @@
           "lat": 7.7763,
           "lon": 98.3219,
           "type": "food"
+        }
+      ]
+    }
+  },
+  {
+    "id": "koh-tao",
+    "name": "Koh Tao",
+    "country": "Thailand",
+    "flag": "🇹🇭",
+    "lat": 10.0956,
+    "lon": 99.8397,
+    "status": "current",
+    "phase": "main",
+    "timezone": "Asia/Bangkok",
+    "currency": "THB",
+    "currencySymbol": "฿",
+    "dateFrom": "2026-06-19",
+    "dateTo": null,
+    "description": "Tauchen, türkises Wasser, kleine Insel im Golf von Thailand.",
+    "details": {
+      "highlights": [
+        "Tauchen & Schnorcheln",
+        "Sairee Beach",
+        "Viewpoints auf der Insel",
+        "Sonnenuntergang Westküste"
+      ],
+      "mustEat": [
+        "Fresh Seafood",
+        "Pad Thai",
+        "Fruit Shakes"
+      ],
+      "visa": "Visa on Arrival / kein Visum für Deutsche (bis 30 Tage)",
+      "language": "Thai, Englisch",
+      "transport": "Fähre, Songthaew, Scooter",
+      "plug": "Typ A/B/C (220V)",
+      "spots": [
+        {
+          "name": "Sairee Beach",
+          "lat": 10.1068,
+          "lon": 99.8244,
+          "type": "sight"
+        },
+        {
+          "name": "John Suwan Viewpoint",
+          "lat": 10.0766,
+          "lon": 99.8404,
+          "type": "sight"
         }
       ]
     }

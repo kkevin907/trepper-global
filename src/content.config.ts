@@ -26,7 +26,8 @@ const orte = defineCollection({
     vibe:       z.string(),
     costLevel:  z.number().min(1).max(5),
     rating:     z.number().min(1).max(5),
-    coverImage: z.string().optional(),
+    coverImage:         z.string().optional(),
+    coverImagePosition: z.string().optional(),
     highlights: z.array(z.string()),
     mapCenter: z.object({
       lat: z.number(),
