@@ -462,9 +462,9 @@ const mapData = JSON.stringify({
   .or-food-list { display:flex; flex-direction:column; gap:.75rem; }
   .or-food-card { background:#ffffff; border:1.5px solid var(--border); border-radius:12px; padding:1rem 1.1rem; transition:box-shadow .15s; }
   .or-food-card:hover { box-shadow:var(--shadow); }
-  .or-food-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:.3rem; }
-  .or-food-name { font-size:.95rem; font-weight:700; color:var(--text); }
-  .or-food-stars { color:#F59E0B; font-size:.85rem; letter-spacing:1px; }
+  .or-food-header { display:flex; justify-content:space-between; align-items:flex-start; gap:.5rem; margin-bottom:.3rem; flex-wrap:wrap; }
+  .or-food-name { font-size:.95rem; font-weight:700; color:var(--text); overflow-wrap:break-word; word-break:break-word; min-width:0; }
+  .or-food-stars { color:#F59E0B; font-size:.85rem; letter-spacing:1px; flex-shrink:0; }
   .or-food-what  { font-size:.85rem; color:var(--text-mid); margin-bottom:.4rem; }
   .or-food-meta  { display:flex; flex-wrap:wrap; gap:.5rem; }
   .or-food-area  { font-size:.75rem; color:var(--text-light); }
@@ -570,28 +570,39 @@ const mapData = JSON.stringify({
   @media (max-width: 600px) {
     .or-sidebar-top { grid-template-columns:1fr; }
     .or-sidebar-bottom { grid-template-columns:1fr; }
-    .or-cover img { height:200px; }
+    .or-cover img { height:260px; }
     .or-photo-grid { grid-template-columns:repeat(2,1fr); }
     .or-chips { gap:.35rem; }
     .or-chip { font-size:.7rem; padding:.22rem .65rem; }
     .or-title { font-size:clamp(1.6rem,8vw,2.5rem); }
     .or-flag { font-size:2.5rem; }
     .or-map { height:300px; }
-    :global(.leaflet-popup-content-wrapper) { max-width: 160px !important; }
+    :global(.leaflet-popup-content-wrapper) { max-width: 200px !important; }
     :global(.leaflet-popup-content) { font-size: 11px !important; margin: 8px 10px !important; }
     .or-header { padding:1.75rem 1.25rem; }
     .or-wrap { padding:1.5rem 1.25rem 3rem; }
+    :global(.or-prose img) { margin:1rem 0 !important; border-radius:10px !important; }
+  }
+  @media (max-width: 480px) {
+    .or-cover img { height:220px; }
+    .or-food-card { padding:.85rem .9rem; }
+    .or-section-title { font-size:1rem; }
+    .or-gmaps-btn { white-space:normal; font-size:.72rem; }
+    .or-map { height:270px; }
+    .or-header { padding:1.5rem 1rem; }
+    .or-wrap { padding:1.25rem 1rem 2.5rem; }
+    .or-chips { gap:.3rem; }
+    .or-chip { font-size:.68rem; padding:.2rem .6rem; }
   }
   @media (max-width: 380px) {
     .or-header { padding:1.25rem 1rem; }
     .or-wrap { padding:1.25rem 1rem 2.5rem; }
     .or-title { font-size:1.5rem; }
     .or-photo-grid { grid-template-columns:1fr; }
-    .or-map { height:260px; }
+    .or-map { height:240px; }
     .or-food-card { padding:.75rem; }
     .or-highlight-list { font-size:.85rem; }
     .or-prose { hyphens:none; -webkit-hyphens:none; max-width:100%; margin-left:0; margin-right:0; }
-    /* Google Maps Button darf umbrechen */
-    .or-gmaps-btn { white-space:normal; font-size:.72rem; }
+    .or-gmaps-btn { width:100%; justify-content:center; }
   }
 </style>
