@@ -1480,7 +1480,7 @@
     "currency": "MYR",
     "currencySymbol": "RM",
     "dateFrom": "2026-06-11",
-    "dateTo": null,
+    "dateTo": "2026-06-16",
     "description": "Petronas Towers, Kulinarik, Dschungel — Melting Pot Südostasiens.",
     "details": {
       "highlights": [
@@ -1551,7 +1551,6 @@
     "currencySymbol": "฿",
     "dateFrom": "2026-06-16",
     "dateTo": "2026-06-18",
-    "dateTo": null,
     "description": "Strände, Inseln, Street Food — Südthailand.",
     "details": {
       "highlights": [
@@ -1620,13 +1619,13 @@
     "flag": "🇹🇭",
     "lat": 10.0956,
     "lon": 99.8397,
-    "status": "current",
+    "status": "visited",
     "phase": "main",
     "timezone": "Asia/Bangkok",
     "currency": "THB",
     "currencySymbol": "฿",
     "dateFrom": "2026-06-19",
-    "dateTo": null,
+    "dateTo": "2026-06-29",
     "description": "Tauchen, türkises Wasser, kleine Insel im Golf von Thailand.",
     "details": {
       "highlights": [
@@ -1667,7 +1666,7 @@
     "flag": "🇭🇰",
     "lat": 22.3193,
     "lon": 114.1694,
-    "status": "upcoming",
+    "status": "current",
     "phase": "main",
     "timezone": "Asia/Hong_Kong",
     "currency": "HKD",
@@ -1743,13 +1742,13 @@
     "flag": "🇹🇭",
     "lat": 13.7563,
     "lon": 100.5018,
-    "status": "upcoming",
+    "status": "visited",
     "phase": "main",
     "timezone": "Asia/Bangkok",
     "currency": "THB",
     "currencySymbol": "฿",
-    "dateFrom": null,
-    "dateTo": null,
+    "dateFrom": "2026-06-29",
+    "dateTo": "2026-07-02",
     "description": "Tempel, Street Food, Süden — Thailand von Nord bis Süd.",
     "details": {
       "highlights": [

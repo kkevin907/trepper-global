@@ -367,10 +367,38 @@ const locLon = currentStation.lon;
           </div>
           <div class="ph-tl-line tl-dash"></div>
 
+          <!-- Bangkok -->
+          <div class="ph-tl-stop" id="ph-tl-bangkok">
+            <div class="ph-tl-top">
+              <span class="ph-tl-flag">🇹🇭</span>
+              <span class="ph-tl-name">Bangkok</span>
+            </div>
+            <div class="ph-tl-dot-row">
+              <div class="ph-tl-dot" id="ph-tl-bangkok-dot" style="background:#F97316;opacity:.6;box-shadow:0 0 0 3px #F9731618;"></div>
+            </div>
+            <div class="ph-tl-bot">
+              <span class="ph-tl-badge" id="ph-tl-bangkok-badge" style="background:#FFF7ED;color:#C2410C;">ab 29. Jun</span>
+            </div>
+          </div>
+          <div class="ph-tl-line tl-dash"></div>
+
+          <!-- Hongkong -->
+          <div class="ph-tl-stop" id="ph-tl-hongkong">
+            <div class="ph-tl-top">
+              <span class="ph-tl-flag">🇭🇰</span>
+              <span class="ph-tl-name">Hongkong</span>
+            </div>
+            <div class="ph-tl-dot-row">
+              <div class="ph-tl-dot" id="ph-tl-hongkong-dot" style="background:#F97316;opacity:.6;box-shadow:0 0 0 3px #F9731618;"></div>
+            </div>
+            <div class="ph-tl-bot">
+              <span class="ph-tl-badge" id="ph-tl-hongkong-badge" style="background:#FFF7ED;color:#C2410C;">ab 2. Jul</span>
+            </div>
+          </div>
+          <div class="ph-tl-line tl-dash"></div>
+
           <!-- GEPLANT: orange, dashed -->
           {[
-            { flag:'🇹🇭', name:'Bangkok'       },
-            { flag:'🇭🇰', name:'Hongkong',     date:'ab 2. Jul'  },
             { flag:'🇻🇳', name:'Vietnam'       },
             { flag:'🇮🇩', name:'Bali'          },
             { flag:'🇳🇿', name:'Neuseeland'    },
@@ -412,8 +440,10 @@ const locLon = currentStation.lon;
     if (!container) return;
 
     var now = new Date();
-    var PHUKET_DATE  = new Date('2026-06-16T00:00:00');
-    var KOHTAO_DATE  = new Date('2026-06-19T00:00:00');
+    var PHUKET_DATE   = new Date('2026-06-16T00:00:00');
+    var KOHTAO_DATE   = new Date('2026-06-19T00:00:00');
+    var BANGKOK_DATE  = new Date('2026-06-29T00:00:00');
+    var HONGKONG_DATE = new Date('2026-07-02T00:00:00');
 
     function setVisited(dotId, badgeId, stopId, label) {
       var dot   = document.getElementById(dotId);
@@ -440,13 +470,23 @@ const locLon = currentStation.lon;
       setVisited('ph-tl-phuket-dot', 'ph-tl-phuket-badge', 'ph-tl-phuket', '✓ 16.–18. Jun');
       setCurrent('ph-tl-kohtao-dot', 'ph-tl-kohtao-badge', 'ph-tl-kohtao');
     }
+    if (now >= BANGKOK_DATE) {
+      setVisited('ph-tl-kohtao-dot', 'ph-tl-kohtao-badge', 'ph-tl-kohtao', '✓ 19.–28. Jun');
+      setCurrent('ph-tl-bangkok-dot', 'ph-tl-bangkok-badge', 'ph-tl-bangkok');
+    }
+    if (now >= HONGKONG_DATE) {
+      setVisited('ph-tl-bangkok-dot', 'ph-tl-bangkok-badge', 'ph-tl-bangkok', '✓ 29. Jun–2. Jul');
+      setCurrent('ph-tl-hongkong-dot', 'ph-tl-hongkong-badge', 'ph-tl-hongkong');
+    }
 
     // Aktuellen Stop zentrieren
     var ABFLUG = new Date('2026-06-09T13:45:00+02:00');
     var marker = now < ABFLUG
       ? document.getElementById('ph-tl-current')
-      : now >= KOHTAO_DATE ? document.getElementById('ph-tl-kohtao')
-      : now >= PHUKET_DATE ? document.getElementById('ph-tl-phuket')
+      : now >= HONGKONG_DATE ? document.getElementById('ph-tl-hongkong')
+      : now >= BANGKOK_DATE  ? document.getElementById('ph-tl-bangkok')
+      : now >= KOHTAO_DATE   ? document.getElementById('ph-tl-kohtao')
+      : now >= PHUKET_DATE   ? document.getElementById('ph-tl-phuket')
       : document.getElementById('ph-tl-kl-current');
     if (!marker) marker = document.getElementById('ph-tl-kl-current');
     if (!marker) return;
