@@ -80,9 +80,9 @@ skip:
 draft: false
 ---
 
-Bangkok war kein normaler Stop. Die Anreise von Koh Tao war schon das Abenteuer.
+Bangkok war kein normaler Stop. Ich wollte die Strecke von Koh Tao per Anhalter fahren und die Anreise war schon das Abenteuer.
 
-Erst mit der Fähre von Koh Tao nach Chumphon. Der Anleger hält etwa 40 km außerhalb der Stadt, im Nirgendwo. Ich hatte kurz Angst, dass ich dort feststecken würde, weil es keine günstige Möglichkeit geben sollte, in die Stadt zu kommen. Stattdessen: das erste Auto, das ich angehalten habe, hat direkt gehalten. Eine Familie, auf dem Heimweg. Wir waren zu fünft im Auto, ich habe mich reingewürgt. Die Familie hat mich bis zu einer Autobahnraststätte auf halbem Weg Richtung Bangkok gefahren.
+Erst mit der Fähre von Koh Tao nach Chumphon. Der Anleger hält etwa 40 km außerhalb der Stadt, im Nirgendwo. Ich hatte kurz Angst, dass ich dort feststecken würde, weil es keine günstige Möglichkeit geben sollte, in die Stadt zu kommen. Stattdessen: das erste Auto, das ich angehalten habe, hat direkt gehalten. Eine Familie, auf dem Heimweg. Wir waren zu fünft im Auto. Die Familie hat mich bis zu einer Autobahnraststätte auf halbem Weg Richtung Bangkok gefahren.
 
 An der Raststätte erst gegessen und dann die nächste Mitfahrgelegenheit gesucht. Dabei habe ich einen Thailänder und einen Russen getroffen, die schon öfters per Anhalter gefahren sind und mir noch ein paar Tipps gegeben haben. Nach ungefähr zehn weiteren Versuchen habe ich einen LKW-Fahrer gefunden, der in Richtung Bangkok fährt. Sein Onkel war auch dabei.
 
@@ -90,18 +90,18 @@ Die beiden waren sehr nett und lustig. Wir haben zusammen zu Abend gegessen, ich
 
 Nach 12 Stunden bin ich an der **[Khao San Road](https://maps.google.com/?q=Khao+San+Road+Bangkok)** angekommen. Meine Freunde, die zur gleichen Zeit mit dem kommerziellen Bus losgefahren waren, kamen nur drei Stunden früher an. So viel langsamer war es also gar nicht.
 
-Das erste Abend haben wir gemeinsam das WM-Viertelfinale **Deutschland gegen Paraguay** geschaut. Deutschland hat verloren.
+Am ersten Abend haben wir gemeinsam das WM-Viertelfinale **Deutschland gegen Paraguay** geschaut. Deutschland hat verloren.
 
-Meine Unterkunft lag in der Nähe der Khao San Road. Gewöhnungsbedürftig, aber ganz nett.
+Meine Unterkunft lag in der Nähe der Khao San Road. Gewöhnungsbedürftig, für zwei Nächte aber ausreichend.
 
 In den nächsten Tagen habe ich mir verschiedene Tempel angeschaut. Den **[Wat Pho](https://maps.google.com/?q=Wat+Pho+Bangkok)** mit dem Liegenden Buddha habe ich nach einer Fahrt mit der **[Chao Phraya Fähre](https://maps.google.com/?q=Chao+Phraya+Express+Boat+Bangkok)** gemacht. Das Ticket kostet unter 0,50 €, die Fähre fährt am **[Wat Arun](https://maps.google.com/?q=Wat+Arun+Bangkok)** vorbei und die Aussicht auf dem Fluss ist gut. Jedem zu empfehlen, der etwas Zeit hat.
 
-Die **[Songwat Road](https://maps.google.com/?q=Songwat+Road+Bangkok)** ist eine Straße mit verschiedenen stylishen Läden — schön gemacht, lohnt sich für einen Spaziergang.
+Die **[Songwat Road](https://maps.google.com/?q=Songwat+Road+Bangkok)** ist eine Straße mit verschiedenen stylishen Läden. Wer in der Nähe ist, kann gut vorbeischauen.
 
-**[Chinatown](https://maps.google.com/?q=Yaowarat+Road+Bangkok)** war voll, aber cool. Dort habe ich eine Michelin-empfohlene Nudelsuppe mit großen Reisnudeln und Hähnchen gegessen — sehr gut. Und danach eine Kugel Kokosnuss-Eis für 10 Baht. Für den Preis eine der besten Sachen in Bangkok, unbedingt mitnehmen.
+**[Chinatown](https://maps.google.com/?q=Yaowarat+Road+Bangkok)** war voll, aber cool. Dort habe ich eine Michelin-empfohlene Nudelsuppe mit großen Reisnudeln und Hähnchen gegessen, sehr gut. Und danach eine Kugel Kokosnuss-Eis für 10 Baht. Für den Preis eine der besten Sachen in Bangkok, unbedingt mitnehmen.
 
-Den **[Chatuchak Market](https://maps.google.com/?q=Chatuchak+Weekend+Market+Bangkok)** habe ich leider unter der Woche erwischt. Google Maps hat ihn als geöffnet angezeigt, aber von über 10.000 Läden waren vielleicht 200 offen. Ernüchternd. Nur am Wochenende hingehen. Direkt daneben ist eine Mall, die ich noch mitgenommen habe, und ein Tiermarkt, der erschütternd war — Tiere unter schlechten Bedingungen auf engstem Raum. Realitätscheck, aber kein Muss.
+Den **[Chatuchak Market](https://maps.google.com/?q=Chatuchak+Weekend+Market+Bangkok)** habe ich leider unter der Woche erwischt. Google Maps hat ihn als geöffnet angezeigt, aber von über 10.000 Läden waren vielleicht 200 offen. Ernüchternd. Nur am Wochenende hingehen. Direkt daneben ist eine Mall, die ich noch mitgenommen habe, und ein Tiermarkt, der erschütternd war. Tiere unter schlechten Bedingungen auf engstem Raum. Realitätscheck, aber kein Muss.
 
-Einen eigenen Stop wert ist **[Uncle Tu 10 Bath](https://maps.google.com/?q=Uncle+Tu+10+Bath+Bangkok)** im Süden der Stadt. Essen für 10 Baht, kleine Pfannkuchen mit Vanille- oder Fruchtfüllung für 5 Baht, große für 10 Baht, und eine Glas-Fanta für 7 Baht. Für die Preise sehr lecker.
+Einen eigenen Stop wert ist **[Uncle Tu 10 Bath](https://maps.google.com/?q=Uncle+Tu+10+Bath+Bangkok)** im Süden der Stadt. Dort gibt es Reis mit Fleisch und Sauce für 10 Baht. Das ganze Viertel drumherum ist günstig: an den umliegenden Ständen habe ich kleine Pfannkuchen mit Vanille- oder Fruchtfüllung für 5 Baht bekommen, große für 10 Baht, und eine Glas-Fanta für 7 Baht. Alles sehr lecker für den Preis.
 
 Am nächsten Morgen Flug nach Hongkong.
