@@ -108,3 +108,5 @@ Abends haben wir immer zusammen als Gruppe in der Bar vorgetrunken, mit Trinkspi
 Eigentlich hatte ich nur geplant, für den Tauchkurs zu bleiben. Dann habe ich fünf Tage verlängert, dann noch mal. Insgesamt zehn Nächte. Die Gruppe war gut, das Tauchen hat Spaß gemacht, und ich wollte einfach nicht weg.
 
 Koh Tao ist eine große Empfehlung.
+
+Weiter nach Bangkok ging's dann per Anhalter.
