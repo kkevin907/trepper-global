@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import LocationBadge from '../components/LocationBadge.astro';
 import WorldMap from '../components/WorldMap.astro';
-import NewsletterSignup from '../components/NewsletterSignup.astro';
+// import NewsletterSignup from '../components/NewsletterSignup.astro';
 import stationsData from '../data/stations.json';
 import config from '../data/config.json';
 import { getCollection } from 'astro:content';
@@ -222,14 +222,13 @@ const locLon = currentStation.lon;
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════
-     NEWSLETTER
-═══════════════════════════════════════════════════════ -->
+{/* NEWSLETTER — vorerst ausgeblendet
 <section class="ph-sec ph-sec-soft ph-sec-nl reveal">
   <div class="ph-wrap">
     <NewsletterSignup variant="section" />
   </div>
 </section>
+*/}
 
 <!-- ═══════════════════════════════════════════════════════
      PHASEN — direkt danach, kompakt
