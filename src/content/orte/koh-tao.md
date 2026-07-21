@@ -14,7 +14,6 @@ highlights:
   - "[Ao Hin Wong Beach](https://maps.google.com/?q=Ao+Hin+Wong+Beach+Koh+Tao) — bestes Highlight der Insel. Im knietiefen Wasser stehen Baby Sharks um einen herum."
   - "[Blue Chair](https://maps.google.com/?q=Blue+Chair+Koh+Tao) — Pad Thai und Thai-Gerichte für 80 Baht. Zwei Minuten Fußweg, riesige Portionen."
   - "[John Suwan Viewpoint](https://maps.google.com/?q=John+Suwan+Viewpoint+Koh+Tao) — 50 Baht Eintritt, bester Aussichtspunkt der Insel. Freedom Beach inklusive."
-  - "Ao Leuk: erster Baby Shark im Taucheinstieg gesehen."
 sights:
   - name: "John Suwan Viewpoint"
     lat: 10.0766
@@ -74,10 +73,8 @@ foodSpots:
     tip: "Hype nicht ganz gerechtfertigt. Lieber weiterziehen."
     link: "https://maps.google.com/?q=995+Roasted+Duck+Koh+Tao"
 tips:
-  - "[Rainbow Fish Divers](https://maps.google.com/?q=Rainbow+Fish+Divers+Koh+Tao): deutschsprachige Tauchschule, Hostel im Preis inklusive, Bar und Frühstück direkt dabei. Beste Wahl für den Open Water Kurs."
   - "[Olli's Motorbike Rentals](https://maps.google.com/?q=Olli+Motorbike+Rental+Koh+Tao): 200 Baht/Tag, Schnorchel-Set kostenlos inklusive. Nur Passfoto + 2.000 Baht Kaution — keine Pass-Abgabe."
   - "[Ao Hin Wong Beach](https://maps.google.com/?q=Ao+Hin+Wong+Beach+Koh+Tao): Eintritt 50–100 Baht. Kostenloser Weg über das View Rock Resort links, dann rüber schwimmen."
-  - "[John Suwan Viewpoint](https://maps.google.com/?q=John+Suwan+Viewpoint+Koh+Tao): 50 Baht Eintritt, bester Aussichtspunkt. Freedom Beach inklusive."
   - "Anreise: Bus + 9 Stunden Nachtfähre. Auf der Fähre schläft man überraschend gut."
 skip:
   - "[995 Roasted Duck](https://maps.google.com/?q=995+Roasted+Duck+Koh+Tao): viel Hype, wenig dahinter. Lange Wartezeit, wenig Ente für den Preis."
@@ -86,7 +83,7 @@ skip:
 draft: false
 ---
 
-Koh Tao war kein geplanter Stop. Kurz vor der Abreise war ich auf einer Feier in München, wo mich zwei Mädchen von ihrer Asienreise erzählt haben und meinten, dass Koh Tao die beste Zeit ihrer gesamten Reise war, vor allem wegen des Tauchens. Sie haben mir explizit die **[Rainbow Fish Divers](https://maps.google.com/?q=Rainbow+Fish+Divers+Koh+Tao)** empfohlen, eine deutschsprachige Tauchschule auf der Insel.
+Koh Tao war kein geplanter Stop. Kurz vor der Abreise war ich auf einer Feier in München, wo mir zwei Mädchen von ihrer Asienreise erzählt haben und meinten, dass Koh Tao die beste Zeit ihrer gesamten Reise war, vor allem wegen des Tauchens. Sie haben mir explizit die **[Rainbow Fish Divers](https://maps.google.com/?q=Rainbow+Fish+Divers+Koh+Tao)** empfohlen, eine deutschsprachige Tauchschule auf der Insel.
 
 Nachdem ich in Phuket war, habe ich beschlossen, es einfach auszuprobieren. Die Anreise war lang: erst mit dem Bus, dann 9 Stunden Nachtfähre. Auf der Fähre schläft man überraschend gut.
 
@@ -94,19 +91,19 @@ In der Tauchschule wurde ich sehr gut empfangen. Das Hostel war direkt im Kurs-P
 
 Den **PADI Open Water Diver Kurs** habe ich dann gemacht. Deutschsprachig zu lernen war ein echter Vorteil, weil man beim Tauchen wirklich alles verstehen muss. Wir hatten einen sehr kompetenten Tauchlehrer, mit dem es Spaß gemacht hat. Sechs Taucheinheiten, Theorie, abschließender Test, letzter Tauchgang in der Praxis.
 
-Beim Tauchen in **[Ao Leuk](https://maps.google.com/?q=Ao+Leuk+Koh+Tao)** habe ich meinen ersten Baby Shark gesehen. Direkt beim Einstieg. Die **[Tanote Bay](https://maps.google.com/?q=Tanote+Bay+Koh+Tao)** war ebenfalls schön, viele Fische und Korallen, aber keine besonderen Tiere.
+Beim Schnorcheln in **[Ao Leuk](https://maps.google.com/?q=Ao+Leuk+Koh+Tao)** habe ich meinen ersten Baby Shark gesehen. Direkt beim Einstieg. In der **[Tanote Bay](https://maps.google.com/?q=Tanote+Bay+Koh+Tao)** war ich auch — viele Fische und Korallen, aber keine besonderen Tiere.
 
 Das absolute Highlight der Insel war der **[Ao Hin Wong Beach](https://maps.google.com/?q=Ao+Hin+Wong+Beach+Koh+Tao)**. Eintritt eigentlich 50–100 Baht, aber links gibt es das View Rock Resort, und darüber kommt man kostenlos zu den Felsen und schwimmt dann rüber zum Strand. Im knietiefen Wasser stehen Baby Sharks direkt um einen herum. Das war wirklich besonders.
 
 Etwas enttäuschend dagegen war die **[Shark Bay](https://maps.google.com/?q=Shark+Bay+Koh+Tao)**. Kostenloser Eingang, aber die versprochenen Schildkröten habe ich nicht gesehen. Ich habe seitdem von vielen gehört, dass das eher selten vorkommt.
 
-Zum Erkunden der Insel habe ich mir einen Roller bei **[Olli's Motorbike Rentals](https://maps.google.com/?q=Olli+Motorbike+Rental+Koh+Tao)** gemietet. 200 Baht pro Tag, etwas teurer als andere Verleihstationen, aber das Schnorchel-Set war kostenlos inklusive. Außerdem musste ich nur ein Foto vom Pass machen und 2.000 Baht Kaution hinterlegen, kein Pass-Abgabe. Den Roller kann ich definitiv empfehlen.
+Zum Erkunden der Insel habe ich mir einen Roller bei **[Olli's Motorbike Rentals](https://maps.google.com/?q=Olli+Motorbike+Rental+Koh+Tao)** gemietet. 200 Baht pro Tag, etwas teurer als andere Verleihstationen, aber das Schnorchel-Set war kostenlos inklusive. Außerdem musste ich nur ein Foto vom Pass machen und 2.000 Baht Kaution hinterlegen, keine Pass-Abgabe. Den Roller kann ich definitiv empfehlen.
 
 Den **[John Suwan Viewpoint](https://maps.google.com/?q=John+Suwan+Viewpoint+Koh+Tao)** haben wir mit 50 Baht Eintritt gemacht. Bester Ausblick auf der Insel. Von dort aus kommt man auch zum Freedom Beach, wo wir Drohnenvideos gedreht haben. Die **Secret View & Sunset Bar** haben wir auch besucht, 100 Baht Eintritt mit einem Freigetränk — ganz nett, aber John Suwan ist deutlich besser.
 
 Beim Essen war **[Blue Chair](https://maps.google.com/?q=Blue+Chair+Koh+Tao)** meine Stammadresse. Zwei Minuten Fußweg, riesige Portion Pad Thai oder andere Thai-Gerichte für 80 Baht, also etwas mehr als 2 €. Sehr gut. Die **Sandwich Lady** habe ich einmal besucht, war weiter weg, aber hat sich gelohnt. Zum Glück keine Schlange. Den **[995 Roasted Duck](https://maps.google.com/?q=995+Roasted+Duck+Koh+Tao)** würde ich beim nächsten Mal auslassen — sehr gehyped, aber zu voll, zu lange Wartezeit, und zu wenig Ente für den Preis.
 
-Abends haben wir in der Bar vorgetrunken und sind dann öfters an den Strand feiern gegangen, meistens zu **Fishbowls**, einem Club direkt am Strand. Spät abends haben wir auch mal zu viert Spiele gespielt.
+Abends haben wir immer zusammen als Gruppe in der Bar vorgetrunken, mit Trinkspielen wie **Rage Cage**, und sind dann öfters an den Strand feiern gegangen, meistens zu **Fishbowls**, einem Club direkt am Strand.
 
 Eigentlich hatte ich nur geplant, für den Tauchkurs zu bleiben. Dann habe ich fünf Tage verlängert, dann noch mal. Insgesamt zehn Nächte. Die Gruppe war gut, das Tauchen hat Spaß gemacht, und ich wollte einfach nicht weg.
 
