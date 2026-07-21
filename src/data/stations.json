@@ -1666,13 +1666,13 @@
     "flag": "🇭🇰",
     "lat": 22.3193,
     "lon": 114.1694,
-    "status": "current",
+    "status": "visited",
     "phase": "main",
     "timezone": "Asia/Hong_Kong",
     "currency": "HKD",
     "currencySymbol": "HK$",
     "dateFrom": "2026-07-02",
-    "dateTo": null,
+    "dateTo": "2026-07-10",
     "description": "Skyline, Straßenmärkte, Dim Sum — erster Asien-Stop der Weltreise.",
     "details": {
       "highlights": [
@@ -1733,6 +1733,78 @@
           "type": "food"
         }
       ]
+    }
+  },
+  {
+    "id": "shenzhen",
+    "name": "Shenzhen",
+    "country": "China",
+    "flag": "🇨🇳",
+    "lat": 22.5431,
+    "lon": 114.0579,
+    "status": "visited",
+    "phase": "main",
+    "timezone": "Asia/Shanghai",
+    "currency": "CNY",
+    "currencySymbol": "¥",
+    "dateFrom": "2026-07-10",
+    "dateTo": "2026-07-14",
+    "description": "Megacity direkt an der Grenze zu Hongkong.",
+    "details": {
+      "highlights": [],
+      "mustEat": [],
+      "visa": "Visum erforderlich",
+      "language": "Mandarin",
+      "transport": "Metro, Didi",
+      "spots": []
+    }
+  },
+  {
+    "id": "shanghai",
+    "name": "Shanghai",
+    "country": "China",
+    "flag": "🇨🇳",
+    "lat": 31.2304,
+    "lon": 121.4737,
+    "status": "visited",
+    "phase": "main",
+    "timezone": "Asia/Shanghai",
+    "currency": "CNY",
+    "currencySymbol": "¥",
+    "dateFrom": "2026-07-15",
+    "dateTo": "2026-07-18",
+    "description": "Skyline am Bund, Altstadt, 19-Stunden-Nachtzug.",
+    "details": {
+      "highlights": [],
+      "mustEat": [],
+      "visa": "Visum erforderlich",
+      "language": "Mandarin",
+      "transport": "Metro, Didi",
+      "spots": []
+    }
+  },
+  {
+    "id": "wuhan",
+    "name": "Wuhan",
+    "country": "China",
+    "flag": "🇨🇳",
+    "lat": 30.5928,
+    "lon": 114.3055,
+    "status": "current",
+    "phase": "main",
+    "timezone": "Asia/Shanghai",
+    "currency": "CNY",
+    "currencySymbol": "¥",
+    "dateFrom": "2026-07-19",
+    "dateTo": null,
+    "description": "Millionenstadt am Jangtse.",
+    "details": {
+      "highlights": [],
+      "mustEat": [],
+      "visa": "Visum erforderlich",
+      "language": "Mandarin",
+      "transport": "Metro, Didi",
+      "spots": []
     }
   },
   {

@@ -397,6 +397,51 @@ const locLon = currentStation.lon;
           </div>
           <div class="ph-tl-line tl-dash"></div>
 
+          <!-- Shenzhen -->
+          <div class="ph-tl-stop" id="ph-tl-shenzhen">
+            <div class="ph-tl-top">
+              <span class="ph-tl-flag">🇨🇳</span>
+              <span class="ph-tl-name">Shenzhen</span>
+            </div>
+            <div class="ph-tl-dot-row">
+              <div class="ph-tl-dot" id="ph-tl-shenzhen-dot" style="background:#F97316;opacity:.6;box-shadow:0 0 0 3px #F9731618;"></div>
+            </div>
+            <div class="ph-tl-bot">
+              <span class="ph-tl-badge" id="ph-tl-shenzhen-badge" style="background:#FFF7ED;color:#C2410C;">ab 10. Jul</span>
+            </div>
+          </div>
+          <div class="ph-tl-line tl-dash"></div>
+
+          <!-- Shanghai -->
+          <div class="ph-tl-stop" id="ph-tl-shanghai">
+            <div class="ph-tl-top">
+              <span class="ph-tl-flag">🇨🇳</span>
+              <span class="ph-tl-name">Shanghai</span>
+            </div>
+            <div class="ph-tl-dot-row">
+              <div class="ph-tl-dot" id="ph-tl-shanghai-dot" style="background:#F97316;opacity:.6;box-shadow:0 0 0 3px #F9731618;"></div>
+            </div>
+            <div class="ph-tl-bot">
+              <span class="ph-tl-badge" id="ph-tl-shanghai-badge" style="background:#FFF7ED;color:#C2410C;">ab 15. Jul</span>
+            </div>
+          </div>
+          <div class="ph-tl-line tl-dash"></div>
+
+          <!-- Wuhan -->
+          <div class="ph-tl-stop" id="ph-tl-wuhan">
+            <div class="ph-tl-top">
+              <span class="ph-tl-flag">🇨🇳</span>
+              <span class="ph-tl-name">Wuhan</span>
+            </div>
+            <div class="ph-tl-dot-row">
+              <div class="ph-tl-dot" id="ph-tl-wuhan-dot" style="background:#F97316;opacity:.6;box-shadow:0 0 0 3px #F9731618;"></div>
+            </div>
+            <div class="ph-tl-bot">
+              <span class="ph-tl-badge" id="ph-tl-wuhan-badge" style="background:#FFF7ED;color:#C2410C;">ab 19. Jul</span>
+            </div>
+          </div>
+          <div class="ph-tl-line tl-dash"></div>
+
           <!-- GEPLANT: orange, dashed -->
           {[
             { flag:'🇻🇳', name:'Vietnam'       },
@@ -440,10 +485,13 @@ const locLon = currentStation.lon;
     if (!container) return;
 
     var now = new Date();
-    var PHUKET_DATE   = new Date('2026-06-16T00:00:00');
-    var KOHTAO_DATE   = new Date('2026-06-19T00:00:00');
-    var BANGKOK_DATE  = new Date('2026-06-29T00:00:00');
-    var HONGKONG_DATE = new Date('2026-07-02T00:00:00');
+    var PHUKET_DATE    = new Date('2026-06-16T00:00:00');
+    var KOHTAO_DATE    = new Date('2026-06-19T00:00:00');
+    var BANGKOK_DATE   = new Date('2026-06-29T00:00:00');
+    var HONGKONG_DATE  = new Date('2026-07-02T00:00:00');
+    var SHENZHEN_DATE  = new Date('2026-07-10T00:00:00');
+    var SHANGHAI_DATE  = new Date('2026-07-15T00:00:00');
+    var WUHAN_DATE     = new Date('2026-07-19T00:00:00');
 
     function setVisited(dotId, badgeId, stopId, label) {
       var dot   = document.getElementById(dotId);
@@ -478,11 +526,26 @@ const locLon = currentStation.lon;
       setVisited('ph-tl-bangkok-dot', 'ph-tl-bangkok-badge', 'ph-tl-bangkok', '✓ 29. Jun–2. Jul');
       setCurrent('ph-tl-hongkong-dot', 'ph-tl-hongkong-badge', 'ph-tl-hongkong');
     }
+    if (now >= SHENZHEN_DATE) {
+      setVisited('ph-tl-hongkong-dot', 'ph-tl-hongkong-badge', 'ph-tl-hongkong', '✓ 2.–10. Jul');
+      setCurrent('ph-tl-shenzhen-dot', 'ph-tl-shenzhen-badge', 'ph-tl-shenzhen');
+    }
+    if (now >= SHANGHAI_DATE) {
+      setVisited('ph-tl-shenzhen-dot', 'ph-tl-shenzhen-badge', 'ph-tl-shenzhen', '✓ 10.–14. Jul');
+      setCurrent('ph-tl-shanghai-dot', 'ph-tl-shanghai-badge', 'ph-tl-shanghai');
+    }
+    if (now >= WUHAN_DATE) {
+      setVisited('ph-tl-shanghai-dot', 'ph-tl-shanghai-badge', 'ph-tl-shanghai', '✓ 15.–18. Jul');
+      setCurrent('ph-tl-wuhan-dot', 'ph-tl-wuhan-badge', 'ph-tl-wuhan');
+    }
 
     // Aktuellen Stop zentrieren
     var ABFLUG = new Date('2026-06-09T13:45:00+02:00');
     var marker = now < ABFLUG
       ? document.getElementById('ph-tl-current')
+      : now >= WUHAN_DATE    ? document.getElementById('ph-tl-wuhan')
+      : now >= SHANGHAI_DATE ? document.getElementById('ph-tl-shanghai')
+      : now >= SHENZHEN_DATE ? document.getElementById('ph-tl-shenzhen')
       : now >= HONGKONG_DATE ? document.getElementById('ph-tl-hongkong')
       : now >= BANGKOK_DATE  ? document.getElementById('ph-tl-bangkok')
       : now >= KOHTAO_DATE   ? document.getElementById('ph-tl-kohtao')
