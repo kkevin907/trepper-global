@@ -29,8 +29,13 @@ const recentOrte = [...realOrte]
 const costColors = ['', '#10B981', '#22C55E', '#F97316', '#EF4444', '#DC2626'];
 const costLabels = ['', 'Günstig', 'Günstig', 'Bezahlbar', 'Teuer', 'Sehr teuer'];
 
-// Warmup-Stops die bereits besucht wurden
-const warmupVisited = stationsData.filter(s => s.phase === 'warmup' && s.status === 'visited').length;
+// Alle besuchten Orte in 2026 — Warmup + Weltreise, automatisch via dateFrom
+const _todayCount = new Date();
+const visitedIn2026 = stationsData.filter(
+  s => (s.phase === 'warmup' || s.phase === 'main') &&
+       s.dateFrom &&
+       new Date(s.dateFrom) <= _todayCount
+).length;
 
 
 // Kilometer berechnen — Haversine über alle besuchten Stationen (home + visited)
@@ -169,7 +174,7 @@ const locLon = currentStation.lon;
       <!-- Stats -->
       <div class="ph-stats">
         <div class="ph-stat">
-          <span class="ph-stat-n" style="color:#F97316;">{warmupVisited}</span>
+          <span class="ph-stat-n" style="color:#F97316;">{visitedIn2026}</span>
           <span class="ph-stat-l">Orte in 2026</span>
         </div>
         <div class="ph-stat-sep"></div>
