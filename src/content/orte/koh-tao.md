@@ -75,24 +75,24 @@ foodSpots:
     link: "https://maps.google.com/?q=995+Roasted+Duck+Koh+Tao"
 tips:
   - "[Rainbow Fish Divers](https://maps.google.com/?q=Rainbow+Fish+Divers+Koh+Tao): deutschsprachige Tauchschule, Hostel im Preis inklusive, Bar und Frühstück direkt dabei. Beste Wahl für den Open Water Kurs."
-  - "[Olli's Motorbike Rentals](https://maps.google.com/?q=Olli+Motorbike+Rental+Koh+Tao): 200 Baht/Tag, Schnorchel-Set kostenlos inklusive. Nur Passfoto + 2.000 Baht Kaution — kein Pass-Abgabe."
+  - "[Olli's Motorbike Rentals](https://maps.google.com/?q=Olli+Motorbike+Rental+Koh+Tao): 200 Baht/Tag, Schnorchel-Set kostenlos inklusive. Nur Passfoto + 2.000 Baht Kaution — keine Pass-Abgabe."
   - "[Ao Hin Wong Beach](https://maps.google.com/?q=Ao+Hin+Wong+Beach+Koh+Tao): Eintritt 50–100 Baht. Kostenloser Weg über das View Rock Resort links, dann rüber schwimmen."
   - "[John Suwan Viewpoint](https://maps.google.com/?q=John+Suwan+Viewpoint+Koh+Tao): 50 Baht Eintritt, bester Aussichtspunkt. Freedom Beach inklusive."
   - "Anreise: Bus + 9 Stunden Nachtfähre. Auf der Fähre schläft man überraschend gut."
-  - "[Shark Bay](https://maps.google.com/?q=Shark+Bay+Koh+Tao): Kostenloser Eingang, Schildkröten sind aber selten zu sehen. Erwartungen niedrig halten."
 skip:
-  - "[995 Roasted Duck](https://maps.google.com/?q=995+Roasted+Duck+Koh+Tao): langer Hype, wenig dahinter. Wenig Ente, langer Wartezeit, zu teuer für das was man bekommt."
+  - "[995 Roasted Duck](https://maps.google.com/?q=995+Roasted+Duck+Koh+Tao): viel Hype, wenig dahinter. Lange Wartezeit, wenig Ente für den Preis."
   - "[Secret View & Sunset Bar](https://maps.google.com/?q=Secret+View+Sunset+Bar+Koh+Tao): 100 Baht Eintritt + Freigetränk, ganz nett — aber [John Suwan](https://maps.google.com/?q=John+Suwan+Viewpoint+Koh+Tao) ist deutlich besser."
+  - "[Shark Bay](https://maps.google.com/?q=Shark+Bay+Koh+Tao): Kostenloser Eingang, aber Schildkröten sieht man dort selten. Enttäuschend."
 draft: false
 ---
 
-Koh Tao war kein geplanter Stop. Eine Woche vor meiner Abreise in München haben mir zwei Mädchen von ihrer Asienreise erzählt und gemeint, dass Koh Tao die beste Zeit ihrer gesamten Reise war, vor allem wegen des Tauchens. Sie haben mir explizit die **[Rainbow Fish Divers](https://maps.google.com/?q=Rainbow+Fish+Divers+Koh+Tao)** empfohlen, eine deutschsprachige Tauchschule auf der Insel.
+Koh Tao war kein geplanter Stop. Kurz vor der Abreise war ich auf einer Feier in München, wo mich zwei Mädchen von ihrer Asienreise erzählt haben und meinten, dass Koh Tao die beste Zeit ihrer gesamten Reise war, vor allem wegen des Tauchens. Sie haben mir explizit die **[Rainbow Fish Divers](https://maps.google.com/?q=Rainbow+Fish+Divers+Koh+Tao)** empfohlen, eine deutschsprachige Tauchschule auf der Insel.
 
 Nachdem ich in Phuket war, habe ich beschlossen, es einfach auszuprobieren. Die Anreise war lang: erst mit dem Bus, dann 9 Stunden Nachtfähre. Auf der Fähre schläft man überraschend gut.
 
-In der Tauchschule wurde ich sehr gut empfangen. Das Hostel war direkt im Kurs-Preis inklusive, hinter dem Seven Eleven, ein Schlafsaal mit mehreren Leuten. Normalerweise wäre mir das zu wenig Privatsphäre, aber die Gruppe war so gut, dass es keine Rolle gespielt hat. Direkt nebenan war die Bar der Tauchschule, nur für uns — günstiges Bier abends, morgens kostenloses Frühstück mit Pancakes, Rührei und Omelette.
+In der Tauchschule wurde ich sehr gut empfangen. Das Hostel war direkt im Kurs-Preis inklusive, hinter dem 7-Eleven, ein Schlafsaal mit mehreren Leuten. Normalerweise wäre mir das zu wenig Privatsphäre, aber die Gruppe war so gut, dass es keine Rolle gespielt hat. Direkt nebenan war die Bar der Tauchschule, nur für uns — günstiges Bier abends, morgens kostenloses Frühstück mit Pancakes, Rührei und Omelette.
 
-Den **PADI Open Water Diver Kurs** habe ich dann gemacht. Deutschsprachig zu lernen war ein echter Vorteil, weil man beim Tauchen wirklich alles verstehen muss. Wir hatten einen sehr guten und kompetenten Tauchlehrer, der Spaß gemacht hat. Sechs Taucheinheiten, Theorie, abschließender Test, letzter Tauchgang in der Praxis — und am Ende noch ein professionelles Video der letzten beiden Tauchgänge als Erinnerung.
+Den **PADI Open Water Diver Kurs** habe ich dann gemacht. Deutschsprachig zu lernen war ein echter Vorteil, weil man beim Tauchen wirklich alles verstehen muss. Wir hatten einen sehr kompetenten Tauchlehrer, mit dem es Spaß gemacht hat. Sechs Taucheinheiten, Theorie, abschließender Test, letzter Tauchgang in der Praxis.
 
 Beim Tauchen in **[Ao Leuk](https://maps.google.com/?q=Ao+Leuk+Koh+Tao)** habe ich meinen ersten Baby Shark gesehen. Direkt beim Einstieg. Die **[Tanote Bay](https://maps.google.com/?q=Tanote+Bay+Koh+Tao)** war ebenfalls schön, viele Fische und Korallen, aber keine besonderen Tiere.
 
@@ -106,8 +106,8 @@ Den **[John Suwan Viewpoint](https://maps.google.com/?q=John+Suwan+Viewpoint+Koh
 
 Beim Essen war **[Blue Chair](https://maps.google.com/?q=Blue+Chair+Koh+Tao)** meine Stammadresse. Zwei Minuten Fußweg, riesige Portion Pad Thai oder andere Thai-Gerichte für 80 Baht, also etwas mehr als 2 €. Sehr gut. Die **Sandwich Lady** habe ich einmal besucht, war weiter weg, aber hat sich gelohnt. Zum Glück keine Schlange. Den **[995 Roasted Duck](https://maps.google.com/?q=995+Roasted+Duck+Koh+Tao)** würde ich beim nächsten Mal auslassen — sehr gehyped, aber zu voll, zu lange Wartezeit, und zu wenig Ente für den Preis.
 
-Abends haben wir in der Bar vorgertrunken und sind dann öfters an den Strand feiern gegangen, meistens zu **Fishbowls**, einem Club direkt am Strand. Zwischendurch auch mal Spiele zu viert spät abends auf der Insel.
+Abends haben wir in der Bar vorgetrunken und sind dann öfters an den Strand feiern gegangen, meistens zu **Fishbowls**, einem Club direkt am Strand. Spät abends haben wir auch mal zu viert Spiele gespielt.
 
-Eigentlich war ich nur für den Tauchkurs geplant. Dann habe ich fünf Tage verlängert. Und am Ende noch mal verlängert. Insgesamt zehn Nächte. Weil die Gruppe einfach gut war, weil das Tauchen Spaß gemacht hat und weil die Insel insgesamt alles richtig macht.
+Eigentlich hatte ich nur geplant, für den Tauchkurs zu bleiben. Dann habe ich fünf Tage verlängert, dann noch mal. Insgesamt zehn Nächte. Die Gruppe war gut, das Tauchen hat Spaß gemacht, und ich wollte einfach nicht weg.
 
-Koh Tao ist eine der besten Empfehlungen dieser Reise.
+Koh Tao ist eine große Empfehlung.

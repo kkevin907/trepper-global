@@ -381,6 +381,13 @@ const mapData = JSON.stringify({
   })();
 </script>
 
+<script>
+  document.querySelectorAll('.or-prose a').forEach(function(a) {
+    a.setAttribute('target', '_blank');
+    a.setAttribute('rel', 'noopener noreferrer');
+  });
+</script>
+
 <style>
   /* STICKY BACK */
   .or-sticky-back {
