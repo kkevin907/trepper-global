@@ -135,16 +135,19 @@ const doFitVisitedOnly = fitVisitedOnly;
       }
     }
 
-    // Marker — ein Pin pro Land (höchste Priorität gewinnt)
+    // Marker — main-Stationen einzeln, alle anderen ein Pin pro Land
     var statusPriority = { current: 5, home: 4, visited: 3, planned: 3, upcoming: 2 };
     var countryBest = {};
     stations.forEach(function(s) {
+      if (s.phase === 'main') return; // main immer einzeln
       var key = s.country;
       if (!countryBest[key] || (statusPriority[s.status] || 0) > (statusPriority[countryBest[key].status] || 0)) {
         countryBest[key] = s;
       }
     });
-    var dedupedStations = Object.keys(countryBest).map(function(k) { return countryBest[k]; });
+    var nonMainDeduped = Object.keys(countryBest).map(function(k) { return countryBest[k]; });
+    var mainStationsAll = stations.filter(function(s) { return s.phase === 'main'; });
+    var dedupedStations = nonMainDeduped.concat(mainStationsAll);
 
     dedupedStations.forEach(function(s) {
       var color  = colorMap[s.status] || '#94A3B8';

@@ -1736,6 +1736,33 @@
     }
   },
   {
+    "id": "macau",
+    "name": "Macau",
+    "country": "Macau",
+    "flag": "🇲🇴",
+    "lat": 22.1987,
+    "lon": 113.5439,
+    "status": "visited",
+    "phase": "main",
+    "timezone": "Asia/Macau",
+    "currency": "MOP",
+    "currencySymbol": "P",
+    "dateFrom": "2026-07-09",
+    "dateTo": "2026-07-09",
+    "description": "Tagesausflug von Hongkong — Kasinos, Kolonialarchitektur, Pastel de Nata.",
+    "details": {
+      "highlights": [],
+      "mustEat": [
+        "Pastel de Nata",
+        "Pork Chop Bun"
+      ],
+      "visa": "Kein Visum für Deutsche",
+      "language": "Kantonesisch, Portugiesisch",
+      "transport": "Fähre von Hongkong, Bus",
+      "spots": []
+    }
+  },
+  {
     "id": "shenzhen",
     "name": "Shenzhen",
     "country": "China",
