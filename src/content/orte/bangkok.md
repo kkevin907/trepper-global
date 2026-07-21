@@ -11,9 +11,9 @@ costLevel: 1
 rating: 3
 highlights:
   - "Trampen von Koh Tao nach Bangkok — 12 Stunden, zwei Mitfahrgelegenheiten, eine LKW-Kajüte."
-  - "[Uncle Tu 10 Bath](https://maps.google.com/?q=Uncle+Tu+10+Bath+Bangkok) — Essen für 10 Baht, Pfannkuchen für 5 Baht, Glas-Fanta für 7 Baht. Im Süden der Stadt."
-  - "[Wat Pho](https://maps.google.com/?q=Wat+Pho+Bangkok) — Liegender Buddha, direkt nach der Chao-Phraya-Fähre."
-  - "[Chinatown / Yaowarat](https://maps.google.com/?q=Yaowarat+Road+Bangkok) — Kokosnuss-Eis für 10 Baht, Michelin-Nudelsuppe, voll aber cool."
+  - "[Uncle Tu 10 Bath](https://maps.google.com/?q=Uncle+Tu+10+Bath+Bangkok) — Reis mit Fleisch und Sauce für 10 Baht. Das ganze Viertel drumherum ist günstig."
+  - "[Wat Pho](https://maps.google.com/?q=Wat+Pho+Bangkok) — Liegender Buddha, nach der Chao-Phraya-Fähre zu Fuß erreichbar."
+  - "[Chinatown / Yaowarat](https://maps.google.com/?q=Yaowarat+Road+Bangkok) — Kokosnuss-Eis für 10 Baht, [Nai Ek Roll Noodle](https://maps.google.com/?q=Nai+Ek+Roll+Noodle+Bangkok) Michelin-Nudelsuppe."
   - "[Chao Phraya Fähre](https://maps.google.com/?q=Chao+Phraya+Express+Boat+Bangkok) — unter 0,50 €, schönste Art sich durch Bangkok zu bewegen."
 sights:
   - name: "Khao San Road"
@@ -48,19 +48,19 @@ foodSpots:
   - name: "Uncle Tu 10 Bath"
     lat: 13.7200
     lon: 100.5000
-    what: "Streetfood für fast nichts. Pfannkuchen mit Vanille- oder Fruchtfüllung: 5 Baht klein, 10 Baht groß. Glas-Fanta: 7 Baht."
+    what: "Reis mit Fleisch und Sauce für 10 Baht. Das ganze Viertel drumherum ist günstig."
     stars: 5
     area: "Süd-Bangkok"
-    tip: "Klein anfangen und dann den großen Pfannkuchen dazunehmen."
+    tip: "An den umliegenden Ständen: Pfannkuchen ab 5 Baht, Glas-Fanta für 7 Baht."
     link: "https://maps.google.com/?q=Uncle+Tu+10+Bath+Bangkok"
-  - name: "Michelin-Stand Chinatown (Name ergänzen)"
+  - name: "Nai Ek Roll Noodle"
     lat: 13.7396
     lon: 100.5097
-    what: "Nudelsuppe mit großen Reisnudeln und Hähnchen. Michelin-Empfehlung auf der Yaowarat Road."
+    what: "Nudelsuppe mit großen Reisnudeln und Hähnchen. Michelin-Empfehlung."
     stars: 4
     area: "Chinatown"
-    tip: "Auf der Yaowarat Road — Michelin-Schild am Stand suchen."
-    link: "https://maps.google.com/?q=Yaowarat+Road+Bangkok"
+    tip: "Michelin-Schild am Stand suchen."
+    link: "https://maps.google.com/?q=Nai+Ek+Roll+Noodle+Bangkok"
   - name: "Kokosnuss-Eis Chinatown"
     lat: 13.7396
     lon: 100.5097
@@ -70,9 +70,8 @@ foodSpots:
     tip: "Für den Preis eine der besten Sachen in Bangkok."
     link: "https://maps.google.com/?q=Yaowarat+Road+Bangkok"
 tips:
-  - "[Chao Phraya Fähre](https://maps.google.com/?q=Chao+Phraya+Express+Boat+Bangkok): unter 0,50 €, fährt an Wat Arun und Wat Pho vorbei. Schönste Art, sich durch die Stadt zu bewegen."
+  - "[Chao Phraya Fähre](https://maps.google.com/?q=Chao+Phraya+Express+Boat+Bangkok): unter 0,50 €, fährt an Wat Arun vorbei. Schönste Art, sich durch die Stadt zu bewegen."
   - "[Chatuchak Market](https://maps.google.com/?q=Chatuchak+Weekend+Market+Bangkok): nur am Wochenende. Unter der Woche sind von 10.000 Läden vielleicht 200 offen."
-  - "[Uncle Tu 10 Bath](https://maps.google.com/?q=Uncle+Tu+10+Bath+Bangkok): im Süden der Stadt, etwas abseits — aber 7-Baht-Fanta in der Glasflasche und 5-Baht-Pfannkuchen rechtfertigen den Weg."
   - "Kokosnuss-Eis in Chinatown: 10 Baht pro Kugel. Unbedingt mitnehmen."
 skip:
   - "[Chatuchak Market](https://maps.google.com/?q=Chatuchak+Weekend+Market+Bangkok) unter der Woche — fast alles geschlossen."
@@ -94,11 +93,11 @@ Am ersten Abend haben wir gemeinsam das WM-Viertelfinale **Deutschland gegen Par
 
 Meine Unterkunft lag in der Nähe der Khao San Road. Gewöhnungsbedürftig, für zwei Nächte aber ausreichend.
 
-In den nächsten Tagen habe ich mir verschiedene Tempel angeschaut. Den **[Wat Pho](https://maps.google.com/?q=Wat+Pho+Bangkok)** mit dem Liegenden Buddha habe ich nach einer Fahrt mit der **[Chao Phraya Fähre](https://maps.google.com/?q=Chao+Phraya+Express+Boat+Bangkok)** gemacht. Das Ticket kostet unter 0,50 €, die Fähre fährt am **[Wat Arun](https://maps.google.com/?q=Wat+Arun+Bangkok)** vorbei und die Aussicht auf dem Fluss ist gut. Jedem zu empfehlen, der etwas Zeit hat.
+In den nächsten Tagen habe ich mir verschiedene Tempel angeschaut. Mit der **[Chao Phraya Fähre](https://maps.google.com/?q=Chao+Phraya+Express+Boat+Bangkok)** bin ich den Fluss entlanggefahren, das Ticket kostet unter 0,50 €. Die Fähre fährt am **[Wat Arun](https://maps.google.com/?q=Wat+Arun+Bangkok)** vorbei und die Aussicht auf dem Fluss ist gut. Von dort bin ich dann noch zum **[Wat Pho](https://maps.google.com/?q=Wat+Pho+Bangkok)** mit dem Liegenden Buddha gelaufen. Jedem zu empfehlen, der etwas Zeit hat.
 
 Die **[Songwat Road](https://maps.google.com/?q=Songwat+Road+Bangkok)** ist eine Straße mit verschiedenen stylishen Läden. Wer in der Nähe ist, kann gut vorbeischauen.
 
-**[Chinatown](https://maps.google.com/?q=Yaowarat+Road+Bangkok)** war voll, aber cool. Dort habe ich eine Michelin-empfohlene Nudelsuppe mit großen Reisnudeln und Hähnchen gegessen, sehr gut. Und danach eine Kugel Kokosnuss-Eis für 10 Baht. Für den Preis eine der besten Sachen in Bangkok, unbedingt mitnehmen.
+**[Chinatown](https://maps.google.com/?q=Yaowarat+Road+Bangkok)** war voll. Dort habe ich beim **[Nai Ek Roll Noodle](https://maps.google.com/?q=Nai+Ek+Roll+Noodle+Bangkok)** eine Michelin-empfohlene Nudelsuppe mit großen Reisnudeln und Hähnchen gegessen, sehr gut. Und danach eine Kugel Kokosnuss-Eis für 10 Baht. Für den Preis eine der besten Sachen in Bangkok, unbedingt mitnehmen.
 
 Den **[Chatuchak Market](https://maps.google.com/?q=Chatuchak+Weekend+Market+Bangkok)** habe ich leider unter der Woche erwischt. Google Maps hat ihn als geöffnet angezeigt, aber von über 10.000 Läden waren vielleicht 200 offen. Ernüchternd. Nur am Wochenende hingehen. Direkt daneben ist eine Mall, die ich noch mitgenommen habe, und ein Tiermarkt, der erschütternd war. Tiere unter schlechten Bedingungen auf engstem Raum. Realitätscheck, aber kein Muss.
 
