@@ -1824,14 +1824,71 @@
     "currencySymbol": "¥",
     "dateFrom": "2026-07-19",
     "dateTo": null,
-    "description": "Millionenstadt am Jangtse.",
+    "description": "11-Millionen-Stadt am Jangtse — Gelber Kranich-Turm, Hot Dry Noodles und authentisches China abseits des Tourismus.",
     "details": {
-      "highlights": [],
-      "mustEat": [],
-      "visa": "Visum erforderlich",
-      "language": "Mandarin",
-      "transport": "Metro, Didi",
-      "spots": []
+      "highlights": [
+        "Gelber Kranich-Turm",
+        "East Lake",
+        "Hubei Provinzmuseum",
+        "Hubu Alley (Streetfood)",
+        "Jianghan Road",
+        "Jangtse-Brücke"
+      ],
+      "mustEat": [
+        "Hot Dry Noodles (热干面) — ~8 ¥ (~1 €)",
+        "Duck Neck (鸭脖) — Wuhaner Spezialität",
+        "Bean Skin (豆皮) bei Laotongcheng",
+        "Wuchang-Fisch gedämpft"
+      ],
+      "tips": "Währung: ¥ Yuan (CNY) — 1 € ≈ 7,70 ¥. Karte wird kaum akzeptiert: Alipay oder WeChat Pay einrichten, sonst Bargeld. Didi (chinesisches Uber) funktioniert gut. Kaum Englisch gesprochen — Übersetzer-App ist unverzichtbar. Eintritt Gelber Kranich-Turm: 80 ¥ (~10 €). Hubei Provinzmuseum kostenlos.",
+      "bestFor": [
+        "Authentisches China",
+        "Street Food",
+        "Geschichte",
+        "Jangtse"
+      ],
+      "visa": "Visum erforderlich (oder 144h Transit Visa-Free)",
+      "language": "Mandarin (kaum Englisch)",
+      "transport": "Metro, Didi, Bus",
+      "plug": "Typ A/C (220V)",
+      "spots": [
+        {
+          "name": "Gelber Kranich-Turm",
+          "lat": 30.5449,
+          "lon": 114.2984,
+          "type": "sight"
+        },
+        {
+          "name": "East Lake",
+          "lat": 30.5585,
+          "lon": 114.3773,
+          "type": "sight"
+        },
+        {
+          "name": "Hubei Provinzmuseum",
+          "lat": 30.5583,
+          "lon": 114.3838,
+          "type": "sight"
+        },
+        {
+          "name": "Hubu Alley (Streetfood)",
+          "lat": 30.5558,
+          "lon": 114.3063,
+          "type": "food"
+        },
+        {
+          "name": "Jianghan Road",
+          "lat": 30.5827,
+          "lon": 114.2942,
+          "type": "sight"
+        },
+        {
+          "name": "Jangtse-Brücke",
+          "lat": 30.5694,
+          "lon": 114.2895,
+          "type": "sight"
+        }
+      ]
     }
   },
   {

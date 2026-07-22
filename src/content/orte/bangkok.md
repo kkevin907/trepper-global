@@ -9,6 +9,7 @@ nights: 3
 vibe: "Trampen, Tempel, WM"
 costLevel: 1
 rating: 3
+coverImage: "/images/orte/bangkok-wat-arun.jpeg"
 highlights:
   - "Trampen von Koh Tao nach Bangkok — 12 Stunden, zwei Mitfahrgelegenheiten, eine LKW-Kajüte."
   - "[Uncle Tu 10 Bath](https://maps.google.com/?q=Uncle+Tu+10+Bath+Bangkok) — Reis mit Fleisch und Sauce für 10 Baht. Das ganze Viertel drumherum ist günstig."
@@ -85,7 +86,11 @@ Erst mit der Fähre von Koh Tao nach Chumphon. Der Anleger hält etwa 40 km auß
 
 An der Raststätte erst gegessen und dann die nächste Mitfahrgelegenheit gesucht. Dabei habe ich einen Thailänder und einen Russen getroffen, die schon öfters per Anhalter gefahren sind und mir noch ein paar Tipps gegeben haben. Nach ungefähr zehn weiteren Versuchen habe ich einen LKW-Fahrer gefunden, der in Richtung Bangkok fährt. Sein Onkel war auch dabei.
 
-Die beiden waren sehr nett und lustig. Wir haben zusammen zu Abend gegessen, ich habe in der Fahrerkabine zwischen den beiden gesessen und konnte zwischendurch sogar ein bisschen schlafen. Und dann hat sich herausgestellt, dass sie direkt bis vor Bangkok durchfahren. Sie haben mich die ganze Strecke mitfahren lassen.
+Die beiden waren sehr nett und lustig. Wir haben zusammen zu Abend gegessen, ich habe in der Fahrerkabine zwischen den beiden gesessen und konnte zwischendurch sogar ein bisschen schlafen.
+
+<img src="/images/orte/bangkok-anhalter-lkw.jpeg" alt="Blick aus der Fahrerkabine des LKW auf dem Weg von Koh Tao nach Bangkok — Straße, Ventilator, vollbepacktes Cockpit" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
+
+Und dann hat sich herausgestellt, dass sie direkt bis vor Bangkok durchfahren. Sie haben mich die ganze Strecke mitfahren lassen.
 
 Nach 12 Stunden bin ich an der **[Khao San Road](https://maps.google.com/?q=Khao+San+Road+Bangkok)** angekommen. Meine Freunde, die zur gleichen Zeit mit dem kommerziellen Bus losgefahren waren, kamen nur drei Stunden früher an. So viel langsamer war es also gar nicht.
 
@@ -93,14 +98,24 @@ Am ersten Abend haben wir gemeinsam das WM-Viertelfinale **Deutschland gegen Par
 
 Meine Unterkunft lag in der Nähe der Khao San Road. Gewöhnungsbedürftig, für zwei Nächte aber ausreichend.
 
-In den nächsten Tagen habe ich mir verschiedene Tempel angeschaut. Mit der **[Chao Phraya Fähre](https://maps.google.com/?q=Chao+Phraya+Express+Boat+Bangkok)** bin ich den Fluss entlanggefahren, das Ticket kostet unter 0,50 €. Die Fähre fährt am **[Wat Arun](https://maps.google.com/?q=Wat+Arun+Bangkok)** vorbei und die Aussicht auf dem Fluss ist gut. Von dort bin ich dann noch zum **[Wat Pho](https://maps.google.com/?q=Wat+Pho+Bangkok)** mit dem Liegenden Buddha gelaufen. Jedem zu empfehlen, der etwas Zeit hat.
+In den nächsten Tagen habe ich mir verschiedene Tempel angeschaut. Mit der **[Chao Phraya Fähre](https://maps.google.com/?q=Chao+Phraya+Express+Boat+Bangkok)** bin ich den Fluss entlanggefahren, das Ticket kostet unter 0,50 €. Die Fähre fährt am **[Wat Arun](https://maps.google.com/?q=Wat+Arun+Bangkok)** vorbei und die Aussicht auf dem Fluss ist gut.
+
+Von dort bin ich dann noch zum **[Wat Pho](https://maps.google.com/?q=Wat+Pho+Bangkok)** mit dem Liegenden Buddha gelaufen. Jedem zu empfehlen, der etwas Zeit hat.
 
 Die **[Songwat Road](https://maps.google.com/?q=Songwat+Road+Bangkok)** ist eine Straße mit verschiedenen stylishen Läden. Wer in der Nähe ist, kann gut vorbeischauen.
+
+<img src="/images/orte/bangkok-chinatown.jpeg" alt="Chinatown Bangkok bei Nacht — Yaowarat Road mit bunten Neon-Schildern auf Thai und Chinesisch" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 **[Chinatown](https://maps.google.com/?q=Yaowarat+Road+Bangkok)** war voll. Dort habe ich beim **[Nai Ek Roll Noodle](https://maps.google.com/?q=Nai+Ek+Roll+Noodle+Bangkok)** eine Michelin-empfohlene Nudelsuppe mit großen Reisnudeln und Hähnchen gegessen, sehr gut. Und danach eine Kugel Kokosnuss-Eis für 10 Baht. Für den Preis eine der besten Sachen in Bangkok, unbedingt mitnehmen.
 
 Den **[Chatuchak Market](https://maps.google.com/?q=Chatuchak+Weekend+Market+Bangkok)** habe ich leider unter der Woche erwischt. Google Maps hat ihn als geöffnet angezeigt, aber von über 10.000 Läden waren vielleicht 200 offen. Ernüchternd. Nur am Wochenende hingehen. Direkt daneben ist eine Mall, die ich noch mitgenommen habe, und ein Tiermarkt, der erschütternd war. Tiere unter schlechten Bedingungen auf engstem Raum. Realitätscheck, aber kein Muss.
 
+<img src="/images/orte/bangkok-schildkroeten.jpeg" alt="Schildkröten auf dem illegalen Tiermarkt neben dem Chatuchak Market in Bangkok — beengte Haltung hinter Metallgittern" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
+
+<img src="/images/orte/bangkok-uncle-tu.jpeg" alt="Uncle Tu 10 Bath Streetfood-Stand in Bangkok — Garküche mit Gasflaschen, Abzugsschlauch, kleiner Verkäufer am Wagen" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
+
 Einen eigenen Stop wert ist **[Uncle Tu 10 Bath](https://maps.google.com/?q=Uncle+Tu+10+Bath+Bangkok)** im Süden der Stadt. Dort gibt es Reis mit Fleisch und Sauce für 10 Baht. Das ganze Viertel drumherum ist günstig: an den umliegenden Ständen habe ich kleine Pfannkuchen mit Vanille- oder Fruchtfüllung für 5 Baht bekommen, große für 10 Baht, und eine Glas-Fanta für 7 Baht. Alles sehr lecker für den Preis.
+
+<img src="/images/orte/bangkok-pancakes.jpeg" alt="Pfannkuchen-Stand neben Uncle Tu in Bangkok — Thai-Schild mit Preisen: klein 5 Baht, groß 10 Baht" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 Am nächsten Morgen Flug nach Hongkong.

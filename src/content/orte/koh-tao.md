@@ -9,6 +9,7 @@ nights: 10
 vibe: "Tauchen, Insel, Gemeinschaft"
 costLevel: 1
 rating: 5
+coverImage: "/images/orte/koh-tao-sonnenuntergang.jpeg"
 highlights:
   - "[Rainbow Fish Divers](https://maps.google.com/?q=Rainbow+Fish+Divers+Koh+Tao) — deutschsprachige Tauchschule. Open Water Kurs, 6 Taucheinheiten, Video der letzten Tauchgänge inklusive. Sehr empfehlenswert."
   - "[Ao Hin Wong Beach](https://maps.google.com/?q=Ao+Hin+Wong+Beach+Koh+Tao) — bestes Highlight der Insel. Im knietiefen Wasser stehen Baby Sharks um einen herum."
@@ -87,19 +88,31 @@ Koh Tao war kein geplanter Stop. Kurz vor der Abreise war ich auf einer Feier in
 
 Nachdem ich in Phuket war, habe ich beschlossen, es einfach auszuprobieren. Die Anreise war lang: erst mit dem Bus, dann 9 Stunden Nachtfähre. Auf der Fähre schläft man überraschend gut.
 
+<img src="/images/orte/koh-tao-nachtfaehre.jpeg" alt="Schlafabteil auf der Nachtfähre nach Koh Tao — nummerierte Etagenbetten mit blauen Matratzen" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
+
+<img src="/images/orte/koh-tao-tauchschule.jpeg" alt="Eingang der Rainbow Fish Divers Tauchschule auf Koh Tao — weiße Felsarchitektur, Palmen, RFD-Banner" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
+
 In der Tauchschule wurde ich sehr gut empfangen. Das Hostel war direkt im Kurs-Preis inklusive, hinter dem 7-Eleven, ein Schlafsaal mit mehreren Leuten. Normalerweise wäre mir das zu wenig Privatsphäre, aber die Gruppe war so gut, dass es keine Rolle gespielt hat. Direkt nebenan war die Bar der Tauchschule, nur für uns — günstiges Bier abends, morgens kostenloses Frühstück mit Pancakes, Rührei und Omelette.
 
 Den **PADI Open Water Diver Kurs** habe ich dann gemacht. Deutschsprachig zu lernen war ein echter Vorteil, weil man beim Tauchen wirklich alles verstehen muss. Wir hatten einen sehr kompetenten Tauchlehrer, mit dem es Spaß gemacht hat. Sechs Taucheinheiten, Theorie, abschließender Test, letzter Tauchgang in der Praxis.
+
+<img src="/images/orte/koh-tao-tauchgruppe.jpeg" alt="Die Tauchgruppe auf dem Boot nach dem PADI Open Water Kurs bei Rainbow Fish Divers auf Koh Tao" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 Beim Schnorcheln in **[Ao Leuk](https://maps.google.com/?q=Ao+Leuk+Koh+Tao)** habe ich meinen ersten Baby Shark gesehen. Direkt beim Einstieg. In der **[Tanote Bay](https://maps.google.com/?q=Tanote+Bay+Koh+Tao)** war ich auch — viele Fische und Korallen, aber keine besonderen Tiere.
 
 Das absolute Highlight der Insel war der **[Ao Hin Wong Beach](https://maps.google.com/?q=Ao+Hin+Wong+Beach+Koh+Tao)**. Eintritt eigentlich 50–100 Baht, aber links gibt es das View Rock Resort, und darüber kommt man kostenlos zu den Felsen und schwimmt dann rüber zum Strand. Im knietiefen Wasser stehen Baby Sharks direkt um einen herum. Das war wirklich besonders.
 
+<img src="/images/orte/koh-tao-baby-shark.jpeg" alt="Baby Shark im knietiefen Wasser am Ao Hin Wong Beach auf Koh Tao" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
+
 Etwas enttäuschend dagegen war die **[Shark Bay](https://maps.google.com/?q=Shark+Bay+Koh+Tao)**. Kostenloser Eingang, aber die versprochenen Schildkröten habe ich nicht gesehen. Ich habe seitdem von vielen gehört, dass das eher selten vorkommt.
 
 Zum Erkunden der Insel habe ich mir einen Roller bei **[Olli's Motorbike Rentals](https://maps.google.com/?q=Olli+Motorbike+Rental+Koh+Tao)** gemietet. 200 Baht pro Tag, etwas teurer als andere Verleihstationen, aber das Schnorchel-Set war kostenlos inklusive. Außerdem musste ich nur ein Foto vom Pass machen und 2.000 Baht Kaution hinterlegen, keine Pass-Abgabe. Den Roller kann ich definitiv empfehlen.
 
-Den **[John Suwan Viewpoint](https://maps.google.com/?q=John+Suwan+Viewpoint+Koh+Tao)** haben wir mit 50 Baht Eintritt gemacht. Bester Ausblick auf der Insel. Von dort aus kommt man auch zum Freedom Beach, wo wir Drohnenvideos gedreht haben. Die **Secret View & Sunset Bar** haben wir auch besucht, 100 Baht Eintritt mit einem Freigetränk — ganz nett, aber John Suwan ist deutlich besser.
+Den **[John Suwan Viewpoint](https://maps.google.com/?q=John+Suwan+Viewpoint+Koh+Tao)** haben wir mit 50 Baht Eintritt gemacht. Bester Ausblick auf der Insel. Von dort aus kommt man auch zum Freedom Beach, wo wir Drohnenvideos gedreht haben.
+
+<img src="/images/orte/koh-tao-john-suwan-viewpoint.jpeg" alt="Panoramablick vom John Suwan Viewpoint auf Koh Tao — türkisfarbenes Wasser, Palmen, Boote und die Küstenlinie der Insel" style="width:100%;border-radius:12px;margin:0.5rem 0;" /> Die **Secret View & Sunset Bar** haben wir auch besucht, 100 Baht Eintritt mit einem Freigetränk — ganz nett, aber John Suwan ist deutlich besser.
+
+<img src="/images/orte/koh-tao-blue-chair-pad-thai.jpeg" alt="Pad Thai bei Blue Chair auf Koh Tao — Reisnudeln mit Ei, Erdnüssen, Gurke und Limette für 80 Baht" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 Beim Essen war **[Blue Chair](https://maps.google.com/?q=Blue+Chair+Koh+Tao)** meine Stammadresse. Zwei Minuten Fußweg, riesige Portion Pad Thai oder andere Thai-Gerichte für 80 Baht, also etwas mehr als 2 €. Sehr gut. Die **Sandwich Lady** habe ich einmal besucht, war weiter weg, aber hat sich gelohnt. Zum Glück keine Schlange. Den **[995 Roasted Duck](https://maps.google.com/?q=995+Roasted+Duck+Koh+Tao)** würde ich beim nächsten Mal auslassen — sehr gehyped, aber zu voll, zu lange Wartezeit, und zu wenig Ente für den Preis.
 
