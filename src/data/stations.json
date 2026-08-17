@@ -1817,13 +1817,13 @@
     "flag": "🇨🇳",
     "lat": 30.5928,
     "lon": 114.3055,
-    "status": "current",
+    "status": "visited",
     "phase": "main",
     "timezone": "Asia/Shanghai",
     "currency": "CNY",
     "currencySymbol": "¥",
     "dateFrom": "2026-07-19",
-    "dateTo": null,
+    "dateTo": "2026-07-23",
     "description": "11-Millionen-Stadt am Jangtse — Gelber Kranich-Turm, Hot Dry Noodles und authentisches China abseits des Tourismus.",
     "details": {
       "highlights": [
@@ -1887,6 +1887,231 @@
           "lat": 30.5694,
           "lon": 114.2895,
           "type": "sight"
+        }
+      ]
+    }
+  },
+  {
+    "id": "zhangjiajie",
+    "name": "Zhangjiajie",
+    "country": "China",
+    "flag": "🇨🇳",
+    "lat": 29.1175,
+    "lon": 110.4792,
+    "status": "visited",
+    "phase": "main",
+    "timezone": "Asia/Shanghai",
+    "currency": "CNY",
+    "currencySymbol": "¥",
+    "dateFrom": "2026-07-24",
+    "dateTo": "2026-07-26",
+    "description": "Avatar-Berge, schwebende Sandstein-Säulen und der Tianmen Mountain.",
+    "details": {
+      "highlights": [
+        "Zhangjiajie National Forest Park",
+        "Tianmen Mountain",
+        "Bailong Elevator (höchster Außenaufzug der Welt)",
+        "Avatar Hallelujah Mountain"
+      ],
+      "mustEat": [
+        "Xiangxi Beef (湘西牛肉)",
+        "Pickled Fish",
+        "Tujia Pancake"
+      ],
+      "visa": "Visum erforderlich",
+      "language": "Mandarin",
+      "transport": "Bus, Seilbahn, Didi",
+      "plug": "Typ A/C (220V)",
+      "spots": [
+        {
+          "name": "Tianmen Mountain",
+          "lat": 29.1329,
+          "lon": 110.4788,
+          "type": "sight"
+        },
+        {
+          "name": "Zhangjiajie National Forest Park",
+          "lat": 29.3265,
+          "lon": 110.4338,
+          "type": "sight"
+        },
+        {
+          "name": "Bailong Elevator",
+          "lat": 29.3288,
+          "lon": 110.4367,
+          "type": "sight"
+        }
+      ]
+    }
+  },
+  {
+    "id": "chongqing",
+    "name": "Chongqing",
+    "country": "China",
+    "flag": "🇨🇳",
+    "lat": 29.5630,
+    "lon": 106.5516,
+    "status": "visited",
+    "phase": "main",
+    "timezone": "Asia/Shanghai",
+    "currency": "CNY",
+    "currencySymbol": "¥",
+    "dateFrom": "2026-07-26",
+    "dateTo": "2026-07-29",
+    "description": "Mega-Stadt am Zusammenfluss von Jangtse und Jialing — Treppen, Neonlichter und scharfer Hot Pot.",
+    "details": {
+      "highlights": [
+        "Hongya Cave",
+        "Jiefangbei (Befreiungsdenkmal)",
+        "Ciqikou Altstadt",
+        "Chongqing Seilbahn über den Jialing",
+        "Yangtze River Night Cruise"
+      ],
+      "mustEat": [
+        "Chongqing Hot Pot (重庆火锅)",
+        "Xiaomian (小面 — würzige Nudeln)",
+        "Stinky Tofu",
+        "Grillspieße am Straßenstand"
+      ],
+      "visa": "Visum erforderlich",
+      "language": "Mandarin, Chongqing-Dialekt",
+      "transport": "Metro, Didi, Seilbahn",
+      "plug": "Typ A/C (220V)",
+      "spots": [
+        {
+          "name": "Hongya Cave",
+          "lat": 29.5613,
+          "lon": 106.5752,
+          "type": "sight"
+        },
+        {
+          "name": "Jiefangbei",
+          "lat": 29.5574,
+          "lon": 106.5752,
+          "type": "sight"
+        },
+        {
+          "name": "Ciqikou Altstadt",
+          "lat": 29.5732,
+          "lon": 106.4649,
+          "type": "sight"
+        }
+      ]
+    }
+  },
+  {
+    "id": "chengdu",
+    "name": "Chengdu",
+    "country": "China",
+    "flag": "🇨🇳",
+    "lat": 30.5728,
+    "lon": 104.0668,
+    "status": "visited",
+    "phase": "main",
+    "timezone": "Asia/Shanghai",
+    "currency": "CNY",
+    "currencySymbol": "¥",
+    "dateFrom": "2026-07-30",
+    "dateTo": "2026-08-02",
+    "description": "Pandas, Sichuan-Küche und die entspannteste Großstadt Chinas.",
+    "details": {
+      "highlights": [
+        "Chengdu Research Base of Giant Panda Breeding",
+        "Kuanzhai Alley (alte Gassen)",
+        "Wenshu Tempel",
+        "Jinli Straße",
+        "Leshan Giant Buddha (Tagesausflug)"
+      ],
+      "mustEat": [
+        "Mapo Tofu (麻婆豆腐)",
+        "Kung Pao Chicken (宫保鸡丁)",
+        "Dan Dan Noodles (担担面)",
+        "Sichuan Hot Pot",
+        "Rabbit Head (兔头 — lokale Spezialität)"
+      ],
+      "visa": "Visum erforderlich",
+      "language": "Mandarin, Sichuan-Dialekt",
+      "transport": "Metro, Didi",
+      "plug": "Typ A/C (220V)",
+      "spots": [
+        {
+          "name": "Panda Base",
+          "lat": 30.7356,
+          "lon": 104.1423,
+          "type": "sight"
+        },
+        {
+          "name": "Kuanzhai Alley",
+          "lat": 30.6705,
+          "lon": 104.0563,
+          "type": "sight"
+        },
+        {
+          "name": "Wenshu Tempel",
+          "lat": 30.6753,
+          "lon": 104.0697,
+          "type": "sight"
+        },
+        {
+          "name": "Jinli Straße",
+          "lat": 30.6399,
+          "lon": 104.0469,
+          "type": "sight"
+        }
+      ]
+    }
+  },
+  {
+    "id": "kunming",
+    "name": "Kunming",
+    "country": "China",
+    "flag": "🇨🇳",
+    "lat": 25.0389,
+    "lon": 102.7183,
+    "status": "visited",
+    "phase": "main",
+    "timezone": "Asia/Shanghai",
+    "currency": "CNY",
+    "currencySymbol": "¥",
+    "dateFrom": "2026-08-03",
+    "dateTo": "2026-08-06",
+    "description": "Die Frühlingsstadt — Tor nach Südostasien, Steinwald und Yunnan-Küche.",
+    "details": {
+      "highlights": [
+        "Stone Forest (Shilin)",
+        "Green Lake Park (翠湖公园)",
+        "Yunnan Provincial Museum",
+        "Bird and Flower Market",
+        "Dian Lake (滇池)"
+      ],
+      "mustEat": [
+        "Crossing the Bridge Noodles (过桥米线)",
+        "Yunnan Ham (云南火腿)",
+        "Erkuai (Reisnudel-Kuchen)",
+        "Wild Mushroom Hot Pot"
+      ],
+      "visa": "Visum erforderlich",
+      "language": "Mandarin, Yi, Bai",
+      "transport": "Metro, Didi, Bus",
+      "plug": "Typ A/C (220V)",
+      "spots": [
+        {
+          "name": "Stone Forest (Shilin)",
+          "lat": 24.8219,
+          "lon": 103.3264,
+          "type": "sight"
+        },
+        {
+          "name": "Green Lake Park",
+          "lat": 25.0607,
+          "lon": 102.7013,
+          "type": "sight"
+        },
+        {
+          "name": "Bird and Flower Market",
+          "lat": 25.0461,
+          "lon": 102.7141,
+          "type": "food"
         }
       ]
     }
@@ -1974,72 +2199,131 @@
     }
   },
   {
-    "id": "vietnam",
-    "name": "Vietnam",
+    "id": "sapa",
+    "name": "Sapa",
     "country": "Vietnam",
     "flag": "🇻🇳",
-    "lat": 14.0583,
-    "lon": 108.2772,
-    "status": "upcoming",
+    "lat": 22.3361,
+    "lon": 103.8444,
+    "status": "visited",
     "phase": "main",
     "timezone": "Asia/Ho_Chi_Minh",
     "currency": "VND",
     "currencySymbol": "₫",
-    "dateFrom": null,
-    "dateTo": null,
-    "description": "Von Hanoi bis Ho-Chi-Minh-Stadt — Vietnam von Nord nach Süd.",
+    "dateFrom": "2026-08-06",
+    "dateTo": "2026-08-11",
+    "description": "Reisterrassen, Hmong-Dörfer und Wolken — das nördliche Vietnam.",
     "details": {
       "highlights": [
-        "Hạ Long Bay",
-        "Hoi An Altstadt (UNESCO)",
-        "Phong Nha Höhlen",
-        "Hanoi Altstadt",
-        "Mekong Delta",
-        "Sapa Reisterrassen"
+        "Reisterrassen Muong Hoa Valley",
+        "Fansipan — höchster Gipfel Indochinas",
+        "Hmong- und Dao-Dörfer",
+        "Cat Cat Village",
+        "Sapa Markt"
       ],
       "mustEat": [
-        "Pho Bo (Rindfleischsuppe)",
-        "Bánh Mì",
-        "Bún Chả",
-        "Bánh Xèo (Crêpe)",
-        "vietnamesischer Kaffee mit Kondensmilch"
+        "Thắng Cố (Pferde-Eintopf)",
+        "Cơm Lam (Klebreis im Bambusrohr)",
+        "Lợn Cắp Nách (Spanferkel vom Markt)",
+        "Phở Sapa",
+        "Vietnamesischer Bergkaffee"
       ],
-      "tips": "Overnight-Busse sparen Hotelkosten. Motorroller fahren nur mit Erfahrung. Früh morgens beste Lichtstimmung.",
+      "tips": "Morgens früh los für die Reisterrassen ohne Massen. Trekkingschuhe Pflicht. Im August kann es regnerisch sein — Poncho einpacken. Cable Car auf den Fansipan spart Zeit, aber der Fuß-Trek ist schöner.",
       "bestFor": [
-        "Natur",
+        "Natur & Trekking",
         "Kultur",
-        "Backpacking",
-        "Food"
+        "Reisterrassen",
+        "Bergvölker"
       ],
       "visa": "E-Visum für Deutsche erforderlich (ca. 25 USD, online beantragen)",
-      "language": "Vietnamesisch",
-      "transport": "Overnight-Bus, Grab, Motorroller, Inlandsflüge",
+      "language": "Vietnamesisch, H'Mong, Dao",
+      "transport": "Overnight-Bus von Hanoi, Grab, Motorroller",
       "plug": "Typ A/C/G (220V)",
       "spots": [
         {
-          "name": "Hạ Long Bay",
-          "lat": 20.9101,
-          "lon": 107.1839,
+          "name": "Fansipan",
+          "lat": 22.3033,
+          "lon": 103.7761,
           "type": "sight"
         },
         {
-          "name": "Hoi An Altstadt",
-          "lat": 15.8801,
-          "lon": 108.338,
+          "name": "Muong Hoa Valley (Reisterrassen)",
+          "lat": 22.3219,
+          "lon": 103.8761,
           "type": "sight"
         },
         {
-          "name": "Hanoi Altstadt",
-          "lat": 21.0285,
-          "lon": 105.8542,
+          "name": "Cat Cat Village",
+          "lat": 22.3280,
+          "lon": 103.8305,
           "type": "sight"
         },
         {
-          "name": "Bánh Mì Stand",
-          "lat": 21.0275,
-          "lon": 105.8412,
+          "name": "Sapa Markt",
+          "lat": 22.3364,
+          "lon": 103.8441,
           "type": "food"
         }
+      ]
+    }
+  },
+  {
+    "id": "hanoi",
+    "name": "Hanoi",
+    "country": "Vietnam",
+    "flag": "🇻🇳",
+    "lat": 21.0245,
+    "lon": 105.8412,
+    "status": "visited",
+    "phase": "main",
+    "timezone": "Asia/Ho_Chi_Minh",
+    "currency": "VND",
+    "currencySymbol": "₫",
+    "dateFrom": "2026-08-11",
+    "dateTo": "2026-08-12",
+    "description": "Vietnams Hauptstadt — Altstadt, Straßenkaffee und Chaos.",
+    "details": {
+      "highlights": ["Hoan Kiem See", "Altstadt (36 Straßen)", "Egg Coffee"],
+      "mustEat": ["Bun Cha", "Pho", "Egg Coffee", "Banh Mi"],
+      "tips": "Zu Fuß durch die Altstadt gehen. Verkehr und Lärm gehören dazu.",
+      "bestFor": ["Altstadt", "Street Food", "Kultur"],
+      "visa": "E-Visum",
+      "language": "Vietnamesisch",
+      "transport": "Grab, zu Fuß, Bus",
+      "plug": "Typ A/C (220V)",
+      "spots": [
+        { "name": "Hoan Kiem See", "lat": 21.0286, "lon": 105.8525, "type": "sight" },
+        { "name": "Altstadt Hanoi", "lat": 21.0340, "lon": 105.8490, "type": "sight" }
+      ]
+    }
+  },
+  {
+    "id": "cat-ba",
+    "name": "Cat Ba",
+    "country": "Vietnam",
+    "flag": "🇻🇳",
+    "lat": 20.7268,
+    "lon": 107.0487,
+    "status": "current",
+    "phase": "main",
+    "timezone": "Asia/Ho_Chi_Minh",
+    "currency": "VND",
+    "currencySymbol": "₫",
+    "dateFrom": "2026-08-12",
+    "dateTo": null,
+    "description": "Insel am Rande der Halong-Bucht — Dschungel, Klippen und Kajak.",
+    "details": {
+      "highlights": ["Halong-Bucht", "Cat Ba Nationalpark", "Lan Ha Bay"],
+      "mustEat": ["Frische Meeresfrüchte", "Bun Cha", "Pho"],
+      "tips": "Kajak-Tour durch die Lan Ha Bay nicht verpassen.",
+      "bestFor": ["Natur", "Kajak", "Inselleben"],
+      "visa": "E-Visum",
+      "language": "Vietnamesisch",
+      "transport": "Fähre von Haiphong, Motorroller, Boot",
+      "plug": "Typ A/C (220V)",
+      "spots": [
+        { "name": "Cat Ba Nationalpark", "lat": 20.7628, "lon": 107.0731, "type": "sight" },
+        { "name": "Lan Ha Bay", "lat": 20.7500, "lon": 107.1000, "type": "sight" }
       ]
     }
   },
