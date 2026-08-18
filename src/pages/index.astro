@@ -79,6 +79,22 @@ const locCurrencyDisplay = `${currentStation.currencySymbol} ${currentStation.cu
 const locStationName = currentStation.name;
 const locLat = currentStation.lat;
 const locLon = currentStation.lon;
+
+// Wechselkurs zur Build-Zeit fetchen
+let buildTimeRateText = '';
+if (currentStation.currency && currentStation.currency !== 'EUR') {
+  try {
+    const rateResp = await fetch('https://open.er-api.com/v6/latest/EUR');
+    const rateData = await rateResp.json();
+    const rate = rateData.rates?.[currentStation.currency];
+    if (rate) {
+      const formatted = rate >= 100
+        ? Math.round(rate).toLocaleString('de-DE')
+        : rate.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      buildTimeRateText = `1 € = ${formatted} ${currentStation.currencySymbol}`;
+    }
+  } catch (e) {}
+}
 ---
 
 <Layout title="Home">
@@ -118,7 +134,7 @@ const locLon = currentStation.lon;
             Währung<span class="ph-label-extra ph-label-waehrung"> vor Ort</span>
           </span>
           <span class="ph-li-val">{locCurrencyDisplay}</span>
-          <span class="ph-li-rate" id="ph-li-rate"></span>
+          <span class="ph-li-rate" id="ph-li-rate">{buildTimeRateText}</span>
         </div>
 
         <div class="ph-li-sep"></div>
@@ -759,7 +775,7 @@ const locLon = currentStation.lon;
     var symbol   = el.getAttribute('data-symbol');
     if (!currency || currency === 'EUR') return; // Heimatwährung, kein Kurs nötig
 
-    fetch('https://api.frankfurter.app/latest?from=EUR&to=' + currency)
+    fetch('https://open.er-api.com/v6/latest/EUR')
       .then(function(r) { return r.json(); })
       .then(function(data) {
         var rate = data.rates && data.rates[currency];

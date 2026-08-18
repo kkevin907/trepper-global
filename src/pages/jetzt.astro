@@ -43,6 +43,22 @@ if (details?.spots) {
 function gmapsUrl(label: string, city: string, lat?: number, lon?: number) {
   return `https://maps.google.com/?q=${encodeURIComponent(label + ' ' + city)}`;
 }
+
+// Wechselkurs zur Build-Zeit fetchen
+let buildTimeRateText = '1 € = …';
+if (currentStation.currency && currentStation.currency !== 'EUR') {
+  try {
+    const rateResp = await fetch('https://open.er-api.com/v6/latest/EUR');
+    const rateData = await rateResp.json();
+    const rate = rateData.rates?.[currentStation.currency];
+    if (rate) {
+      const formatted = rate >= 100
+        ? Math.round(rate).toLocaleString('de-DE')
+        : rate.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      buildTimeRateText = `1 € = ${formatted} ${currentStation.currencySymbol}`;
+    }
+  } catch (e) {}
+}
 ---
 
 <Layout
@@ -94,7 +110,7 @@ function gmapsUrl(label: string, city: string, lat?: number, lon?: number) {
               <span class="jt-live-label">Währung</span>
               <span class="jt-live-val">{currentStation.currencySymbol} {currencyName}</span>
               {currentStation.currency !== 'EUR' && (
-                <span class="jt-live-sub" id="jt-rate">1 € = …</span>
+                <span class="jt-live-sub" id="jt-rate">{buildTimeRateText}</span>
               )}
             </div>
             {details?.visa && (
@@ -234,7 +250,7 @@ function gmapsUrl(label: string, city: string, lat?: number, lon?: number) {
   // Wechselkurs
   var rateEl = document.getElementById('jt-rate');
   if (rateEl && currency && currency !== 'EUR') {
-    fetch('https://api.frankfurter.app/latest?from=EUR&to=' + currency)
+    fetch('https://open.er-api.com/v6/latest/EUR')
       .then(function(r) { return r.json(); })
       .then(function(d) {
         var rate = d.rates && d.rates[currency];
