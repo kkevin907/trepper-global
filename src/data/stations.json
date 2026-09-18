@@ -1660,6 +1660,88 @@
     }
   },
   {
+    "id": "thailand",
+    "name": "Bangkok",
+    "country": "Thailand",
+    "flag": "🇹🇭",
+    "lat": 13.7563,
+    "lon": 100.5018,
+    "status": "visited",
+    "phase": "main",
+    "timezone": "Asia/Bangkok",
+    "currency": "THB",
+    "currencySymbol": "฿",
+    "dateFrom": "2026-06-29",
+    "dateTo": "2026-07-02",
+    "description": "Tempel, Street Food, Süden — Thailand von Nord bis Süd.",
+    "details": {
+      "highlights": [
+        "Wat Phra Kaew (Smaragd-Buddha)",
+        "Chatuchak Weekend Market",
+        "Khao San Road",
+        "Chao Phraya Fluss",
+        "Railay Beach (Süden)",
+        "Chiang Mai (Norden)"
+      ],
+      "mustEat": [
+        "Pad Thai",
+        "Som Tam (Papayasalat)",
+        "Mango Sticky Rice",
+        "Pad Kra Pao",
+        "Tom Yum Soup"
+      ],
+      "tips": "Tuk-Tuks immer Preis vorher aushandeln. Tempel: Schultern und Knie bedecken. BTS Skytrain in Bangkok unverzichtbar.",
+      "bestFor": [
+        "Tempel",
+        "Street Food",
+        "Inseln & Strände",
+        "Nightlife"
+      ],
+      "visa": "Visa on Arrival / kein Visum für Deutsche (bis 30 Tage)",
+      "language": "Thai",
+      "transport": "BTS Skytrain, MRT, Tuk-Tuk, Grab (App)",
+      "plug": "Typ A/B/C (220V)",
+      "spots": [
+        {
+          "name": "Wat Phra Kaew",
+          "lat": 13.7516,
+          "lon": 100.4925,
+          "type": "sight"
+        },
+        {
+          "name": "Chatuchak Market",
+          "lat": 13.7999,
+          "lon": 100.5508,
+          "type": "food"
+        },
+        {
+          "name": "Khao San Road",
+          "lat": 13.7586,
+          "lon": 100.4977,
+          "type": "sight"
+        },
+        {
+          "name": "Pad Thai Street Food",
+          "lat": 13.7563,
+          "lon": 100.5018,
+          "type": "food"
+        },
+        {
+          "name": "Railay Beach",
+          "lat": 8.0124,
+          "lon": 98.8348,
+          "type": "sight"
+        },
+        {
+          "name": "Chiang Mai Altstadt",
+          "lat": 18.7883,
+          "lon": 98.9853,
+          "type": "sight"
+        }
+      ]
+    }
+  },
+  {
     "id": "hongkong",
     "name": "Hongkong",
     "country": "Hongkong",
@@ -1949,7 +2031,7 @@
     "name": "Chongqing",
     "country": "China",
     "flag": "🇨🇳",
-    "lat": 29.5630,
+    "lat": 29.563,
     "lon": 106.5516,
     "status": "visited",
     "phase": "main",
@@ -2117,88 +2199,6 @@
     }
   },
   {
-    "id": "thailand",
-    "name": "Bangkok",
-    "country": "Thailand",
-    "flag": "🇹🇭",
-    "lat": 13.7563,
-    "lon": 100.5018,
-    "status": "visited",
-    "phase": "main",
-    "timezone": "Asia/Bangkok",
-    "currency": "THB",
-    "currencySymbol": "฿",
-    "dateFrom": "2026-06-29",
-    "dateTo": "2026-07-02",
-    "description": "Tempel, Street Food, Süden — Thailand von Nord bis Süd.",
-    "details": {
-      "highlights": [
-        "Wat Phra Kaew (Smaragd-Buddha)",
-        "Chatuchak Weekend Market",
-        "Khao San Road",
-        "Chao Phraya Fluss",
-        "Railay Beach (Süden)",
-        "Chiang Mai (Norden)"
-      ],
-      "mustEat": [
-        "Pad Thai",
-        "Som Tam (Papayasalat)",
-        "Mango Sticky Rice",
-        "Pad Kra Pao",
-        "Tom Yum Soup"
-      ],
-      "tips": "Tuk-Tuks immer Preis vorher aushandeln. Tempel: Schultern und Knie bedecken. BTS Skytrain in Bangkok unverzichtbar.",
-      "bestFor": [
-        "Tempel",
-        "Street Food",
-        "Inseln & Strände",
-        "Nightlife"
-      ],
-      "visa": "Visa on Arrival / kein Visum für Deutsche (bis 30 Tage)",
-      "language": "Thai",
-      "transport": "BTS Skytrain, MRT, Tuk-Tuk, Grab (App)",
-      "plug": "Typ A/B/C (220V)",
-      "spots": [
-        {
-          "name": "Wat Phra Kaew",
-          "lat": 13.7516,
-          "lon": 100.4925,
-          "type": "sight"
-        },
-        {
-          "name": "Chatuchak Market",
-          "lat": 13.7999,
-          "lon": 100.5508,
-          "type": "food"
-        },
-        {
-          "name": "Khao San Road",
-          "lat": 13.7586,
-          "lon": 100.4977,
-          "type": "sight"
-        },
-        {
-          "name": "Pad Thai Street Food",
-          "lat": 13.7563,
-          "lon": 100.5018,
-          "type": "food"
-        },
-        {
-          "name": "Railay Beach",
-          "lat": 8.0124,
-          "lon": 98.8348,
-          "type": "sight"
-        },
-        {
-          "name": "Chiang Mai Altstadt",
-          "lat": 18.7883,
-          "lon": 98.9853,
-          "type": "sight"
-        }
-      ]
-    }
-  },
-  {
     "id": "sapa",
     "name": "Sapa",
     "country": "Vietnam",
@@ -2254,7 +2254,7 @@
         },
         {
           "name": "Cat Cat Village",
-          "lat": 22.3280,
+          "lat": 22.328,
           "lon": 103.8305,
           "type": "sight"
         },
@@ -2283,17 +2283,40 @@
     "dateTo": "2026-08-12",
     "description": "Vietnams Hauptstadt — Altstadt, Straßenkaffee und Chaos.",
     "details": {
-      "highlights": ["Hoan Kiem See", "Altstadt (36 Straßen)", "Egg Coffee"],
-      "mustEat": ["Bun Cha", "Pho", "Egg Coffee", "Banh Mi"],
+      "highlights": [
+        "Hoan Kiem See",
+        "Altstadt (36 Straßen)",
+        "Egg Coffee"
+      ],
+      "mustEat": [
+        "Bun Cha",
+        "Pho",
+        "Egg Coffee",
+        "Banh Mi"
+      ],
       "tips": "Zu Fuß durch die Altstadt gehen. Verkehr und Lärm gehören dazu.",
-      "bestFor": ["Altstadt", "Street Food", "Kultur"],
+      "bestFor": [
+        "Altstadt",
+        "Street Food",
+        "Kultur"
+      ],
       "visa": "E-Visum",
       "language": "Vietnamesisch",
       "transport": "Grab, zu Fuß, Bus",
       "plug": "Typ A/C (220V)",
       "spots": [
-        { "name": "Hoan Kiem See", "lat": 21.0286, "lon": 105.8525, "type": "sight" },
-        { "name": "Altstadt Hanoi", "lat": 21.0340, "lon": 105.8490, "type": "sight" }
+        {
+          "name": "Hoan Kiem See",
+          "lat": 21.0286,
+          "lon": 105.8525,
+          "type": "sight"
+        },
+        {
+          "name": "Altstadt Hanoi",
+          "lat": 21.034,
+          "lon": 105.849,
+          "type": "sight"
+        }
       ]
     }
   },
@@ -2304,27 +2327,307 @@
     "flag": "🇻🇳",
     "lat": 20.7268,
     "lon": 107.0487,
-    "status": "current",
+    "status": "visited",
     "phase": "main",
     "timezone": "Asia/Ho_Chi_Minh",
     "currency": "VND",
     "currencySymbol": "₫",
     "dateFrom": "2026-08-12",
-    "dateTo": null,
+    "dateTo": "2026-08-19",
     "description": "Insel am Rande der Halong-Bucht — Dschungel, Klippen und Kajak.",
     "details": {
-      "highlights": ["Halong-Bucht", "Cat Ba Nationalpark", "Lan Ha Bay"],
-      "mustEat": ["Frische Meeresfrüchte", "Bun Cha", "Pho"],
+      "highlights": [
+        "Halong-Bucht",
+        "Cat Ba Nationalpark",
+        "Lan Ha Bay"
+      ],
+      "mustEat": [
+        "Frische Meeresfrüchte",
+        "Bun Cha",
+        "Pho"
+      ],
       "tips": "Kajak-Tour durch die Lan Ha Bay nicht verpassen.",
-      "bestFor": ["Natur", "Kajak", "Inselleben"],
+      "bestFor": [
+        "Natur",
+        "Kajak",
+        "Inselleben"
+      ],
       "visa": "E-Visum",
       "language": "Vietnamesisch",
       "transport": "Fähre von Haiphong, Motorroller, Boot",
       "plug": "Typ A/C (220V)",
       "spots": [
-        { "name": "Cat Ba Nationalpark", "lat": 20.7628, "lon": 107.0731, "type": "sight" },
-        { "name": "Lan Ha Bay", "lat": 20.7500, "lon": 107.1000, "type": "sight" }
+        {
+          "name": "Cat Ba Nationalpark",
+          "lat": 20.7628,
+          "lon": 107.0731,
+          "type": "sight"
+        },
+        {
+          "name": "Lan Ha Bay",
+          "lat": 20.75,
+          "lon": 107.1,
+          "type": "sight"
+        }
       ]
+    }
+  },
+  {
+    "id": "luang-prabang",
+    "name": "Luang Prabang",
+    "country": "Laos",
+    "flag": "🇱🇦",
+    "lat": 19.8845,
+    "lon": 102.1348,
+    "status": "visited",
+    "phase": "main",
+    "timezone": "Asia/Vientiane",
+    "currency": "LAK",
+    "currencySymbol": "₭",
+    "dateFrom": "2026-08-21",
+    "dateTo": "2026-08-25",
+    "description": "Koenigsstadt am Mekong -- Tempel, Moenche und Wasserfall.",
+    "details": {
+      "highlights": [],
+      "mustEat": [],
+      "visa": "Visa on Arrival (35 USD)",
+      "language": "Laotisch",
+      "transport": "Tuk-Tuk, Fahrrad",
+      "spots": []
+    }
+  },
+  {
+    "id": "vang-vieng",
+    "name": "Vang Vieng",
+    "country": "Laos",
+    "flag": "🇱🇦",
+    "lat": 18.9233,
+    "lon": 102.4414,
+    "status": "visited",
+    "phase": "main",
+    "timezone": "Asia/Vientiane",
+    "currency": "LAK",
+    "currencySymbol": "₭",
+    "dateFrom": "2026-08-25",
+    "dateTo": "2026-08-28",
+    "description": "Karstberge, Tubing, Partyhostels.",
+    "details": {
+      "highlights": [],
+      "mustEat": [],
+      "visa": "Visa on Arrival (35 USD)",
+      "language": "Laotisch",
+      "transport": "Tuk-Tuk, Motorroller",
+      "spots": []
+    }
+  },
+  {
+    "id": "vientiane",
+    "name": "Vientiane",
+    "country": "Laos",
+    "flag": "🇱🇦",
+    "lat": 17.9757,
+    "lon": 102.6331,
+    "status": "visited",
+    "phase": "main",
+    "timezone": "Asia/Vientiane",
+    "currency": "LAK",
+    "currencySymbol": "₭",
+    "dateFrom": "2026-08-28",
+    "dateTo": "2026-08-30",
+    "description": "Ruhige Hauptstadt am Mekong mit franzoesischem Kolonialerbe.",
+    "details": {
+      "highlights": [],
+      "mustEat": [],
+      "visa": "Visa on Arrival (35 USD)",
+      "language": "Laotisch",
+      "transport": "Tuk-Tuk, zu Fuss",
+      "spots": []
+    }
+  },
+  {
+    "id": "pakse",
+    "name": "Pakse",
+    "country": "Laos",
+    "flag": "🇱🇦",
+    "lat": 15.12,
+    "lon": 105.7995,
+    "status": "visited",
+    "phase": "main",
+    "timezone": "Asia/Vientiane",
+    "currency": "LAK",
+    "currencySymbol": "₭",
+    "dateFrom": "2026-08-30",
+    "dateTo": "2026-09-03",
+    "description": "Tor zum Sueden -- Bolaven-Plateau und Si Phan Don.",
+    "details": {
+      "highlights": [],
+      "mustEat": [],
+      "visa": "Visa on Arrival (35 USD)",
+      "language": "Laotisch",
+      "transport": "Motorroller, Tuk-Tuk",
+      "spots": []
+    }
+  },
+  {
+    "id": "don-det",
+    "name": "Don Det",
+    "country": "Laos",
+    "flag": "🇱🇦",
+    "lat": 14.0123,
+    "lon": 105.8432,
+    "status": "visited",
+    "phase": "main",
+    "timezone": "Asia/Vientiane",
+    "currency": "LAK",
+    "currencySymbol": "₭",
+    "dateFrom": "2026-09-03",
+    "dateTo": "2026-09-05",
+    "description": "Si Phan Don — Tausend Inseln im Mekong, Haengematte, Sonnenuntergang.",
+    "details": {
+      "highlights": [],
+      "mustEat": [],
+      "visa": "Visa on Arrival (35 USD)",
+      "language": "Laotisch",
+      "transport": "Fahrrad, Boot",
+      "spots": []
+    }
+  },
+  {
+    "id": "siem-reap",
+    "name": "Siem Reap",
+    "country": "Kambodscha",
+    "flag": "🇰🇭",
+    "lat": 13.3671,
+    "lon": 103.8448,
+    "status": "visited",
+    "phase": "main",
+    "timezone": "Asia/Phnom_Penh",
+    "currency": "USD",
+    "currencySymbol": "$",
+    "dateFrom": "2026-09-05",
+    "dateTo": "2026-09-09",
+    "description": "Tor zu Angkor Wat — Tempel, Pub Street und Tuk-Tuks.",
+    "details": {
+      "highlights": [],
+      "mustEat": [],
+      "visa": "E-Visum (36 USD)",
+      "language": "Khmer",
+      "transport": "Tuk-Tuk, Grab",
+      "spots": []
+    }
+  },
+  {
+    "id": "phnom-penh",
+    "name": "Phnom Penh",
+    "country": "Kambodscha",
+    "flag": "🇰🇭",
+    "lat": 11.5564,
+    "lon": 104.9282,
+    "status": "visited",
+    "phase": "main",
+    "timezone": "Asia/Phnom_Penh",
+    "currency": "USD",
+    "currencySymbol": "$",
+    "dateFrom": "2026-09-09",
+    "dateTo": "2026-09-11",
+    "description": "Hauptstadt am Mekong — Killing Fields, Koenigspalast, lebhafte Riverside.",
+    "details": {
+      "highlights": [],
+      "mustEat": [],
+      "visa": "E-Visum (36 USD)",
+      "language": "Khmer",
+      "transport": "Tuk-Tuk, Grab",
+      "spots": []
+    }
+  },
+  {
+    "id": "koh-rong",
+    "name": "Koh Rong",
+    "country": "Kambodscha",
+    "flag": "🇰🇭",
+    "lat": 10.7267,
+    "lon": 103.2482,
+    "status": "visited",
+    "phase": "main",
+    "timezone": "Asia/Phnom_Penh",
+    "currency": "USD",
+    "currencySymbol": "$",
+    "dateFrom": "2026-09-11",
+    "dateTo": "2026-09-16",
+    "description": "Insel vor Sihanoukville — weisse Straende, Biolumineszenz, kein Alltag.",
+    "details": {
+      "highlights": [],
+      "mustEat": [],
+      "visa": "E-Visum (36 USD)",
+      "language": "Khmer",
+      "transport": "Boot, zu Fuss",
+      "spots": []
+    }
+  },
+  {
+    "id": "phnom-penh-2",
+    "name": "Phnom Penh",
+    "country": "Kambodscha",
+    "flag": "🇰🇭",
+    "lat": 11.5564,
+    "lon": 104.9282,
+    "status": "current",
+    "phase": "main",
+    "timezone": "Asia/Phnom_Penh",
+    "currency": "USD",
+    "currencySymbol": "$",
+    "dateFrom": "2026-09-16",
+    "dateTo": null,
+    "description": "Hauptstadt am Mekong — Killing Fields, Koenigspalast, lebhafte Riverside.",
+    "details": {
+      "highlights": [],
+      "mustEat": [],
+      "visa": "E-Visum (36 USD)",
+      "language": "Khmer",
+      "transport": "Tuk-Tuk, Grab",
+      "spots": []
+    }
+  },
+  {
+    "id": "philippinen",
+    "name": "Philippinen",
+    "country": "Philippinen",
+    "flag": "🇵🇭",
+    "lat": 12.8797,
+    "lon": 121.774,
+    "status": "upcoming",
+    "phase": "main",
+    "timezone": "Asia/Manila",
+    "currency": "PHP",
+    "currencySymbol": "₱",
+    "dateFrom": null,
+    "dateTo": null,
+    "description": "Inseln, Tauchen, weisse Straende.",
+    "details": {
+      "highlights": [],
+      "mustEat": [],
+      "spots": []
+    }
+  },
+  {
+    "id": "suedkorea",
+    "name": "Südkorea",
+    "country": "Südkorea",
+    "flag": "🇰🇷",
+    "lat": 37.5665,
+    "lon": 126.978,
+    "status": "upcoming",
+    "phase": "main",
+    "timezone": "Asia/Seoul",
+    "currency": "KRW",
+    "currencySymbol": "₩",
+    "dateFrom": null,
+    "dateTo": null,
+    "description": "Seoul, K-Culture und ein Wiedersehen in der Hauptstadt.",
+    "details": {
+      "highlights": [],
+      "mustEat": [],
+      "spots": []
     }
   },
   {

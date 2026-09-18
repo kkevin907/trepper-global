@@ -134,7 +134,7 @@ const mapData = JSON.stringify({
           </div>
 
           <!-- FOOD SPOTS -->
-          <div class="or-section">
+          {d.foodSpots.length > 0 && <div class="or-section">
             <h2 class="or-section-title">🍽️ Food-Spots</h2>
             <div class="or-food-list reveal-stagger">
               {d.foodSpots.map((f: any) => (
@@ -157,7 +157,7 @@ const mapData = JSON.stringify({
                 </div>
               ))}
             </div>
-          </div>
+          </div>}
 
           <!-- STADTKARTE -->
           {mapCenter && (
