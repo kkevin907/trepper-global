@@ -2571,13 +2571,13 @@
     "flag": "🇰🇭",
     "lat": 11.5564,
     "lon": 104.9282,
-    "status": "current",
+    "status": "visited",
     "phase": "main",
     "timezone": "Asia/Phnom_Penh",
     "currency": "USD",
     "currencySymbol": "$",
     "dateFrom": "2026-09-16",
-    "dateTo": null,
+    "dateTo": "2026-09-22",
     "description": "Hauptstadt am Mekong — Killing Fields, Koenigspalast, lebhafte Riverside.",
     "details": {
       "highlights": [],
@@ -2585,6 +2585,30 @@
       "visa": "E-Visum (36 USD)",
       "language": "Khmer",
       "transport": "Tuk-Tuk, Grab",
+      "spots": []
+    }
+  },
+  {
+    "id": "saigon",
+    "name": "Saigon",
+    "country": "Vietnam",
+    "flag": "🇻🇳",
+    "lat": 10.8231,
+    "lon": 106.6297,
+    "status": "current",
+    "phase": "main",
+    "timezone": "Asia/Ho_Chi_Minh",
+    "currency": "VND",
+    "currencySymbol": "₫",
+    "dateFrom": "2026-09-22",
+    "dateTo": null,
+    "description": "Größte Stadt Vietnams — French-Colonial-Charme, Straßencafés und das pulsierende Herz des Südens.",
+    "details": {
+      "highlights": [],
+      "mustEat": [],
+      "visa": "E-Visum (25 USD)",
+      "language": "Vietnamesisch",
+      "transport": "Grab, xe ôm",
       "spots": []
     }
   },

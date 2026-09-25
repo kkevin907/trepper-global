@@ -80,6 +80,26 @@ const locStationName = currentStation.name;
 const locLat = currentStation.lat;
 const locLon = currentStation.lon;
 
+// Länder-Counter — Reisetage gehen an den Abfahrtsort
+// Formel: Tage pro Station = nächste.dateFrom − diese.dateFrom (letzte Station: heute)
+// → alle Ländertage addieren sich exakt zur Gesamtreisetage-Zahl
+const mainVisited = stationsData
+  .filter(s => s.phase === 'main' && (s.status === 'visited' || s.status === 'current') && s.dateFrom)
+  .sort((a, b) => new Date(a.dateFrom!).getTime() - new Date(b.dateFrom!).getTime());
+
+const countryDaysMap: Record<string, { flag: string; days: number }> = {};
+for (let i = 0; i < mainVisited.length; i++) {
+  const s    = mainVisited[i];
+  const from = new Date(s.dateFrom!);
+  const to   = i < mainVisited.length - 1 ? new Date(mainVisited[i + 1].dateFrom!) : _today;
+  const days = Math.max(1, Math.round((to.getTime() - from.getTime()) / (1000 * 60 * 60 * 24)));
+  if (!countryDaysMap[s.country]) countryDaysMap[s.country] = { flag: s.flag, days: 0 };
+  countryDaysMap[s.country].days += days;
+}
+const countriesSorted = Object.entries(countryDaysMap)
+  .map(([name, d]) => ({ name, flag: d.flag, days: d.days }))
+  .sort((a, b) => b.days - a.days);
+
 // Wechselkurs zur Build-Zeit fetchen
 let buildTimeRateText = '';
 if (currentStation.currency && currentStation.currency !== 'EUR') {
@@ -212,6 +232,26 @@ if (currentStation.currency && currentStation.currency !== 'EUR') {
       <WorldMap height="100%" mapId="home-map" showRoute={false} showFilters={true} centerOnCurrent={true} centerZoom={4} />
     </div>
 
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     LÄNDER-COUNTER
+═══════════════════════════════════════════════════════ -->
+<section class="ph-sec ph-countries reveal">
+  <div class="ph-wrap">
+    <div class="ph-countries-head">
+      <p class="ph-countries-label">{countriesSorted.length} Länder auf dieser Reise</p>
+    </div>
+    <div class="ph-countries-strip">
+      {countriesSorted.map((c, i) => (
+        <div class={`ph-country-card${i === 0 ? ' ph-country-card--first' : ''}`}>
+          <span class="ph-country-flag">{c.flag}</span>
+          <span class="ph-country-name">{c.name}</span>
+          <span class="ph-country-days">{c.days} Tage</span>
+        </div>
+      ))}
+    </div>
   </div>
 </section>
 
@@ -701,6 +741,20 @@ if (currentStation.currency && currentStation.currency !== 'EUR') {
           </div>
           <div class="ph-tl-line tl-dash"></div>
 
+          <div class="ph-tl-stop" id="ph-tl-saigon">
+            <div class="ph-tl-top">
+              <span class="ph-tl-flag">🇻🇳</span>
+              <span class="ph-tl-name">Saigon</span>
+            </div>
+            <div class="ph-tl-dot-row">
+              <div class="ph-tl-dot" id="ph-tl-saigon-dot" style="background:#F97316;opacity:.6;box-shadow:0 0 0 3px #F9731618;"></div>
+            </div>
+            <div class="ph-tl-bot">
+              <span class="ph-tl-badge" id="ph-tl-saigon-badge" style="background:#FFF7ED;color:#C2410C;">ab 22. Sep</span>
+            </div>
+          </div>
+          <div class="ph-tl-line tl-dash"></div>
+
           <!-- GEPLANT: orange, dashed -->
           {[
             { flag:'🇮🇩', name:'Indonesien'     },
@@ -769,6 +823,7 @@ if (currentStation.currency && currentStation.currency !== 'EUR') {
     var PHNOMPENH_DATE          = new Date('2026-09-09T00:00:00');
     var KOHRONG_DATE            = new Date('2026-09-11T00:00:00');
     var PHNOMPENH2_DATE         = new Date('2026-09-16T00:00:00');
+    var SAIGON_DATE             = new Date('2026-09-22T00:00:00');
 
     function setVisited(dotId, badgeId, stopId, label) {
       var dot   = document.getElementById(dotId);
@@ -883,11 +938,16 @@ if (currentStation.currency && currentStation.currency !== 'EUR') {
       setVisited('ph-tl-koh-rong-dot', 'ph-tl-koh-rong-badge', 'ph-tl-koh-rong', '✓ 11.–16. Sep');
       setCurrent('ph-tl-phnom-penh-2-dot', 'ph-tl-phnom-penh-2-badge', 'ph-tl-phnom-penh-2');
     }
+    if (now >= SAIGON_DATE) {
+      setVisited('ph-tl-phnom-penh-2-dot', 'ph-tl-phnom-penh-2-badge', 'ph-tl-phnom-penh-2', '✓ 16.–22. Sep');
+      setCurrent('ph-tl-saigon-dot', 'ph-tl-saigon-badge', 'ph-tl-saigon');
+    }
 
     // Aktuellen Stop zentrieren
     var ABFLUG = new Date('2026-06-09T13:45:00+02:00');
     var marker = now < ABFLUG
       ? document.getElementById('ph-tl-current')
+      : now >= SAIGON_DATE         ? document.getElementById('ph-tl-saigon')
       : now >= PHNOMPENH2_DATE    ? document.getElementById('ph-tl-phnom-penh-2')
       : now >= KOHRONG_DATE       ? document.getElementById('ph-tl-koh-rong')
       : now >= PHNOMPENH_DATE     ? document.getElementById('ph-tl-phnom-penh')
@@ -2103,5 +2163,84 @@ if (currentStation.currency && currentStation.currency !== 'EUR') {
 
 @media (max-width: 380px) {
   .ph-reports-grid { grid-template-columns: 1fr; }
+}
+
+/* ── LÄNDER-COUNTER ── */
+.ph-countries {
+  padding: 2rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.ph-countries-head {
+  max-width: 1100px;
+  margin: 0 auto .75rem;
+}
+.ph-countries-label {
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--text-light);
+}
+.ph-countries-strip {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: .65rem;
+  overflow-x: auto;
+  padding-bottom: .25rem;
+  scrollbar-width: none;
+}
+.ph-countries-strip::-webkit-scrollbar { display: none; }
+.ph-country-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .2rem;
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: .75rem 1rem;
+  min-width: 80px;
+  flex-shrink: 0;
+  transition: box-shadow .15s, border-color .15s;
+}
+.ph-country-card:hover {
+  box-shadow: var(--shadow);
+  border-color: #CBD5E1;
+}
+.ph-country-card--first {
+  border-color: var(--coral-mid);
+  background: #FFF7ED;
+}
+.ph-country-flag {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+.ph-country-name {
+  font-size: .68rem;
+  font-weight: 700;
+  color: var(--text);
+  text-align: center;
+  white-space: nowrap;
+}
+.ph-country-days {
+  font-size: .65rem;
+  font-weight: 600;
+  color: var(--text-light);
+  white-space: nowrap;
+}
+.ph-country-card--first .ph-country-days {
+  color: #C2410C;
+}
+@media (max-width: 700px) {
+  .ph-countries { padding: 1.5rem 1.25rem; }
+  .ph-country-card { padding: .65rem .8rem; min-width: 70px; }
+  .ph-country-flag { font-size: 1.4rem; }
+}
+@media (max-width: 480px) {
+  .ph-country-card { padding: .6rem .75rem; min-width: 66px; }
+  .ph-country-flag { font-size: 1.3rem; }
+  .ph-country-name { font-size: .63rem; }
+  .ph-country-days { font-size: .6rem; }
 }
 </style>
