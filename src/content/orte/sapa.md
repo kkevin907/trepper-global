@@ -32,7 +32,7 @@ foodSpots: []
 tips:
   - "Grenzübergang Hekou → Lào Cai ist unkompliziert: einmal über die Brücke über den Fluss, dann Vietnam. Von Lào Cai fährt ein Bus direkt nach Sapa, ca. 2 Stunden."
   - "Motorradvermietung direkt in Sapa, günstig. Wer etwas Fahrerfahrung hat, sollte es nicht verpassen."
-draft: true
+draft: false
 ---
 
 Am Bahnhof in Hekou habe ich eine Britin und einen Niederländer getroffen, und wir sind gemeinsam rüber. Der Übergang selbst: einmal über eine Brücke über den Fluss, auf der anderen Seite Vietnam. Stempel, fertig. Alles sehr schnell und einfach. Von **Lào Cai** aus dann den Bus genommen, ungefähr zwei Stunden, und ich war in Sapa.

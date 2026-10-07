@@ -34,7 +34,7 @@ foodSpots:
 tips:
   - "Buffalo Hostel buchen: Pool, Jacuzzi, Open Bar bis 4 Uhr, Frühstücksbuffet. Eines der besten Hostels auf der Reise."
   - "Motorrad mieten und einmal die ganze Insel abfahren. Bis ans nördliche Ende, von dort sieht man die Halong-Bucht."
-draft: true
+draft: false
 ---
 
 Ich war eigentlich erst einen Tag in Hanoi, als **George**, den ich schon aus Sapa kannte, mir beim Morgenkaffee erzählte, dass er weiter nach Cat Ba fährt.

@@ -33,7 +33,7 @@ foodSpots:
 tips:
   - "Zum Kingdom of the Little People fährt ein Shuttle-Bus ab Kunming."
   - "Kunming braucht nicht viele Tage. Zwei reichen."
-draft: true
+draft: false
 ---
 
 Kunming war das Ende von China, und ich bin nach einer harten Nacht dort angekommen.
