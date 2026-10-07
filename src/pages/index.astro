@@ -215,8 +215,8 @@ if (currentStation.currency && currentStation.currency !== 'EUR') {
         </div>
         <div class="ph-stat-sep"></div>
         <div class="ph-stat">
-          <span class="ph-stat-n" style="color:#0EA5E9;">{orteCount}</span>
-          <span class="ph-stat-l">Reiseberichte</span>
+          <span class="ph-stat-n" style="color:#0EA5E9;">35</span>
+          <span class="ph-stat-l">Länder besucht</span>
         </div>
         <div class="ph-stat-sep"></div>
         <div class="ph-stat">
@@ -753,11 +753,66 @@ if (currentStation.currency && currentStation.currency !== 'EUR') {
               <span class="ph-tl-badge" id="ph-tl-saigon-badge" style="background:#FFF7ED;color:#C2410C;">ab 22. Sep</span>
             </div>
           </div>
+          <div class="ph-tl-line"></div>
+
+          <div class="ph-tl-stop" id="ph-tl-berastagi">
+            <div class="ph-tl-top">
+              <span class="ph-tl-flag">🇮🇩</span>
+              <span class="ph-tl-name">Berastagi</span>
+            </div>
+            <div class="ph-tl-dot-row">
+              <div class="ph-tl-dot" id="ph-tl-berastagi-dot" style="background:#F97316;opacity:.6;box-shadow:0 0 0 3px #F9731618;"></div>
+            </div>
+            <div class="ph-tl-bot">
+              <span class="ph-tl-badge" id="ph-tl-berastagi-badge" style="background:#FFF7ED;color:#C2410C;">ab 26. Sep</span>
+            </div>
+          </div>
+          <div class="ph-tl-line"></div>
+
+          <div class="ph-tl-stop" id="ph-tl-ketambe">
+            <div class="ph-tl-top">
+              <span class="ph-tl-flag">🇮🇩</span>
+              <span class="ph-tl-name">Ketambe</span>
+            </div>
+            <div class="ph-tl-dot-row">
+              <div class="ph-tl-dot" id="ph-tl-ketambe-dot" style="background:#F97316;opacity:.6;box-shadow:0 0 0 3px #F9731618;"></div>
+            </div>
+            <div class="ph-tl-bot">
+              <span class="ph-tl-badge" id="ph-tl-ketambe-badge" style="background:#FFF7ED;color:#C2410C;">ab 1. Okt</span>
+            </div>
+          </div>
+          <div class="ph-tl-line"></div>
+
+          <div class="ph-tl-stop" id="ph-tl-tuk-tuk">
+            <div class="ph-tl-top">
+              <span class="ph-tl-flag">🇮🇩</span>
+              <span class="ph-tl-name">TukTuk</span>
+            </div>
+            <div class="ph-tl-dot-row">
+              <div class="ph-tl-dot" id="ph-tl-tuk-tuk-dot" style="background:#F97316;opacity:.6;box-shadow:0 0 0 3px #F9731618;"></div>
+            </div>
+            <div class="ph-tl-bot">
+              <span class="ph-tl-badge" id="ph-tl-tuk-tuk-badge" style="background:#FFF7ED;color:#C2410C;">ab 3. Okt</span>
+            </div>
+          </div>
+          <div class="ph-tl-line"></div>
+
+          <div class="ph-tl-stop" id="ph-tl-jakarta">
+            <div class="ph-tl-top">
+              <span class="ph-tl-flag">🇮🇩</span>
+              <span class="ph-tl-name">Jakarta</span>
+            </div>
+            <div class="ph-tl-dot-row">
+              <div class="ph-tl-dot" id="ph-tl-jakarta-dot" style="background:#F97316;opacity:.6;box-shadow:0 0 0 3px #F9731618;"></div>
+            </div>
+            <div class="ph-tl-bot">
+              <span class="ph-tl-badge" id="ph-tl-jakarta-badge" style="background:#FFF7ED;color:#C2410C;">ab 8. Okt</span>
+            </div>
+          </div>
           <div class="ph-tl-line tl-dash"></div>
 
           <!-- GEPLANT: orange, dashed -->
           {[
-            { flag:'🇮🇩', name:'Indonesien'     },
             { flag:'🇵🇭', name:'Philippinen'   },
             { flag:'🇰🇷', name:'Südkorea'      },
             { flag:'🇳🇿', name:'Neuseeland'    },
@@ -824,6 +879,10 @@ if (currentStation.currency && currentStation.currency !== 'EUR') {
     var KOHRONG_DATE            = new Date('2026-09-11T00:00:00');
     var PHNOMPENH2_DATE         = new Date('2026-09-16T00:00:00');
     var SAIGON_DATE             = new Date('2026-09-22T00:00:00');
+    var BERASTAGI_DATE          = new Date('2026-09-26T00:00:00');
+    var KETAMBE_DATE            = new Date('2026-10-01T00:00:00');
+    var TUKTUK_DATE             = new Date('2026-10-03T00:00:00');
+    var JAKARTA_DATE            = new Date('2026-10-08T00:00:00');
 
     function setVisited(dotId, badgeId, stopId, label) {
       var dot   = document.getElementById(dotId);
@@ -942,11 +1001,31 @@ if (currentStation.currency && currentStation.currency !== 'EUR') {
       setVisited('ph-tl-phnom-penh-2-dot', 'ph-tl-phnom-penh-2-badge', 'ph-tl-phnom-penh-2', '✓ 16.–22. Sep');
       setCurrent('ph-tl-saigon-dot', 'ph-tl-saigon-badge', 'ph-tl-saigon');
     }
+    if (now >= BERASTAGI_DATE) {
+      setVisited('ph-tl-saigon-dot', 'ph-tl-saigon-badge', 'ph-tl-saigon', '✓ 22.–26. Sep');
+      setCurrent('ph-tl-berastagi-dot', 'ph-tl-berastagi-badge', 'ph-tl-berastagi');
+    }
+    if (now >= KETAMBE_DATE) {
+      setVisited('ph-tl-berastagi-dot', 'ph-tl-berastagi-badge', 'ph-tl-berastagi', '✓ 26.–30. Sep');
+      setCurrent('ph-tl-ketambe-dot', 'ph-tl-ketambe-badge', 'ph-tl-ketambe');
+    }
+    if (now >= TUKTUK_DATE) {
+      setVisited('ph-tl-ketambe-dot', 'ph-tl-ketambe-badge', 'ph-tl-ketambe', '✓ 1.–3. Okt');
+      setCurrent('ph-tl-tuk-tuk-dot', 'ph-tl-tuk-tuk-badge', 'ph-tl-tuk-tuk');
+    }
+    if (now >= JAKARTA_DATE) {
+      setVisited('ph-tl-tuk-tuk-dot', 'ph-tl-tuk-tuk-badge', 'ph-tl-tuk-tuk', '✓ 3.–8. Okt');
+      setCurrent('ph-tl-jakarta-dot', 'ph-tl-jakarta-badge', 'ph-tl-jakarta');
+    }
 
     // Aktuellen Stop zentrieren
     var ABFLUG = new Date('2026-06-09T13:45:00+02:00');
     var marker = now < ABFLUG
       ? document.getElementById('ph-tl-current')
+      : now >= JAKARTA_DATE         ? document.getElementById('ph-tl-jakarta')
+      : now >= TUKTUK_DATE          ? document.getElementById('ph-tl-tuk-tuk')
+      : now >= KETAMBE_DATE         ? document.getElementById('ph-tl-ketambe')
+      : now >= BERASTAGI_DATE       ? document.getElementById('ph-tl-berastagi')
       : now >= SAIGON_DATE         ? document.getElementById('ph-tl-saigon')
       : now >= PHNOMPENH2_DATE    ? document.getElementById('ph-tl-phnom-penh-2')
       : now >= KOHRONG_DATE       ? document.getElementById('ph-tl-koh-rong')

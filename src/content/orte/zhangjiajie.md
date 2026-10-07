@@ -8,7 +8,7 @@ coverImagePosition: "center"
 dateFrom: "2026-07-24"
 dateTo: "2026-07-26"
 nights: 2
-vibe: "Avatar Mountains, 33.000 Schritte, Glasboden"
+vibe: "Avatar, Glasboden, 33.000 Schritte"
 costLevel: 3
 rating: 5
 highlights:

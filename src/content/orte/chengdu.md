@@ -8,7 +8,7 @@ coverImagePosition: "center"
 dateFrom: "2026-07-30"
 dateTo: "2026-08-02"
 nights: 3
-vibe: "DJI Action 4, Cheersum Spa, Hot Pot"
+vibe: "DJI, Cheersum, Hot Pot"
 costLevel: 2
 rating: 4
 highlights:
