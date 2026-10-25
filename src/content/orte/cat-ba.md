@@ -3,7 +3,7 @@ title: "Cat Ba"
 stationId: "cat-ba"
 country: "Vietnam"
 flag: "🇻🇳"
-coverImage: ""
+coverImage: "/images/orte/cat-ba-motorrad.jpeg"
 coverImagePosition: "center"
 dateFrom: "2026-08-12"
 dateTo: "2026-08-19"
@@ -43,10 +43,14 @@ Ich hatte erst abgelehnt. Gerade angekommen, wollte ich kurz ankommen. Aber 45 M
 
 Wir sind direkt ins **Buffalo Hostel**. Pool, Jacuzzi, Open Bar bis 4 Uhr, kostenloses Frühstücksbuffet von 7 bis 8. George und ich hatten ein Viererzimmer die ganze Zeit für uns alleine. Wir haben sofort nette Australier und Niederländer getroffen und hatten direkt am ersten Abend Spaß.
 
+<img src="/images/orte/cat-ba-buffalo-hostel.jpeg" alt="Pool im Buffalo Hostel auf Cat Ba mit Liegestühlen und Blick auf das Hostelgebäude" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
+
 Am nächsten Tag haben wir uns Motorräder gemietet und sind einmal die ganze Insel abgefahren. Bis ans nördliche Ende, wo man von oben die **Halong-Bucht** sehen kann. Den Rest der Insel haben wir auch mitgenommen.
 
 Nach zwei Tagen ist George abgereist. Ich bin geblieben. Eine Woche insgesamt.
 
 Der Tagesablauf hat sich schnell eingespielt: morgens Frühstück im Hostel, nachmittags Mittagessen oder Kaffee in dem kleinen Café direkt neben dem Buffalo, günstige Bánh Mì und Eissäfte. Danach Fußball oder Volleyball mit den Local Kids auf der Straße. Abends Bier mit wem auch immer gerade da war.
+
+<img src="/images/orte/cat-ba-banh-mi.jpeg" alt="Bánh Mì und Eissaft vom Café neben dem Buffalo Hostel auf Cat Ba" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 Keine Highlights im klassischen Sinn. Aber genau das war der Punkt. Cat Ba war die richtige Entscheidung zur richtigen Zeit.

@@ -96,9 +96,18 @@ for (let i = 0; i < mainVisited.length; i++) {
   if (!countryDaysMap[s.country]) countryDaysMap[s.country] = { flag: s.flag, days: 0 };
   countryDaysMap[s.country].days += days;
 }
+// Hongkong und Macau sind offiziell keine eigenen Länder, sondern Sonderverwaltungszonen Chinas.
+// Sie bleiben als eigene Zeilen in der Liste sichtbar (eigene Flagge, eigene Tage-Zahl),
+// ihre Tage zählen aber zusätzlich zu China, und die Kopfzahl zählt nur echte, offizielle Länder.
+for (const sarRegion of ['Hongkong', 'Macau']) {
+  if (countryDaysMap[sarRegion] && countryDaysMap['China']) {
+    countryDaysMap['China'].days += countryDaysMap[sarRegion].days;
+  }
+}
 const countriesSorted = Object.entries(countryDaysMap)
   .map(([name, d]) => ({ name, flag: d.flag, days: d.days }))
   .sort((a, b) => b.days - a.days);
+const officialCountriesCount = countriesSorted.filter(c => c.name !== 'Hongkong' && c.name !== 'Macau').length;
 
 // Wechselkurs zur Build-Zeit fetchen
 let buildTimeRateText = '';
@@ -241,7 +250,7 @@ if (currentStation.currency && currentStation.currency !== 'EUR') {
 <section class="ph-sec ph-countries reveal">
   <div class="ph-wrap">
     <div class="ph-countries-head">
-      <p class="ph-countries-label">{countriesSorted.length} Länder auf dieser Reise</p>
+      <p class="ph-countries-label">{officialCountriesCount} Länder auf dieser Reise</p>
     </div>
     <div class="ph-countries-strip">
       {countriesSorted.map((c, i) => (
@@ -809,6 +818,48 @@ if (currentStation.currency && currentStation.currency !== 'EUR') {
               <span class="ph-tl-badge" id="ph-tl-jakarta-badge" style="background:#FFF7ED;color:#C2410C;">ab 8. Okt</span>
             </div>
           </div>
+          <div class="ph-tl-line"></div>
+
+          <div class="ph-tl-stop" id="ph-tl-bandung">
+            <div class="ph-tl-top">
+              <span class="ph-tl-flag">🇮🇩</span>
+              <span class="ph-tl-name">Bandung</span>
+            </div>
+            <div class="ph-tl-dot-row">
+              <div class="ph-tl-dot" id="ph-tl-bandung-dot" style="background:#F97316;opacity:.6;box-shadow:0 0 0 3px #F9731618;"></div>
+            </div>
+            <div class="ph-tl-bot">
+              <span class="ph-tl-badge" id="ph-tl-bandung-badge" style="background:#FFF7ED;color:#C2410C;">ab 11. Okt</span>
+            </div>
+          </div>
+          <div class="ph-tl-line"></div>
+
+          <div class="ph-tl-stop" id="ph-tl-pangandaran">
+            <div class="ph-tl-top">
+              <span class="ph-tl-flag">🇮🇩</span>
+              <span class="ph-tl-name">Pangandaran</span>
+            </div>
+            <div class="ph-tl-dot-row">
+              <div class="ph-tl-dot" id="ph-tl-pangandaran-dot" style="background:#F97316;opacity:.6;box-shadow:0 0 0 3px #F9731618;"></div>
+            </div>
+            <div class="ph-tl-bot">
+              <span class="ph-tl-badge" id="ph-tl-pangandaran-badge" style="background:#FFF7ED;color:#C2410C;">ab 14. Okt</span>
+            </div>
+          </div>
+          <div class="ph-tl-line"></div>
+
+          <div class="ph-tl-stop" id="ph-tl-batu-karas">
+            <div class="ph-tl-top">
+              <span class="ph-tl-flag">🇮🇩</span>
+              <span class="ph-tl-name">Batu Karas</span>
+            </div>
+            <div class="ph-tl-dot-row">
+              <div class="ph-tl-dot" id="ph-tl-batu-karas-dot" style="background:#F97316;opacity:.6;box-shadow:0 0 0 3px #F9731618;"></div>
+            </div>
+            <div class="ph-tl-bot">
+              <span class="ph-tl-badge" id="ph-tl-batu-karas-badge" style="background:#FFF7ED;color:#C2410C;">ab 20. Okt</span>
+            </div>
+          </div>
           <div class="ph-tl-line tl-dash"></div>
 
           <!-- GEPLANT: orange, dashed -->
@@ -883,6 +934,9 @@ if (currentStation.currency && currentStation.currency !== 'EUR') {
     var KETAMBE_DATE            = new Date('2026-10-01T00:00:00');
     var TUKTUK_DATE             = new Date('2026-10-03T00:00:00');
     var JAKARTA_DATE            = new Date('2026-10-08T00:00:00');
+    var BANDUNG_DATE            = new Date('2026-10-11T00:00:00');
+    var PANGANDARAN_DATE        = new Date('2026-10-14T00:00:00');
+    var BATUKARAS_DATE          = new Date('2026-10-20T00:00:00');
 
     function setVisited(dotId, badgeId, stopId, label) {
       var dot   = document.getElementById(dotId);
@@ -1017,11 +1071,26 @@ if (currentStation.currency && currentStation.currency !== 'EUR') {
       setVisited('ph-tl-tuk-tuk-dot', 'ph-tl-tuk-tuk-badge', 'ph-tl-tuk-tuk', '✓ 3.–8. Okt');
       setCurrent('ph-tl-jakarta-dot', 'ph-tl-jakarta-badge', 'ph-tl-jakarta');
     }
+    if (now >= BANDUNG_DATE) {
+      setVisited('ph-tl-jakarta-dot', 'ph-tl-jakarta-badge', 'ph-tl-jakarta', '✓ 8.–11. Okt');
+      setCurrent('ph-tl-bandung-dot', 'ph-tl-bandung-badge', 'ph-tl-bandung');
+    }
+    if (now >= PANGANDARAN_DATE) {
+      setVisited('ph-tl-bandung-dot', 'ph-tl-bandung-badge', 'ph-tl-bandung', '✓ 11.–14. Okt');
+      setCurrent('ph-tl-pangandaran-dot', 'ph-tl-pangandaran-badge', 'ph-tl-pangandaran');
+    }
+    if (now >= BATUKARAS_DATE) {
+      setVisited('ph-tl-pangandaran-dot', 'ph-tl-pangandaran-badge', 'ph-tl-pangandaran', '✓ 14.–20. Okt');
+      setCurrent('ph-tl-batu-karas-dot', 'ph-tl-batu-karas-badge', 'ph-tl-batu-karas');
+    }
 
     // Aktuellen Stop zentrieren
     var ABFLUG = new Date('2026-06-09T13:45:00+02:00');
     var marker = now < ABFLUG
       ? document.getElementById('ph-tl-current')
+      : now >= BATUKARAS_DATE       ? document.getElementById('ph-tl-batu-karas')
+      : now >= PANGANDARAN_DATE     ? document.getElementById('ph-tl-pangandaran')
+      : now >= BANDUNG_DATE         ? document.getElementById('ph-tl-bandung')
       : now >= JAKARTA_DATE         ? document.getElementById('ph-tl-jakarta')
       : now >= TUKTUK_DATE          ? document.getElementById('ph-tl-tuk-tuk')
       : now >= KETAMBE_DATE         ? document.getElementById('ph-tl-ketambe')
@@ -1283,7 +1352,7 @@ if (currentStation.currency && currentStation.currency !== 'EUR') {
             <a href={`/reiseberichte/${ort.id}`} class="ph-report-card">
               {d.coverImage ? (
                 <div class="ph-report-img">
-                  <img src={d.coverImage} alt={d.title} loading="lazy" />
+                  <img src={d.coverImage} alt={d.title} loading="lazy" style={d.coverImagePosition ? `object-position:${d.coverImagePosition};` : undefined} />
                 </div>
               ) : (
                 <div class="ph-report-img ph-report-img--empty">

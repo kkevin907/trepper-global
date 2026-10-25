@@ -57,7 +57,7 @@ const costLabels  = ['', 'Günstig', 'Günstig', 'Bezahlbar', 'Teuer', 'Sehr teu
               <Tag {...props} class={`oi-card${isReal ? ' oi-card--link' : ' oi-card--soon'}`}>
                 {d.coverImage ? (
                   <div class="oi-card-img">
-                    <img src={d.coverImage} alt={d.title} />
+                    <img src={d.coverImage} alt={d.title} style={d.coverImagePosition ? `object-position:${d.coverImagePosition};` : undefined} />
                   </div>
                 ) : (
                   <div class="oi-card-img oi-card-img--empty">

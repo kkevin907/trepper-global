@@ -126,12 +126,29 @@ const doFitVisitedOnly = fitVisitedOnly;
       upcoming: L.layerGroup().addTo(map),
     };
 
-    // Route
+    // Route — nur die echte Weltreise-Strecke (Warmup + Main), chronologisch sortiert.
+    // Bucket-List-Länder (phase: pre) und alte Trips (phase: history) werden bewusst nicht verbunden.
     if (doRoute) {
-      var coords = stations.map(function(s) { return [s.lat, s.lon]; });
-      if (coords.length > 1) {
-        L.polyline(coords, { color: '#ffffff', weight: 7, opacity: 0.7 }).addTo(map);
-        L.polyline(coords, { color: '#F97316', weight: 4, opacity: 0.9, lineCap: 'round', lineJoin: 'round' }).addTo(map);
+      var tripStations = stations
+        .filter(function(s) { return (s.phase === 'warmup' || s.phase === 'main') && s.dateFrom; })
+        .sort(function(a, b) { return new Date(a.dateFrom).getTime() - new Date(b.dateFrom).getTime(); });
+
+      var traveled = tripStations.filter(function(s) { return s.status === 'visited' || s.status === 'current'; });
+      var upcoming = tripStations.filter(function(s) { return s.status === 'upcoming'; });
+      // Letzten besuchten Punkt an den geplanten Teil anhängen, damit die Linie nicht abreißt
+      var upcomingWithBridge = (traveled.length && upcoming.length)
+        ? [traveled[traveled.length - 1]].concat(upcoming)
+        : upcoming;
+
+      var traveledCoords = traveled.map(function(s) { return [s.lat, s.lon]; });
+      var upcomingCoords = upcomingWithBridge.map(function(s) { return [s.lat, s.lon]; });
+
+      if (traveledCoords.length > 1) {
+        L.polyline(traveledCoords, { color: '#ffffff', weight: 6, opacity: 0.8, dashArray: '1, 11', lineCap: 'round' }).addTo(map);
+        L.polyline(traveledCoords, { color: '#F97316', weight: 3.5, opacity: 0.95, dashArray: '1, 11', lineCap: 'round', lineJoin: 'round' }).addTo(map);
+      }
+      if (upcomingCoords.length > 1) {
+        L.polyline(upcomingCoords, { color: '#0EA5E9', weight: 3, opacity: 0.6, dashArray: '1, 11', lineCap: 'round' }).addTo(map);
       }
     }
 

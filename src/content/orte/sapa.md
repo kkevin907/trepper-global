@@ -3,7 +3,7 @@ title: "Sapa"
 stationId: "sapa"
 country: "Vietnam"
 flag: "🇻🇳"
-coverImage: ""
+coverImage: "/images/orte/sapa-berg-teenager.jpeg"
 coverImagePosition: "center"
 dateFrom: "2026-08-06"
 dateTo: "2026-08-11"
@@ -41,12 +41,20 @@ Unterkunft: ein Privatzimmer im **Sapa Central** für 7,50 Euro die Nacht, mit k
 
 Am ersten Tag habe ich eine kleine Tour auf einen nahegelegenen Berg gemacht. Drei Euro Eintritt an einem Checkpoint, und dann war ich komplett alleine. Keine anderen Touristen. Erst eine Art botanischen Garten, dann weiter die Berge hoch. Auf dem Weg habe ich eine Gruppe vietnamesischer Teenager getroffen, die denselben Berg hoch wollten. Also sind wir zusammen hochgestiegen und zusammen wieder runter. Gute Leute.
 
+<img src="/images/orte/sapa-berg-teenager.jpeg" alt="Gruppenfoto mit vietnamesischen Teenagern auf einem Berg bei Sapa, im Hintergrund die Stadt und die umliegenden Reisterrassen" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
+
 Abends hatte ich dann noch eine weitere Überraschung: **George**, den ich aus Chongqing kannte, war zufälligerweise zur selben Zeit in Sapa angekommen. Wir haben uns verabredet, zusammen gegessen und sind danach noch ausgegangen.
+
+<img src="/images/orte/sapa-george-bbq.jpeg" alt="Barbecue-Abend mit George in Sapa — Grillspieße mit Garnelen, Fleisch und Wachteleiern auf dem Tischgrill" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 Am nächsten Tag haben mich die Teenager wieder kontaktiert. Sie wollten mir etwas zeigen, einen versteckten Wasserfall bei **[Cat Cat Village](https://maps.google.com/?q=Cat+Cat+Village+Sapa)**, den sie kannten. Eine kleine Gruppe, komplett allein dort. Schwimmen, von Felsen springen, kein Plan und kein Zeitdruck.
 
 Danach noch das Dorf selbst: traditionelle Architektur, Musik, ein bisschen Aufführung. Kulturell interessant, nicht übertouristisch.
 
+<img src="/images/orte/sapa-cat-cat-village.jpeg" alt="Cat Cat Village bei Sapa — Restaurant auf Stelzen über einem Wasserfall, umgeben von grünen Bergen" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
+
 Am nächsten Tag habe ich mir ein Motorrad gemietet und bin alleine losgefahren. Keine Gruppe, keine geführte Tour, kein fester Plan. Ich bin durch Wege gefahren, auf denen sonst niemand war, über unbefestigte Pisten, durch Reisterrassen, bergauf und bergab. Am Ende des Tages: 80 Kilometer und 2700 Höhenmeter. Die Strecke war komplett verrückt und genau deshalb gut.
+
+<img src="/images/orte/sapa-reisterrassen.jpeg" alt="Reisterrassen im Muong Hoa Valley bei Sapa, Blick von oben auf grün-gelbe Felder zwischen den Bergen" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 Am nächsten Tag ging es weiter nach Hanoi.

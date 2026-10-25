@@ -3,8 +3,8 @@ title: "Kunming"
 stationId: "kunming"
 country: "China"
 flag: "🇨🇳"
-coverImage: ""
-coverImagePosition: "center"
+coverImage: "/images/orte/kunming-kingdom-foto.jpeg"
+coverImagePosition: "top"
 dateFrom: "2026-08-03"
 dateTo: "2026-08-06"
 nights: 3
@@ -42,11 +42,17 @@ Die Zugfahrt aus Chengdu lief in zwei Abschnitten. Die ersten acht Stunden hatte
 
 In Kunming habe ich mir direkt ein Hotel genommen und den halben Tag geschlafen. Abends bin ich rausgegangen und die Gegend erkunden. In der Nähe des Hotels war ein großes Einkaufszentrum, und davor haben Einheimische getanzt. Einfach so, mitten unter der Woche, draußen, entspannt. Gute Stimmung.
 
+<img src="/images/orte/kunming-nanping-street.jpeg" alt="Nanping Street in Kunming bei Nacht — beleuchtete Neon-Schilder über Garküchen und Streetfood-Ständen" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
+
+Auch die **Nanping Street** war abends einen Spaziergang wert, voller Neon-Schilder und Streetfood-Ständen.
+
 Am nächsten Tag habe ich ein Hostel genommen und dort eine Französin getroffen, mit der ich die Stadt erkundet habe. Wir sind zum **[Green Lake Park](https://maps.google.com/?q=Green+Lake+Park+Kunming)** gelaufen, einem großen ruhigen Park im Zentrum der Stadt mit alten Bäumen, Brücken und Pavillons. Komplett zu Fuß durchgegangen. Danach noch durch die Gassen der Altstadt. Dazu Nudeln bei einem lokalen Laden. Gut genug.
 
 Mein letzter Tag in China war der verrückteste.
 
 Ich bin zum **[Kingdom of the Little People](https://maps.google.com/?q=Kingdom+of+Little+People+Kunming)** gefahren. Das ist ein Freizeitpark außerhalb von Kunming, bei dem fast alle Mitarbeiter und Entertainer kleinwüchsig sind. International gibt es dazu sehr gemischte Meinungen, und ich wollte mir ein eigenes Bild machen, bevor ich ein Urteil fälle.
+
+<img src="/images/orte/kunming-kingdom-little-people.jpeg" alt="Eingang zum Kingdom of the Little People bei Kunming — Schloss-Attrappe aus Fels mit goldenen Türmchen und chinesischer Beschriftung 小人国 魔法城堡" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
 Mein Fazit: Die Menschen dort wirkten freundlich und glücklich. Niemand hat sich unwohl gefühlt, soweit ich das beurteilen konnte. Ob das Inklusion ist oder ob es eine Schau auf Kosten der Beteiligten ist, dazu wird man immer unterschiedliche Antworten bekommen. Ich habe mir die Zeit genommen, es selbst zu sehen, und habe mir danach meine Meinung gebildet.
 
