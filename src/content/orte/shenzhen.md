@@ -56,7 +56,7 @@ foodSpots:
   - name: "Bubble Waffeln, Nantou"
     lat: 22.5272
     lon: 113.9316
-    what: "Knapp 2 €, ein bisschen trocken. Beim nächsten Mal mit Belag — das macht den Unterschied."
+    what: "Knapp 2 €, ein bisschen trocken. Beim nächsten Mal mit Belag, das macht den Unterschied."
     stars: 3
     area: "Nantou"
     tip: "Mit Belag bestellen (das ist der Gamechanger)."

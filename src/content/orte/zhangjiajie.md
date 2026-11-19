@@ -38,7 +38,7 @@ sights:
 foodSpots: []
 tips:
   - "Den [Nationalpark](https://maps.google.com/?q=Zhangjiajie+National+Forest+Park) selbst hochgehen statt den [Bailong Elevator](https://maps.google.com/?q=Bailong+Elevator+Zhangjiajie) zu nehmen. Der Aufstieg ist fast menschenleer, sehr naturbelassen und man begegnet Affen, die entspannter sind als die oben."
-  - "Früh starten. Um 5 Uhr morgens keine Busse ab Zhangjiajie Bahnhof — Sammeltaxi verhandeln bis runter auf 30 Yuan (~4 €)."
+  - "Früh starten. Um 5 Uhr morgens keine Busse ab Zhangjiajie Bahnhof, Sammeltaxi verhandeln bis runter auf 30 Yuan (~4 €)."
 skip:
   - "Die normalen Wege im Nationalpark an Haupttagen. Voll und laut. Die weniger bekannten Aufstiegswege sind das Gegenteil."
 draft: false

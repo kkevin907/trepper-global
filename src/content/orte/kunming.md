@@ -46,7 +46,11 @@ In Kunming habe ich mir direkt ein Hotel genommen und den halben Tag geschlafen.
 
 Auch die **Nanping Street** war abends einen Spaziergang wert, voller Neon-Schilder und Streetfood-Ständen.
 
-Am nächsten Tag habe ich ein Hostel genommen und dort eine Französin getroffen, mit der ich die Stadt erkundet habe. Wir sind zum **[Green Lake Park](https://maps.google.com/?q=Green+Lake+Park+Kunming)** gelaufen, einem großen ruhigen Park im Zentrum der Stadt mit alten Bäumen, Brücken und Pavillons. Komplett zu Fuß durchgegangen. Danach noch durch die Gassen der Altstadt. Dazu Nudeln bei einem lokalen Laden. Gut genug.
+Am nächsten Tag habe ich ein Hostel genommen und dort eine Französin getroffen, mit der ich die Stadt erkundet habe. Wir sind zum **[Green Lake Park](https://maps.google.com/?q=Green+Lake+Park+Kunming)** gelaufen, einem großen ruhigen Park im Zentrum der Stadt mit alten Bäumen, Brücken und Pavillons. Komplett zu Fuß durchgegangen.
+
+<img src="/images/orte/kunming-green-lake-park.jpeg" alt="Green Lake Park in Kunming, alte Bäume und Pavillons an einem ruhigen See" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
+
+Danach noch durch die Gassen der Altstadt. Dazu Nudeln bei einem lokalen Laden. Gut genug.
 
 Mein letzter Tag in China war der verrückteste.
 

@@ -860,11 +860,94 @@ if (currentStation.currency && currentStation.currency !== 'EUR') {
               <span class="ph-tl-badge" id="ph-tl-batu-karas-badge" style="background:#FFF7ED;color:#C2410C;">ab 20. Okt</span>
             </div>
           </div>
+          <div class="ph-tl-line"></div>
+
+          <div class="ph-tl-stop" id="ph-tl-yogyakarta">
+            <div class="ph-tl-top">
+              <span class="ph-tl-flag">🇮🇩</span>
+              <span class="ph-tl-name">Yogyakarta</span>
+            </div>
+            <div class="ph-tl-dot-row">
+              <div class="ph-tl-dot" id="ph-tl-yogyakarta-dot" style="background:#F97316;opacity:.6;box-shadow:0 0 0 3px #F9731618;"></div>
+            </div>
+            <div class="ph-tl-bot">
+              <span class="ph-tl-badge" id="ph-tl-yogyakarta-badge" style="background:#FFF7ED;color:#C2410C;">ab 27. Okt</span>
+            </div>
+          </div>
+          <div class="ph-tl-line"></div>
+
+          <div class="ph-tl-stop" id="ph-tl-bromo">
+            <div class="ph-tl-top">
+              <span class="ph-tl-flag">🇮🇩</span>
+              <span class="ph-tl-name">Mount Bromo</span>
+            </div>
+            <div class="ph-tl-dot-row">
+              <div class="ph-tl-dot" id="ph-tl-bromo-dot" style="background:#F97316;opacity:.6;box-shadow:0 0 0 3px #F9731618;"></div>
+            </div>
+            <div class="ph-tl-bot">
+              <span class="ph-tl-badge" id="ph-tl-bromo-badge" style="background:#FFF7ED;color:#C2410C;">ab 1. Nov</span>
+            </div>
+          </div>
+          <div class="ph-tl-line"></div>
+
+          <div class="ph-tl-stop" id="ph-tl-ijen">
+            <div class="ph-tl-top">
+              <span class="ph-tl-flag">🇮🇩</span>
+              <span class="ph-tl-name">Ijen</span>
+            </div>
+            <div class="ph-tl-dot-row">
+              <div class="ph-tl-dot" id="ph-tl-ijen-dot" style="background:#F97316;opacity:.6;box-shadow:0 0 0 3px #F9731618;"></div>
+            </div>
+            <div class="ph-tl-bot">
+              <span class="ph-tl-badge" id="ph-tl-ijen-badge" style="background:#FFF7ED;color:#C2410C;">ab 3. Nov</span>
+            </div>
+          </div>
+          <div class="ph-tl-line"></div>
+
+          <div class="ph-tl-stop" id="ph-tl-kuta-lombok">
+            <div class="ph-tl-top">
+              <span class="ph-tl-flag">🇮🇩</span>
+              <span class="ph-tl-name">Kuta Lombok</span>
+            </div>
+            <div class="ph-tl-dot-row">
+              <div class="ph-tl-dot" id="ph-tl-kuta-lombok-dot" style="background:#F97316;opacity:.6;box-shadow:0 0 0 3px #F9731618;"></div>
+            </div>
+            <div class="ph-tl-bot">
+              <span class="ph-tl-badge" id="ph-tl-kuta-lombok-badge" style="background:#FFF7ED;color:#C2410C;">ab 5. Nov</span>
+            </div>
+          </div>
+          <div class="ph-tl-line"></div>
+
+          <div class="ph-tl-stop" id="ph-tl-klungkung">
+            <div class="ph-tl-top">
+              <span class="ph-tl-flag">🇮🇩</span>
+              <span class="ph-tl-name">Klungkung</span>
+            </div>
+            <div class="ph-tl-dot-row">
+              <div class="ph-tl-dot" id="ph-tl-klungkung-dot" style="background:#F97316;opacity:.6;box-shadow:0 0 0 3px #F9731618;"></div>
+            </div>
+            <div class="ph-tl-bot">
+              <span class="ph-tl-badge" id="ph-tl-klungkung-badge" style="background:#FFF7ED;color:#C2410C;">ab 12. Nov</span>
+            </div>
+          </div>
+          <div class="ph-tl-line"></div>
+
+          <div class="ph-tl-stop" id="ph-tl-siargao">
+            <div class="ph-tl-top">
+              <span class="ph-tl-flag">🇵🇭</span>
+              <span class="ph-tl-name">Siargao</span>
+            </div>
+            <div class="ph-tl-dot-row">
+              <div class="ph-tl-dot" id="ph-tl-siargao-dot" style="background:#F97316;opacity:.6;box-shadow:0 0 0 3px #F9731618;"></div>
+            </div>
+            <div class="ph-tl-bot">
+              <span class="ph-tl-badge" id="ph-tl-siargao-badge" style="background:#FFF7ED;color:#C2410C;">ab 17. Nov</span>
+            </div>
+          </div>
           <div class="ph-tl-line tl-dash"></div>
 
           <!-- GEPLANT: orange, dashed -->
           {[
-            { flag:'🇵🇭', name:'Philippinen'   },
             { flag:'🇰🇷', name:'Südkorea'      },
             { flag:'🇳🇿', name:'Neuseeland'    },
           ].map((s, i, arr) => (
@@ -937,6 +1020,12 @@ if (currentStation.currency && currentStation.currency !== 'EUR') {
     var BANDUNG_DATE            = new Date('2026-10-11T00:00:00');
     var PANGANDARAN_DATE        = new Date('2026-10-14T00:00:00');
     var BATUKARAS_DATE          = new Date('2026-10-20T00:00:00');
+    var YOGYAKARTA_DATE        = new Date('2026-10-27T00:00:00');
+    var BROMO_DATE             = new Date('2026-11-01T00:00:00');
+    var IJEN_DATE              = new Date('2026-11-03T00:00:00');
+    var KUTALOMBOK_DATE        = new Date('2026-11-05T00:00:00');
+    var KLUNGKUNG_DATE         = new Date('2026-11-12T00:00:00');
+    var SIARGAO_DATE           = new Date('2026-11-17T00:00:00');
 
     function setVisited(dotId, badgeId, stopId, label) {
       var dot   = document.getElementById(dotId);
@@ -1083,11 +1172,41 @@ if (currentStation.currency && currentStation.currency !== 'EUR') {
       setVisited('ph-tl-pangandaran-dot', 'ph-tl-pangandaran-badge', 'ph-tl-pangandaran', '✓ 14.–20. Okt');
       setCurrent('ph-tl-batu-karas-dot', 'ph-tl-batu-karas-badge', 'ph-tl-batu-karas');
     }
+    if (now >= YOGYAKARTA_DATE) {
+      setVisited('ph-tl-batu-karas-dot', 'ph-tl-batu-karas-badge', 'ph-tl-batu-karas', '✓ 20.–27. Okt');
+      setCurrent('ph-tl-yogyakarta-dot', 'ph-tl-yogyakarta-badge', 'ph-tl-yogyakarta');
+    }
+    if (now >= BROMO_DATE) {
+      setVisited('ph-tl-yogyakarta-dot', 'ph-tl-yogyakarta-badge', 'ph-tl-yogyakarta', '✓ 27.–31. Okt');
+      setCurrent('ph-tl-bromo-dot', 'ph-tl-bromo-badge', 'ph-tl-bromo');
+    }
+    if (now >= IJEN_DATE) {
+      setVisited('ph-tl-bromo-dot', 'ph-tl-bromo-badge', 'ph-tl-bromo', '✓ 1.–3. Nov');
+      setCurrent('ph-tl-ijen-dot', 'ph-tl-ijen-badge', 'ph-tl-ijen');
+    }
+    if (now >= KUTALOMBOK_DATE) {
+      setVisited('ph-tl-ijen-dot', 'ph-tl-ijen-badge', 'ph-tl-ijen', '✓ 3.–5. Nov');
+      setCurrent('ph-tl-kuta-lombok-dot', 'ph-tl-kuta-lombok-badge', 'ph-tl-kuta-lombok');
+    }
+    if (now >= KLUNGKUNG_DATE) {
+      setVisited('ph-tl-kuta-lombok-dot', 'ph-tl-kuta-lombok-badge', 'ph-tl-kuta-lombok', '✓ 5.–12. Nov');
+      setCurrent('ph-tl-klungkung-dot', 'ph-tl-klungkung-badge', 'ph-tl-klungkung');
+    }
+    if (now >= SIARGAO_DATE) {
+      setVisited('ph-tl-klungkung-dot', 'ph-tl-klungkung-badge', 'ph-tl-klungkung', '✓ 12.–16. Nov');
+      setCurrent('ph-tl-siargao-dot', 'ph-tl-siargao-badge', 'ph-tl-siargao');
+    }
 
     // Aktuellen Stop zentrieren
     var ABFLUG = new Date('2026-06-09T13:45:00+02:00');
     var marker = now < ABFLUG
       ? document.getElementById('ph-tl-current')
+      : now >= SIARGAO_DATE           ? document.getElementById('ph-tl-siargao')
+      : now >= KLUNGKUNG_DATE         ? document.getElementById('ph-tl-klungkung')
+      : now >= KUTALOMBOK_DATE        ? document.getElementById('ph-tl-kuta-lombok')
+      : now >= IJEN_DATE              ? document.getElementById('ph-tl-ijen')
+      : now >= BROMO_DATE             ? document.getElementById('ph-tl-bromo')
+      : now >= YOGYAKARTA_DATE        ? document.getElementById('ph-tl-yogyakarta')
       : now >= BATUKARAS_DATE       ? document.getElementById('ph-tl-batu-karas')
       : now >= PANGANDARAN_DATE     ? document.getElementById('ph-tl-pangandaran')
       : now >= BANDUNG_DATE         ? document.getElementById('ph-tl-bandung')

@@ -38,7 +38,7 @@ foodSpots:
     what: "Selbst gemachte Burger, sehr günstig, sehr gut. Durch Conor entdeckt. Empfehlung ohne Einschränkung."
     stars: 4
     area: "Chongqing"
-    tip: "Durch einen lokalen Tipp gefunden — nicht verpassen."
+    tip: "Durch einen lokalen Tipp gefunden, nicht verpassen."
   - name: "Streetfood neben dem Hostel"
     lat: 29.5603
     lon: 106.5513
@@ -55,7 +55,7 @@ draft: false
 
 Chongqing war anders als alles davor. Ich bin nach drei Tagen in Zhangjiajie angekommen, noch ein bisschen von den Bergen benommen.
 
-Im **[Mama Youth Hostel](https://maps.google.com/?q=Mama+Youth+Hostel+Chongqing)** habe ich die **Westheads** getroffen. Drei Jungs aus Nordwales. Die fahren mit dem Fahrrad nach Thailand — für die **British Heart Foundation**. Von Wales bis Thailand, mit dem Rad, für einen guten Zweck. Wir haben den Abend zusammen gefeiert, was unfassbar viel Spaß gemacht hat.
+Im **[Mama Youth Hostel](https://maps.google.com/?q=Mama+Youth+Hostel+Chongqing)** habe ich die **Westheads** getroffen. Drei Jungs aus Nordwales. Die fahren mit dem Fahrrad nach Thailand, für die **British Heart Foundation**. Von Wales bis Thailand, mit dem Rad, für einen guten Zweck. Wir haben den Abend zusammen gefeiert, was unfassbar viel Spaß gemacht hat.
 
 Am nächsten Tag habe ich mit **Conor**, den ich am Abend beim Feiern kennengelernt hatte, die Stadt erkundet. Erster Stopp: die **[Liziba Station](https://maps.google.com/?q=Liziba+Station+Chongqing)**. Der Zug der Linie 2 fährt dort mitten durch ein Wohngebäude hindurch.
 
@@ -81,4 +81,4 @@ Am letzten Abend sind wir noch zu einem Ort gegangen, den ich kaum beschreiben k
 
 Das **[Mama Youth Hostel](https://maps.google.com/?q=Mama+Youth+Hostel+Chongqing)** war eine sehr gute Entscheidung. Direkt daneben gab es einen Essensstand, der für 1,20 Euro eine vollständige Mahlzeit angeboten hat. Das habe ich täglich genutzt.
 
-Chongqing war mehr als ich erwartet hatte. Die Stadt, die Leute, die Zufälle — alles zusammen hat das zu einem der besten Stopps der Reise gemacht.
+Chongqing war mehr als ich erwartet hatte. Die Stadt, die Leute, die Zufälle, alles zusammen hat das zu einem der besten Stopps der Reise gemacht.

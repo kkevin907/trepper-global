@@ -11,11 +11,11 @@ costLevel: 1
 rating: 3
 coverImage: "/images/orte/bangkok-wat-arun.jpeg"
 highlights:
-  - "Trampen von Koh Tao nach Bangkok — 12 Stunden, zwei Mitfahrgelegenheiten, eine LKW-Kajüte."
-  - "[Uncle Tu 10 Bath](https://maps.google.com/?q=Uncle+Tu+10+Bath+Bangkok) — Reis mit Fleisch und Sauce für 10 Baht. Das ganze Viertel drumherum ist günstig."
-  - "[Wat Pho](https://maps.google.com/?q=Wat+Pho+Bangkok) — Liegender Buddha, nach der Chao-Phraya-Fähre zu Fuß erreichbar."
-  - "[Chinatown / Yaowarat](https://maps.google.com/?q=Yaowarat+Road+Bangkok) — Kokosnuss-Eis für 10 Baht, [Nai Ek Roll Noodle](https://maps.google.com/?q=Nai+Ek+Roll+Noodle+Bangkok) Michelin-Nudelsuppe."
-  - "[Chao Phraya Fähre](https://maps.google.com/?q=Chao+Phraya+Express+Boat+Bangkok) — unter 0,50 €, schönste Art sich durch Bangkok zu bewegen."
+  - "Trampen von Koh Tao nach Bangkok: 12 Stunden, zwei Mitfahrgelegenheiten, eine LKW-Kajüte."
+  - "[Uncle Tu 10 Bath](https://maps.google.com/?q=Uncle+Tu+10+Bath+Bangkok): Reis mit Fleisch und Sauce für 10 Baht. Das ganze Viertel drumherum ist günstig."
+  - "[Wat Pho](https://maps.google.com/?q=Wat+Pho+Bangkok): Liegender Buddha, nach der Chao-Phraya-Fähre zu Fuß erreichbar."
+  - "[Chinatown / Yaowarat](https://maps.google.com/?q=Yaowarat+Road+Bangkok): Kokosnuss-Eis für 10 Baht, [Nai Ek Roll Noodle](https://maps.google.com/?q=Nai+Ek+Roll+Noodle+Bangkok) Michelin-Nudelsuppe."
+  - "[Chao Phraya Fähre](https://maps.google.com/?q=Chao+Phraya+Express+Boat+Bangkok): unter 0,50 €, schönste Art sich durch Bangkok zu bewegen."
 sights:
   - name: "Khao San Road"
     lat: 13.7588
@@ -75,7 +75,7 @@ tips:
   - "[Chatuchak Market](https://maps.google.com/?q=Chatuchak+Weekend+Market+Bangkok): nur am Wochenende. Unter der Woche sind von 10.000 Läden vielleicht 200 offen."
   - "Kokosnuss-Eis in Chinatown: 10 Baht pro Kugel. Unbedingt mitnehmen."
 skip:
-  - "[Chatuchak Market](https://maps.google.com/?q=Chatuchak+Weekend+Market+Bangkok) unter der Woche — fast alles geschlossen."
+  - "[Chatuchak Market](https://maps.google.com/?q=Chatuchak+Weekend+Market+Bangkok) unter der Woche: fast alles geschlossen."
   - "Tiermarkt neben Chatuchak: erschütternd. Tiere unter schlechten Bedingungen auf engstem Raum. Kein Muss."
 draft: false
 ---

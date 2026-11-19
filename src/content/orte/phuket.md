@@ -14,10 +14,10 @@ mapCenter:
 rating: 3
 coverImage: "/images/orte/phuket-altstadt-strasse.jpeg"
 highlights:
-  - "[Chillva Market](https://maps.google.com/?q=Chillva+Market+Phuket) — Streetfood-Markt, kein Touristenkram."
-  - "[Phuket Old Town](https://maps.google.com/?q=Phuket+Old+Town+Thailand) — Chino-Portugiesische Altstadt zum Laufen. Ruhig, schön."
-  - "[Jui Tui Shrine](https://maps.google.com/?q=Jui+Tui+Shrine+Phuket) — Chinesischer Tempel in den Altstadtgassen. Kaum Touristen."
-  - "[A Pong Mae Sunee](https://maps.google.com/?q=A+Pong+Mae+Sunee+Phuket) — Michelin-Empfehlung. Kokosnuss-Reisküchlein, 6 Stück für 25 Baht. Den Stand vermisse ich."
+  - "[Chillva Market](https://maps.google.com/?q=Chillva+Market+Phuket): Streetfood-Markt, kein Touristenkram."
+  - "[Phuket Old Town](https://maps.google.com/?q=Phuket+Old+Town+Thailand): Chino-Portugiesische Altstadt zum Laufen. Ruhig, schön."
+  - "[Jui Tui Shrine](https://maps.google.com/?q=Jui+Tui+Shrine+Phuket): Chinesischer Tempel in den Altstadtgassen. Kaum Touristen."
+  - "[A Pong Mae Sunee](https://maps.google.com/?q=A+Pong+Mae+Sunee+Phuket): Michelin-Empfehlung. Kokosnuss-Reisküchlein, 6 Stück für 25 Baht. Den Stand vermisse ich."
 sights:
   - name: "Phuket Old Town"
     lat: 7.8851
@@ -80,7 +80,7 @@ Danach das erste Mal **Grab** benutzt. Grab ist in Südostasien das, was Uber in
 
 <img src="/images/orte/phuket-chillva-market.jpeg" alt="Smoothie-Stand mit Neon-Beleuchtung auf dem Chillva Market in Phuket" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
-Am nächsten Tag habe ich mir die Altstadt weiter angeschaut. Auf dem Weg bin ich an mehreren chinesischen Tempeln vorbeigekommen — der beeindruckendste war der **[Jui Tui Shrine](https://maps.google.com/?q=Jui+Tui+Shrine+Phuket)**. Mitten in den Altstadtgassen, wenig Touristen, ruhig. Hat sich gelohnt, kurz reinzugehen.
+Am nächsten Tag habe ich mir die Altstadt weiter angeschaut. Auf dem Weg bin ich an mehreren chinesischen Tempeln vorbeigekommen, der beeindruckendste war der **[Jui Tui Shrine](https://maps.google.com/?q=Jui+Tui+Shrine+Phuket)**. Mitten in den Altstadtgassen, wenig Touristen, ruhig. Hat sich gelohnt, kurz reinzugehen.
 
 <img src="/images/orte/phuket-jui-tui-shrine.jpeg" alt="Innenraum des Jui Tui Shrine in Phuket Old Town — goldene Statuen, rote Fahnen, Weihrauchspiralen" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 

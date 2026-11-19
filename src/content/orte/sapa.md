@@ -12,7 +12,7 @@ vibe: "Teenager, Wasserfall, Motorrad"
 costLevel: 1
 rating: 5
 highlights:
-  - "Hike auf den Berg mit einer Gruppe vietnamesischer Teenager — komplett spontan, ganz alleine dort oben."
+  - "Hike auf den Berg mit einer Gruppe vietnamesischer Teenager: komplett spontan, ganz alleine dort oben."
   - "Versteckter Wasserfall bei [Cat Cat Village](https://maps.google.com/?q=Cat+Cat+Village+Sapa): schwimmen, von Felsen springen, niemand sonst da."
   - "Solo-Motortour: 80 km, 2700 Höhenmeter, Reisterrassen, unbefestigte Wege, niemand sonst."
 sights:

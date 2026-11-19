@@ -13,7 +13,7 @@ costLevel: 2
 rating: 4
 highlights:
   - "[Dongiao Memory](https://maps.google.com/?q=Dongiao+Memory+Chengdu): umgebaute Fabrik, heute Kunstbezirk. Mit **[Taikoo Li](https://maps.google.com/?q=Taikoo+Li+Chengdu)** und dem riesigen Panda am **[IFS-Gebäude](https://maps.google.com/?q=IFS+Chengdu)** daneben."
-  - "Erstes Mal Hot Pot — Pansen, Kutteln und Sachen, die ich sonst nie essen würde. Gut."
+  - "Erstes Mal Hot Pot: Pansen, Kutteln und Sachen, die ich sonst nie essen würde. Gut."
   - "Cheersum Spa: Saunen, Pools, Frühstück, Getränke, frisch aufgeschnittenes Obst. Alles für 33 €."
 sights:
   - name: "Dongiao Memory (umgebaute Fabrik)"
@@ -55,7 +55,7 @@ tips:
 draft: false
 ---
 
-Chengdu war entspannter als die Stopps davor. Kein Plan, kein Muss — was nicht heißt, dass nichts passiert ist.
+Chengdu war entspannter als die Stopps davor. Kein Plan, kein Muss, was nicht heißt, dass nichts passiert ist.
 
 Noch am ersten Tag habe ich beschlossen, mir eine **DJI Action 4** zu kaufen. Ich bin durch die Stadt gelaufen, habe in Läden gefragt, habe einen Treffer gefunden, der sie nicht hatte, aber mir dafür online eine Adresse rausgesucht hat: ein kleiner gebrauchter Stand in einem Supermarkt. Ich bin dort hingegangen, habe sie angeschaut und am nächsten Tag gekauft.
 
@@ -69,7 +69,7 @@ Erster Stopp: **[Dongiao Memory](https://maps.google.com/?q=Dongiao+Memory+Cheng
 
 Danach in Richtung **[Taikoo Li](https://maps.google.com/?q=Taikoo+Li+Chengdu)**, dem riesigen offenen Einkaufs- und Kulturzentrum im Zentrum. Direkt daneben steht das **[IFS-Gebäude](https://maps.google.com/?q=IFS+Chengdu)** mit dem riesigen Panda außen dran, der aus der Fassade herausragt. Das sieht man von Weitem und man schaut zweimal hin. Mitten in dieser modernen Shoppingwelt steht der alte **[Daci-Tempel](https://maps.google.com/?q=Daci+Temple+Chengdu)**, ein buddhistischer Tempel, der dort einfach zwischen den Boutiquen existiert.
 
-Auf dem Weg haben wir **冰粉** gegessen, Bing Fen — ein Sichuan-Dessert aus kaltem Reisgeleé, mit Nüssen, roten Bohnen und braunem Zuckersirup, dazu kalte Milch. Ich hatte so etwas noch nie gegessen und es war sehr gut.
+Auf dem Weg haben wir **冰粉** gegessen, Bing Fen: ein Sichuan-Dessert aus kaltem Reisgeleé, mit Nüssen, roten Bohnen und braunem Zuckersirup, dazu kalte Milch. Ich hatte so etwas noch nie gegessen und es war sehr gut.
 
 Weiter zum **[Tianfu Square](https://maps.google.com/?q=Tianfu+Square+Chengdu)** mit der riesigen Mao-Zedong-Statue in der Mitte und dem **[Sichuan Science and Technology Museum](https://maps.google.com/?q=Sichuan+Science+Technology+Museum+Chengdu)** nebenan.
 
@@ -81,8 +81,10 @@ Den Abend haben wir mit **Hot Pot** abgeschlossen. Mein erstes Mal. In Sichuan i
 
 Am letzten Tag wollte ich eigentlich eine 24-Stunden-Bar finden. Nach einigem Suchen und einer Empfehlung bin ich in ein Gebäude gegangen und hatte mich geirrt. Es war ein Kinderparadies. Ich habe Eintritt bezahlt, bin zwei Stunden geblieben, weil ich nicht wusste, was ich sonst tun sollte, und habe zwei Stunden Kindergeschrei durchgehalten. Dann bin ich in der Nacht wieder raus.
 
-Der zweite Versuch war besser. Deutlich besser. Ich bin in das **[Cheersum Spa](https://maps.google.com/?q=Cheersum+Spa+Chengdu)** gegangen
+Der zweite Versuch war besser. Deutlich besser. Ich bin in das **[Cheersum Spa](https://maps.google.com/?q=Cheersum+Spa+Chengdu)** gegangen.
 
-![Pool und Saunen im Cheersum Spa Chengdu](/images/orte/chengdu-cheersum-pool.png) — Saunen, verschiedene Pools, Ruhebereiche, Schlafen möglich, Frühstück inklusive, frisch aufgeschnittenes Obst, dauerhaft kostenlose Getränke und Snacks, Vollservice. Ich habe dort die Nacht verbracht, am nächsten Morgen gefrühstückt und bin den ganzen Tag bis zum Abend geblieben. Das alles für 33 Euro. Ich würde das immer wieder machen.
+![Pool und Saunen im Cheersum Spa Chengdu](/images/orte/chengdu-cheersum-pool.png)
+
+Saunen, verschiedene Pools, Ruhebereiche, Schlafen möglich, Frühstück inklusive, frisch aufgeschnittenes Obst, dauerhaft kostenlose Getränke und Snacks, Vollservice. Ich habe dort die Nacht verbracht, am nächsten Morgen gefrühstückt und bin den ganzen Tag bis zum Abend geblieben. Das alles für 33 Euro. Ich würde das immer wieder machen.
 
 Am Abend dann weiter im Zug nach Kunming.

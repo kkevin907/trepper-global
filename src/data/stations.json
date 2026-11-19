@@ -2738,36 +2738,117 @@
     "flag": "🇮🇩",
     "lat": -7.7314,
     "lon": 108.4939,
-    "status": "current",
+    "status": "visited",
     "phase": "main",
     "timezone": "Asia/Jakarta",
     "currency": "IDR",
     "currencySymbol": "Rp",
     "dateFrom": "2026-10-20",
-    "dateTo": null,
+    "dateTo": "2026-10-27",
     "description": "Surfdorf an Javas Südküste — entspannt, Wellen, Sonnenuntergänge.",
     "details": { "highlights": [], "mustEat": [], "spots": [] }
   },
   {
-    "id": "philippinen",
-    "name": "Philippinen",
+    "id": "yogyakarta",
+    "name": "Yogyakarta",
+    "country": "Indonesien",
+    "flag": "🇮🇩",
+    "lat": -7.7956,
+    "lon": 110.3695,
+    "status": "visited",
+    "phase": "main",
+    "timezone": "Asia/Jakarta",
+    "currency": "IDR",
+    "currencySymbol": "Rp",
+    "dateFrom": "2026-10-27",
+    "dateTo": "2026-10-31",
+    "description": "Kulturhauptstadt Javas, Borobudur und Prambanan.",
+    "details": { "highlights": [], "mustEat": [], "spots": [] }
+  },
+  {
+    "id": "bromo",
+    "name": "Mount Bromo",
+    "country": "Indonesien",
+    "flag": "🇮🇩",
+    "lat": -7.9425,
+    "lon": 112.953,
+    "status": "visited",
+    "phase": "main",
+    "timezone": "Asia/Jakarta",
+    "currency": "IDR",
+    "currencySymbol": "Rp",
+    "dateFrom": "2026-11-01",
+    "dateTo": "2026-11-03",
+    "description": "Aktiver Vulkan in Ostjava, Sonnenaufgang über der Caldera.",
+    "details": { "highlights": [], "mustEat": [], "spots": [] }
+  },
+  {
+    "id": "ijen",
+    "name": "Ijen",
+    "country": "Indonesien",
+    "flag": "🇮🇩",
+    "lat": -8.0583,
+    "lon": 114.2422,
+    "status": "visited",
+    "phase": "main",
+    "timezone": "Asia/Jakarta",
+    "currency": "IDR",
+    "currencySymbol": "Rp",
+    "dateFrom": "2026-11-03",
+    "dateTo": "2026-11-05",
+    "description": "Vulkan mit türkisem Kratersee und blauem Feuer.",
+    "details": { "highlights": [], "mustEat": [], "spots": [] }
+  },
+  {
+    "id": "kuta-lombok",
+    "name": "Kuta Lombok",
+    "country": "Indonesien",
+    "flag": "🇮🇩",
+    "lat": -8.8954,
+    "lon": 116.2785,
+    "status": "visited",
+    "phase": "main",
+    "timezone": "Asia/Makassar",
+    "currency": "IDR",
+    "currencySymbol": "Rp",
+    "dateFrom": "2026-11-05",
+    "dateTo": "2026-11-12",
+    "description": "Surfort an der Südküste von Lombok.",
+    "details": { "highlights": [], "mustEat": [], "spots": [] }
+  },
+  {
+    "id": "klungkung",
+    "name": "Klungkung",
+    "country": "Indonesien",
+    "flag": "🇮🇩",
+    "lat": -8.5389,
+    "lon": 115.4045,
+    "status": "visited",
+    "phase": "main",
+    "timezone": "Asia/Makassar",
+    "currency": "IDR",
+    "currencySymbol": "Rp",
+    "dateFrom": "2026-11-12",
+    "dateTo": "2026-11-16",
+    "description": "Ruhiger Osten von Bali, abseits der Touristenorte.",
+    "details": { "highlights": [], "mustEat": [], "spots": [] }
+  },
+  {
+    "id": "siargao",
+    "name": "Siargao",
     "country": "Philippinen",
     "flag": "🇵🇭",
-    "lat": 12.8797,
-    "lon": 121.774,
-    "status": "upcoming",
+    "lat": 9.784,
+    "lon": 126.158,
+    "status": "current",
     "phase": "main",
     "timezone": "Asia/Manila",
     "currency": "PHP",
     "currencySymbol": "₱",
-    "dateFrom": null,
+    "dateFrom": "2026-11-17",
     "dateTo": null,
-    "description": "Inseln, Tauchen, weisse Straende.",
-    "details": {
-      "highlights": [],
-      "mustEat": [],
-      "spots": []
-    }
+    "description": "Surfinsel im Osten der Philippinen.",
+    "details": { "highlights": [], "mustEat": [], "spots": [] }
   },
   {
     "id": "suedkorea",
@@ -2784,86 +2865,6 @@
     "dateFrom": null,
     "dateTo": null,
     "description": "Seoul, K-Culture und ein Wiedersehen in der Hauptstadt.",
-    "details": {
-      "highlights": [],
-      "mustEat": [],
-      "spots": []
-    }
-  },
-  {
-    "id": "indonesia",
-    "name": "Bali",
-    "country": "Indonesien",
-    "flag": "🇮🇩",
-    "lat": -8.3405,
-    "lon": 115.092,
-    "status": "upcoming",
-    "phase": "main",
-    "timezone": "Asia/Makassar",
-    "currency": "IDR",
-    "currencySymbol": "Rp",
-    "dateFrom": null,
-    "dateTo": null,
-    "description": "Reisfelder, Tempel, Surfen — Insel der Götter.",
-    "details": {
-      "highlights": [
-        "Tegallalang Reisterrassen",
-        "Tanah Lot Tempel",
-        "Ubud Monkey Forest",
-        "Seminyak Beach",
-        "Uluwatu Klippen-Tempel",
-        "Mount Batur (Sunrise Trek)"
-      ],
-      "mustEat": [
-        "Nasi Goreng",
-        "Babi Guling (Spanferkel)",
-        "Sate Lilit",
-        "Gado Gado",
-        "frische Kokosnuss"
-      ],
-      "tips": "Scooter-Verleih für ca. 5€/Tag. Bei Tempeln immer Sarong tragen. Ubud für Kultur, Seminyak für Strand & Party.",
-      "bestFor": [
-        "Surfen",
-        "Yoga & Wellness",
-        "Tempel",
-        "Natur"
-      ],
-      "visa": "Visa on Arrival für Deutsche (35 USD, 30 Tage)",
-      "language": "Balinesisch, Indonesisch",
-      "transport": "Scooter, Grab, privater Fahrer (günstig)",
-      "plug": "Typ C/F (230V)",
-      "spots": [
-        {
-          "name": "Tegallalang Reisterrassen",
-          "lat": -8.431,
-          "lon": 115.2785,
-          "type": "sight"
-        },
-        {
-          "name": "Tanah Lot Tempel",
-          "lat": -8.6213,
-          "lon": 115.0869,
-          "type": "sight"
-        },
-        {
-          "name": "Ubud Monkey Forest",
-          "lat": -8.5186,
-          "lon": 115.2594,
-          "type": "sight"
-        },
-        {
-          "name": "Seminyak Beach",
-          "lat": -8.6882,
-          "lon": 115.1552,
-          "type": "sight"
-        },
-        {
-          "name": "Nasi Goreng Local Waung",
-          "lat": -8.3405,
-          "lon": 115.092,
-          "type": "food"
-        }
-      ]
-    }
+    "details": { "highlights": [], "mustEat": [], "spots": [] }
   }
 ]

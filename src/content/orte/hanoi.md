@@ -12,7 +12,7 @@ vibe: "Egg Coffee, Obama-Spot, Train Street"
 costLevel: 1
 rating: 4
 highlights:
-  - "Egg Coffee — aufgeschlagenes Ei auf starkem Kaffee. Klingt komisch, ist sehr gut."
+  - "Egg Coffee: aufgeschlagenes Ei auf starkem Kaffee. Klingt komisch, ist sehr gut."
   - "[Bún Chả Hương Liên](https://maps.google.com/?q=Bun+Cha+Huong+Lien+Hanoi): der Laden, in dem Obama und Anthony Bourdain zusammen gegessen haben. Das Bún Chả war sehr gut."
   - "[Hoa Lo Prison Museum](https://maps.google.com/?q=Hoa+Lo+Prison+Hanoi): gut gemacht, interessant, lohnt sich."
 sights:
@@ -46,20 +46,20 @@ foodSpots:
     stars: 5
     area: "Altstadt"
 tips:
-  - "Laotisches Visum direkt an der laotischen Botschaft in Hanoi beantragen — 40 USD."
+  - "Laotisches Visum direkt an der laotischen Botschaft in Hanoi beantragen, 40 USD."
   - "Fake-Klamotten in den Gassen der Altstadt: Arc'teryx, The North Face, gute Qualität für wenig Geld."
-draft: false
+draft: true
 ---
 
-Ich war zweimal in Hanoi — beide Male kurz, beide Male gut.
+Ich war zweimal in Hanoi, beide Male kurz, beide Male gut.
 
-**Erstes Mal:** Ich kam abends aus Sapa an und traf George wieder, der schon ein paar Tage da war. Wir sind durch die **Beer Street** gezogen, die Gegend angeschaut, den Abend verbracht. Am nächsten Morgen haben wir noch **Egg Coffee** getrunken — aufgeschlagenes Ei auf starkem Kaffee, eine Hanoi-Spezialität. Klingt komisch, ist wirklich gut. Dann hat George mich überzeugt, mit nach Cat Ba zu kommen. Sachen gepackt, mitgefahren.
+**Erstes Mal:** Ich kam abends aus Sapa an und traf George wieder, der schon ein paar Tage da war. Wir sind durch die **Beer Street** gezogen, die Gegend angeschaut, den Abend verbracht. Am nächsten Morgen haben wir noch **Egg Coffee** getrunken, aufgeschlagenes Ei auf starkem Kaffee, eine Hanoi-Spezialität. Klingt komisch, ist wirklich gut. Dann hat George mich überzeugt, mit nach Cat Ba zu kommen. Sachen gepackt, mitgefahren.
 
-**Zweites Mal:** Nach Cat Ba, wieder auf dem Weg. Auch nur eine Nacht, diesmal im **Buffalo Hostel** — kann ich empfehlen.
+**Zweites Mal:** Nach Cat Ba, wieder auf dem Weg. Auch nur eine Nacht, diesmal im **Buffalo Hostel**, kann ich empfehlen.
 
-Ich habe die **[St. Joseph's Cathedral](https://maps.google.com/?q=St+Joseph+Cathedral+Hanoi)** besucht, eine neogotische Kathedrale von 1886, die überraschend gut erhalten und schön anzusehen ist. Danach zur **laotischen Botschaft**, um mein Visum für Laos zu beantragen — 40 Dollar.
+Ich habe die **[St. Joseph's Cathedral](https://maps.google.com/?q=St+Joseph+Cathedral+Hanoi)** besucht, eine neogotische Kathedrale von 1886, die überraschend gut erhalten und schön anzusehen ist. Danach zur **laotischen Botschaft**, um mein Visum für Laos zu beantragen, 40 Dollar.
 
-Mittags bin ich zu **[Bún Chả Hương Liên](https://maps.google.com/?q=Bun+Cha+Huong+Lien+Hanoi)** gegangen. Das ist der Laden, in dem Obama und Anthony Bourdain 2016 zusammen gegessen haben. Das Bún Chả — gegrilltes Schweinefleisch, Reisnudeln, Brühe zum Dippen — war sehr gut. Abends noch mal bei einem lokalen Spot in der Nähe vom Hostel gegessen, der noch besser war.
+Mittags bin ich zu **[Bún Chả Hương Liên](https://maps.google.com/?q=Bun+Cha+Huong+Lien+Hanoi)** gegangen. Das ist der Laden, in dem Obama und Anthony Bourdain 2016 zusammen gegessen haben. Das Bún Chả, gegrilltes Schweinefleisch, Reisnudeln, Brühe zum Dippen, war sehr gut. Abends noch mal bei einem lokalen Spot in der Nähe vom Hostel gegessen, der noch besser war.
 
 Abends noch auf die **[Train Street](https://maps.google.com/?q=Train+Street+Hanoi)**: eine enge Gasse, durch die ein Zug fährt. Ich war spät, war nicht mehr viel los. Tagsüber soll es voller sein.
 

@@ -14,11 +14,11 @@ mapCenter:
 rating: 3
 coverImage: "/images/orte/kl-merdeka-ausblick.jpeg"
 highlights:
-  - "[Merdeka 118](https://maps.google.com/?q=Merdeka+118+Kuala+Lumpur) — zweithöchster Turm der Welt, kostenlos. Eingang über das Hyatt Hotel, 75. Stock."
-  - "[Batu Caves](https://maps.google.com/?q=Batu+Caves+Malaysia) — kostenloser Eintritt, Affen die aktiv klauen. Aufpassen."
-  - "[KL Forest Eco Park](https://maps.google.com/?q=KL+Forest+Eco+Park+Kuala+Lumpur) — echter Dschungel mitten in der Stadt. 40 RM für den Canopy Walk."
-  - "[W Hotel](https://maps.google.com/?q=W+Hotel+Kuala+Lumpur) Rooftop — kostenloser Blick auf die Petronas Towers."
-  - "[Saloma Link Bridge](https://maps.google.com/?q=Saloma+Link+Bridge+Kuala+Lumpur) — schön bei Nacht, und direkt darunter ein kleiner Streetfood-Markt."
+  - "[Merdeka 118](https://maps.google.com/?q=Merdeka+118+Kuala+Lumpur): zweithöchster Turm der Welt, kostenlos. Eingang über das Hyatt Hotel, 75. Stock."
+  - "[Batu Caves](https://maps.google.com/?q=Batu+Caves+Malaysia): kostenloser Eintritt, Affen die aktiv klauen. Aufpassen."
+  - "[KL Forest Eco Park](https://maps.google.com/?q=KL+Forest+Eco+Park+Kuala+Lumpur): echter Dschungel mitten in der Stadt. 40 RM für den Canopy Walk."
+  - "[W Hotel](https://maps.google.com/?q=W+Hotel+Kuala+Lumpur) Rooftop: kostenloser Blick auf die Petronas Towers."
+  - "[Saloma Link Bridge](https://maps.google.com/?q=Saloma+Link+Bridge+Kuala+Lumpur): schön bei Nacht, und direkt darunter ein kleiner Streetfood-Markt."
 sights:
   - name: "Merdeka 118"
     lat: 3.1428
@@ -68,7 +68,7 @@ foodSpots:
   - name: "HSP Boss"
     lat: 3.149
     lon: 101.697
-    what: "Pommes mit Chicken und Saucen — so eine Art überbackener Pomm-Döner auf Malaysisch."
+    what: "Pommes mit Chicken und Saucen, so eine Art überbackener Pomm-Döner auf Malaysisch."
     stars: 3
     area: "City"
     tip: "Ganz gut, aber für das was es ist etwas teuer."
@@ -104,15 +104,15 @@ Am ersten Abend bin ich durch **[Chinatown](https://maps.google.com/?q=Petaling+
 
 Mittags am nächsten Tag habe ich an einem Stand Nudeln gegessen. 2,10 €, eine richtige Portion. So fängt Asien an.
 
-Dann zum **[Merdeka 118](https://maps.google.com/?q=Merdeka+118+Kuala+Lumpur)** — der zweithöchste Turm der Welt. Den Trick muss man wissen: Eingang über das Hyatt Hotel, einfach zur Lobby rein und hochfahren. 75. Stock, kein Ticket, kostenlos. Der Ausblick ist gut.
+Dann zum **[Merdeka 118](https://maps.google.com/?q=Merdeka+118+Kuala+Lumpur)**, der zweithöchste Turm der Welt. Den Trick muss man wissen: Eingang über das Hyatt Hotel, einfach zur Lobby rein und hochfahren. 75. Stock, kein Ticket, kostenlos. Der Ausblick ist gut.
 
 <img src="/images/orte/kl-merdeka-ausblick.jpeg" alt="Blick vom 75. Stock des Merdeka 118 auf die Skyline von Kuala Lumpur" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
-Auf dem Weg bin ich am **[REX KL](https://maps.google.com/?q=REX+KL+Kuala+Lumpur)** vorbeigekommen — ein umgebautes altes Kino mit Bookshop, Café und Galerie drinne. Lohnt sich für einen kurzen Stopp.
+Auf dem Weg bin ich am **[REX KL](https://maps.google.com/?q=REX+KL+Kuala+Lumpur)** vorbeigekommen, einem umgebauten alten Kino mit Bookshop, Café und Galerie drinne. Lohnt sich für einen kurzen Stopp.
 
 <img src="/images/orte/kl-rex-buchhandlung.jpeg" alt="Riesige Bücherwand im REX KL Bookshop, Kuala Lumpur" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
-Der **[Dataran Merdeka](https://maps.google.com/?q=Dataran+Merdeka+Kuala+Lumpur)** ist der große Unabhängigkeitsplatz mitten in der City — mit dem langen Fahnenmast und dem historischen Sultan Abdul Samad Gebäude drum herum. Nett zum Vorbeigehen.
+Der **[Dataran Merdeka](https://maps.google.com/?q=Dataran+Merdeka+Kuala+Lumpur)** ist der große Unabhängigkeitsplatz mitten in der City, mit dem langen Fahnenmast und dem historischen Sultan Abdul Samad Gebäude drum herum. Nett zum Vorbeigehen.
 
 <img src="/images/orte/kl-dataran-merdeka.jpeg" alt="Dataran Merdeka mit Sultan Abdul Samad Gebäude, Kuala Lumpur" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
@@ -126,7 +126,7 @@ Von der **[Saloma Link Bridge](https://maps.google.com/?q=Saloma+Link+Bridge+Kua
 
 Einen kostenlosen Blick auf die Petronas Towers gibt es auch vom Rooftop des **[W Hotels](https://maps.google.com/?q=W+Hotel+Kuala+Lumpur)**. Einfach hochfahren und die Aussicht genießen.
 
-Die **[Batu Caves](https://maps.google.com/?q=Batu+Caves+Malaysia)** habe ich per öffentlichem Nahverkehr gemacht. Der Weg war viel entspannter als mir erzählt worden ist — Europäer kommen mit den Treppen gut zurecht. Eintritt kostenlos. Ein Affe hat versucht, mein Handy zu greifen. Die sind wirklich dreist. Aufpassen.
+Die **[Batu Caves](https://maps.google.com/?q=Batu+Caves+Malaysia)** habe ich per öffentlichem Nahverkehr gemacht. Der Weg war viel entspannter als mir erzählt worden ist, Europäer kommen mit den Treppen gut zurecht. Eintritt kostenlos. Ein Affe hat versucht, mein Handy zu greifen. Die sind wirklich dreist. Aufpassen.
 
 <img src="/images/orte/kl-batu-caves-affe.jpeg" alt="Affe mit Kokosnuss bei den Batu Caves, Kuala Lumpur" style="width:100%;border-radius:12px;margin:0.5rem 0;" />
 
